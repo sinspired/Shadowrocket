@@ -1,5 +1,5 @@
 #!name = 自用融合模块
-#!desc = 融合功能： Youtube去广告 & 京东历史比价；
+#!desc = 融合功能：Youtube去广告、京东历史比价；
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
