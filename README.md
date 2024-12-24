@@ -58,7 +58,7 @@ ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书�
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
-#### 自用融合模块：
+#### 融合模块：
 复制如下链接：<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Sgmodule.sgmodule<br>
 打开Shadowrocket，点击[配置]，点击右上角的加号，粘贴，下载即可；<br>
