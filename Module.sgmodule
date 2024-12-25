@@ -38,7 +38,7 @@ Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\
 Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/Amap.js, requires-body=true, max-size=-1, timeout=60
 Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/Amap.js, requires-body=true, max-size=-1, timeout=60
 Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/Amap.js, requires-body=true, max-size=-1, timeout=60
-Amap-AdBlock =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/Amdc.js, requires-body=true, max-size=-1, timeout=60
+# Amap-AdBlock =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/Amdc.js, requires-body=true, max-size=-1, timeout=60
 JD-HistoryPrice = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Script/JD_Price.js, requires-body=true, max-size=-1, timeout=60
 
 [Map Local]
