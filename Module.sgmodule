@@ -11,21 +11,18 @@ AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 
 [Script]
-YouTubek = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument="{"blockUpload":true,"blockImmersive":true,"debug":false}"
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-RedBook = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-Cainiao = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/cainiao.js,requires-body=true,max-size=-1,timeout=60
-Taobao = type=http-response,pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/myBlockAds.js,requires-body=true,max-size=-1,timeout=60
-Alibaba = type=http-response,pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/myBlockAds.js,requires-body=true,max-size=-1,timeout=60
+YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument="{"blockUpload":true,"blockImmersive":true,"debug":false}"
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 JD-HistoryPrice = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js,requires-body=true,max-size=-1,timeout=60
 
 [Map Local]
@@ -33,18 +30,6 @@ JD-HistoryPrice = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? data-type=text data="{}" status-code=200
 ^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
-^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,edith.xiaohongshu.com,www.xiaohongshu.com,acs.m.taobao.com,heic.alicdn.com,guide-acs.m.taobao.com,poplayer.template.alibaba.com,api.m.jd.com
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,edith.xiaohongshu.com,www.xiaohongshu.com,api.m.jd.com
