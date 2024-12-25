@@ -66,7 +66,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 融合功能： YouTube去广告、小红书去广告、京东历史比价；<br>
 
 #### 墨鱼去广告模块：
-说明：目前小火箭上最全面的去广告规则，误杀较少，建议使用；<br>
+说明：目前Shadowrocket上最全面的去广告规则，误杀较少，建议使用；<br>
 使用办法：<br>
 复制链接：https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule<br>
 打开Shadowrocket，点击[配置]，点击右上角的加号，粘贴，下载即可；<br>
