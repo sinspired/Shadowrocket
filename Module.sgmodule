@@ -1,5 +1,5 @@
 #!name = 融合模块
-#!desc = 融合功能：YouTube去广告、小红书去广告、京东历史比价；
+#!desc = 融合功能：YouTube去广告、小红书去广告、高德地图去广告、京东历史比价；
 #!date = 20241225
 
 [Rule]
@@ -9,6 +9,12 @@ AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif - reject
+^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
+^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information - reject
+^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? - reject
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend - reject
+^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather - reject
 
 [Script]
 YouTube-AdBlock = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{"blockUpload":true,"blockImmersive":true,"debug":false}"
@@ -23,7 +29,17 @@ RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\
 RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 RedBook-AdBlock = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
-JD-HistoryPrice = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
+Amap-AdBlock =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amdc.js, requires-body=true, max-size=-1, timeout=60
+JD-HistoryPrice = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig), script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js, requires-body=true, max-size=-1, timeout=60
 
 [Map Local]
 ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) data-type=text data="{}" status-code=200
@@ -32,4 +48,4 @@ JD-HistoryPrice = type=http-response, pattern=^https?:\/\/api\.m\.jd\.com/client
 ^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, edith.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, edith.xiaohongshu.com, www.xiaohongshu.com, *amap.com, api.m.jd.com
