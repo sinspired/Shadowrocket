@@ -74,4 +74,8 @@ https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule<br>
 https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket<br>
 
 #### 鸣谢：（排名不分先后）<br>
-[*@blackmatrix7*](https://github.com/blackmatrix7) [*@ddgksf2013*](https://github.com/ddgksf2013) [*@Maasea*](https://github.com/Maasea) [*@wf021325*](https://github.com/wf021325a) [*@iab0x00*](https://github.com/iab0x00)
+[*@blackmatrix7*](https://github.com/blackmatrix7)
+[*@ddgksf2013*](https://github.com/ddgksf2013)
+[*@Maasea*](https://github.com/Maasea)
+[*@wf021325*](https://github.com/wf021325)
+[*@iab0x00*](https://github.com/iab0x00)
