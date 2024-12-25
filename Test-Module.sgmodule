@@ -1,41 +1,37 @@
-#!name = 小红书去广告与水印
-#!desc = 小红书去广告、去图片视频水印
-#!author = RuCu6、fmz200
+#!name = 测试模块
 
-[Rule]
-AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com,extended-matching)),REJECT
 
 [Script]
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(imagefeed|live_photo\/save),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+高德地图去广告=type=http-response,script-path=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/(banner|hot)_list,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+高德地图去广告1=type=http-response,script-path=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+高德地图去广告2=type=http-response,script-path=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+高德地图去广告3=type=http-response,script-path=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(note\/widgets|user\/followings\/followfeed),script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+高德地图去广告4=type=http-response,script-path=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword,requires-body=1,script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/(hint|trending)\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
 
-小红书 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?,script-path=https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Script/xiaohongshu.js,requires-body=true,timeout=60
+[URL Rewrite]
 
-[Map Local]
-^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(get_style|open|submit_action) data-type=text data="{}" status-code=200
+^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information _ reject-200
 
-^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v3\/note\/guide\? data-type=text data="{}" status-code=200
+^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution _ reject
 
-^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend _ reject-dict
 
-^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif _ reject-img
+
+^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather _ reject-dict
+
+
 
 [MITM]
-hostname = %APPEND% edith.xiaohongshu.com, www.xiaohongshu.com
+
+hostname= %APPEND% *amap.com
+
