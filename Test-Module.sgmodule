@@ -56,4 +56,4 @@ caiyun_json.js =type=http-response, pattern=^https?:\/\/starplucker\.cyapi\.cn\/
 caiyun_json.js =type=http-response, pattern=^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity, script-path=https://github.com/ddgksf2013/Scripts/raw/master/caiyun_json.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname= %APPEND% *.bilibili.*, *.bilibili.com, api.live.bilibili.com, app.bilibili.com, -broadcast.chat.bilibili.com, cn-acs.m.cainiao.com, cn-acs.m.cainiao.com, api.caiyunapp.com, ad.cyapi.cn, starplucker.cyapi.cn, wrapper.cyapi.cn, 
+hostname = %APPEND% *.bilibili.*, *.bilibili.com, api.live.bilibili.com, app.bilibili.com, -broadcast.chat.bilibili.com, cn-acs.m.cainiao.com, cn-acs.m.cainiao.com, api.caiyunapp.com, ad.cyapi.cn, starplucker.cyapi.cn, wrapper.cyapi.cn, 
