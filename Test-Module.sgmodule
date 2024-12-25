@@ -2,7 +2,6 @@
 #!desc = 测试模块，请勿使用！
 
 [Script]
-
 amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
 amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
 amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
@@ -14,10 +13,7 @@ amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/sear
 amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen, script-path=https://github.com/ddgksf2013/Scripts/raw/master/amap.js, requires-body=true, max-size=-1, timeout=60
 
 
-
-
 [URL Rewrite]
-
 ^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif - reject
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
 ^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information - reject
@@ -25,8 +21,6 @@ amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend - reject
 ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/weather - reject
 
-
 [MITM]
 
 hostname= %APPEND% *amap.com
-
