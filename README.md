@@ -62,7 +62,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 复制如下链接：<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Sgmodule.sgmodule<br>
 打开Shadowrocket，点击[配置]，点击右上角的加号，粘贴，下载即可；<br>
-融合功能： Youtube去广告 & 京东历史比价；<br>
+融合功能： YouTube去广告、京东历史比价；<br>
 
 #### 墨鱼去广告模块：
 复制如下链接：<br>
