@@ -8,11 +8,9 @@
 具体功能参考下方的：[Rules.conf - 配置介绍]
 
 ##### 规则地址：<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf<br>
-![qrcode_raw githubusercontent com](https://github.com/user-attachments/assets/871c0452-5483-4059-b3bf-c66e039d2c2b)
 
-[*RulesLite-点击链接，一键安装*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)
-<br>
+[*RulesLite.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
+
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
 具有强大的广告拦截功能；<br>
@@ -38,8 +36,7 @@ Apple/Microsoft/Goole单独分流；<br>
 为了保证完整的接管流量，本策略默认使用<美国优先>兜底；<br>
 
 ##### 规则地址：<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf<br>
-![qrcode](https://github.com/user-attachments/assets/faf02085-0828-430c-8509-fb09ffb7287f)
+[*Rules.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
 
 #### MitM&证书模块
 建议开启MitM，搭配MitM才能最大化的去除广告；<br>
