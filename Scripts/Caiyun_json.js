@@ -1,77 +1,70 @@
-let responseBody = {};
+/*************************************
 
-if ($request.url.includes("activity")) {
-    // 只返回相关活动信息，去除广告部分
-    if ($request.url.includes("type_id=A03")) {
-        responseBody = {
-            status: "ok",
-            activities: [
-                {
-                    type: "tabbar",
-                    name: "aichat",
-                    feature: false
-                }
-            ]
-        };
-    } else {
-        responseBody = {
-            status: "ok",
-            activities: [
-                {
-                    items: [{}]  // 保证只返回正常活动项
-                }
-            ]
-        };
-    }
-} else if ($request.url.includes("operation/homefeatures")) {
-    // 仅去除首页顶部的广告数据，不影响正常内容
-    responseBody = {
-        data: []  // 不修改首页顶部的广告数据
-    };
-} else if ($request.url.includes("operation/feeds")) {
-    // 保留需要的推荐项，移除广告
-    responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留有效推荐项
-} else if ($request.url.includes("operation/banners")) {
-    // 只修改返回的数据，确保去除广告并返回一个有效的图片链接
-    responseBody = {
-        data: [
-            {
-                avatar: "https://cdn-w.caiyunapp.com/p/app/operation/prod/banner/668502d5c3a2362582a2a5da/d9f198473e7f387d13ea892719959ddb.jpg",
-                url: "https://cdn-w.caiyunapp.com/p/app/operation/prod/article/66850143c3a2362582a2a5d9/index.html",
-                title: "暴雨来袭，这些避险“秘籍”你学会了吗？",
-                banner_type: "article"
-            }
-        ]
-    };
-} else if ($request.url.includes("operation/features")) {
-    // 只保留有效内容，不影响其他非广告内容，特别是防止误修改地图或其他重要部分
-    responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.url.indexOf("cy://") !== -1);  // 仅过滤有效链接
-} else if ($request.url.includes("campaigns")) {
-    // 返回正常的广告活动信息，避免影响其他功能
-    responseBody = {
-        campaigns: [
-            {
-                name: "driveweather",
-                title: "驾驶天气新功能",
-                url: "cy://page_driving_weather",
-                cover: "https://cdn-w.caiyunapp.com/p/banner/test/668d442c4fe75aca7251c161.png"
-            }
-        ]
-    };
-} else if ($request.url.includes("notification/message_center")) {
-    // 清空通知信息，防止广告推送
-    responseBody = {
-        messages: []
-    };
-} else if ($request.url.includes("config/cypage")) {
-    // 清空弹窗和动作，防止广告干扰
-    responseBody = {
-        popups: [],
-        actions: []
-    };
+项目名称：彩云天气-净化/解锁SVIP
+下载地址：https://t.cn/A66d95hV
+更新日期：2024-09-28
+脚本作者：chxm1023
+电报频道：https://t.me/chxm1023
+使用声明：⚠️仅供参考，🈲转载与售卖！
+
+**************************************
+
+[filter_local]
+# 禁用上传信息 - 来源: @苍井灰灰
+host, gather.colorfulclouds.net ,reject
+
+[rewrite_local]
+# 广告净化/弹窗AD/去除亲友卡/去除悬浮模块
+^https?:\/\/(ad|biz|wrapper|starplucker)\.cyapi\.cn\/.+\/((activity\?app_name|operation|config|req\?app_name=weather)|v\d\/(trial_card\/info|entries|friend_cards|token\/device)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+# VIP信息
+^https?:\/\/(biz|wrapper|starplucker)\.cyapi\.cn\/(v\d\/user\?app_name|.+\/v\d\/(vip_info|user_detail)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+# SVIP地图-48小时预报
+^https?:\/\/(api|wrapper)\.cyapi\.cn\/v\d\/(satellite|nafp\/origin_images) url script-request-header https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+
+[mitm]
+hostname = *.cyapi.cn
+
+*************************************/
+
+
+let chxm1024 = {}, chxm1023 = JSON.parse(typeof $response != "undefined" && $response.body || null);
+const url = $request.url;
+const headers = Object.fromEntries(Object.entries($request.headers).map(([k, v]) => [k.toLowerCase(), v]));
+
+if (typeof $response == "undefined") {
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ2ZXJzaW9uIjoxLCJ1c2VyX2lkIjoiNWY1YmZjNTdkMmM2ODkwMDE0ZTI2YmI4Iiwic3ZpcF9leHBpcmVkX2F0IjoxNzA1MzMxMTY2LjQxNjc3MSwidmlwX2V4cGlyZWRfYXQiOjB9.h_Cem89QarTXxVX9Z_Wt-Mak6ZHAjAJqgv3hEY6wpps';
+  chxm1024.headers = { ...headers, 'device-token': token };
+  if (headers['app-version'] > '7.19.0') { chxm1024.headers['authorization'] = `Bearer ${token}`; }
+} else {
+  const data = { "is_auto_renewal": true, "expires_time": 4092599349 };
+  //净化广告
+  if (/banners|entries|friend_cards|trial_card\/info|req\?app_name=weather|conditions/.test(url)) {
+    chxm1023 = {};
+  }
+  //旧版数据
+  if (/user\?app_name/.test(url)) {
+    chxm1023.result = { ...chxm1023.result, "is_vip": true, "vip_expired_at": 4092599349, "svip_given": 1, "is_xy_vip": true, "xy_svip_expire": 4092599349, "wt": { ...chxm1023.result.wt, "vip": { ...chxm1023.result.wt.vip, "expired_at": 0, "enabled": true, "svip_apple_expired_at": 4092599349, "is_auto_renewal": true, "svip_expired_at": 4092599349 }, "svip_given": 1 }, "vip_take_effect": 1, "xy_vip_expire": 4092599349, "svip_expired_at": 4092599349, "svip_take_effect": 1, "vip_type": "s" };
+  }
+  //新版数据
+  if (/user_detail/.test(url)) {
+    chxm1023.vip_info.show_upcoming_renewal = false;
+    chxm1023.vip_info.svip = data;
+  }
+  //VIP信息
+  if (/vip_info/.test(url)) {
+    chxm1023.show_upcoming_renewal = false;
+    chxm1023.svip = data;
+  }
+  //添加一个哆啦A梦
+  if (/features|homefeatures/.test(url)) {
+    chxm1023["data"] = [{  "badge_type" : "",  "title" : "叮当猫",  "url" : "https://t.me/chxm1023",  "feature_type" : "",  "avatar" : "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm2.png"  },...chxm1023.data];
+  }
+  chxm1024.body = JSON.stringify(chxm1023);
 }
 
-// 返回修改后的数据
-$done({ body: JSON.stringify(responseBody) });
+//去除悬浮模块
+if (/activity\?app_name/.test(url)) {
+  chxm1024.body = headers['app-version'] < '7.20.0'  ? '{"status":"ok","activities":[{"items":[{}]}]}'  : '{"status":"ok","activities":[]}';
+}
+
+$done(chxm1024);
