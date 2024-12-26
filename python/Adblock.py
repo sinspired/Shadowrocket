@@ -113,7 +113,7 @@ def process_urls(urls, project_name):
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
-    input_file_path = os.path.join(parent_dir, "ModuleList.txt")
+    input_file_path = os.path.join(parent_dir, "python"， "ModuleList.txt")
     print("Input file path:", input_file_path)
     try:
         with open(input_file_path, 'r') as file:
