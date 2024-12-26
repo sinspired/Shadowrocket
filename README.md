@@ -4,7 +4,7 @@
 #### RulesLite.conf - 配置介绍
 ##### 配置功能介绍：<br>
 基于Rules.conf修改，除不包含策略组以外，其余配置完全相同；<br>
-如不需要策略组，建议使用此配置；<br>
+如不需要策略组及自动分流，建议使用此配置；<br>
 具体功能参考下方的：[Rules.conf - 配置介绍]
 
 ##### 规则地址：<br>
@@ -12,6 +12,7 @@
 
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
+自动分配策略组，无需手动切换节点；<br>
 具有强大的广告拦截功能；<br>
 具有有效的防追踪/劫持功能；<br>
 ChatGPT等AI工具单独分流；<br>
@@ -30,9 +31,9 @@ Apple/Microsoft/Goole单独分流；<br>
 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
-##### 分流办法：<br>
+##### 修改分流：<br>
 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
-为了保证完整的接管流量，本策略默认使用<美国优先>兜底；<br>
+为了保证完全接管流量，本策略默认使用<美国优先>兜底；<br>
 
 ##### 规则地址：<br>
 [*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
