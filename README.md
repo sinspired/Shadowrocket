@@ -1,14 +1,5 @@
 ### Shadowrocket 配置/模块<br>
 
-#### RulesLite.conf - 配置介绍
-##### 配置功能介绍：<br>
-基于Rules.conf修改，除不包含策略组以外，其余配置完全相同；<br>
-如不需要策略组及自动分流，建议使用此配置；<br>
-具体功能参考下方的：[Rules.conf - 配置介绍]
-
-##### 规则地址：<br>
-[*RulesLite.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
-
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
 自动分配策略组，无需手动切换节点；<br>
@@ -26,13 +17,22 @@ Apple/Microsoft/Goole单独分流；<br>
 如不包含这两地区节点，则需要自行修改正则；<br>
 本策略默认指定Telegram使用<新加坡节点>，其他规则使用<美国节点>；<br>
 
+##### 修改分流：<br>
+打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
+为了保证完全接管流量，本策略默认使用<美国优先>兜底；<br>
+
+#### RulesLite.conf - 配置介绍
+##### 配置功能介绍：<br>
+基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
+如不需要策略组及自动分流，建议使用此配置；<br>
+
+##### 规则地址：<br>
+[*RulesLite.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
+
 ##### 使用办法：<br>
 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
-##### 修改分流：<br>
-打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
-为了保证完全接管流量，本策略默认使用<美国优先>兜底；<br>
 
 ##### 规则地址：<br>
 [*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
@@ -61,7 +61,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 融合功能如下： 
-去开屏，京东历史比价；<br>
+墨鱼去开屏，京东历史比价；<br>
 软件净化：YouTube，喜马拉雅，哔哩哔哩，微博，高德地图，小红书，网易云音乐，菜鸟裹裹，豆瓣，起点，知乎，百度网盘；<br>
 
 #### 本策略依赖如下项目：<br>
