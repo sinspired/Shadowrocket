@@ -30,12 +30,3 @@ jobs:
     - name: Run Python script
       run: |
         python Adblock.py  # 运行 Adblock.py 脚本
-
-    # 5. 提交生成的文件回仓库
-    - name: Commit and push generated files
-      uses: EndBug/add-and-commit@v9  # 使用这个 action 提交文件
-      with:
-        author_name: 'GitHub Actions'  # 提交者名字
-        author_email: 'xiangwan.guan@gnail.com'  # 提交者邮箱
-        message: 'Update Adblock.sgmodule file'  # 提交信息
-        add: 'Adblock.sgmodule'  # 添加要提交的文件
