@@ -30,12 +30,6 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!desc = 基于墨鱼规则定制；
 #!logtime={timestamp}
 
-[General]
-
-[Rule]
-AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
-
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 """
@@ -67,7 +61,6 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
     sgmodule_content += f"""
 [Script]
 JD-History-Price = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js,requires-body=true,max-size=-1,timeout=60
-YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument="{"blockUpload":true,"blockImmersive":true,"debug":false}"
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
@@ -92,7 +85,7 @@ YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.co
     sgmodule_content += f"""
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, api.m.jd.com, {mitm_match_content}
+hostname = %APPEND% api.m.jd.com, {mitm_match_content}
 """
     return sgmodule_content
 
