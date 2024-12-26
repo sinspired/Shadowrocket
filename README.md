@@ -58,7 +58,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 #### 融合模块：
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 说明：基于“墨鱼去广告模块”定制，修改部分功能，每日自动构建；<br>
-使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
+使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 融合功能如下： 
 墨鱼去开屏，京东历史比价；<br>
 软件净化：YouTube，喜马拉雅，哔哩哔哩，微博，高德地图，小红书，网易云音乐，菜鸟裹裹，豆瓣，起点，知乎，百度网盘，彩云天气；<br>
