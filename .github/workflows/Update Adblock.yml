@@ -45,4 +45,5 @@ jobs:
         author_email: 'actions@github.com'  # 提交者邮箱
         message: 'Update Adblock.sgmodule file'  # 提交信息
         add: 'Adblock.sgmodule'  # 添加要提交的文件
-        github_token: ${{ secrets.UPDATEADBLOCK }}  # 使用 GitHub Secrets 中的 "UPDATEADBLOCK" 密钥进行身份验证
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 设置 GITHUB_TOKEN 环境变量
