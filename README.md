@@ -58,13 +58,13 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 
 #### 融合模块：
 说明：补充墨鱼模块缺失的部分功能；<br>
-使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 融合功能： YouTube去广告、小红书去广告、京东历史比价；<br>
 
 #### 墨鱼去广告模块：
 说明：目前Shadowrocket上最全面的去广告规则，误杀较少，建议使用；<br>
-使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
 [*墨鱼去广告模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule)<br>
 多规则的模块建议放置在最下方；<br>
 
