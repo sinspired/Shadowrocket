@@ -10,7 +10,7 @@
 ##### 规则地址：<br>
 
 [*RulesLite.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
-
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf<br>
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
 具有强大的广告拦截功能；<br>
