@@ -78,7 +78,6 @@ YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.co
         script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
     script_content= '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content +=script_content
-    
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
@@ -92,7 +91,6 @@ YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.co
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, api.m.jd.com,{mitm_match_content}
 """
     return sgmodule_content
-
 def process_urls(urls, project_name):
     combined_js_content = ""
     for url in urls:
@@ -109,7 +107,6 @@ def process_urls(urls, project_name):
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
-
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
