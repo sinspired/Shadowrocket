@@ -65,6 +65,7 @@ def rewrite_to_sgmodule(js_content, project_name):
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
+JD-History-Price = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js,requires-body=true,max-size=-1,timeout=60
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
