@@ -8,9 +8,8 @@
 具体功能参考下方的：[Rules.conf - 配置介绍]
 
 ##### 规则地址：<br>
-
 [*RulesLite.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf<br>
+
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
 具有强大的广告拦截功能；<br>
@@ -28,7 +27,7 @@ Apple/Microsoft/Goole单独分流；<br>
 本策略默认指定Telegram使用<新加坡节点>，其他规则使用<美国节点>；<br>
 
 ##### 使用办法：<br>
-打开Shadowrocket，点击[配置]，点击左上角的[扫描]，识别下方的二维码，应用即可；<br>
+使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
 ##### 分流办法：<br>
@@ -59,16 +58,14 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 
 #### 融合模块：
 说明：补充墨鱼模块缺失的部分功能；<br>
-使用办法：<br>
-复制链接：https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule<br>
-打开Shadowrocket，点击[配置]，点击右上角的加号，粘贴，下载即可；<br>
+使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+[*融合模块-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 融合功能： YouTube去广告、小红书去广告、京东历史比价；<br>
 
 #### 墨鱼去广告模块：
 说明：目前Shadowrocket上最全面的去广告规则，误杀较少，建议使用；<br>
-使用办法：<br>
-复制链接：https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule<br>
-打开Shadowrocket，点击[配置]，点击右上角的加号，粘贴，下载即可；<br>
+使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+[*墨鱼去广告模块-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule)<br>
 多规则的模块建议放置在最下方；<br>
 
 #### 本策略依赖如下项目：<br>
@@ -80,3 +77,4 @@ https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket<br
 [*@Maasea*](https://github.com/Maasea)
 [*@wf021325*](https://github.com/wf021325)
 [*@iab0x00*](https://github.com/iab0x00)
+[*@LOWERTOP*](https://github.com/LOWERTOP)
