@@ -19,12 +19,12 @@ jobs:
         pip install requests
     - name: Run Python script
       run: |
-        python ModuleBuild.py
+        python /Build/ModuleBuild.py
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit and push generated files
+    - name: Commit 和 push generated files
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
