@@ -47,7 +47,6 @@ def rewrite_to_sgmodule(js_content, project_name):
     url_content = '\n'.join(unique_lines)
     sgmodule_content += url_content
     sgmodule_content += f"""
-
 [Map Local]
 """
     for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
@@ -83,7 +82,6 @@ JD-History-Price = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client
     unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
     mitm_match_content = unique_content
     sgmodule_content += f"""
-
 [MITM]
 hostname = %APPEND% api.m.jd.com, {mitm_match_content}
 """
