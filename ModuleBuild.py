@@ -27,7 +27,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
-#!desc = 基于墨鱼规则定制；
+#!desc = 基于墨鱼规则定制，每日自动构建；
 #!logtime={timestamp}
 
 [URL Rewrite]
@@ -47,6 +47,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     url_content = '\n'.join(unique_lines)
     sgmodule_content += url_content
     sgmodule_content += f"""
+
 [Map Local]
 """
     for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
@@ -58,6 +59,7 @@ def rewrite_to_sgmodule(js_content, project_name):
         else:
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
+
 [Script]
 JD-History-Price = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig),script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js,requires-body=true,max-size=-1,timeout=60
 """
@@ -82,6 +84,7 @@ JD-History-Price = type=http-response,pattern=^https?:\/\/api\.m\.jd\.com/client
     unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
     mitm_match_content = unique_content
     sgmodule_content += f"""
+
 [MITM]
 hostname = %APPEND% api.m.jd.com, {mitm_match_content}
 """
