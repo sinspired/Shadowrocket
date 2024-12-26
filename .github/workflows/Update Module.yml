@@ -1,4 +1,4 @@
-name: Update Adblock.Module
+name: Update Module.sgmodule
 on:
   schedule:
     - cron: '0 8 * * *'
