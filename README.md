@@ -12,6 +12,9 @@ Apple/Microsoft/Goole单独分流；<br>
 使用加密的DoH，防止DNS泄露，并有效屏蔽未加密的DNS查询；<br>
 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 
+##### 规则地址：<br>
+[*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
+
 ##### 使用必看：<br>
 你所使用的节点，必须包含<美国节点>，<新加坡节点>；<br>
 如不包含这两地区节点，则需要自行修改正则；<br>
@@ -33,10 +36,6 @@ Apple/Microsoft/Goole单独分流；<br>
 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
-
-##### 规则地址：<br>
-[*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
-
 #### MitM&证书模块
 建议开启MitM，搭配MitM才能最大化的去除广告；<br>
 建议添加证书模块，避免因配置变化导致证书失效；<br>
@@ -57,9 +56,9 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
 #### 融合模块：
+[*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 说明：基于“墨鱼去广告模块”定制，修改部分功能，每日自动构建；<br>
 使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
-[*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 融合功能如下： 
 墨鱼去开屏，京东历史比价；<br>
 软件净化：YouTube，喜马拉雅，哔哩哔哩，微博，高德地图，小红书，网易云音乐，菜鸟裹裹，豆瓣，起点，知乎，百度网盘；<br>
