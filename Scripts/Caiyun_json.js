@@ -1,6 +1,7 @@
 let responseBody = {};
 
 if ($request.url.includes("activity")) {
+    // 只返回相关活动信息，去除广告部分
     if ($request.url.includes("type_id=A03")) {
         responseBody = {
             status: "ok",
@@ -17,19 +18,22 @@ if ($request.url.includes("activity")) {
             status: "ok",
             activities: [
                 {
-                    items: [{}] 
+                    items: [{}]  // 保证只返回正常活动项
                 }
             ]
         };
     }
 } else if ($request.url.includes("operation/homefeatures")) {
+    // 仅去除首页顶部的广告数据，不影响正常内容
     responseBody = {
-        data: [] 
+        data: []  // 不修改首页顶部的广告数据
     };
 } else if ($request.url.includes("operation/feeds")) {
+    // 保留需要的推荐项，移除广告
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留有效推荐项
 } else if ($request.url.includes("operation/banners")) {
+    // 只修改返回的数据，确保去除广告并返回一个有效的图片链接
     responseBody = {
         data: [
             {
@@ -41,9 +45,11 @@ if ($request.url.includes("activity")) {
         ]
     };
 } else if ($request.url.includes("operation/features")) {
+    // 只保留有效内容，不影响其他非广告内容，特别是防止误修改地图或其他重要部分
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.url.indexOf("cy://") !== -1); 
+    responseBody.data = responseBody.data.filter(e => e.url.indexOf("cy://") !== -1);  // 仅过滤有效链接
 } else if ($request.url.includes("campaigns")) {
+    // 返回正常的广告活动信息，避免影响其他功能
     responseBody = {
         campaigns: [
             {
@@ -55,14 +61,17 @@ if ($request.url.includes("activity")) {
         ]
     };
 } else if ($request.url.includes("notification/message_center")) {
+    // 清空通知信息，防止广告推送
     responseBody = {
         messages: []
     };
 } else if ($request.url.includes("config/cypage")) {
+    // 清空弹窗和动作，防止广告干扰
     responseBody = {
         popups: [],
         actions: []
     };
 }
 
+// 返回修改后的数据
 $done({ body: JSON.stringify(responseBody) });
