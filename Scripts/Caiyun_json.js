@@ -1,32 +1,3 @@
-/*************************************
-
-项目名称：彩云天气-净化/解锁SVIP
-下载地址：https://t.cn/A66d95hV
-更新日期：2024-09-28
-脚本作者：chxm1023
-电报频道：https://t.me/chxm1023
-使用声明：⚠️仅供参考，🈲转载与售卖！
-
-**************************************
-
-[filter_local]
-# 禁用上传信息 - 来源: @苍井灰灰
-host, gather.colorfulclouds.net ,reject
-
-[rewrite_local]
-# 广告净化/弹窗AD/去除亲友卡/去除悬浮模块
-^https?:\/\/(ad|biz|wrapper|starplucker)\.cyapi\.cn\/.+\/((activity\?app_name|operation|config|req\?app_name=weather)|v\d\/(trial_card\/info|entries|friend_cards|token\/device)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
-# VIP信息
-^https?:\/\/(biz|wrapper|starplucker)\.cyapi\.cn\/(v\d\/user\?app_name|.+\/v\d\/(vip_info|user_detail)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
-# SVIP地图-48小时预报
-^https?:\/\/(api|wrapper)\.cyapi\.cn\/v\d\/(satellite|nafp\/origin_images) url script-request-header https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
-
-[mitm]
-hostname = *.cyapi.cn
-
-*************************************/
-
-
 let chxm1024 = {}, chxm1023 = JSON.parse(typeof $response != "undefined" && $response.body || null);
 const url = $request.url;
 const headers = Object.fromEntries(Object.entries($request.headers).map(([k, v]) => [k.toLowerCase(), v]));
