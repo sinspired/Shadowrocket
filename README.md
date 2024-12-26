@@ -12,7 +12,7 @@ https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf<
 ![qrcode_raw githubusercontent com](https://github.com/user-attachments/assets/871c0452-5483-4059-b3bf-c66e039d2c2b)
 
 
-[*RulesLite-一键安装*]([https://github.com/blackmatrix7](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf))<br>
+[*RulesLite-一键安装*]([https://github.com/blackmatrix7](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
 具有强大的广告拦截功能；<br>
