@@ -8,7 +8,7 @@
 具体功能参考下方的：[Rules.conf - 配置介绍]
 
 ##### 规则地址：<br>
-[*RulesLite.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
+[*RulesLite.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
 
 #### Rules.conf - 配置介绍
 ##### 配置功能介绍：<br>
@@ -35,7 +35,7 @@ Apple/Microsoft/Goole单独分流；<br>
 为了保证完整的接管流量，本策略默认使用<美国优先>兜底；<br>
 
 ##### 规则地址：<br>
-[*Rules.conf-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
+[*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
 
 #### MitM&证书模块
 建议开启MitM，搭配MitM才能最大化的去除广告；<br>
@@ -59,17 +59,17 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 #### 融合模块：
 说明：补充墨鱼模块缺失的部分功能；<br>
 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
-[*融合模块-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
+[*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 融合功能： YouTube去广告、小红书去广告、京东历史比价；<br>
 
 #### 墨鱼去广告模块：
 说明：目前Shadowrocket上最全面的去广告规则，误杀较少，建议使用；<br>
 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
-[*墨鱼去广告模块-点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule)<br>
+[*墨鱼去广告模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://github.com/ddgksf2013/Modules/raw/main/Adblock.sgmodule)<br>
 多规则的模块建议放置在最下方；<br>
 
 #### 本策略依赖如下项目：<br>
-https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket<br>
+[*blackmatrix7/ios_rule_script*](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket)<br>
 
 #### 鸣谢：（排名不分先后）<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
