@@ -61,7 +61,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 使用办法：使用手机访问此页面，点击下面的链接，一键安装；<br>
 融合功能如下： 
 墨鱼去开屏，京东历史比价；<br>
-软件净化：YouTube，喜马拉雅，哔哩哔哩，微博，高德地图，小红书，网易云音乐，菜鸟裹裹，豆瓣，起点，知乎，百度网盘；<br>
+软件净化：YouTube，喜马拉雅，哔哩哔哩，微博，高德地图，小红书，网易云音乐，菜鸟裹裹，豆瓣，起点，知乎，百度网盘，彩云天气；<br>
 
 #### 本策略依赖如下项目：<br>
 [*blackmatrix7/ios_rule_script*](https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Shadowrocket)<br>
