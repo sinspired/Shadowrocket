@@ -1,25 +1,41 @@
 name: Update Adblock.Module
+
 on:
   schedule:
-    - cron: '0 0 */5 * *'  
-  workflow_dispatch:
+    - cron: '0 0 */5 * *'  # 每五天的零点执行一次
+  workflow_dispatch:  # 允许手动触发工作流
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
 
     steps:
+    # 1. 检出代码
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4  # 检出仓库代码
 
+    # 2. 设置 Python 环境
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: '3.x'  # 使用最新的 Python 版本
 
+    # 3. 安装依赖
     - name: Install dependencies
       run: |
-        pip install requests
+        python -m pip install --upgrade pip  # 升级 pip
+        pip install requests  # 安装 requests 库，如果有其他依赖可以在这里加
 
+    # 4. 运行 Python 脚本
     - name: Run Python script
       run: |
-        python Adblock.py
+        python Adblock.py  # 运行 Adblock.py 脚本
+
+    # 5. 提交生成的文件回仓库
+    - name: Commit and push generated files
+      uses: EndBug/add-and-commit@v9  # 使用这个 action 提交文件
+      with:
+        author_name: 'GitHub Actions'  # 提交者名字
+        author_email: 'xiangwan.guan@gnail.com'  # 提交者邮箱
+        message: 'Update Adblock.sgmodule file'  # 提交信息
+        add: 'Adblock.sgmodule'  # 添加要提交的文件
