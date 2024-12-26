@@ -30,7 +30,12 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!desc = 基于墨鱼规则定制，每日自动构建；
 #!logtime={timestamp}
 
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+
 [URL Rewrite]
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 """
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
@@ -84,7 +89,7 @@ YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.co
     mitm_match_content = unique_content
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% api.m.jd.com, {mitm_match_content}
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,api.m.jd.com, {mitm_match_content}
 """
     return sgmodule_content
 
