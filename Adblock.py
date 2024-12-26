@@ -45,20 +45,20 @@ def rewrite_to_sgmodule(js_content, project_name):
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
     url_content = "";
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1)。strip()
+        pattern = match.group(1).strip()
         url_content += f"{pattern} - reject\n"
     url_lines = url_content.splitlines()
     unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
-    url_content = '\n'。join(unique_lines)
+    url_content = '\n'.join(unique_lines)
     sgmodule_content += url_content
     sgmodule_content += f"""
 
 [Map Local]
 """
     for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1)。strip()
-        re1 = match.group(3)。strip()
-        re2 = match.group(5)。strip()
+        pattern = match.group(1).strip()
+        re1 = match.group(3).strip()
+        re2 = match.group(5).strip()
         if re1 == "text/html":
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
         else:
@@ -68,9 +68,9 @@ def rewrite_to_sgmodule(js_content, project_name):
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1)。strip()
+        pattern = match.group(1).strip()
         script_type_raw = match.group(2)
-        script_path = match.group(3)。strip()
+        script_path = match.group(3).strip()
         filename = re.search(r'/([^/]+)$', script_path).group(1)
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
@@ -106,7 +106,7 @@ def process_urls(urls, project_name):
         output_file = 'Adblock.sgmodule'
         save_content(sgmodule_content, output_file)
         print(sgmodule_content);
-        print(f"Successfully converted 和 saved to {output_file}")
+        print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
 
