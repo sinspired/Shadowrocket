@@ -1,6 +1,7 @@
 /*
 //Caiyun.js
 
+[rewrite_local]
 ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? url reject-dict
 ^https:\/\/api\.caiyunapp\.com\/v1\/activity\? url reject-dict
 ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
