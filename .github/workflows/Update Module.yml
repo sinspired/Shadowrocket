@@ -1,4 +1,4 @@
-name: Update Module.sgmodule
+name: AutoBuild Module.sgmodule
 on:
   schedule:
     - cron: '0 8 * * 1'
@@ -29,7 +29,7 @@ jobs:
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Update Module.sgmodule file'
+        message: 'AutoBuild Module.sgmodule file'
         add: 'Module.sgmodule'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
