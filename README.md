@@ -7,7 +7,7 @@
 具有有效的防追踪/劫持功能；<br>
 ChatGPT等AI工具单独分流；<br>
 WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
-Apple/Microsoft/Goole单独分流；<br>
+Apple/Microsoft/Google单独分流；<br>
 国内地址/国际地址，国内媒体/国际媒体，可单独分流；<br>
 使用加密的DoH，防止DNS泄露，并有效屏蔽未加密的DNS查询；<br>
 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
