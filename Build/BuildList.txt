@@ -1,14 +1,2 @@
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseAds.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/Html/Douban.conf
-https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf
-https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
-https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
-https://raw.githubusercontent.com/chxm1023/Rewrite/refs/heads/main/caiyuntianqi.js
 https://raw.githubusercontent.com/fmz200/wool_scripts/dc6b3ad84a2c8352265c8c601e4a564dd9c99199/QuantumultX/rewrite/chongxie.txt
