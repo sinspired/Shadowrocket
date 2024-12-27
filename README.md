@@ -73,3 +73,5 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@wf021325*](https://github.com/wf021325)
 [*@iab0x00*](https://github.com/iab0x00)
 [*@LOWERTOP*](https://github.com/LOWERTOP)
+<br>
+[![pages-build-deployment](https://github.com/XiangwanGuan/Shadowrocket/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/XiangwanGuan/Shadowrocket/actions/workflows/pages/pages-build-deployment)
