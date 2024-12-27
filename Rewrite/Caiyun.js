@@ -1,7 +1,5 @@
 /*************************************
 
-// 彩云天气净化
-
 [filter_local]
 # 禁用上传信息
 host, gather.colorfulclouds.net ,reject
@@ -18,8 +16,7 @@ hostname = *.cyapi.cn
 *************************************/
 
 
-let chxm1024 = {};
-let chxm1023 = JSON.parse(typeof $response != "undefined" && $response.body || null);
+let chxm1024 = {}, chxm1023 = JSON.parse(typeof $response != "undefined" && $response.body || null);
 const url = $request.url;
 const headers = Object.fromEntries(Object.entries($request.headers).map(([k, v]) => [k.toLowerCase(), v]));
 
@@ -42,11 +39,21 @@ if (typeof $response == "undefined") {
     chxm1023.vip_info.show_upcoming_renewal = false;
     chxm1023.vip_info.svip = data;
   }
-  //去除悬浮模块
-  if (/activity\?app_name/.test(url)) {
-    chxm1024.body = headers['app-version'] < '7.20.0' ? '{"status":"ok","activities":[{"items":[{}]}]}' : '{"status":"ok","activities":[]}';
+  //VIP信息
+  if (/vip_info/.test(url)) {
+    chxm1023.show_upcoming_renewal = false;
+    chxm1023.svip = data;
+  }
+  //添加一个哆啦A梦
+  if (/features|homefeatures/.test(url)) {
+    chxm1023["data"] = [{  "badge_type" : "",  "title" : "叮当猫",  "url" : "https://t.me/chxm1023",  "feature_type" : "",  "avatar" : "https://raw.githubusercontent.com/chxm1023/Script_X/main/icon/ddm2.png"  },...chxm1023.data];
   }
   chxm1024.body = JSON.stringify(chxm1023);
+}
+
+//去除悬浮模块
+if (/activity\?app_name/.test(url)) {
+  chxm1024.body = headers['app-version'] < '7.20.0'  ? '{"status":"ok","activities":[{"items":[{}]}]}'  : '{"status":"ok","activities":[]}';
 }
 
 $done(chxm1024);
