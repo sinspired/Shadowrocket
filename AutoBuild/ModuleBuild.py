@@ -27,7 +27,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
-#!desc = 基于墨鱼规则定制，每周一自动构建；
+#!desc=基于墨鱼规则定制，每周自动构建；
 #!logtime={timestamp}
 
 [Rule]
@@ -64,6 +64,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
+youtube =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument='{{"blockUpload":true,"blockImmersive":true,"debug":false}}'
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
