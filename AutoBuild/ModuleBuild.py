@@ -87,7 +87,7 @@ YouTube-AdBlock = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.co
     mitm_match_content = unique_content
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com, api.m.jd.com,{mitm_match_content}
+hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com,{mitm_match_content}
 """
     return sgmodule_content
 def process_urls(urls, project_name):
