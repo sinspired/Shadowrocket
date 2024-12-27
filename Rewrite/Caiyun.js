@@ -15,6 +15,7 @@ hostname = *.cyapi.cn
 
 *************************************/
 
+
 let chxm1024 = {};
 let chxm1023 = JSON.parse(typeof $response != "undefined" && $response.body || null);
 const url = $request.url;
@@ -29,6 +30,10 @@ if (typeof $response == "undefined") {
   //净化广告
   if (/banners|entries|friend_cards|trial_card\/info|req\?app_name=weather|conditions/.test(url)) {
     chxm1023 = {};
+  }
+  //旧版数据
+  if (/user\?app_name/.test(url)) {
+    chxm1023.result = { ...chxm1023.result, "is_vip": true, "vip_expired_at": 4092599349, "svip_given": 1, "is_xy_vip": true, "xy_svip_expire": 4092599349, "wt": { ...chxm1023.result.wt, "vip": { ...chxm1023.result.wt.vip, "expired_at": 0, "enabled": true, "svip_apple_expired_at": 4092599349, "is_auto_renewal": true, "svip_expired_at": 4092599349 }, "svip_given": 1 }, "vip_take_effect": 1, "xy_vip_expire": 4092599349, "svip_expired_at": 4092599349, "svip_take_effect": 1, "vip_type": "s" };
   }
   //新版数据
   if (/user_detail/.test(url)) {
