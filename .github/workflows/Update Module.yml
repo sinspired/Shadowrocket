@@ -1,7 +1,7 @@
 name: Update Module.sgmodule
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 8 * * 1'
   workflow_dispatch:
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
         pip install requests
     - name: Run Python script
       run: |
-        python Build/ModuleBuild.py
+        python AutoBuild/ModuleBuild.py
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
