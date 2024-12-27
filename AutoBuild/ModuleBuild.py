@@ -64,7 +64,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
-youtube.js =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument='{{"blockUpload":true,"blockImmersive":true,"debug":false}}'
+YouTube-ADS = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument='{{"blockUpload":true,"blockImmersive":true,"debug":false}}'
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
@@ -72,7 +72,7 @@ youtube.js =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/you
         script_type_raw = match.group(2)
         script_path = match.group(3).strip()
         filename = re.search(r'/([^/]+)$', script_path).group(1)
-        script_type = 'response' if script_type_raw in ['script-response-body'， 'script-echo-response', 'script-response-header'] else 'request'
+        script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
         script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
     script_content= '\n'.join(sorted(set(script_content.splitlines())))
