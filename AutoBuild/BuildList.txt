@@ -12,4 +12,4 @@ https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/r
 https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js
 https://raw.githubusercontent.com/chxm1023/Rewrite/refs/heads/main/caiyuntianqi.js
 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
-https://raw.githubusercontent.com/Yuclaude/rulesScript/d3de3352001de31e83d5fcadc8a5128e04da9a64/QX/js/YoutubeAds.js
+https://raw.githubusercontent.com/fmz200/wool_scripts/dc6b3ad84a2c8352265c8c601e4a564dd9c99199/QuantumultX/rewrite/chongxie.txt
