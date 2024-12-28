@@ -1,6 +1,5 @@
 /*
 // 高德地图
-// 引用自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
 [rewrite_local]
 ^https?://.*.amap.com/ws/boss/order_web/\w{8}_information url reject-200
