@@ -9,7 +9,8 @@ https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/r
 https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js
 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
 
-###### 已下架规则：
+###### 下架规则：<br>
+######未有人提需需求<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Ximalaya.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/KeepStyle.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseAds.conf
