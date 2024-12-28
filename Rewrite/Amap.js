@@ -1,50 +1,56 @@
 /*
+// 高德地图
+// 引用自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
-# > 高德地图_开屏广告@ddgksf2013
+[rewrite_local]
+
+开屏广告
 ^https?://.*.amap.com/ws/valueadded/alimama/splash_screen url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_底部tab栏角标@ddgksf2013
+底部tab栏角标
 ^https?://.*.amap.com/ws/message/notice/list url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_路线规划下方广告@ddgksf2013
+路线规划下方广告
 ^https?://.*.amap.com/ws/faas/amap-navigation/card-service-route-plan? url reject-dict
 
-# > 高德地图_首页右中广告@ddgksf2013
+首页右中广告
 ^https?://.*.amap.com/ws/shield/frogserver/aocs/updatable url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_附近页面@ddgksf2013
+附近页面
 ^https?://.*.amap.com/ws/shield/search/nearbyrec_smart url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_打车页面处理@ddgksf2013
+打车页面处理
 ^https?://.*.amap.com/ws/promotion-web/resource url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_Tip请求@ddgksf2013
+Tip请求
 ^https?://.*.amap.com/ws/boss/order_web/\w{8}_information url reject-200
 
-# > 高德地图_首页底部处理@ddgksf2013
+首页底部处理
 ^https?://.*.amap.com/ws/faas/amap-navigation/main-page url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_通用广告请求@ddgksf2013
+通用广告请求
 ^https?://.*.amap.com/ws/asa/ads_attribution url reject
 
-# > 高德地图_首页顶部推广@ddgksf2013
+首页顶部推广
 ^https?://.*.amap.com/ws/msgbox/pull url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_我的页面@ddgksf2013
+我的页面
 ^https?://.*.amap.com/ws/shield/dsp/profile/index/nodefaas url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_搜索框热词@ddgksf2013
+搜索框热词
 ^https?://.*.amap.com/ws/shield/search/new_hotword url script-response-body https://github.com/ddgksf2013/Scripts/raw/master/amap.js
 
-# > 高德地图_搜索框scene@ddgksf2013
+搜索框scene
 ^https?://.*.amap.com/ws/shield/scene/recommend url reject-dict
 
-# > 高德地图_首页左上角gif@ddgksf2013
+首页左上角gif
 ^https?://.*.amap.com/uploadimg/\w+.gif url reject-img
 
-# > 高德地图_左下天气@ddgksf2013
+左下天气
 ^https?://.*.amap.com/ws/valueadded/weather url reject-dict
 
+[mitm]
+hostname = *.amap.com
 
 */
 
@@ -58,7 +64,7 @@ var pattern = /(AMap|Cainiao|%E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C|%E5%96%B5%E8%A
 // 检查 User-Agent 是否匹配指定的关键字
 if (pattern.test(ua)) {
     // 如果匹配到关键字，返回特定的响应体
-    $done({ body: "ddgksf2013" });
+    $done({ body: "adsblock" });
 } else {
     // 如果没有匹配关键字，则正常完成请求
     $done({});
