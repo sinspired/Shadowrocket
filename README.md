@@ -65,7 +65,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 京东历史比价(wf021325)；
 <br>
 软件净化：
-YouTube（iab0x00），
+YouTube（Maasea），
 哔哩哔哩(ddgksf2013)，
 微博(ddgksf2013)，
 小红书(ddgksf2013)，
@@ -81,6 +81,4 @@ YouTube（iab0x00），
 [*@ddgksf2013*](https://github.com/ddgksf2013)
 [*@Maasea*](https://github.com/Maasea)
 [*@wf021325*](https://github.com/wf021325)
-[*@iab0x00*](https://github.com/iab0x00)
 [*@LOWERTOP*](https://github.com/LOWERTOP)
-[*@chxm1023*](https://github.com/chxm1023)
