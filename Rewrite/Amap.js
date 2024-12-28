@@ -3,7 +3,6 @@
 // 引用自：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
 
 [rewrite_local]
-^https?://.*.amap.com/ws/faas/amap-navigation/card-service-route-plan? url reject-dict
 ^https?://.*.amap.com/ws/boss/order_web/\w{8}_information url reject-200
 ^https?://.*.amap.com/ws/asa/ads_attribution url reject
 ^https?://.*.amap.com/ws/shield/scene/recommend url reject-dict
