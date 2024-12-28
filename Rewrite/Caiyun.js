@@ -2,79 +2,36 @@
 //彩云天气
 
 [rewrite_local]
-# > 图层推广@ddgksf2013
+# > 图层推广
 ^https?:\/\/wrapper\.cyapi\.cn\/v\d\/activity url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 活动推广@ddgksf2013
+# > 活动推广
 ^https?:\/\/api\.caiyunapp\.com\/v\d\/activity url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 首页顶部推广@ddgksf2013
+# > 首页顶部推广
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/homefeatures url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > SVIP提醒推广@ddgksf2013
+# > SVIP提醒推广
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/notification/message_center url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 雨季特惠提醒@ddgksf2013
+# > 雨季特惠提醒
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/config/cypage url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 发现页信息流推荐@ddgksf2013
+# > 发现页信息流推荐
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/feeds url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 发现页banners@ddgksf2013
+# > 发现页banners
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/banners url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 发现页中间部分@ddgksf2013
+# > 发现页中间部分
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 发现页活动@ddgksf2013
+# > 发现页活动
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-# > 通用广告请求@ddgksf2013
+# > 通用广告请求
 ^https?:\/\/ad\.cyapi\.cn\/v\d url reject-200
 
 [mitm]
 hostname =  wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
+
 */
 
 let responseBody = {};
 
-// 判断请求 URL 是否包含 "/v2/user"
-if ($request.url.includes("/v2/user")) {
-    responseBody = JSON.parse($response.body);
-    
-    // 修改响应中的 VIP 状态信息
-    responseBody.result.is_vip = 1;
-    responseBody.result.svip_expired_at = 1892260800; // 设置过期时间
-    responseBody.result.wt.vip.expired_at = 1892260800; // 设置过期时间
-    responseBody.result.svip_take_effect = 1;
-    responseBody.result.vip_type = "s"; // 设置 VIP 类型为 "s"
-}
-// 判断请求 URL 是否包含 "user_detail"
-else if ($request.url.includes("user_detail")) {
-    responseBody = JSON.parse($response.body);
-    
-    // 遍历 vip_info 中的 svip 和 vip 项，设置过期时间和自动续费
-    ["svip", "vip"].forEach(e => {
-        if (responseBody.vip_info[e]) {
-            responseBody.vip_info[e] = {
-                expires_time: "1892260800", // 设置过期时间
-                is_auto_renewal: true // 设置自动续费为 true
-            };
-        }
-    });
-}
-// 判断请求 URL 是否包含 "activity"
-else if ($request.url.includes("activity")) {
-    // 根据 type_id 判断返回不同的活动内容
-    if ($request.url.includes("type_id=A03")) {
-        responseBody = {
-            status: "ok",
-            activities: [
-                { type: "tabbar", name: "aichat", feature: false }
-            ]
-        };
-    } else {
-        responseBody = {
-            status: "ok",
-            activities: [
-                { items: [{}] }
-            ]
-        };
-    }
-}
 // 判断请求 URL 是否包含 "operation/homefeatures"
-else if ($request.url.includes("operation/homefeatures")) {
+if ($request.url.includes("operation/homefeatures")) {
     responseBody = { data: [] }; // 返回空的 homefeatures 数据
 }
 // 判断请求 URL 是否包含 "operation/feeds"
