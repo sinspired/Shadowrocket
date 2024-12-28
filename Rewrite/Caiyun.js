@@ -58,7 +58,7 @@ else if ($request.url.includes("notification/message_center")) {
     responseBody = { messages: [] };
 }
 else if ($request.url.includes("config/cypage")) {
-    responseBody = { popups: [], actions: [] }; // 返回空的弹窗和动作数据
+    responseBody = { popups: [], actions: [] };
 }
 
 $done({ body: JSON.stringify(responseBody) });
