@@ -31,7 +31,20 @@ if (pattern.test(ua)) {
     $done({});
 }
 var obj = JSON.parse($response.body);
-if ($request.url.indexOf("valueadded/alimama/splash_screen") !== -1) {
+if ($request.url.indexOf("search/nearbyrec_smart") !== -1) {
+    let fieldsToRemove = ["coupon", "scene", "activity", "commodity_rec", "operation_activity"];
+    if (obj.data) {
+        fieldsToRemove.forEach(field => {
+            delete obj.data[field];
+        });
+        if (obj.data.modules) {
+            obj.data.modules = obj.data.modules.filter(module => 
+                !fieldsToRemove.includes(module)
+            );
+        }
+    }
+    $done({ body: JSON.stringify(obj) });
+} else if ($request.url.indexOf("valueadded/alimama/splash_screen") !== -1) {
     if (obj.data && obj.data.ad) {
         for (let ad of obj.data.ad) {
             ad.set.setting.display_time = 0;
@@ -100,19 +113,6 @@ if ($request.url.indexOf("valueadded/alimama/splash_screen") !== -1) {
     for (let key of keysToClear) {
         if (obj.data?.[key]) {
             obj.data[key] = { status: 1, version: "", value: "" };
-        }
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("search/nearbyrec_smart") !== -1) {
-    let fieldsToRemove = ["coupon", "scene", "activity", "commodity_rec", "operation_activity"];
-    if (obj.data) {
-        fieldsToRemove.forEach(field => {
-            delete obj.data[field];
-        });
-        if (obj.data.modules) {
-            obj.data.modules = obj.data.modules.filter(module => 
-                !fieldsToRemove.includes(module)
-            );
         }
     }
     $done({ body: JSON.stringify(obj) });
