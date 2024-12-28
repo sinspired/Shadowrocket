@@ -1,5 +1,6 @@
 /*
 // 网易云音乐
+// 等待测试中；
 // 引用自：https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt
 
 [rewrite_local]
