@@ -2,26 +2,10 @@
 //彩云天气
 
 [rewrite_local]
-^https:\/\/biz\.cyapi\.cn\/(p\/v1\/entries|p\/v1\/trial_card\/info|v2\/product) url reject-dict
-^https:\/\/starplucker\.cyapi\.cn\/v3\/(config\/cypage\/\w+\/conditions|notification\/message_center|operation\/homefeatures) url reject-dict
-^https:\/\/api\.caiyunapp\.com\/v1\/activity\? url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
-^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/refs/heads/main/Rewrite/Caiyun.js
+^https?:\/\/(biz|wrapper|starplucker)\.(cyapi|caiyunapp)\.(cn|com)\/(.+\/(user\?app_name|activity\?app_name|visitors|operation\/banners|operation\/homefeatures|config)|p\/v\d\/(vip_info|user_info|entries|privileges|trial_card\/info)) url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
+^https?:\/\/(api|wrapper)\.(cyapi|caiyunapp)\.(cn|com)\/v\d\/(satellite|nafp\/origin_images) url script-request-header https://raw.githubusercontent.com/chxm1023/Rewrite/main/caiyuntianqi.js
 
 [mitm]
-hostname = api.caiyunapp.com, *.cyapi.cn
+hostname =  *.cyapi.cn, *.caiyunapp.com, adx.sogaha.cn
 */
 
-if (url.includes("/api.caiyunapp.com/v1/activity")) {
-    if (url.includes("&type_id=A03&")) {
-        if (obj?.interval) {
-            obj.interval = 2592000; // 30天 === 2592000秒
-        }
-        if (obj?.activities?.length > 0) {
-            obj.activities = obj.activities.filter(item => !item?.name?.includes('彩云AI'));
-        }
-    }
-} else if (url.includes("/wrapper.cyapi.cn/v1/activity")) {
-    if (obj?.activities) {
-        obj.activities = [];
-    }
-}
