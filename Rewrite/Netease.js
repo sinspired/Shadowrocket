@@ -18,5 +18,4 @@ https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mix
 
 [mitm]
 hostname = interface.music.163.com, interface?.music.163.com, ipv4.music.163.com
-
 */
