@@ -90,6 +90,7 @@ youtube =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtub
 hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com,{mitm_match_content}
 """
     return sgmodule_content
+
 def process_urls(urls, project_name):
     combined_js_content = ""
     for url in urls:
@@ -106,6 +107,7 @@ def process_urls(urls, project_name):
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
+
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
