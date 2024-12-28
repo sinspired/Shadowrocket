@@ -1,7 +1,7 @@
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf
 https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
