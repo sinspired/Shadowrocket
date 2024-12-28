@@ -1,4 +1,4 @@
-name: Build Site to GitHub Pages
+name: Build Site To GitHub Pages
 on:
   push:
     branches: ["main"]
