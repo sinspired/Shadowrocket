@@ -10,6 +10,7 @@ https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf
 https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js
 https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js
 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+https://raw.githubusercontent.com/iab0x00/ProxyRules/refs/heads/main/Rewrite/YouTubeNoAd.sgmodule （手动构建）
 
 ###### 下架规则：<br>
 ###### 未上架规则：<br>
