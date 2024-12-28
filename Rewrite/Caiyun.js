@@ -60,5 +60,4 @@ else if ($request.url.includes("notification/message_center")) {
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
-
 $done({ body: JSON.stringify(responseBody) });
