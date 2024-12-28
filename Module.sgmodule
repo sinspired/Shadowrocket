@@ -1,6 +1,10 @@
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每周自动构建；
-#!logtime=2024-12-28 10:11:33
+#!logtime=2024-12-28 10:22:08
+
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [URL Rewrite]
 ^https?:\/\/2024.12.23/c362/v2.0.561 - reject
@@ -593,7 +597,7 @@ weibo_json.js =type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.cn
 weibo_search_info.json =type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*a=get_searching_info, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_info.json, requires-body=true, max-size=-1, timeout=60
 weibo_search_topic.json =type=http-response, pattern=^https?:\/\/weibointl\.api\.weibo\.c(n|om)\/portal\.php.*feed&a=search_topic, script-path=https://github.com/ddgksf2013/Scripts/raw/master/weibo_search_topic.json, requires-body=true, max-size=-1, timeout=60
 weixin110.js =type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/weixin110.js, requires-body=true, max-size=-1, timeout=60
-youtube =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch),script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js,requires-body=true,binary-body-mode=true,max-size=-1,argument='{{"blockUpload":true,"blockImmersive":true,"debug":false}}'
+youtube.response.preview.js =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js, requires-body=true, max-size=-1, timeout=60
 zhihu_openads.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/commercial_api.*launch_v2, script-path=https://github.com/ddgksf2013/Scripts/raw/master/zhihu_openads.js, requires-body=true, max-size=-1, timeout=60replace-body.js =type=http-response, pattern=https://beta-api.crunchyroll.com/cms, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=-1, timeout=60
 replace-body.js =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/getAd, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=rt_time":\d{2}->rt_time":40,max-size=-1, timeout=60
 replace-body.js =type=http-response, pattern=^https?:\/\/.*flyert.*\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, argument=adv->ddgksf2013,max-size=-1, timeout=60
