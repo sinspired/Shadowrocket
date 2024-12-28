@@ -30,6 +30,10 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!desc=基于墨鱼规则定制，每周自动构建；
 #!logtime={timestamp}
 
+[Rule]
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+
 [URL Rewrite]
 """
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
