@@ -60,4 +60,39 @@ else if ($request.url.includes("notification/message_center")) {
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
+else if ($request.url.includes("/api/v1/user_detail")) {
+    // 精简“我的”页面，移除更多服务和奖励计划
+    let obj = JSON.parse($response.body);
+
+    // 移除奖励计划
+    if (obj?.rewards) {
+        obj.rewards = [];
+    }
+
+    // 移除更多服务
+    if (obj?.services) {
+        obj.services = [];
+    }
+
+    // 继续返回其他内容不变
+    responseBody = obj;
+}
+else if ($request.url.includes("/v2/user")) {
+    // 精简“我的”页面，移除更多服务和奖励计划
+    let obj = JSON.parse($response.body);
+
+    if (obj?.result) {
+        // 移除奖励计划
+        if (obj.result.rewards) {
+            obj.result.rewards = [];
+        }
+
+        // 移除更多服务
+        if (obj.result.services) {
+            obj.result.services = [];
+        }
+    }
+    responseBody = obj;
+}
+
 $done({ body: JSON.stringify(responseBody) });
