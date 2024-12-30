@@ -1,6 +1,6 @@
 /*
-  // 彩云天气Pro
-  // 仅作去广告处理，去除广告，去除“小助手”；
+// 彩云天气Pro
+// 仅作去广告处理，去除广告，去除“小助手”；
 
 [rewrite_local]
 ^https?:\/\/ad\.cyapi\.cn\/v\d url reject-200
@@ -14,22 +14,12 @@
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/operation/features url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Caiyun.js
 ^https?:\/\/starplucker\.cyapi\.cn\/v\d/campaigns url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Caiyun.js
 
-  [mitm]
-  hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
+[mitm]
+hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
 */
 
 let responseBody = {};
-
-// 为了强制请求并避免缓存，给请求 URL 添加时间戳参数
 if ($request.url.includes("operation/homefeatures")) {
-    // 给 URL 添加时间戳参数，避免缓存
-    const timestamp = new Date().getTime();
-    const modifiedUrl = $request.url + `?t=${timestamp}`;
-
-    // 更新请求的 URL
-    $request.url = modifiedUrl;
-
-    // 返回空的数据，屏蔽小助手
     responseBody = { data: [] };
 }
 else if ($request.url.includes("operation/feeds")) {
@@ -70,5 +60,4 @@ else if ($request.url.includes("notification/message_center")) {
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
-
 $done({ body: JSON.stringify(responseBody) });
