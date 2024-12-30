@@ -16,11 +16,15 @@
 
 let responseBody = {};
 
-// 强制禁用缓存
+// 为了强制请求并避免缓存，给请求 URL 添加时间戳参数
 if ($request.url.includes("operation/homefeatures")) {
-    $request.headers['Cache-Control'] = 'no-cache';
-    $request.headers['Pragma'] = 'no-cache';
-    
+    // 给 URL 添加时间戳参数，避免缓存
+    const timestamp = new Date().getTime();
+    const modifiedUrl = $request.url + `?t=${timestamp}`;
+
+    // 更新请求的 URL
+    $request.url = modifiedUrl;
+
     // 返回空的数据，屏蔽小助手
     responseBody = { data: [] };
 }
