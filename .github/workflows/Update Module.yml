@@ -1,7 +1,7 @@
 name: AutoBuild Module.sgmodule
 on:
   schedule:
-    - cron: '0 8 * * 1'
+    - cron: '0 2 * * 1'
   workflow_dispatch:
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit and push generated files
+    - name: Commit 和 push generated files
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
