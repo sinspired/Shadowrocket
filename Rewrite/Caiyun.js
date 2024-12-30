@@ -60,24 +60,4 @@ else if ($request.url.includes("notification/message_center")) {
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
-else if ($request.url.includes("/api.caiyunapp.com/v1/activity")) {
-    let obj = JSON.parse($response.body);
-    if ($request.url.includes("&type_id=A03&")) {
-        // 底栏控制项目 主页图标 天气助手 彩云ai
-        if (obj?.interval) {
-            obj.interval = 2592000; // 30天===2592000秒
-        }
-        if (obj?.activities?.length > 0) {
-            for (let item of obj.activities) {
-                if (item?.name && item?.type && item?.feature) {
-                    item.feature = false; // 去除天气助手功能
-                }
-            }
-        }
-        // 去除彩云推广
-        obj.activities = obj.activities.filter(item => item?.type !== 'A03');
-    }
-    responseBody = obj;
-}
-
 $done({ body: JSON.stringify(responseBody) });
