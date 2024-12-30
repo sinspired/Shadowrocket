@@ -19,7 +19,6 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 */
 
 let responseBody = {};
-
 if ($request.url.includes("operation/homefeatures")) {
     responseBody = { data: [] };
 }
@@ -59,20 +58,6 @@ else if ($request.url.includes("notification/message_center")) {
     responseBody = { messages: [] };
 }
 else if ($request.url.includes("config/cypage")) {
-    responseBody = JSON.parse($response.body);
-
-    // 先移除小助手
-    responseBody.popups = responseBody.popups.filter(popup => {
-        return popup.title !== "小助手"; // 如果小助手的标题有变化，确保过滤条件与之匹配
-    });
-    
-    // 移除"我的"页面按钮
-    const removeButtons = [
-        "优惠卷", "兑换中心", "帮助与反馈", "好评鼓励", "关于我们", "我的包裹", "点亮地图", "分享得SVIP", "亲友卡"
-    ];
-    responseBody.popups = responseBody.popups.filter(popup => !removeButtons.includes(popup.title));
-    responseBody.actions = responseBody.actions.filter(action => !removeButtons.includes(action.title));
-
-    // 确保保留其他原始功能
+    responseBody = { popups: [], actions: [] };
 }
 $done({ body: JSON.stringify(responseBody) });
