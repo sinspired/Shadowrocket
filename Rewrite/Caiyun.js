@@ -61,38 +61,38 @@ else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
 else if ($request.url.includes("/api/v1/user_detail")) {
-    // 精简“我的”页面，移除更多服务和奖励计划
+    // 精简“我的”页面，移除指定的按钮
     let obj = JSON.parse($response.body);
 
-    // 移除奖励计划
-    if (obj?.rewards) {
-        obj.rewards = [];
+    // 要移除的按钮名称列表
+    const removeTitles = [
+        "优惠卷", "兑换中心", "帮助与反馈", "好评鼓励", "关于我们", 
+        "我的包裹", "点亮地图", "分享得SVIP", "亲友卡"
+    ];
+
+    // 移除这些按钮
+    if (obj?.features) {
+        obj.features = obj.features.filter(item => 
+            !removeTitles.includes(item.title)
+        );
     }
 
-    // 移除更多服务
-    if (obj?.services) {
-        obj.services = [];
-    }
-
-    // 继续返回其他内容不变
     responseBody = obj;
 }
 else if ($request.url.includes("/v2/user")) {
-    // 精简“我的”页面，移除更多服务和奖励计划
+    // 精简“我的”页面，移除指定的按钮
     let obj = JSON.parse($response.body);
 
-    if (obj?.result) {
-        // 移除奖励计划
-        if (obj.result.rewards) {
-            obj.result.rewards = [];
-        }
-
-        // 移除更多服务
-        if (obj.result.services) {
-            obj.result.services = [];
-        }
+    if (obj?.result?.features) {
+        obj.result.features = obj.result.features.filter(item => 
+            !removeTitles.includes(item.title)
+        );
     }
     responseBody = obj;
+}
+
+$done({ body: JSON.stringify(responseBody) });
+
 }
 
 $done({ body: JSON.stringify(responseBody) });
