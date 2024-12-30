@@ -19,6 +19,8 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 */
 
 let responseBody = {};
+
+// 去广告处理：过滤掉相关的广告内容
 if ($request.url.includes("operation/homefeatures")) {
     responseBody = { data: [] };
 }
@@ -60,8 +62,9 @@ else if ($request.url.includes("notification/message_center")) {
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
-else if ($request.url.includes("/api/v1/user_detail")) {
-    // 精简“我的”页面，移除指定的按钮
+
+// 精简“我的页面”：移除特定的按钮
+else if ($request.url.includes("/api/v1/user_detail") || $request.url.includes("/v2/user")) {
     let obj = JSON.parse($response.body);
 
     // 要移除的按钮名称列表
@@ -70,29 +73,21 @@ else if ($request.url.includes("/api/v1/user_detail")) {
         "我的包裹", "点亮地图", "分享得SVIP", "亲友卡"
     ];
 
-    // 移除这些按钮
+    // 移除指定的按钮（根据title字段）
     if (obj?.features) {
         obj.features = obj.features.filter(item => 
             !removeTitles.includes(item.title)
         );
     }
 
-    responseBody = obj;
-}
-else if ($request.url.includes("/v2/user")) {
-    // 精简“我的”页面，移除指定的按钮
-    let obj = JSON.parse($response.body);
-
+    // 如果是v2的接口，可能存在不同的字段（如result）
     if (obj?.result?.features) {
         obj.result.features = obj.result.features.filter(item => 
             !removeTitles.includes(item.title)
         );
     }
+
     responseBody = obj;
-}
-
-$done({ body: JSON.stringify(responseBody) });
-
 }
 
 $done({ body: JSON.stringify(responseBody) });
