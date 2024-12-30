@@ -19,28 +19,29 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 */
 
 let responseBody = {};
-const emptyData = { data: [] };
-const emptyMessage = { messages: [] };
-const emptyConfig = { popups: [], actions: [] };
-
-function filterData(response) {
-    response.data = response.data.filter(item => item.category_times_text.indexOf("人查看") !== -1);
-    return response;
+if ($request.url.includes("operation/homefeatures")) {
+    responseBody = { data: [] };
 }
-
-if ($request.url.includes("homefeatures") || $request.url.includes("banners")) {
-    responseBody = emptyData;
-} 
-else if ($request.url.includes("feeds")) {
-    responseBody = filterData(JSON.parse($response.body));
-} 
-else if ($request.url.includes("features")) {
+else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(item => item.title !== "赏花地图" && item.icon_url);
-    responseBody.data.forEach(item => {
-        if (item.icon_url === "path_to_unused_icon") item.icon_url = "";
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
+}
+else if ($request.url.includes("operation/banners")) {
+    responseBody = {
+        data: []
+    };
+}
+else if ($request.url.includes("operation/features")) {
+    responseBody = JSON.parse($response.body);
+    responseBody.data = responseBody.data.filter(item => {
+        return item.title !== "赏花地图" && (item.icon_url && item.icon_url !== "");
     });
-} 
+    responseBody.data.forEach(item => {
+        if (item.icon_url === "path_to_unused_icon") {
+            item.icon_url = "";
+        }
+    });
+}
 else if ($request.url.includes("campaigns")) {
     responseBody = {
         campaigns: [
@@ -52,12 +53,11 @@ else if ($request.url.includes("campaigns")) {
             }
         ]
     };
-} 
-else if ($request.url.includes("message_center")) {
-    responseBody = emptyMessage;
-} 
-else if ($request.url.includes("cypage")) {
-    responseBody = emptyConfig;
 }
-
+else if ($request.url.includes("notification/message_center")) {
+    responseBody = { messages: [] };
+}
+else if ($request.url.includes("config/cypage")) {
+    responseBody = { popups: [], actions: [] };
+}
 $done({ body: JSON.stringify(responseBody) });
