@@ -20,20 +20,22 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 
 let responseBody = {};
 
+// 清除小助手
 if ($request.url.includes("operation/homefeatures")) {
-    responseBody = { data: [] };  // 清空小助手相关功能
+    responseBody = { data: [] };  // 清除小助手相关功能
 }
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留有用数据
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
 }
 else if ($request.url.includes("operation/banners")) {
-    responseBody = { data: [] };  // 强制清除广告横幅
+    responseBody = { data: [] };  // 清空广告横幅
 }
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
-    // 清理不需要的特性，特别是与小助手相关的UI组件
-    responseBody.data = responseBody.data.filter(item => item.title !== "赏花地图" && (item.icon_url && item.icon_url !== ""));
+    responseBody.data = responseBody.data.filter(item => {
+        return item.title !== "赏花地图" && (item.icon_url && item.icon_url !== "");
+    });
     responseBody.data.forEach(item => {
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";  // 清空无效图标
@@ -56,18 +58,14 @@ else if ($request.url.includes("notification/message_center")) {
     responseBody = { messages: [] };  // 清空消息
 }
 else if ($request.url.includes("config/cypage")) {
-    responseBody = {
-        popups: [],  // 清除弹窗
-        actions: []  // 清除操作按钮
-    };
+    responseBody = { popups: [], actions: [] };  // 清除小助手的配置
 }
 
-// 检查是否有底部小助手按钮的数据，需要处理
+// 这里可以加入一个更直接的清除小助手的逻辑
 if ($request.url.includes("wrapper.cyapi.cn") || $request.url.includes("api.caiyunapp.com")) {
-    // 强制删除或清除与小助手相关的按钮或数据
     responseBody = JSON.parse($response.body);
-    // 假设有`assistant`或类似字段表示小助手
-    if (responseBody && responseBody.data && responseBody.data.some(item => item.title === "小助手")) {
+    // 直接清除小助手相关的元素
+    if (responseBody.data && responseBody.data.some(item => item.title === "小助手")) {
         responseBody.data = responseBody.data.filter(item => item.title !== "小助手");
     }
 }
