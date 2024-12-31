@@ -22,39 +22,28 @@ var obj = JSON.parse($response.body);
 
 if ($request.url.indexOf("operation/homefeatures") !== -1) {
     // 清空 operation/homefeatures 的所有数据
-    if (obj.data) {
-        obj.data = obj.data.filter(item => !item.name || !item.name.includes("小助手"));
-    }
+    obj.data = [];
 }
 
 if ($request.url.indexOf("profile/index/node") !== -1) {
-    // 删除 profile/index/node 的提示信息和与小助手相关的卡片
+    // 清空 profile/index/node 的卡片列表
     delete obj.data.tipData;
-    if (obj.data?.cardList) {
-        obj.data.cardList = obj.data.cardList.filter(a => a.name !== "小助手");
-    }
+    obj.data.cardList = [];
 }
 
 if ($request.url.indexOf("ws/message/notice/list") !== -1) {
     // 清空通知消息
-    if (obj.data?.noticeList) {
-        obj.data.noticeList = [];
-    }
+    obj.data.noticeList = [];
 }
 
 if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
-    // 清空 ws/shield/frogserver/aocs 中小助手相关的字段
-    let keysToClear = [
-        "assistant_logo",
-        "assistant_position",
-        "assistant_tip"
-    ];
-    for (let key of keysToClear) {
-        if (obj.data?.[key]) {
-            obj.data[key] = { status: 1, version: "", value: "" };
-        }
-    }
+    // 清空与小助手相关的所有字段
+    obj.data = {};
 }
+
+// 返回处理后的响应
+$done({ body: JSON.stringify(obj) });
+
 
 // 返回处理后的响应
 $done({ body: JSON.stringify(obj) });
