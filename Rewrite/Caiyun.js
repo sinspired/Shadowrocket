@@ -18,24 +18,19 @@
 hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
 */
 
-// 1
-
 let responseBody = {};
-
-// 处理 "operation/homefeatures" 的请求
 if ($request.url.includes("operation/homefeatures")) {
     responseBody = { data: [] };
 }
-// 处理 "operation/feeds" 的请求
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
     responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
 }
-// 处理 "operation/banners" 的请求
 else if ($request.url.includes("operation/banners")) {
-    responseBody = { data: [] };
+    responseBody = {
+        data: []
+    };
 }
-// 处理 "operation/features" 的请求
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
     responseBody.data = responseBody.data.filter(item => {
@@ -47,7 +42,6 @@ else if ($request.url.includes("operation/features")) {
         }
     });
 }
-// 处理 "campaigns" 的请求
 else if ($request.url.includes("campaigns")) {
     responseBody = {
         campaigns: [
@@ -60,17 +54,10 @@ else if ($request.url.includes("campaigns")) {
         ]
     };
 }
-// 处理 "notification/message_center" 的请求
 else if ($request.url.includes("notification/message_center")) {
     responseBody = { messages: [] };
 }
-// 处理 "config/cypage" 的请求
 else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
-// 处理“小助手”相关的请求
-else if ($request.url.includes("/assistant") || $request.url.includes("operation/homefeatures") || $request.url.includes("operation/feeds")) { 
-    responseBody = { data: [] }; // 将小助手的内容去除，返回一个空数组
-}
-
 $done({ body: JSON.stringify(responseBody) });
