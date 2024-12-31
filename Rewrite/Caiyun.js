@@ -25,16 +25,17 @@ if ($request.url.includes("operation/homefeatures")) {
 }
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留需要的数据，去除无关内容
+    // 过滤掉无关数据，包括小助手相关的内容
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
 }
 else if ($request.url.includes("operation/banners")) {
     responseBody = { data: [] };  // 强制清空广告横幅
 }
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
-    // 过滤掉不需要的特性（比如小助手相关的）
+    // 过滤掉不需要的特性（例如小助手等UI功能）
     responseBody.data = responseBody.data.filter(item => item.title !== "赏花地图" && (item.icon_url && item.icon_url !== ""));
-    // 确保不会返回小助手的无用数据
+    // 强制清除小助手的无用图标
     responseBody.data.forEach(item => {
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";  // 清空无效图标
@@ -57,7 +58,11 @@ else if ($request.url.includes("notification/message_center")) {
     responseBody = { messages: [] };  // 清空消息，去除与小助手相关的消息
 }
 else if ($request.url.includes("config/cypage")) {
-    responseBody = { popups: [], actions: [] };  // 清除弹窗和小助手相关的操作
+    // 这里尝试清除小助手的相关UI元素
+    responseBody = {
+        popups: [],  // 清除弹窗
+        actions: [],  // 清除操作按钮
+    };
 }
 
 $done({ body: JSON.stringify(responseBody) });
