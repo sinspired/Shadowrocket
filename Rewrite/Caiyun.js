@@ -20,17 +20,18 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 
 let responseBody = {};
 
-// 清除小助手
+// 直接处理小助手相关逻辑
 if ($request.url.includes("operation/homefeatures")) {
-    responseBody = { data: [] };  // 清除小助手相关功能
-}
+    responseBody = { data: [] };  // 清除所有数据，包括小助手
+} 
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
+    // 过滤去掉不需要的数据，依旧保留一些合理的数据
     responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
-}
+} 
 else if ($request.url.includes("operation/banners")) {
-    responseBody = { data: [] };  // 清空广告横幅
-}
+    responseBody = { data: [] };  // 清空所有横幅广告，包括小助手
+} 
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
     responseBody.data = responseBody.data.filter(item => {
@@ -41,7 +42,7 @@ else if ($request.url.includes("operation/features")) {
             item.icon_url = "";  // 清空无效图标
         }
     });
-}
+} 
 else if ($request.url.includes("campaigns")) {
     responseBody = {
         campaigns: [
@@ -52,21 +53,25 @@ else if ($request.url.includes("campaigns")) {
                 cover: "https://cdn-w.caiyunapp.com/p/banner/test/668d442c4fe75aca7251c161.png"
             }
         ]
-    };  // 自定义广告，去除小助手广告
-}
+    };
+} 
 else if ($request.url.includes("notification/message_center")) {
-    responseBody = { messages: [] };  // 清空消息
-}
+    responseBody = { messages: [] };  // 清空所有消息
+} 
 else if ($request.url.includes("config/cypage")) {
-    responseBody = { popups: [], actions: [] };  // 清除小助手的配置
+    responseBody = { popups: [], actions: [] };  // 清除配置中的小助手元素
 }
 
-// 这里可以加入一个更直接的清除小助手的逻辑
+// 进一步处理"小助手"的清除
 if ($request.url.includes("wrapper.cyapi.cn") || $request.url.includes("api.caiyunapp.com")) {
-    responseBody = JSON.parse($response.body);
-    // 直接清除小助手相关的元素
-    if (responseBody.data && responseBody.data.some(item => item.title === "小助手")) {
-        responseBody.data = responseBody.data.filter(item => item.title !== "小助手");
+    try {
+        responseBody = JSON.parse($response.body);
+        if (responseBody.data && Array.isArray(responseBody.data)) {
+            // 查找是否有"小助手"相关的项，直接过滤掉
+            responseBody.data = responseBody.data.filter(item => item.title !== "小助手");
+        }
+    } catch (e) {
+        console.error("Error parsing response body for wrapper.cyapi.cn or api.caiyunapp.com");
     }
 }
 
