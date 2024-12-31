@@ -18,62 +18,29 @@
 hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
 */
 
-var obj = JSON.parse($response.body);
+let responseBody = JSON.parse($response.body);
 
-if ($request.url.indexOf("operation/homefeatures") !== -1) {
-    // 清空 operation/homefeatures 的所有数据
-    obj.data = [];
-}
-
-if ($request.url.indexOf("profile/index/node") !== -1) {
-    // 清空 profile/index/node 的卡片列表
-    delete obj.data.tipData;
-    obj.data.cardList = [];
-}
-
-if ($request.url.indexOf("ws/message/notice/list") !== -1) {
-    // 清空通知消息
-    obj.data.noticeList = [];
-}
-
-if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
-    // 清空 ws/shield/frogserver/aocs 的数据
-    obj.data = {};
-}
-
-if ($request.url.indexOf("ws/promotion-web/resource") !== -1) {
-    // 清空广告资源
-    let resourceTypes = ["icon", "banner", "tips", "popup", "bubble", "other"];
-    resourceTypes.forEach(type => {
-        if (obj.data?.[type]) {
-            obj.data[type] = [];
+if ($request.url.includes("operation/homefeatures")) {
+    // 清空所有数据，包括小助手的底部图标
+    responseBody.data = [];
+} else if ($request.url.includes("operation/banners")) {
+    // 清空所有 banner 数据
+    responseBody = {
+        data: []
+    };
+} else if ($request.url.includes("profile/index/node")) {
+    // 清空个人中心相关数据
+    delete responseBody.data.tipData;
+    responseBody.data.cardList = [];
+} else if ($request.url.includes("ws/shield/frogserver/aocs")) {
+    // 清空小助手相关数据
+    let keysToClear = ["gd_notch_logo", "home_business_position_config", "his_input_tip", "operation_layer"];
+    keysToClear.forEach(key => {
+        if (responseBody.data?.[key]) {
+            responseBody.data[key] = { status: 1, version: "", value: "" };
         }
     });
 }
 
-if ($request.url.indexOf("ws/msgbox/pull") !== -1) {
-    // 清空消息通知
-    obj.msgs = [];
-    if (obj.pull3?.msgs) {
-        obj.pull3.msgs = [];
-    }
-}
-
-if ($request.url.indexOf("faas/amap-navigation/main-page") !== -1) {
-    // 删除高德导航的多余内容
-    if (obj.data?.cardList) {
-        obj.data.cardList = [];
-    }
-    if (obj.data?.pull3?.msgs) {
-        obj.data.pull3.msgs = [];
-    }
-    if (obj.data?.business_position) {
-        obj.data.business_position = [];
-    }
-    if (obj.data?.mapBizList) {
-        obj.data.mapBizList = [];
-    }
-}
-
 // 返回处理后的响应
-$done({ body: JSON.stringify(obj) });
+$done({ body: JSON.stringify(responseBody) });
