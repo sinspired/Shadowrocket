@@ -1,6 +1,6 @@
 /*
-// 彩云天气Pro
-// 仅作去广告处理，去除广告，去除“小助手”；
+// 彩云天气
+// 仅作去广告处理；
 
 [rewrite_local]
 ^https?:\/\/ad\.cyapi\.cn\/v\d url reject-200
