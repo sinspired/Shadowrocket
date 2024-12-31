@@ -21,31 +21,29 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 var obj = JSON.parse($response.body);
 
 if ($request.url.indexOf("operation/homefeatures") !== -1) {
-    // 移除小助手
+    // 清空 operation/homefeatures 的所有数据
     if (obj.data) {
-        obj.data = obj.data.filter(item => !item.type || item.type !== "assistant");
+        obj.data = obj.data.filter(item => !item.name || !item.name.includes("小助手"));
     }
 }
 
 if ($request.url.indexOf("profile/index/node") !== -1) {
-    // 移除小助手的提示
+    // 删除 profile/index/node 的提示信息和与小助手相关的卡片
     delete obj.data.tipData;
     if (obj.data?.cardList) {
-        obj.data.cardList = obj.data.cardList.filter(card => 
-            card.dataType !== "AssistantCard" && card.name !== "小助手"
-        );
+        obj.data.cardList = obj.data.cardList.filter(a => a.name !== "小助手");
     }
 }
 
 if ($request.url.indexOf("ws/message/notice/list") !== -1) {
-    // 清空小助手的消息通知
+    // 清空通知消息
     if (obj.data?.noticeList) {
-        obj.data.noticeList = obj.data.noticeList.filter(msg => msg.type !== "assistant");
+        obj.data.noticeList = [];
     }
 }
 
 if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
-    // 针对小助手的关键字段清空
+    // 清空 ws/shield/frogserver/aocs 中小助手相关的字段
     let keysToClear = [
         "assistant_logo",
         "assistant_position",
@@ -58,4 +56,5 @@ if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
     }
 }
 
+// 返回处理后的响应
 $done({ body: JSON.stringify(obj) });
