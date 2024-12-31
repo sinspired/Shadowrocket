@@ -1,6 +1,6 @@
 /*
 // 高德地图
-// 去除广告和无关内容，优化“附近”功能；
+// 去除广告和无关内容；
 
 [rewrite_local]
 ^https?://.*.amap.com/ws/boss/order_web/\w{8}_information url reject-200
