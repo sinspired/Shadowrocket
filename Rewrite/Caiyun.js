@@ -21,21 +21,19 @@ hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.c
 let responseBody = {};
 
 if ($request.url.includes("operation/homefeatures")) {
-    responseBody = { data: [] };  // 强制清空小助手相关数据
+    responseBody = { data: [] };  // 清空小助手相关功能
 }
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
-    // 过滤掉无关数据，包括小助手相关的内容
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留有用数据
 }
 else if ($request.url.includes("operation/banners")) {
-    responseBody = { data: [] };  // 强制清空广告横幅
+    responseBody = { data: [] };  // 强制清除广告横幅
 }
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
-    // 过滤掉不需要的特性（例如小助手等UI功能）
+    // 清理不需要的特性，特别是与小助手相关的UI组件
     responseBody.data = responseBody.data.filter(item => item.title !== "赏花地图" && (item.icon_url && item.icon_url !== ""));
-    // 强制清除小助手的无用图标
     responseBody.data.forEach(item => {
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";  // 清空无效图标
@@ -52,17 +50,26 @@ else if ($request.url.includes("campaigns")) {
                 cover: "https://cdn-w.caiyunapp.com/p/banner/test/668d442c4fe75aca7251c161.png"
             }
         ]
-    };  // 自定义广告内容，去除小助手相关广告
+    };  // 自定义广告，去除小助手广告
 }
 else if ($request.url.includes("notification/message_center")) {
-    responseBody = { messages: [] };  // 清空消息，去除与小助手相关的消息
+    responseBody = { messages: [] };  // 清空消息
 }
 else if ($request.url.includes("config/cypage")) {
-    // 这里尝试清除小助手的相关UI元素
     responseBody = {
         popups: [],  // 清除弹窗
-        actions: [],  // 清除操作按钮
+        actions: []  // 清除操作按钮
     };
+}
+
+// 检查是否有底部小助手按钮的数据，需要处理
+if ($request.url.includes("wrapper.cyapi.cn") || $request.url.includes("api.caiyunapp.com")) {
+    // 强制删除或清除与小助手相关的按钮或数据
+    responseBody = JSON.parse($response.body);
+    // 假设有`assistant`或类似字段表示小助手
+    if (responseBody && responseBody.data && responseBody.data.some(item => item.title === "小助手")) {
+        responseBody.data = responseBody.data.filter(item => item.title !== "小助手");
+    }
 }
 
 $done({ body: JSON.stringify(responseBody) });
