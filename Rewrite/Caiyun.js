@@ -25,15 +25,16 @@ if ($request.url.includes("operation/homefeatures")) {
 }
 else if ($request.url.includes("operation/feeds")) {
     responseBody = JSON.parse($response.body);
-    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 去除无关内容
+    responseBody.data = responseBody.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);  // 保留需要的数据，去除无关内容
 }
 else if ($request.url.includes("operation/banners")) {
-    responseBody = { data: [] };  // 清空广告横幅
+    responseBody = { data: [] };  // 强制清空广告横幅
 }
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
-    // 过滤掉不需要的特性，例如小助手相关的内容
+    // 过滤掉不需要的特性（比如小助手相关的）
     responseBody.data = responseBody.data.filter(item => item.title !== "赏花地图" && (item.icon_url && item.icon_url !== ""));
+    // 确保不会返回小助手的无用数据
     responseBody.data.forEach(item => {
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";  // 清空无效图标
@@ -50,13 +51,13 @@ else if ($request.url.includes("campaigns")) {
                 cover: "https://cdn-w.caiyunapp.com/p/banner/test/668d442c4fe75aca7251c161.png"
             }
         ]
-    };  // 自定义广告内容
+    };  // 自定义广告内容，去除小助手相关广告
 }
 else if ($request.url.includes("notification/message_center")) {
-    responseBody = { messages: [] };  // 清空消息
+    responseBody = { messages: [] };  // 清空消息，去除与小助手相关的消息
 }
 else if ($request.url.includes("config/cypage")) {
-    responseBody = { popups: [], actions: [] };  // 去除弹窗和操作按钮
+    responseBody = { popups: [], actions: [] };  // 清除弹窗和小助手相关的操作
 }
 
 $done({ body: JSON.stringify(responseBody) });
