@@ -18,29 +18,65 @@
 hostname = wrapper.cyapi.cn, api.caiyunapp.com, starplucker.cyapi.cn, ad.cyapi.cn
 */
 
-let responseBody = JSON.parse($response.body);
+var obj = JSON.parse($response.body);
 
-if ($request.url.includes("operation/homefeatures")) {
-    // 清空所有数据，包括小助手的底部图标
-    responseBody.data = [];
-} else if ($request.url.includes("operation/banners")) {
-    // 清空所有 banner 数据
-    responseBody = {
-        data: []
-    };
-} else if ($request.url.includes("profile/index/node")) {
-    // 清空个人中心相关数据
-    delete responseBody.data.tipData;
-    responseBody.data.cardList = [];
-} else if ($request.url.includes("ws/shield/frogserver/aocs")) {
-    // 清空小助手相关数据
+if ($request.url.indexOf("operation/homefeatures") !== -1) {
+    // 去除所有 operation/homefeatures 数据
+    obj.data = [];
+}
+
+if ($request.url.indexOf("profile/index/node") !== -1) {
+    // 删除个人中心的卡片数据
+    delete obj.data.tipData;
+    obj.data.cardList = [];
+}
+
+if ($request.url.indexOf("ws/message/notice/list") !== -1) {
+    // 清空通知消息列表
+    if (obj.data?.noticeList) {
+        obj.data.noticeList = [];
+    }
+}
+
+if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
+    // 强制清除小助手相关字段
     let keysToClear = ["gd_notch_logo", "home_business_position_config", "his_input_tip", "operation_layer"];
-    keysToClear.forEach(key => {
-        if (responseBody.data?.[key]) {
-            responseBody.data[key] = { status: 1, version: "", value: "" };
+    for (let key of keysToClear) {
+        if (obj.data?.[key]) {
+            obj.data[key] = { status: 1, version: "", value: "" };
+        }
+    }
+}
+
+// 保持其他接口逻辑不变
+if ($request.url.indexOf("operation/feeds") !== -1) {
+    obj.data = obj.data.filter(e => e.category_times_text.indexOf("人查看") !== -1);
+} else if ($request.url.indexOf("operation/banners") !== -1) {
+    obj.data = [];
+} else if ($request.url.indexOf("operation/features") !== -1) {
+    obj.data = obj.data.filter(item => {
+        return item.title !== "赏花地图" && (item.icon_url && item.icon_url !== "");
+    });
+    obj.data.forEach(item => {
+        if (item.icon_url === "path_to_unused_icon") {
+            item.icon_url = "";
         }
     });
+} else if ($request.url.indexOf("campaigns") !== -1) {
+    obj.campaigns = [
+        {
+            name: "driveweather",
+            title: "驾驶天气新功能",
+            url: "cy://page_driving_weather",
+            cover: "https://cdn-w.caiyunapp.com/p/banner/test/668d442c4fe75aca7251c161.png"
+        }
+    ];
+} else if ($request.url.indexOf("notification/message_center") !== -1) {
+    obj.messages = [];
+} else if ($request.url.indexOf("config/cypage") !== -1) {
+    obj.popups = [];
+    obj.actions = [];
 }
 
 // 返回处理后的响应
-$done({ body: JSON.stringify(responseBody) });
+$done({ body: JSON.stringify(obj) });
