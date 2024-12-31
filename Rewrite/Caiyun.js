@@ -67,10 +67,8 @@ else if ($request.url.includes("config/cypage")) {
     responseBody = { popups: [], actions: [] };
 }
 // 处理“小助手”相关的请求
-else if ($request.url.includes("assistant")) { 
-    responseBody = {
-        data: [] // 将小助手的内容去除，返回一个空数组
-    };
+else if ($request.url.includes("/assistant") || $request.url.includes("operation/homefeatures") || $request.url.includes("operation/feeds")) { 
+    responseBody = { data: [] }; // 将小助手的内容去除，返回一个空数组
 }
 
 $done({ body: JSON.stringify(responseBody) });
