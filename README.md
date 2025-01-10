@@ -27,7 +27,7 @@ Apple/Microsoft/Google单独分流；<br>
 #### RulesLite.conf - 配置介绍
 ##### 配置功能介绍：<br>
 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
-如不需要策略组及自动分流，建议使用此配置；<br>
+如不需要策略组及自动分流，强烈建议使用此配置；<br>
 
 ##### 规则地址：<br>
 [*RulesLite.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf)<br>
@@ -57,7 +57,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 
 #### 融合模块：
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
-说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一8:00自动构建；<br>
+说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 融合功能如下：<br>
 功能模块：
