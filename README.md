@@ -81,7 +81,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 #### 融合模块：
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
-由于配置及网络的多样及不确定性，本模块仅接受搭配使用<Rules.conf>和<RulesLife.conf>的Issues，请悉知；<br>
+由于配置及网络的多样及不确定性，本模块仅接受搭配使用<Rules.conf>和<RulesLite.conf>的Issues，请悉知；<br>
 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 融合功能如下：<br>
 功能模块：
