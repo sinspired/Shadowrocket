@@ -55,7 +55,7 @@ Telegram使用<新加坡节点>，
 设置-GeoLite2数据库：
 开启“自动后台更新”，间隔“7”；<br>
 设置-GeoLite2数据库：
-国家-URL，输入<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb><br>
+国家-URL，输入此链接：<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb>并点击更新<br>
 设置-排除路由0.0.0.0/31：
 选择关闭<br>
 
