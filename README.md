@@ -96,6 +96,7 @@ YouTube（Maasea），
 高德地图(XiangwanGuan)，
 彩云天气(XiangwanGuan)；
 <br>
+由于配置及网络的多样及不确定性，本模块仅接受搭配使用<Rules.conf>和<RulesLife.conf>这两配置的Issues，请悉知；<br>
 
 #### 鸣谢：（排名不分先后）<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
