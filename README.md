@@ -55,7 +55,7 @@ Telegram使用<新加坡节点>，
 设置-GeoLite2数据库：
 开启“自动后台更新”，间隔“7”；<br>
 设置-GeoLite2数据库：
-国家-URL，输入此链接：<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb>并点击更新<br>
+国家-URL，输入此链接：<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb>，并点击更新<br>
 设置-排除路由0.0.0.0/31：
 选择关闭<br>
 
@@ -71,7 +71,7 @@ MitM开启办法：
 点击「已安装证书的配置文件」后面ⓘ - HTTPS解密 - 证书后面ⓘ - 复制；<br>
 打开Shadowrocket，点击[配置]，点击新建模块：<br>
 ```
-#!name = 证书（名字可更改）
+#!name = 证书模块
 [MITM]
 enable = true
 ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书密码，默认密码是Shadowrocket）
