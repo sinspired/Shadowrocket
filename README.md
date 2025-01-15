@@ -20,7 +20,7 @@ Apple/Microsoft/Google单独分流；<br>
 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
 本策略默认指定：<br>
 国内应用直接连接；<br>
-Telegram使用<新加坡节点>，Google&ChatGPT&Copilot&Gemini，使用<美国节点>；<br>
+Telegram使用<新加坡节点>，Google，ChatGPT/Copilot/Gemini，使用<美国节点>；<br>
 其他规则及未匹配到的规则<香港节点>；<br>
 
 ##### 修改分流：<br>
