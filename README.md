@@ -41,7 +41,9 @@ Telegram使用<新加坡节点>，
 
 #### 推荐设置：<br>
 首页-全局路由：
-开启“启用回退”，全局路由选择“配置”；<br>
+开启“启用回退”；<br>
+首页-全局路由：
+全局路由-选择“配置”；<br>
 设置-按需求连接：
 开启“始终开启”，其余开关勿动；<br>
 设置-代理：
@@ -55,7 +57,7 @@ Telegram使用<新加坡节点>，
 设置-GeoLite2数据库：
 国家-URL，输入<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb><br>
 设置-排除路由0.0.0.0/31：
-关闭<br>
+选择关闭<br>
 
 #### MitM&证书模块
 建议开启MitM，搭配MitM才能最大化的去除广告；<br>
@@ -79,6 +81,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 #### 融合模块：
 [*融合模块--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)<br>
 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
+由于配置及网络的多样及不确定性，本模块仅接受搭配使用<Rules.conf>和<RulesLife.conf>的Issues，请悉知；<br>
 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 融合功能如下：<br>
 功能模块：
@@ -96,7 +99,6 @@ YouTube（Maasea），
 高德地图(XiangwanGuan)，
 彩云天气(XiangwanGuan)；
 <br>
-由于配置及网络的多样及不确定性，本模块仅接受搭配使用<Rules.conf>和<RulesLife.conf>这两配置的Issues，请悉知；<br>
 
 #### 鸣谢：（排名不分先后）<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
