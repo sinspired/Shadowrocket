@@ -31,6 +31,10 @@
 > 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
 > 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
 
+#### `配置使用：`<br>
+> 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
+> 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
+
 ### [精简配置介绍](#精简配置介绍)<br>
 
 #### `配置功能介绍：`<br>
@@ -39,10 +43,6 @@
 
 #### `配置安装：`<br>
 > [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
-
-#### `配置使用：`<br>
-> 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
-> 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
 ### [去广告融合模块](#去广告融合模块)<br>
 
