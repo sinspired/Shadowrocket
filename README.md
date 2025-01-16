@@ -1,6 +1,6 @@
-## Shadowrocket 配置/模块<br>
+## Shadowrocket 分流配置/精简配置/推荐设置/去广告融合模块<br>
 
-### Rules.conf -- 配置介绍
+### Rules.conf -- 分流配置介绍
 #### 配置功能介绍：<br>
 > 自动分配策略组，无需手动切换节点；<br>
 > 具有强大的广告拦截功能；<br>
@@ -28,7 +28,7 @@
 > 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
 > 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
 
-### RulesLite.conf -- 配置介绍
+### RulesLite.conf -- 精简配置介绍
 #### 配置功能介绍：<br>
 > 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
 > 如不需要策略组及自动分流，**强烈建议使用此配置**；<br>
@@ -40,7 +40,7 @@
 > 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 > 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
-### 推荐设置：<br>
+### Shadowrocket -- 推荐设置：<br>
 > 首页-全局路由：
 开启“启用回退”；<br>
 > 首页-全局路由：
@@ -58,7 +58,7 @@
 > 设置-排除路由0.0.0.0/31：
 选择关闭；<br>
 
-### MitM&证书模块
+### MitM & 证书模块
 > **建议开启MitM**，搭配MitM才能最大化的去除广告；<br>
 > **建议添加证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
@@ -77,7 +77,7 @@ ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书�
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
-### 融合模块：
+### 去广告融合模块：
 > [*`融合模块`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule) -- 点击链接 一键安装<br>
 > 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用Rules.conf和RulesLite.conf的Issues**，请悉知；<br>
