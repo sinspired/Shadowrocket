@@ -37,6 +37,8 @@
 > 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 > 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
+------
+
 ### [精简配置介绍](#精简配置介绍)<br>
 
 #### `配置功能介绍：`<br>
@@ -45,6 +47,8 @@
 
 #### `配置安装：`<br>
 > [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
+
+------
 
 ### [去广告融合模块](#去广告融合模块)<br>
 
@@ -70,6 +74,8 @@
 `皮皮虾(ddgksf2013)`
 `高德地图(XiangwanGuan)`
 `彩云天气(XiangwanGuan)`<br>
+
+------
 
 ### [推荐设置](#推荐设置)<br>
 
@@ -110,6 +116,8 @@ enable = true
 ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书密码，默认密码是Shadowrocket）
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
+
+------
 
 ### [鸣谢：](#鸣谢：)<br>
 [*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
