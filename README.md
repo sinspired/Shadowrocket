@@ -21,7 +21,7 @@
 > 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
 > 本策略默认规则如下：<br>
 > 国内应用直接连接；<br>
-> Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用<美国节点>；<br>
+> Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
 > 其他规则及未匹配到的规则使用`香港节点`；<br>
 
 #### 修改分流：<br>
@@ -31,7 +31,7 @@
 ### RulesLite.conf -- 配置介绍
 #### 配置功能介绍：<br>
 > 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
-> 如不需要策略组及自动分流，强烈**建议使用此配置**；<br>
+> 如不需要策略组及自动分流，**强烈建议使用此配置**；<br>
 
 #### 规则地址：<br>
 > [*`RulesLite.conf`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf) -- 点击链接 一键安装<br>
@@ -54,7 +54,7 @@
 > 设置-GeoLite2数据库：
 开启“自动后台更新”，间隔“7”；<br>
 > 设置-GeoLite2数据库：
-国家-URL，输入此链接：[*`Country.mmdb`*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)(长按或右键进入菜单进行复制)，并点击更新；<br>
+国家-URL，输入此链接：[*`Country.mmdb`*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，并点击更新；<br>
 > 设置-排除路由0.0.0.0/31：
 选择关闭；<br>
 
