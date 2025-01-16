@@ -16,6 +16,7 @@ Apple/Microsoft/Google单独分流；<br>
 [*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
 
 ##### 使用必看：<br>
+本策略默认使用Tun模式接管所有流量；<br>
 你所使用的节点，必须包含<香港节点>，<美国节点>，<新加坡节点>的至少一项；<br>
 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
 本策略默认指定：<br>
@@ -46,8 +47,6 @@ Telegram使用<新加坡节点>，Google，ChatGPT/Copilot/Gemini，使用<美�
 全局路由-选择“配置”；<br>
 设置-按需求连接：
 开启“始终开启”，其余开关勿动；<br>
-设置-代理：
-代理设置，代理类型选择“None”；<br>
 设置-配置：
 开启“自动后台更新”，间隔“7”；<br>
 设置-订阅：
@@ -55,7 +54,7 @@ Telegram使用<新加坡节点>，Google，ChatGPT/Copilot/Gemini，使用<美�
 设置-GeoLite2数据库：
 开启“自动后台更新”，间隔“7”；<br>
 设置-GeoLite2数据库：
-国家-URL，输入此链接：<https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb>，并点击更新；<br>
+国家-URL，输入此链接：[*Country.mmdb*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，并点击更新；<br>
 设置-排除路由0.0.0.0/31：
 选择关闭；<br>
 
@@ -101,7 +100,9 @@ YouTube（Maasea），
 <br>
 
 #### 鸣谢：（排名不分先后）<br>
+[*@wlxuf*](https://github.com/wlxuf)
 [*@blackmatrix7*](https://github.com/blackmatrix7)
+[*@Johnshall*](https://github.com/Johnshall)
 [*@ddgksf2013*](https://github.com/ddgksf2013)
 [*@Maasea*](https://github.com/Maasea)
 [*@wf021325*](https://github.com/wf021325)
