@@ -85,20 +85,18 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 > 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 > 融合功能如下：<br>
 > 功能模块：
-墨鱼去开屏(ddgksf2013)，
-京东历史比价(wf021325)；
-<br>
+`墨鱼去开屏(ddgksf2013)`
+`京东历史比价(wf021325)`<br>
 > 软件净化：
-YouTube（Maasea），
-哔哩哔哩(ddgksf2013)，
-微博(ddgksf2013)，
-小红书(ddgksf2013)，
-菜鸟裹裹(ddgksf2013)，
-知乎(ddgksf2013)，
-皮皮虾(ddgksf2013)，
-高德地图(XiangwanGuan)，
-彩云天气(XiangwanGuan)；
-<br>
+`YouTube（Maasea）`
+`哔哩哔哩(ddgksf2013)`
+`微博(ddgksf2013)`
+`小红书(ddgksf2013)`
+`菜鸟裹裹(ddgksf2013)`
+`知乎(ddgksf2013)`
+`皮皮虾(ddgksf2013)`
+`高德地图(XiangwanGuan)`
+`彩云天气(XiangwanGuan)`<br>
 
 ### `项目地址：`<br>
 [*`@XiangwanGuan`*](https://github.com/XiangwanGuan/Shadowrocket)
