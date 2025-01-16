@@ -99,7 +99,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 `彩云天气(XiangwanGuan)`<br>
 
 ### `项目地址：（欢迎STAR）`<br>
-[*`@XiangwanGuan`*](https://github.com/XiangwanGuan/Shadowrocket)
+[*`@XiangwanGuan`*](https://github.com/XiangwanGuan/Shadowrocket)<br>
 
 ### `在此鸣谢：（排名不分先后）`<br>
 [*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
@@ -109,3 +109,4 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@Maasea*](https://github.com/Maasea/sgmodule)
 [*@wf021325*](https://github.com/wf021325/qx)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
+<br>
