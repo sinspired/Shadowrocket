@@ -1,9 +1,8 @@
-## `Shadowrocket -- 仓库自述`<br>
-### [*`分流配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesconf----%E5%88%86%E6%B5%81%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`精简配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesliteconf----%E7%B2%BE%E7%AE%80%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`推荐设置`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE) [*`去广告融合模块`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E5%8E%BB%E5%B9%BF%E5%91%8A%E8%9E%8D%E5%90%88%E6%A8%A1%E5%9D%97)<br>
+## [Shadowrocket -- 仓库自述](https://github.com/XiangwanGuan/Shadowrocket)<br>
+> 本仓库提供由'向晚'维护的Shadowrocket的分流配置、精简配置、去广告模块，及推荐设置；<br>
 
+### [分流配置介绍](#分流配置介绍)<br>
 
-
-### [Rules.conf -- 分流配置介绍](#Rules.conf -- 分流配置介绍)<br>
 #### `配置功能介绍：`<br>
 > 自动分配策略组，无需手动切换节点；<br>
 > 具有强大的广告拦截功能；<br>
@@ -15,8 +14,8 @@
 > 使用加密的DoH，防止DNS泄露，并有效屏蔽未加密的DNS查询；<br>
 > 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 
-#### `规则地址：`<br>
-> [![一键安装 Rules](https://img.shields.io/static/v1?label=一键安装&message=Rules&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装本配置文件")<br>
+#### `配置安装：`<br>
+> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装本配置文件")<br>
 
 #### `使用必看：`<br>
 > 本策略**默认使用Tun模式**接管所有流量；<br>
@@ -32,19 +31,22 @@
 > 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
 > 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
 
-### [RulesLite.conf -- 精简配置介绍](#RulesLite.conf -- 精简配置介绍)<br>
+### [精简配置介绍](#精简配置介绍)<br>
+
 #### `配置功能介绍：`<br>
 > 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
 > 如不需要策略组及自动分流，**强烈建议使用此配置**；<br>
 
-#### `规则地址：`<br>
-> [![一键安装 RulesLite](https://img.shields.io/static/v1?label=一键安装&message=RulesLite&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
+#### `配置安装：`<br>
+> [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
 
-### `使用办法：`<br>
+### [配置使用](#配置使用)<br>
 > 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 > 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 
-### `Shadowrocket -- 推荐设置：`<br>
+### [推荐设置](#推荐设置)<br>
+
+#### `软件配置：`<br>
 > 首页-全局路由：
 开启`启用回退`；<br>
 > 首页-全局路由：
@@ -62,7 +64,7 @@
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
 
-### `MitM & 证书模块`<br>
+#### `MitM&证书模块：`<br>
 > **建议开启MitM**，搭配MitM才能最大化的去除广告；<br>
 > **建议添加证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
@@ -82,14 +84,17 @@ ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书�
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
-### `Shadowrocket -- 去广告融合模块：`<br>
+### [去广告融合模块](#去广告融合模块)<br>
+
+#### `模块安装：`<br>
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
-> 
-> 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
+
+#### `模块说明：`<br>
+> 由“向晚”基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`Rules.conf`和`RulesLite.conf`的Issues**，请悉知；<br>
 > 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 > 
-> 融合功能如下：<br>
+> 融合功能说明：<br>
 > 功能模块：
 `墨鱼去开屏(ddgksf2013)`
 `京东历史比价(wf021325)`<br>
@@ -104,10 +109,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 `高德地图(XiangwanGuan)`
 `彩云天气(XiangwanGuan)`<br>
 
-### `项目地址：（欢迎STAR）`<br>
-[*`@XiangwanGuan`*](https://github.com/XiangwanGuan/Shadowrocket)<br>
-
-### `在此鸣谢：（排名不分先后）`<br>
+### [鸣谢：（排名不分先后）](#在此鸣谢：（排名不分先后）)<br>
 [*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
 [*@Johnshall*](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
