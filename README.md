@@ -1,5 +1,5 @@
 ## `Shadowrocket -- 仓库自述`<br>
-### [*`分流配置`*](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#rulesconf----%E5%88%86%E6%B5%81%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`精简配置`*](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#rulesliteconf----%E7%B2%BE%E7%AE%80%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`推荐设置`*](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#shadowrocket----%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE) [*`去广告融合模块`*](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#shadowrocket----%E5%8E%BB%E5%B9%BF%E5%91%8A%E8%9E%8D%E5%90%88%E6%A8%A1%E5%9D%97)<br>
+### [*`分流配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesconf----%E5%88%86%E6%B5%81%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`精简配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesliteconf----%E7%B2%BE%E7%AE%80%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`推荐设置`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE) [*`去广告融合模块`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E5%8E%BB%E5%B9%BF%E5%91%8A%E8%9E%8D%E5%90%88%E6%A8%A1%E5%9D%97)<br>
 
 ### `Rules.conf -- 分流配置介绍`<br>
 #### `配置功能介绍：`<br>
