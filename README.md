@@ -1,7 +1,7 @@
-### Shadowrocket 配置/模块<br>
+## Shadowrocket 配置/模块<br>
 
-#### Rules.conf - 配置介绍
-##### 配置功能介绍：<br>
+### Rules.conf - 配置介绍
+#### 配置功能介绍：<br>
 自动分配策略组，无需手动切换节点；<br>
 具有强大的广告拦截功能；<br>
 具有有效的防追踪/劫持功能；<br>
@@ -12,10 +12,10 @@ Apple/Microsoft/Google单独分流；<br>
 使用加密的DoH，防止DNS泄露，并有效屏蔽未加密的DNS查询；<br>
 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 
-##### 规则地址：<br>
+#### 规则地址：<br>
 [*Rules.conf--点击链接，一键安装；*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf)<br>
 
-**##### 使用必看：**<br>
+##### 使用必看：<br>
 **本策略默认使用Tun模式接管所有流量；**<br>
 你所使用的节点，必须包含<香港节点>，<美国节点>，<新加坡节点>的至少一项；<br>
 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
