@@ -1,7 +1,9 @@
 ## `Shadowrocket -- 仓库自述`<br>
 ### [*`分流配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesconf----%E5%88%86%E6%B5%81%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`精简配置`*](https://xiangwanguan.github.io/Shadowrocket/#rulesliteconf----%E7%B2%BE%E7%AE%80%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D) [*`推荐设置`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E6%8E%A8%E8%8D%90%E8%AE%BE%E7%BD%AE) [*`去广告融合模块`*](https://xiangwanguan.github.io/Shadowrocket/#shadowrocket----%E5%8E%BB%E5%B9%BF%E5%91%8A%E8%9E%8D%E5%90%88%E6%A8%A1%E5%9D%97)<br>
 
-### `Rules.conf -- 分流配置介绍`<br>
+
+
+### [Rules.conf -- 分流配置介绍](#Rules.conf -- 分流配置介绍)<br>
 #### `配置功能介绍：`<br>
 > 自动分配策略组，无需手动切换节点；<br>
 > 具有强大的广告拦截功能；<br>
@@ -14,12 +16,13 @@
 > 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 
 #### `规则地址：`<br>
-> [*`Rules.conf`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf) -- 点击链接 一键安装<br>
+> [![一键安装 Rules](https://img.shields.io/static/v1?label=一键安装&message=Rules&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装本配置文件")<br>
 
 #### `使用必看：`<br>
 > 本策略**默认使用Tun模式**接管所有流量；<br>
 > 你所使用的节点，**必须包含`香港节点`，`美国节点`，`新加坡节点`的至少一项**；<br>
 > 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
+> 
 > 本策略默认规则如下：<br>
 > 国内应用直接连接；<br>
 > Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
@@ -29,13 +32,13 @@
 > 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
 > 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
 
-### `RulesLite.conf -- 精简配置介绍`<br>
+### [RulesLite.conf -- 精简配置介绍](#RulesLite.conf -- 精简配置介绍)<br>
 #### `配置功能介绍：`<br>
 > 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
 > 如不需要策略组及自动分流，**强烈建议使用此配置**；<br>
 
 #### `规则地址：`<br>
-> [*`RulesLite.conf`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf) -- 点击链接 一键安装<br>
+> [![一键安装 RulesLite](https://img.shields.io/static/v1?label=一键安装&message=RulesLite&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
 
 ### `使用办法：`<br>
 > 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
@@ -64,6 +67,7 @@
 > **建议添加证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
 > 证书模块添加成功后，“HTTPS解密”开关将不再重要，默认开启（模块的优先级高于配置）；<br>
+> 
 > MitM开启办法：<br>
 > 点击配置文件ⓘ - HTTPS解密 - 证书 - 生成新的CA证书 - 安装证书；<br>
 > 系统设置 - 已下载描述文件 - 安装；<br>
@@ -79,10 +83,12 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
 ### `Shadowrocket -- 去广告融合模块：`<br>
-> [*`融合模块`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule) -- 点击链接 一键安装<br>
+> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
+> 
 > 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`Rules.conf`和`RulesLite.conf`的Issues**，请悉知；<br>
 > 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+> 
 > 融合功能如下：<br>
 > 功能模块：
 `墨鱼去开屏(ddgksf2013)`
