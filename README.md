@@ -77,7 +77,7 @@ ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书�
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
-### 去广告融合模块：
+### Shadowrocket -- 去广告融合模块：
 > [*`融合模块`*](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule) -- 点击链接 一键安装<br>
 > 说明：基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用Rules.conf和RulesLite.conf的Issues**，请悉知；<br>
