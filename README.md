@@ -40,9 +40,34 @@
 #### `配置安装：`<br>
 > [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
 
-### [配置使用](#配置使用)<br>
+#### `配置使用：`<br>
 > 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
 > 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
+
+### [去广告融合模块](#去广告融合模块)<br>
+
+#### `模块安装：`<br>
+> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
+
+#### `模块说明：`<br>
+> 由'向晚'基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
+> 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`Rules.conf`和`RulesLite.conf`的Issues**，请悉知；<br>
+> 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
+> 
+> 融合功能说明：<br>
+> 功能模块：
+`墨鱼去开屏(ddgksf2013)`
+`京东历史比价(wf021325)`<br>
+> 软件净化：
+`YouTube（Maasea）`
+`哔哩哔哩(ddgksf2013)`
+`微博(ddgksf2013)`
+`小红书(ddgksf2013)`
+`菜鸟裹裹(ddgksf2013)`
+`知乎(ddgksf2013)`
+`皮皮虾(ddgksf2013)`
+`高德地图(XiangwanGuan)`
+`彩云天气(XiangwanGuan)`<br>
 
 ### [推荐设置](#推荐设置)<br>
 
@@ -83,31 +108,6 @@ enable = true
 ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书密码，默认密码是Shadowrocket）
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
-
-### [去广告融合模块](#去广告融合模块)<br>
-
-#### `模块安装：`<br>
-> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
-
-#### `模块说明：`<br>
-> 由“向晚”基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
-> 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`Rules.conf`和`RulesLite.conf`的Issues**，请悉知；<br>
-> 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
-> 
-> 融合功能说明：<br>
-> 功能模块：
-`墨鱼去开屏(ddgksf2013)`
-`京东历史比价(wf021325)`<br>
-> 软件净化：
-`YouTube（Maasea）`
-`哔哩哔哩(ddgksf2013)`
-`微博(ddgksf2013)`
-`小红书(ddgksf2013)`
-`菜鸟裹裹(ddgksf2013)`
-`知乎(ddgksf2013)`
-`皮皮虾(ddgksf2013)`
-`高德地图(XiangwanGuan)`
-`彩云天气(XiangwanGuan)`<br>
 
 ### [鸣谢：（排名不分先后）](#在此鸣谢：（排名不分先后）)<br>
 [*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
