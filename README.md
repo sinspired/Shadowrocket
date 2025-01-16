@@ -111,7 +111,7 @@ ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书�
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 
-### [鸣谢：（排名不分先后）](#在此鸣谢：（排名不分先后）)<br>
+### [鸣谢：](#鸣谢：)<br>
 [*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
 [*@Johnshall*](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
