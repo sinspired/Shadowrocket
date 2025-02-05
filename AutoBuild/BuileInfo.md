@@ -10,7 +10,6 @@ https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/r
 https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js<br>
 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Caiyun.js<br>
 https://raw.githubusercontent.com/iab0x00/ProxyRules/refs/heads/main/Rewrite/YouTubeNoAd.sgmodule （手动构建）<br>
 
 ###### 下架规则：<br>
