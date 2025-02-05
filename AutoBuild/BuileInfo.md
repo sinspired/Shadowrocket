@@ -25,11 +25,7 @@ https://raw.githubusercontent.com/app2smile/rules/master/module/qqnews.conf<br>
 https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js<br>
 
 ###### 有故障规则：<br>
-有故障：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CaiYunAds.conf<br>
-已修复：https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Caiyun.js<br>
 有故障：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf<br>
 已修复：https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
 有故障：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/NeteaseAds.conf<br>
-
-##### 测试规则：<br>
-https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt<br>
+有故障：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/CaiYunAds.conf<br>
