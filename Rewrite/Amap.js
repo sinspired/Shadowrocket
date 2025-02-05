@@ -3,11 +3,11 @@
 // 去除广告和无关内容；
 
 [rewrite_local]
-^https?://.*.amap.com/ws/boss/order_web/\w{8}_information url reject-200
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? url reject-dict
-^https?://.*.amap.com/ws/asa/ads_attribution url reject
-^https?://.*.amap.com/ws/shield/scene/recommend url reject-dict
-^https?://.*.amap.com/uploadimg/\w+.gif url reject-img
+^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information url reject-200
+^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution url reject
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend url reject-dict
+^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif url reject-img
 ^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 ^https?://.*.amap.com/ws/valueadded/alimama/splash_screen url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 ^https?://.*.amap.com/ws/message/notice/list url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
