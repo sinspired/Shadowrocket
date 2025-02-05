@@ -33,16 +33,13 @@ else if ($request.url.includes("operation/banners")) {
 }
 else if ($request.url.includes("operation/features")) {
     responseBody = JSON.parse($response.body);
+    // 过滤掉 "天气助手" 和 "彩云ai" 项
+    responseBody.data = responseBody.data.filter(item => item.title !== "天气助手" && item.title !== "彩云ai");
+    
+    // 继续其他过滤逻辑
     responseBody.data = responseBody.data.filter(item => {
         return item.title !== "赏花地图" && (item.icon_url && item.icon_url !== "");
     });
-    
-    // 过滤掉AI相关项
-    responseBody.data = responseBody.data.filter(item => {
-        return item.title !== "天气助手" && item.title !== "彩云ai";
-    });
-
-    // 处理与AI相关的功能项
     responseBody.data.forEach(item => {
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";
