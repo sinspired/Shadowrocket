@@ -36,7 +36,12 @@ else if ($request.url.includes("operation/features")) {
     responseBody.data = responseBody.data.filter(item => {
         return item.title !== "赏花地图" && (item.icon_url && item.icon_url !== "");
     });
+    
+    // 处理 AI 相关部分，禁用相关功能
     responseBody.data.forEach(item => {
+        if (item.title === "天气助手" || item.title === "彩云ai") {
+            item.feature = false; // 禁用天气助手和彩云ai的功能
+        }
         if (item.icon_url === "path_to_unused_icon") {
             item.icon_url = "";
         }
