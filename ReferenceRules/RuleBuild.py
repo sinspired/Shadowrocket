@@ -21,25 +21,25 @@ def process_rules(rule_definitions):
     for rule in rule_definitions:
         if len(rule) == 2:
             rule_type, action = rule
-            rules.append(f"{rule_type}，{action}")
+            rules.append(f"{rule_type},{action}")
         else:
             rule_type, url, action = rule
             if rule_type == "GEOIP":
-                rules.append(f"{rule_type}，{url},{action}")
+                rules.append(f"{rule_type},{url},{action}")
             else:
                 download_index += 1
                 rule_content = download_rule(url, download_index, total_rules)
                 if rule_content is None:
                     failed_rules.append(url)
                 else:
-                    rules.extend([f"{rule_type}，{line},{action}" for line in rule_content if line.strip()])
+                    rules.extend([f"{rule_type},{line},{action}" for line in rule_content if line.strip()])
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
 
 def save_rules_to_file(rules, file_name):
     try:
         with open(file_name, 'w', encoding='utf-8') as f:
-            f.write("\n"。join(rules))
+            f.write("\n".join(rules))
         print(f"规则已保存到: {file_name}")
     except Exception as e:
         print(f"规则保存失败: {e}")
@@ -48,16 +48,16 @@ def main():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
     output_file = os.path.join(script_dir, "Rules.MD")
     rule_definitions = [
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Lan.list", "DIRECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Direct.list", "DIRECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/BlockHttpDNS.list", "REJECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Hijacking.list", "REJECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Privacy.list", "REJECT")，
-        ("DOMAIN-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Privacy_Domain.list", "REJECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/AdvertisingLite.list", "REJECT")，
-        ("DOMAIN-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/AdvertisingLite_Domain.list", "REJECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/WeChat.list", "DIRECT")，
-        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Telegram.list"， "PROXY"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Lan.list", "DIRECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Direct.list", "DIRECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/BlockHttpDNS.list", "REJECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Hijacking.list", "REJECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Privacy.list", "REJECT"),
+        ("DOMAIN-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Privacy_Domain.list", "REJECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/AdvertisingLite.list", "REJECT"),
+        ("DOMAIN-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/AdvertisingLite_Domain.list", "REJECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/WeChat.list", "DIRECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Telegram.list", "PROXY"),
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/OpenAI.list", "PROXY"),
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Copilot.list", "PROXY"),
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Gemini.list", "PROXY"),
