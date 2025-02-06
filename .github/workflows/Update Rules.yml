@@ -44,10 +44,7 @@ jobs:
         )
         for LINK in "${LINKS[@]}"; do
           FILE_NAME=$(basename $LINK)
-          curl -f -o "Rules/$FILE_NAME" $LINK || { 
-            echo "First attempt failed, retrying...";
-            curl -f -o "Rules/$FILE_NAME" $LINK || echo "Failed to download $LINK after retry";
-          }
+          curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
         done
     - name: Commit and push the changes
       uses: EndBug/add-and-commit@v9
