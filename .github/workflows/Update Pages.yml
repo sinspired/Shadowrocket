@@ -1,4 +1,4 @@
-name: Build Site To GitHub Pages
+name: AutoBuild GitHubPages
 on:
   push:
     branches: ["main"]
