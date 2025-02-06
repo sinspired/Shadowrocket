@@ -1,4 +1,4 @@
-name: Autobuild ReferenceRules.md
+name: AutoBuild ReferenceRules.md
 on:
   schedule:
     - cron: '0 0 * * *'
