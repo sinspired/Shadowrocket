@@ -19,7 +19,7 @@ jobs:
         pip install requests
     - name: Run Python script to generate ReferenceRules.md file
       run: |
-        python ReferenceRules/ModuleBuild.py
+        python ReferenceRules/RuleBuild.py
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
