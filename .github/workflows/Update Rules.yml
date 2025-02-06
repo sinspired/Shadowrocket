@@ -1,8 +1,8 @@
-name: AutoCopy Links to Shadowrocket/Rules
+name: AutoCopy Rules
 on:
   schedule:
-    - cron: '0 0 * * 1'  # 每周一触发
-  workflow_dispatch:  # 支持手动触发
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
 
 jobs:
   copy-links:
@@ -18,10 +18,7 @@ jobs:
     
     - name: Download 和 copy links
       run: |
-        # 创建目标目录
-        mkdir -p Shadowrocket/Rules
-        
-        # 定义要下载的链接列表
+        mkdir -p Rules
         LINKS=(
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Direct/Direct.list"
@@ -48,16 +45,11 @@ jobs:
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMaxNoMedia/ChinaMaxNoMedia.list"
           "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMaxNoMedia/ChinaMaxNoMedia_Domain.list"
         )
-
-        # 循环遍历链接并下载
         for LINK in "${LINKS[@]}"; do
-          # 从链接中提取文件名
           FILE_NAME=$(basename $LINK)
-          # 下载并保存到目标目录
-          curl -o "Shadowrocket/Rules/$FILE_NAME" $LINK
+          curl -o "Rules/$FILE_NAME" $LINK
         done
-
-    - name: Commit 和 push the changes
+    - name: Commit and push the changes
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
