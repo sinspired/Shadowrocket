@@ -1,7 +1,7 @@
 name: AutoCopy Rules Files
 on:
   schedule:
-    - cron: '0 0 * * 1'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 jobs:
   copy-links:
@@ -44,7 +44,10 @@ jobs:
         )
         for LINK in "${LINKS[@]}"; do
           FILE_NAME=$(basename $LINK)
-          curl -o "Rules/$FILE_NAME" $LINK
+          curl -f -o "Rules/$FILE_NAME" $LINK || { 
+            echo "First attempt failed, retrying...";
+            curl -f -o "Rules/$FILE_NAME" $LINK || echo "Failed to download $LINK after retry";
+          }
         done
     - name: Commit and push the changes
       uses: EndBug/add-and-commit@v9
