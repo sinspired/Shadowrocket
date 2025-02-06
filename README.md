@@ -120,9 +120,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 ------
 
 ### [鸣谢：](#鸣谢：)<br>
-[*@wlxuf*](https://github.com/wlxuf/Shadowrocket)
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
-[*@Johnshall*](https://github.com/Johnshall/Shadowrocket-ADBlock-Rules-Forever)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
 [*@wf021325*](https://github.com/wf021325/qx)
