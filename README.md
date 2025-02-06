@@ -56,7 +56,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
 
 #### `模块说明：`<br>
-> 由'向晚'基于“墨鱼去广告模块”定制，修改部分功能，每周一的8时自动构建；<br>
+> 由'向晚'基于“墨鱼去广告模块”定制，修改部分功能，每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`Rules.conf`和`RulesLite.conf`的Issues**，请悉知；<br>
 > 使用办法：使用手机访问此页面，点击链接，一键安装；<br>
 > 
