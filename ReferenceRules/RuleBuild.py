@@ -4,13 +4,13 @@ import sys
 
 def download_rule(url, index, total):
     file_name = url.split("/")[-1]
-    print(f"正在处理 ({index:02}/{total:02}): {file_name}")
+    print(f"Processing ({index:02}/{total:02}): {file_name}")
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
         return [line for line in response.text.splitlines() if not line.lstrip().startswith("#")]
     except requests.RequestException as e:
-        print(f"规则下载失败: {file_name} - {e}")
+        print(f"Failed to download rule: {file_name} - {e}")
         return None
 
 def process_rules(rule_definitions):
@@ -40,13 +40,13 @@ def save_rules_to_file(rules, file_name):
     try:
         with open(file_name, 'w', encoding='utf-8') as f:
             f.write("\n".join(rules))
-        print(f"规则已保存到: {file_name}")
+        print(f"Rules saved to: {file_name}")
     except Exception as e:
-        print(f"规则保存失败: {e}")
+        print(f"Failed to save rules: {e}")
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-    output_file = os.path.join(script_dir, "Rules.MD")
+    output_file = os.path.join(script_dir, "ReferenceRules", "ReferenceRules.md")
     rule_definitions = [
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Direct.list", "DIRECT"),
@@ -78,7 +78,7 @@ def main():
     rules, failed_rules = process_rules(rule_definitions)
     save_rules_to_file(rules, output_file)
     if failed_rules:
-        print("\n以下规则下载失败，请检查链接或网络:")
+        print("\nThe following rule downloads failed. Please check the links or network:")
         for rule in failed_rules:
             print(f"   - {rule}")
 
