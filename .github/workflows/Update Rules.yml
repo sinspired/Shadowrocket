@@ -1,4 +1,4 @@
-name: AutoCopy Rules Files
+name: AutoCopy Rulesfiles.list
 on:
   schedule:
     - cron: '0 0 * * *'
