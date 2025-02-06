@@ -1,4 +1,4 @@
-name: AutoBuild ReferenceRules.md
+name: AutoBuild ReferenceRules.conf
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -24,12 +24,12 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit and push generated ReferenceRules.md file
+    - name: Commit and push generated ReferenceRules.conf
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'AutoBuild ReferenceRules.md'
-        add: 'ReferenceRules/ReferenceRules.md'
+        message: 'AutoBuild ReferenceRules.conf'
+        add: 'ReferenceRules/ReferenceRules.conf'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
