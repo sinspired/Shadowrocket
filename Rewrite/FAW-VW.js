@@ -1,34 +1,30 @@
-// 获取响应体数据
-var obj = JSON.parse($response.body);
+#!name=测试模块
+#!desc=一汽大众去广告
 
-// 处理广告请求，根据 URL 来判断是否是广告请求
-if ($request.url.indexOf("getBoothList") !== -1) {
-    // 如果返回的数据包含广告，清空广告数据
-    if (obj.data && obj.data.ads) {
-        obj.data.ads = [];  // 删除广告数据
-    }
-    // 这里可以做其他字段处理，例如清除缓存相关的数据
-    if (obj.data && obj.data.cache) {
-        obj.data.cache = {};  // 清空缓存数据
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("VWAPP_ICE_OPEN_SCREEN_ADS") !== -1 || $request.url.indexOf("VWAPP_MEB_OPEN_SCREEN_ADS") !== -1) {
-    // 处理针对ICE和MEB广告的请求
-    if (obj.data && obj.data.ad) {
-        obj.data.ad = obj.data.ad.filter(ad => {
-            // 设置广告的展示时间为无效，防止广告展示
-            ad.set.setting.display_time = 0;  // 设置广告的展示时间为无效
-            ad.creative[0].start_time = 2240150400;  // 设置广告开始时间为一个无效时间
-            ad.creative[0].end_time = 2240150400;    // 设置广告结束时间为一个无效时间
-            return false;  // 删除广告
-        });
-    }
-    // 清理与缓存相关的字段
-    if (obj.data && obj.data.cache) {
-        obj.data.cache = {};  // 清空缓存数据
-    }
-    $done({ body: JSON.stringify(obj) });
-} else {
-    // 其他请求，不做任何处理
-    $done({ body: JSON.stringify(obj) });
-}
+[URL Rewrite]
+# 拒绝开屏广告请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/.*Code=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS - reject-200
+
+# 拒绝车主广告横幅请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_OWNER_BANNER - reject-200
+
+# 拒绝KONGO广告请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_KONGO - reject-200
+
+# 拒绝浮动广告请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY - reject-200
+
+# 拒绝潜在客户广告横幅请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_PROSPECTS_BANNER - reject-200
+
+# 拒绝推荐信息流请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/recommend\/getRecommendInfoFlows\/v1\?.* - reject-200
+
+# 拒绝搜索提示列表请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* - reject-200
+
+# 拒绝智虎学院广告请求
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_MEB_CAR_ZHIHU_COLLEGE - reject-200
+
+[MITM]
+hostname = %APPEND% oneapp-api.faw-vw.com,
