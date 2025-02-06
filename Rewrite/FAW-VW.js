@@ -13,5 +13,5 @@
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_MEB_CAR_ZHIHU_COLLEGE - reject-200
 
 [mitm]
-hostname = oneapp-api.faw-vw.com
+hostname = oneapp-api.faw-vw.com,
 */
