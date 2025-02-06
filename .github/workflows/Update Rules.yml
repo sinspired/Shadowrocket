@@ -1,21 +1,18 @@
-name: AutoCopy Rules
+name: AutoCopy Rules Files
 on:
   schedule:
     - cron: '0 0 * * 1'
   workflow_dispatch:
-
 jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    
     - name: Download 和 copy links
       run: |
         mkdir -p Rules
@@ -54,7 +51,7 @@ jobs:
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Auto copy rule files to Shadowrocket/Rules'
-        add: 'Shadowrocket/Rules/*'
+        message: 'Auto copy rule files to Rules'
+        add: 'Rules/*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
