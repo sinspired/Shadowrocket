@@ -46,7 +46,7 @@ def save_rules_to_file(rules, file_name):
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-    output_file = os.path.join(script_dir, "ReferenceRules.md")
+    output_file = os.path.join(script_dir, "ReferenceRules.conf")
     rule_definitions = [
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/Direct.list", "DIRECT"),
