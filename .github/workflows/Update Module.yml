@@ -24,7 +24,7 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit 和 push generated files
+    - name: Commit and push generated files
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
