@@ -1,7 +1,7 @@
 name: AutoBuild ReferenceRules.conf
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '20 0 * * *'
   workflow_dispatch:
 jobs:
   build:
