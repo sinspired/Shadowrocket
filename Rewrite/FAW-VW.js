@@ -8,16 +8,24 @@ if ($request.url.indexOf("getBoothList") !== -1) {
         obj.data.ads = [];  // 删除广告数据
     }
     // 这里可以做其他字段处理，例如清除缓存相关的数据
+    if (obj.data && obj.data.cache) {
+        obj.data.cache = {};  // 清空缓存数据
+    }
     $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("MEB_OPEN_SCREEN_ADS") !== -1) {
-    // 处理针对特定广告的请求
+} else if ($request.url.indexOf("VWAPP_ICE_OPEN_SCREEN_ADS") !== -1 || $request.url.indexOf("VWAPP_MEB_OPEN_SCREEN_ADS") !== -1) {
+    // 处理针对ICE和MEB广告的请求
     if (obj.data && obj.data.ad) {
         obj.data.ad = obj.data.ad.filter(ad => {
+            // 设置广告的展示时间为无效，防止广告展示
             ad.set.setting.display_time = 0;  // 设置广告的展示时间为无效
-            ad.creative[0].start_time = 2240150400;  // 广告开始时间
-            ad.creative[0].end_time = 2240150400;    // 广告结束时间
+            ad.creative[0].start_time = 2240150400;  // 设置广告开始时间为一个无效时间
+            ad.creative[0].end_time = 2240150400;    // 设置广告结束时间为一个无效时间
             return false;  // 删除广告
         });
+    }
+    // 清理与缓存相关的字段
+    if (obj.data && obj.data.cache) {
+        obj.data.cache = {};  // 清空缓存数据
     }
     $done({ body: JSON.stringify(obj) });
 } else {
