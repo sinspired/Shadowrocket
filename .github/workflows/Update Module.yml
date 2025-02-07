@@ -19,7 +19,7 @@ jobs:
         pip install requests
     - name: Run Python script
       run: |
-        python AutoBuild/ModuleBuild.py
+        python ModuleBuild/ModuleBuild.py
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
