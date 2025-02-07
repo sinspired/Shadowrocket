@@ -1,4 +1,4 @@
-name: AutoCopy Rulesfiles.list
+name: AutoCopy Rulefiles.list
 on:
   schedule:
     - cron: '10 0 * * *'
@@ -13,7 +13,7 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Download 和 copy links
+    - name: Download & Copy links
       run: |
         mkdir -p Rules
         LINKS=(
@@ -46,7 +46,7 @@ jobs:
           FILE_NAME=$(basename $LINK)
           curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
         done
-    - name: Commit & copy Rulesfiles.list
+    - name: Commit & Copy Rulefiles.list
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
