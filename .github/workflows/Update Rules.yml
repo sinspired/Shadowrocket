@@ -46,7 +46,7 @@ jobs:
           FILE_NAME=$(basename $LINK)
           curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
         done
-    - name: Commit and push the changes
+    - name: Commit & push the changes
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
