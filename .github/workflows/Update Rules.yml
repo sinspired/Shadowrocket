@@ -1,4 +1,4 @@
-name: AutoCopy Rulefiles.list
+name: Update Rulefiles.list
 on:
   schedule:
     - cron: '10 0 * * *'
@@ -51,7 +51,7 @@ jobs:
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Auto copy rule files to Rules'
+        message: 'Update Rulefiles.list'
         add: 'Rules/*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
