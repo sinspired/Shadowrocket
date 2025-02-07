@@ -27,7 +27,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
-#!desc=基于墨鱼规则定制，每日自动构建；
+#!desc=基于墨鱼规则定制，每周自动构建；
 #!logtime={timestamp}
 
 [Rule]
