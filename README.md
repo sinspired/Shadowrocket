@@ -1,5 +1,5 @@
 ## [Shadowrocket -- 仓库自述](https://github.com/XiangwanGuan/Shadowrocket)<br>
-> 本仓库提供由'向晚'维护的Shadowrocket的分流配置、精简配置、去广告模块，及推荐设置；<br>
+> 本仓库提供由'向晚'维护的Shadowrocket的分流规则、精简规则、去广告模块，由Github Actions定期自动构建；<br>
 >
 ------
 
