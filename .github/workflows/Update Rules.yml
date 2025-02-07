@@ -13,7 +13,7 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Download & Copy links
+    - name: Download & copy links
       run: |
         mkdir -p Rules
         LINKS=(
@@ -46,7 +46,7 @@ jobs:
           FILE_NAME=$(basename $LINK)
           curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
         done
-    - name: Commit & Copy Rulefiles.list
+    - name: Commit & copy Rulefiles.list
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
