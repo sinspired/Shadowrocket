@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每周自动构建；
-#!logtime=2025-02-10 13:17:13
+#!logtime=2025-02-10 13:41:03
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
@@ -506,6 +506,7 @@ FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/conte
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/customize\/getCustomizePageName\/v1\?.*, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1, timeout=60
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/recommend\/getRecommendInfoFlows\/v1\?.*, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1, timeout=60
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.*, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1, timeout=60
+FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/support\/home\/queryConfig\/v1\?.*, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/feeds, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/modules, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
