@@ -45,7 +45,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
     url_content = "";
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
-        url_content += f"{pattern} - reject-200\n"
+        url_content += f"{pattern} - reject\n"
     url_lines = url_content.splitlines()
     unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
     url_content = '\n'.join(unique_lines)
