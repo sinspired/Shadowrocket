@@ -27,4 +27,10 @@ const jsonResponse = {
     "hasMore": false,
     "data": []
 };
-$done({body: JSON.stringify(jsonResponse)});
+$done({
+    status: 200,
+    body: JSON.stringify(jsonResponse),
+    headers: {
+        "Content-Type": "application/json"
+    }
+});
