@@ -14,9 +14,6 @@ hostname = oneapp-api.faw-vw.com
 // 获取请求的 URL
 const url = $request.url;
 
-// 获取请求的 URL
-const url = $request.url;
-
 // 如果 URL 中包含 "showPositionCode=VWAPP"，才进行处理
 if (/^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP/.test(url)) {
     // 获取响应体
@@ -61,3 +58,4 @@ if (/^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*sh
         // 解析失败时，跳过不做任何修改
     }
 }
+
