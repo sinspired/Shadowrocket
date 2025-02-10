@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每周自动构建；
-#!logtime=2025-02-10 09:39:17
+#!logtime=2025-02-10 10:40:59
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
@@ -370,14 +370,6 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 ^https?:\/\/newsuperapp\.ftms\.com\.cn\/app-bff\/.*openScreenPicture - reject
 ^https?:\/\/notify\.baicizhan\.com\/rpc\/notify\/get_latest_notify - reject
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/.*Code=VWAPP_ICE_OPEN_SCREEN_ADS - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_CAR_ZHIHU_COLLEGE - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_BANNER - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_KONGO - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_KONGO - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_OWNER_BANNER - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_PROSPECTS_BANNER - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS - reject
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY - reject
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/recommend\/getRecommendInfoFlows\/v1\?.* - reject
 ^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* - reject
 ^https?:\/\/open\.78dm\.net\/v\d\/site\/ad\/ - reject
@@ -505,6 +497,7 @@ Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/frogserver/
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/nearbyrec_smart, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1, timeout=60
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/new_hotword, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1, timeout=60
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/valueadded/alimama/splash_screen, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1, timeout=60
+FAW-VW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAW-VW.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+\/feeds, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
 Zhihu.Adblock.js =type=http-response, pattern=^https?:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/modules, script-path=https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js, requires-body=true, max-size=-1, timeout=60
