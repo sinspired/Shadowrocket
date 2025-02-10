@@ -29,4 +29,4 @@ const jsonResponse = {
     "data": []
 };
 
-$response.body = JSON.stringify(jsonResponse);
+$response。body = JSON.stringify(jsonResponse);
