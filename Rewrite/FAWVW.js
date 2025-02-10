@@ -20,12 +20,6 @@ hostname = oneapp-api.faw-vw.com
 */
 
 const jsonResponse = {
-    "returnStatus": "SUCCEED",
-    "total": 0,
-    "pageNo": 1,
-    "pageSize": 1,
-    "hasMore": false,
     "data": []
 };
-
-$response.body = JSON.stringify(jsonResponse);
+$response.body = JSON.stringify(jsonResponse); 
