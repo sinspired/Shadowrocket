@@ -14,7 +14,10 @@ hostname = oneapp-api.faw-vw.com
 // 获取请求的 URL
 const url = $request.url;
 
-// 如果 URL 中包含 "showPositionCode=VWAPP_"，才进行处理
+// 获取请求的 URL
+const url = $request.url;
+
+// 如果 URL 中包含 "showPositionCode=VWAPP"，才进行处理
 if (/^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP/.test(url)) {
     // 获取响应体
     let response = $response.body;
@@ -44,9 +47,11 @@ if (/^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*sh
             "VWAPP_MEB_CAR_ZHIHU_COLLEGE"
         ];
 
-        // 如果匹配需要修改的 showPositionCode，将 total 设为 0
+        // 如果匹配需要修改的 showPositionCode，将广告的有效时间设置为永久过期（20000000）
         if (adsToReject.includes(showPositionCode)) {
-            jsonResponse.total = 0;
+            jsonResponse.data.forEach(ad => {
+                ad.contentInfo.effectiveTime = 20000000;  // 设置为永久过期的时间
+            });
         }
 
         // 返回修改后的响应体
