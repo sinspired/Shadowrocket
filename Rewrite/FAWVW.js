@@ -1,6 +1,6 @@
 /*
 // 一汽大众
-// 需卸载重装APP；
+// 去除所有广告，无需卸载重装
 
 [rewrite_local]
 ^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js
