@@ -19,14 +19,16 @@
 hostname = oneapp-api.faw-vw.com
 */
 
-const jsonResponse = {
-    "returnStatus": "SUCCEED",
-    "data": []
+const jsonResponse = { 
+    returnStatus: "SUCCEED", 
+    data: [] 
 };
-$done({
-    status: 200,
-    body: JSON.stringify(jsonResponse),
-    headers: {
-        "Content-Type": "application/json"
-    }
+const responseBody = JSON.stringify(jsonResponse);
+const responseHeaders = { 
+    "Content-Type": "application/json" 
+};
+$done({ 
+    status: 200, 
+    body: responseBody, 
+    headers: responseHeaders 
 });
