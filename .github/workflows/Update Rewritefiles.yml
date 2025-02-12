@@ -15,7 +15,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
     - name: Download & copy links
       run: |
-        mkdir -p Rules
+        mkdir -p Rewrite
         LINKS=(
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf"
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf"
@@ -28,7 +28,7 @@ jobs:
         )
         for LINK in "${LINKS[@]}"; do
           FILE_NAME=$(basename $LINK)
-          curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
+          curl -f -o "Rewrite/$FILE_NAME" $LINK || curl -f -o "Rewrite/$FILE_NAME" $LINK
         done
     - name: Commit & copy Rewritefiles.conf
       uses: EndBug/add-and-commit@v9
