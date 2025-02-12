@@ -1,4 +1,4 @@
-name: Update Rewritefiles.conf
+name: Update RewriteFiles
 on:
   schedule:
     - cron: '5 0 * * *'
@@ -30,12 +30,12 @@ jobs:
           FILE_NAME=$(basename $LINK)
           curl -f -o "Rewrite/$FILE_NAME" $LINK || curl -f -o "Rewrite/$FILE_NAME" $LINK
         done
-    - name: Commit & copy Rewritefiles.conf
+    - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Update Rewritefiles.conf'
+        message: 'Update RewriteFiles'
         add: 'Rewrite/*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

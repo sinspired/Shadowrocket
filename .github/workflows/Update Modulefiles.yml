@@ -1,4 +1,4 @@
-name: Update Module.sgmodule
+name: Update ModuleFiles
 on:
   schedule:
     - cron: '15 0 * * 1'
@@ -24,12 +24,12 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit & push generated Module.sgmodule
+    - name: Commit & push generated ModuleFiles
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Update Module.sgmodule'
+        message: 'Update ModuleFiles'
         add: 'Module.sgmodule'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

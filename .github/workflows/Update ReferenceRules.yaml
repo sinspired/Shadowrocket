@@ -1,4 +1,4 @@
-name: Update ReferenceRules.conf
+name: Update ReferenceRules
 on:
   schedule:
     - cron: '10 0 * * *'
@@ -24,12 +24,12 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit & push generated ReferenceRules.conf
+    - name: Commit & push generated ReferenceRules
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Update ReferenceRules.conf'
+        message: 'Update ReferenceRules'
         add: 'ReferenceRules/ReferenceRules.conf'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

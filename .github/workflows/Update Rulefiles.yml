@@ -1,4 +1,4 @@
-name: Update Rulefiles.list
+name: Update RuleFiles
 on:
   schedule:
     - cron: '0 0 * * *'
@@ -46,12 +46,12 @@ jobs:
           FILE_NAME=$(basename $LINK)
           curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
         done
-    - name: Commit & copy Rulefiles.list
+    - name: Commit & copy RuleFiles
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
-        message: 'Update Rulefiles.list'
+        message: 'Update RuleFiles'
         add: 'Rules/*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
