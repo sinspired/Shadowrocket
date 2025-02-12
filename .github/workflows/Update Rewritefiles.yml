@@ -39,3 +39,4 @@ jobs:
         add: 'Rewrite/*'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+1
