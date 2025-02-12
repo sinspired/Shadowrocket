@@ -1,0 +1,41 @@
+name: Update Rewritefiles.conf
+on:
+  schedule:
+    - cron: '5 0 * * *'
+  workflow_dispatch:
+jobs:
+  copy-links:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Git configuration
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Download & copy links
+      run: |
+        mkdir -p Rules
+        LINKS=(
+          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf"
+          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf"
+          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf"
+          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf"
+          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf"
+          "https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js"
+          "https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js"
+          "https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js"
+        )
+        for LINK in "${LINKS[@]}"; do
+          FILE_NAME=$(basename $LINK)
+          curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
+        done
+    - name: Commit & copy Rewritefiles.conf
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: 'GitHub Actions'
+        author_email: 'actions@github.com'
+        message: 'Update Rewritefiles.conf
+        add: 'Rewrite/*'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
