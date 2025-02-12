@@ -47,7 +47,7 @@ if ($request.url.indexOf("search/nearbyrec_smart") !== -1) {
 } else if ($request.url.indexOf("valueadded/alimama/splash_screen") !== -1) {
     if (obj.data && obj.data.ad) {
         for (let ad of obj.data.ad) {
-            ad.set。setting.display_time = 0;
+            ad.set.setting.display_time = 0;
             ad.creative[0].start_time = 2240150400;
             ad.creative[0].end_time = 2240150400;
         }
