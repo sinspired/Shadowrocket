@@ -35,7 +35,14 @@ def process_rules(rule_definitions):
                     for line in rule_content:
                         line = line.strip()
                         if line:
-                            rules.append(f"{line},{action}")
+                            parts = line.split(",")
+                            if len(parts) == 3:
+                                parts.insert(2, action)
+                            elif len(parts) == 2:
+                                parts.append(action)
+                            elif len(parts) == 1:
+                                parts.append(action)
+                            rules.append(",".join(parts))
             elif rule_type == "DOMAIN-SET":
                 download_index += 1
                 rule_content = download_rule(url, download_index, total_rules)
