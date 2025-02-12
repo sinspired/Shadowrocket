@@ -8,14 +8,12 @@ function getRegexp(re_str) {
         try {
             return new RegExp(regParts[1], regParts[2]);
         } catch (e) {
-            console.log(`Invalid regex: ${re_str}`);
             return null;
         }
     } else {
         try {
             return new RegExp(re_str);
         } catch (e) {
-            console.log(`Invalid regex: ${re_str}`);
             return null;
         }
     }
@@ -23,39 +21,43 @@ function getRegexp(re_str) {
 
 let body;
 if (typeof $argument == "undefined") {
-    console.log("requires $argument");
+    $done({});
 } else {
-    if ($script.type === "http-response") {
+    if ($script && $script.type === "http-response") {
         body = $response.body;
-    } else if ($script.type === "http-request") {
+    } else if ($script && $script.type === "http-request") {
         body = $request.body;
     } else {
-        console.log("script type error");
+        $done({});
+        return;
     }
-}
-
-if (body) {
-    let replacements = [];
-    $argument.split("&").forEach((item) => {
-        if (!/^[^->]+->[^->]+$/.test(item)) {
-            console.log(`Invalid argument format: ${item}`);
+    if (body) {
+        let replacements = [];
+        if (!$argument || $argument.trim() === "") {
+            $done({ body });
             return;
         }
-        let [match, replace] = item.split("->").map(s => s.trim());
-        if (match && replace) {
-            let re = getRegexp(match);
-            if (re) {
-                replacements.push({ re, replace });
+        $argument.split("&").forEach((item) => {
+            if (!/^[^->]+->[^->]+$/.test(item)) {
+                return;
             }
+            let [match, replace] = item.split("->").map(s => s.trim());
+            if (match && replace) {
+                let re = getRegexp(match);
+                if (re) {
+                    replacements.push({ re, replace });
+                }
+            }
+        });
+        if (replacements.length > 0) {
+            replacements.forEach(({ re, replace }) => {
+                body = body.replace(re, replace);
+            });
+            $done({ body });
         } else {
-            console.log(`Invalid match->replace pair: ${item}`);
+            $done({ body });
         }
-    });
-    replacements.forEach(({ re, replace }) => {
-        body = body.replace(re, replace);
-    });
-    $done({ body });
-} else {
-    console.log("No modification applied.");
-    $done({});
+    } else {
+        $done({});
+    }
 }
