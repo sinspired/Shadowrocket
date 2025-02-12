@@ -81,7 +81,7 @@ youtube =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtub
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f"replace-body.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
+        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
     unique_content = ','.join(sorted(set(mitm_match_content.split(','))))
     mitm_match_content = unique_content
