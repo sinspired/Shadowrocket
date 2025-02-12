@@ -18,7 +18,6 @@ function getRegexp(re_str) {
         }
     }
 }
-
 let body;
 if (typeof $argument == "undefined") {
     $done({});
