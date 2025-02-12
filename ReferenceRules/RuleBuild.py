@@ -26,13 +26,26 @@ def process_rules(rule_definitions):
             rule_type, url, action = rule
             if rule_type == "GEOIP":
                 rules.append(f"{rule_type},{url},{action}")
-            else:
+            elif rule_type == "RULE-SET":
                 download_index += 1
                 rule_content = download_rule(url, download_index, total_rules)
                 if rule_content is None:
                     failed_rules.append(url)
                 else:
-                    rules.extend([f"{rule_type},{line},{action}" for line in rule_content if line.strip()])
+                    for line in rule_content:
+                        line = line.strip()
+                        if line:
+                            rules.append(f"{line},{action}")
+            elif rule_type == "DOMAIN-SET":
+                download_index += 1
+                rule_content = download_rule(url, download_index, total_rules)
+                if rule_content is None:
+                    failed_rules.append(url)
+                else:
+                    for line in rule_content:
+                        domain = line.strip()
+                        if domain:
+                            rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
 
