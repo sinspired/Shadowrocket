@@ -1,6 +1,12 @@
 import requests
 import os
 import sys
+import datetime
+
+def generate_beijing_time():
+    utc_time = datetime.datetime.now(datetime.timezone.utc)
+    beijing_time = utc_time + datetime.timedelta(hours=8)
+    return beijing_time.strftime("%Y-%m-%d %H:%M:%S")
 
 def download_rule(url, index, total):
     file_name = url.split("/")[-1]
@@ -58,8 +64,37 @@ def process_rules(rule_definitions):
 
 def save_rules_to_file(rules, file_name):
     try:
+        timestamp = generate_beijing_time()
+        header = f"#update = {timestamp}\n" 
+        header += """
+[General]
+bypass-system = true
+compatibility-mode = 3
+tun-excluded-routes = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.88.99.0/24, 192.168.0.0/16, 224.0.0.0/4, 239.255.255.250/32, 255.255.255.255/32
+dns-server = https://dns.alidns.com/dns-query, https://doh.pub/dns-query
+fallback-dns-server = https://doh.apad.pro/dns-query
+hijack-dns = *:53
+icmp-auto-reply = true
+private-ip-answer = true
+dns-direct-fallback-proxy = true
+udp-policy-not-supported-behaviour = REJECT
+
+[Rule]
+"""
+        
+        footer = """
+
+[Host]
+localhost = 127.0.0.1
+
+[URL Rewrite]
+^https?://(www.)?g.cn https://www.google.com 302
+^https?://(www.)?google.cn https://www.google.com 302
+"""
         with open(file_name, 'w', encoding='utf-8') as f:
+            f.write(header)
             f.write("\n".join(rules))
+            f.write(footer)
         print(f"规则已保存到: {file_name}")
     except Exception as e:
         print(f"规则保存失败: {e}")
