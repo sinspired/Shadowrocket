@@ -7,4 +7,4 @@ https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.A
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/pipixia.adblock.js
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/jd_price.js
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js
+Rewrite/FAWVW.js
