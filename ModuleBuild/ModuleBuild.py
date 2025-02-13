@@ -12,7 +12,7 @@ def download_content(url):
         except IOError as e:
             print(f"Error reading local file {url}: {e}")
             return None
-    elif url.startswith("http://") or url.startswith("https://"):
+    elif url.startswith("https://"):
         try:
             response = requests.get(url)
             response.raise_for_status()
