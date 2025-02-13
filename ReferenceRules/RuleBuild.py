@@ -35,7 +35,10 @@ def process_rules(rule_definitions):
                 rules.append(f"{rule_type},{url},{action}")
             elif rule_type == "RULE-SET":
                 download_index += 1
-                rule_content = download_rule(url, download_index, total_rules)
+                if url.startswith("https://"):
+                    rule_content = download_rule(url, download_index, total_rules)
+                else:
+                    rule_content = read_local_rule(url)
                 if rule_content is None:
                     failed_rules.append(url)
                 else:
@@ -67,7 +70,10 @@ def process_rules(rule_definitions):
                                     rules.append(rule_str)
             elif rule_type == "DOMAIN-SET":
                 download_index += 1
-                rule_content = download_rule(url, download_index, total_rules)
+                if url.startswith("https://"):
+                    rule_content = download_rule(url, download_index, total_rules)
+                else:
+                    rule_content = read_local_rule(url)
                 if rule_content is None:
                     failed_rules.append(url)
                 else:
@@ -78,6 +84,14 @@ def process_rules(rule_definitions):
                             rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
+
+def read_local_rule(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.readlines()
+    except Exception as e:
+        print(f"读取本地规则文件失败: {file_path} - {e}")
+        return None
 
 def save_rules_to_file(rules, file_name):
     try:
