@@ -1,6 +1,7 @@
 /*
-// 一汽大众
-// 去除广告和无关内容，无需卸载重装；
+# 一汽大众
+# 去除广告和无关内容，无需卸载重装；
+# 由向晚维护；
 
 [rewrite_local]
 ^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js
