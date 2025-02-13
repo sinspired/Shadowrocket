@@ -1,5 +1,6 @@
 /*
-修改HTTP请求或响应的Body内容；
+// 修改HTTP请求或响应的Body内容；
+// 由向晚维护；
 */
 
 function getRegexp(re_str) {
