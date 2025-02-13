@@ -88,7 +88,7 @@ def process_rules(rule_definitions):
 def read_local_rule(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
-            return f.readlines()
+            return [line.strip() for line in f.readlines() if not line.lstrip().startswith("#")]
     except Exception as e:
         print(f"读取本地规则文件失败: {file_path} - {e}")
         return None
