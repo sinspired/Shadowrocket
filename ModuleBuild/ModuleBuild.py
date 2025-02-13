@@ -5,13 +5,40 @@ import time
 import datetime
 
 def download_content(url):
+    if os.path.isfile(url):
+        try:
+            with open(url, 'r', encoding='utf-8') as file:
+                return file.read()
+        except IOError as e:
+            print(f"Error reading local file {url}: {e}")
+            return None
+    elif url.startswith("http://") or url.startswith("https://"):
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            return response.text
+        except requests.RequestException as e:
+            print(f"Error downloading content from {url}: {e}")
+            return None
+    else:
+        local_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), url)
+        if os.path.isfile(local_path):
+            try:
+                with open(local_path, 'r', encoding='utf-8') as file:
+                    return file.read()
+            except IOError as e:
+                print(f"Error reading local file {local_path}: {e}")
+                return None
+        else:
+            print(f"File not found at {local_path}")
+            return None
+
+def save_content(content, file_path):
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
-    except requests.RequestException as e:
-        print(f"Error downloading content from {url}: {e}")
-        return None
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+    except IOError as e:
+        print(f"Error saving content to {file_path}: {e}")
 
 def save_content(content, file_path):
     try:
