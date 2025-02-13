@@ -22,6 +22,7 @@ def download_rule(url, index, total):
 def process_rules(rule_definitions):
     rules = []
     failed_rules = []
+    seen_domains = set()
     total_rules = sum(1 for rule in rule_definitions if len(rule) == 3 and rule[0] in ("RULE-SET", "DOMAIN-SET"))
     download_index = 0
     for rule in rule_definitions:
@@ -48,7 +49,22 @@ def process_rules(rule_definitions):
                                 parts.append(action)
                             elif len(parts) == 1:
                                 parts.append(action)
-                            rules.append(",".join(parts))
+                            rule_str = ",".join(parts)
+                            if rule_str.startswith("DOMAIN-SUFFIX"):
+                                domain = parts[1]
+                                if domain not in seen_domains:
+                                    seen_domains.add(domain)
+                                    rules.append(rule_str)
+                            elif rule_str.startswith("IP-CIDR"):
+                                ip = parts[1]
+                                if ip not in seen_domains:
+                                    seen_domains.add(ip)
+                                    rules.append(rule_str)
+                            elif rule_str.startswith("DOMAIN"):
+                                domain = parts[1]
+                                if domain not in seen_domains:
+                                    seen_domains.add(domain)
+                                    rules.append(rule_str)
             elif rule_type == "DOMAIN-SET":
                 download_index += 1
                 rule_content = download_rule(url, download_index, total_rules)
@@ -57,7 +73,8 @@ def process_rules(rule_definitions):
                 else:
                     for line in rule_content:
                         domain = line.strip()
-                        if domain:
+                        if domain and domain not in seen_domains:
+                            seen_domains.add(domain)
                             rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
