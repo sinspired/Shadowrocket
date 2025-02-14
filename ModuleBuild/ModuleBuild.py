@@ -40,13 +40,6 @@ def save_content(content, file_path):
     except IOError as e:
         print(f"Error saving content to {file_path}: {e}")
 
-def save_content(content, file_path):
-    try:
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-    except IOError as e:
-        print(f"Error saving content to {file_path}: {e}")
-
 def rewrite_to_sgmodule(js_content, project_name):
     if not re.search(r'hostname', js_content, re.IGNORECASE):
         return None
