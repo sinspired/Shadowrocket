@@ -132,7 +132,7 @@ localhost = 127.0.0.1
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-    output_file = os.path.join(script_dir, "ReferenceRulesLite.conf")
+    output_file = os.path.join(script_dir, "LocalRulesLite.conf")
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
