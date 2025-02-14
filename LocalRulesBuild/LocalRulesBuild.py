@@ -141,6 +141,7 @@ localhost = 127.0.0.1
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
 """
+        rules = [re.sub(r'\\b', r'\b', rule) for rule in rules]
         with open(file_name, 'w', encoding='utf-8') as f:
             f.write(header)
             f.write("\n".join(rules))
