@@ -79,9 +79,12 @@ def process_rules(rule_definitions):
                 else:
                     for line in rule_content:
                         domain = line.strip()
-                        if domain and domain not in seen_domains:
-                            seen_domains.add(domain)
-                            rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
+                        if domain:
+                            if domain.startswith('.'):
+                                domain = domain[1:]
+                            if domain not in seen_domains:
+                                seen_domains.add(domain)
+                                rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
 
