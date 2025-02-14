@@ -19,7 +19,7 @@ jobs:
         pip install requests
     - name: Run Python script
       run: |
-        python ReferenceRules/RuleLiteBuild.py
+        python ReferenceRules/RulesLiteBuild.py
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
