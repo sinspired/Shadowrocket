@@ -1,6 +1,5 @@
 import requests
 import os
-import re
 import sys
 import datetime
 
@@ -126,9 +125,9 @@ udp-policy-not-supported-behaviour = REJECT
 国际代理 = select, 香港优选, 狮城优选, 美国优选
 国内媒体 = select, DIRECT, 香港优选, 狮城优选, 美国优选
 国内直连 = select, DIRECT, 香港优选, 狮城优选, 美国优选
-香港优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bHK\b|🇭🇰|香港|香江|Hong\s?Kong)
-狮城优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bSG\b|🇸🇬|新加坡|狮城|Singapore)
-美国优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bUS\b|🇺🇸|美国|States|American)
+香港优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bHK\\b|🇭🇰|香港|香江|Hong\s?Kong)
+狮城优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bSG\\b|🇸🇬|新加坡|狮城|Singapore)
+美国优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bUS\\b|🇺🇸|美国|States|American)
 
 [Rule]
 """
@@ -142,7 +141,6 @@ localhost = 127.0.0.1
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
 """
-        rules = [re.sub(r'\\\\b', r'\\b', rule) for rule in rules]
         with open(file_name, 'w', encoding='utf-8') as f:
             f.write(header)
             f.write("\n".join(rules))
