@@ -110,22 +110,6 @@ private-ip-answer = true
 dns-direct-fallback-proxy = true
 udp-policy-not-supported-behaviour = REJECT
 
-[Proxy Group]
-骚扰拦截 = select, REJECT, DIRECT
-微信消息 = select, DIRECT, 狮城优选
-电报消息 = select, 狮城优选, 香港优选, 美国优选
-人工智能 = select, 美国优选, 香港优选, 狮城优选
-苹果服务 = select, DIRECT, 美国优选
-微软服务 = select, DIRECT, 美国优选
-谷歌服务 = select, 美国优选, 香港优选, 狮城优选
-国际媒体 = select, 香港优选, 狮城优选, 美国优选
-国际代理 = select, 香港优选, 狮城优选, 美国优选
-国内媒体 = select, DIRECT, 香港优选, 狮城优选, 美国优选
-国内直连 = select, DIRECT, 香港优选, 狮城优选, 美国优选
-香港优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bHK\b|🇭🇰|香港|香江|Hong\s?Kong)
-狮城优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bSG\b|🇸🇬|新加坡|狮城|Singapore)
-美国优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\bUS\b|🇺🇸|美国|States|American)
-
 [Rule]
 """
         
@@ -148,34 +132,34 @@ localhost = 127.0.0.1
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-    output_file = os.path.join(script_dir, "ReferenceRules.conf")
+    output_file = os.path.join(script_dir, "ReferenceRulesLite.conf")
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
-        ("RULE-SET", "Rules/BlockHttpDNS.list", "骚扰拦截"),
-        ("RULE-SET", "Rules/Hijacking.list", "骚扰拦截"),
-        ("RULE-SET", "Rules/Privacy.list", "骚扰拦截"),
-        ("DOMAIN-SET", "Rules/Privacy_Domain.list", "骚扰拦截"),
-        ("RULE-SET", "Rules/AdvertisingLite.list", "骚扰拦截"),
-        ("DOMAIN-SET", "Rules/AdvertisingLite_Domain.list", "骚扰拦截"),
-        ("RULE-SET", "Rules/WeChat.list", "微信消息"),
-        ("RULE-SET", "Rules/Telegram.list", "电报消息"),
-        ("RULE-SET", "Rules/OpenAI.list", "人工智能"),
-        ("RULE-SET", "Rules/Copilot.list", "人工智能"),
-        ("RULE-SET", "Rules/Gemini.list", "人工智能"),
-        ("RULE-SET", "Rules/Apple.list", "苹果服务"),
-        ("DOMAIN-SET", "Rules/Apple_Domain.list", "苹果服务"),
-        ("RULE-SET", "Rules/Microsoft.list", "微软服务"),
-        ("RULE-SET", "Rules/Google.list", "谷歌服务"),
-        ("RULE-SET", "Rules/GlobalMedia.list", "国际媒体"),
-        ("DOMAIN-SET", "Rules/GlobalMedia_Domain.list", "国际媒体"),
-        ("RULE-SET", "Rules/Global.list", "国际代理"),
-        ("DOMAIN-SET", "Rules/Global_Domain.list", "国际代理"),
-        ("RULE-SET", "Rules/ChinaMedia.list", "国内媒体"),
-        ("RULE-SET", "Rules/ChinaMaxNoMedia.list", "国内直连"),
-        ("DOMAIN-SET", "Rules/ChinaMaxNoMedia_Domain.list", "国内直连"),
-        ("GEOIP", "CN", "国内直连"),
-        ("FINAL", "国际代理"),
+        ("RULE-SET", "Rules/BlockHttpDNS.list", "REJECT"),
+        ("RULE-SET", "Rules/Hijacking.list", "REJECT"),
+        ("RULE-SET", "Rules/Privacy.list", "REJECT"),
+        ("DOMAIN-SET", "Rules/Privacy_Domain.list", "REJECT"),
+        ("RULE-SET", "Rules/AdvertisingLite.list", "REJECT"),
+        ("DOMAIN-SET", "Rules/AdvertisingLite_Domain.list", "REJECT"),
+        ("RULE-SET", "Rules/WeChat.list", "DIRECT"),
+        ("RULE-SET", "Rules/Telegram.list", "PROXY"),
+        ("RULE-SET", "Rules/OpenAI.list", "PROXY"),
+        ("RULE-SET", "Rules/Copilot.list", "PROXY"),
+        ("RULE-SET", "Rules/Gemini.list", "PROXY"),
+        ("RULE-SET", "Rules/Apple.list", "DIRECT"),
+        ("DOMAIN-SET", "Rules/Apple_Domain.list", "DIRECT"),
+        ("RULE-SET", "Rules/Microsoft.list", "DIRECT"),
+        ("RULE-SET", "Rules/Google.list", "PROXY"),
+        ("RULE-SET", "Rules/GlobalMedia.list", "PROXY"),
+        ("DOMAIN-SET", "Rules/GlobalMedia_Domain.list", "PROXY"),
+        ("RULE-SET", "Rules/Global.list", "PROXY"),
+        ("DOMAIN-SET", "Rules/Global_Domain.list", "PROXY"),
+        ("RULE-SET", "Rules/ChinaMedia.list", "DIRECT"),
+        ("RULE-SET", "Rules/ChinaMaxNoMedia.list", "DIRECT"),
+        ("DOMAIN-SET", "Rules/ChinaMaxNoMedia_Domain.list", "DIRECT"),
+        ("GEOIP", "CN", "DIRECT"),
+        ("FINAL", "PROXY"),
     ]
     rules, failed_rules = process_rules(rule_definitions)
     save_rules_to_file(rules, output_file)
