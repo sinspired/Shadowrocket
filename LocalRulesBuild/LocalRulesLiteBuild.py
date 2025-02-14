@@ -131,7 +131,7 @@ localhost = 127.0.0.1
         print(f"规则保存失败: {e}")
 
 def main():
-    script_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+    script_dir = os.getcwd()
     output_file = os.path.join(script_dir, "LocalRulesLite.conf")
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
