@@ -53,7 +53,7 @@
 ### [本地配置介绍](#本地配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`Rules.conf`或`RulesLite.conf`的规则，由生成器构建，安装后不依赖外部规则集，每日自动构建；<br>
+> 基于`Rules.conf`或`RulesLite.conf`的规则，由生成器每日自动构建，安装后不依赖外部规则集；<br>
 > **此配置很难自定义，如有个性需求，请慎重使用！**<br>
 > **此配置尚在开发阶段，有问题及时反馈！**<br>
 >
@@ -70,7 +70,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由'向晚'基于“墨鱼去广告模块”定制，修改部分功能，每日自动构建；<br>
+> 由'向晚'基于“墨鱼去广告模块”定制，重定义部分功能，由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`(Local)Rules.conf`或`(Local)RulesLite.conf`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
