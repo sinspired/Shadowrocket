@@ -17,7 +17,7 @@
 > 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装本配置文件")<br>
+> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：分流配置")<br>
 >
 #### `使用必看：`<br>
 > 本策略**默认使用Tun模式**接管所有流量；<br>
@@ -43,17 +43,31 @@
 >
 #### `配置功能介绍：`<br>
 > 基于Rules.conf精简，除不包含策略组以外，其余配置完全相同；<br>
-> 如不需要策略组及自动分流，**强烈建议使用此配置**；<br>
+> **如不需要策略组及自动分流，强烈建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装本配置文件")<br>
+> [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装：精简配置")<br>
+>
+------
+>
+### [本地配置介绍](#本地配置介绍)<br>
+>
+#### `配置功能介绍：`<br>
+> 基于Rules.conf及RulesLite.conf，由生成器构建，安装后不依赖外部规则集，每日自动构建；<br>
+> **此配置很难自定义，如有个性需求，请慎重使用！**<br>
+> **此配置尚在开发阶段，有问题及时反馈！**<br>
+>
+#### `配置安装：`<br>
+> [![一键安装 本地分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules.conf "一键安装：本地分流配置")<br>
+>
+> [![一键安装 本地精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesLite.conf "一键安装：本地精简配置")<br>
 >
 ------
 >
 ### [去广告融合模块](#去广告融合模块)<br>
 >
 #### `模块安装：`<br>
-> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装本模块")<br>
+> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
 > 由'向晚'基于“墨鱼去广告模块”定制，修改部分功能，每日自动构建；<br>
