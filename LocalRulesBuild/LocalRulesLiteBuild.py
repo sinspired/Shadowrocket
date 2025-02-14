@@ -159,8 +159,8 @@ def main():
         ("RULE-SET", "Rules/Global.list", "PROXY"),
         ("DOMAIN-SET", "Rules/Global_Domain.list", "PROXY"),
         ("RULE-SET", "Rules/ChinaMedia.list", "DIRECT"),
-        ("RULE-SET", "Rules/ChinaMaxNoMedia.list", "DIRECT"),
-        ("DOMAIN-SET", "Rules/ChinaMaxNoMedia_Domain.list", "DIRECT"),
+        ("RULE-SET", "Rules/ChinaNoMedia.list", "DIRECT"),
+        ("DOMAIN-SET", "Rules/ChinaNoMedia_Domain.list", "DIRECT"),
         ("GEOIP", "CN", "DIRECT"),
         ("FINAL", "PROXY"),
     ]

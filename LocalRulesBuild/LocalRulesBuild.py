@@ -175,8 +175,8 @@ def main():
         ("RULE-SET", "Rules/Global.list", "国际代理"),
         ("DOMAIN-SET", "Rules/Global_Domain.list", "国际代理"),
         ("RULE-SET", "Rules/ChinaMedia.list", "国内媒体"),
-        ("RULE-SET", "Rules/ChinaMaxNoMedia.list", "国内直连"),
-        ("DOMAIN-SET", "Rules/ChinaMaxNoMedia_Domain.list", "国内直连"),
+        ("RULE-SET", "Rules/ChinaNoMedia.list", "国内直连"),
+        ("DOMAIN-SET", "Rules/ChinaNoMedia_Domain.list", "国内直连"),
         ("GEOIP", "CN", "国内直连"),
         ("FINAL", "国际代理"),
     ]
