@@ -82,11 +82,8 @@
 > 软件净化：
 `YouTube（Maasea）`
 `哔哩哔哩(ddgksf2013)`
-`微博(ddgksf2013)`
 `小红书(ddgksf2013)`
 `菜鸟裹裹(ddgksf2013)`
-`知乎(ddgksf2013)`
-`皮皮虾(ddgksf2013)`
 `高德地图(XiangwanGuan)`
 `一汽大众(XiangwanGuan)`
 >
