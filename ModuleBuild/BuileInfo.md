@@ -3,11 +3,8 @@
 ##### 上架规则：<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf<br>
-https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf<br>
-https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js<br>
-https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js<br>
 https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
@@ -23,6 +20,9 @@ https://raw.githubusercontent.com/app2smile/rules/master/module/qidian.conf<br>
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/SuiShouJi.conf<br>
 https://raw.githubusercontent.com/app2smile/rules/master/module/qqnews.conf<br>
 https://gist.githubusercontent.com/ddgksf2013/f43026707830c7818ee3ba624e383c8d/raw/baiduCloud.adblock.js<br>
+https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Weibo.conf<br>
+https://gist.githubusercontent.com/ddgksf2013/d43179d848586d561dbb968dee93bae8/raw/Zhihu.Adblock.js<br>
+https://gist.githubusercontent.com/ddgksf2013/bb1dadbd32f67c68772caebcc70b0a33/raw/pipixia.adblock.js<br>
 
 ###### 有故障规则：<br>
 有故障：https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Amap.conf<br>
