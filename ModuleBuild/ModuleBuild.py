@@ -49,7 +49,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     sgmodule_content = f"""
 #!name={project_name}
 #!desc=基于墨鱼规则定制，每日自动构建；
-#!logtime={timestamp}
+#!update={timestamp}
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
