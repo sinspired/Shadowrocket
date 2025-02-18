@@ -125,6 +125,9 @@ localhost = 127.0.0.1
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
 ^https?://(www.)?google.cn https://www.google.com 302
+
+[MITM]
+hostname = *.google.cn
 """
         with open(file_name, 'w', encoding='utf-8') as f:
             f.write(header)
