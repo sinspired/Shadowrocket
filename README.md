@@ -3,7 +3,7 @@
 >
 ------
 >
-> [!CAUTION]
+> [!NOTE]
 > 
 > 禁止使用本仓库内的任何内容违法或用以牟利！如需转载请`标明作者`或`注明来源`！<br>
 > 若有其他需求可以访问 [Shadowrocket 官方群组](https://t.me/ShadowrocketApp)寻求帮助！<br>
