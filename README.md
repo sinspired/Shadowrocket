@@ -1,13 +1,12 @@
-> 
-![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)
-> 
-------
-> 
 ## [Shadowrocket -- 仓库自述](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > 本仓库提供由'向晚'维护的Shadowrocket分流规则、去广告模块，由生成器每日自动构建；<br>
-> 
+>
 ------
-> 
+>
+![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)<br>
+>
+------
+>
 ### [敬告](#敬告)<br>
 > 禁止使用本仓库内的任何内容，进行违法行为或用以牟利！如需转载请`标明作者`或`注明来源`！<br>
 > 若有其他需求可以访问 [Shadowrocket 官方群组](https://t.me/ShadowrocketApp)寻求帮助或进行反馈！<br>
