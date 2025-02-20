@@ -147,10 +147,8 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 >
 ------
 >
-### [Star History](#Star History)<br>
-<img src="https://api.star-history.com/svg?repos=XiangwanGuan/Shadowrocket&type=Date" alt="Star History Chart" width="600" height="356" align="center">
->
-### [回到顶部](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#readme)
+### [StarHistory](#StarHistory)<br>
+<img src="https://api.star-history.com/svg?repos=XiangwanGuan/Shadowrocket&type=Date" alt="Star History Chart" width="600" height="356" align="center"><br>
 >
 ------
 >
