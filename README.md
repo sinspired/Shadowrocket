@@ -1,9 +1,10 @@
-## [Shadowrocket -- 仓库自述](https://github.com/XiangwanGuan/Shadowrocket)<br>
-> 本仓库提供由'向晚'维护的Shadowrocket分流规则、去广告模块，由生成器每日自动构建；<br>
+> 
+![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)
 > 
 ------
 > 
-![Xiangwans GitHub Stats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)
+## [Shadowrocket -- 仓库自述](https://github.com/XiangwanGuan/Shadowrocket)<br>
+> 本仓库提供由'向晚'维护的Shadowrocket分流规则、去广告模块，由生成器每日自动构建；<br>
 > 
 ------
 > 
@@ -151,7 +152,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 >
 ------
 >
-### [星标历史](#星标历史)<br>
+### [StarHistory](#StarHistory)<br>
 <img src="https://api.star-history.com/svg?repos=XiangwanGuan/Shadowrocket&type=Date" alt="Star History Chart" width="600" height="356" align="center"><br>
 >
 ------
