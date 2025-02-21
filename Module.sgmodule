@@ -1,7 +1,7 @@
 
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每日自动构建；
-#!update=2025-02-20 09:52:39
+#!update=2025-02-21 09:52:47
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
