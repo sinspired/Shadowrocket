@@ -157,7 +157,7 @@ hostname = *.google.cn
 
 def main():
     script_dir = os.getcwd()
-    output_file = os.path.join(script_dir, "LocalRulesFull.conf")
+    output_file = os.path.join(script_dir, "LocalRules/LocalRulesFull.conf")
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
