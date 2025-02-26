@@ -85,14 +85,18 @@
 ### [本地配置介绍](#本地配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`Rules.conf`或`RulesLite.conf`的规则，由生成器每日自动构建，安装后不依赖外部规则集；<br>
+> 同步提供本仓库所有配置`本地化配置`，由生成器每日自动构建，安装后不依赖外部规则集；<br>
 > **此配置很难自定义，如有个性需求，请慎重使用！**<br>
 > **此配置尚在开发阶段，有问题及时反馈！**<br>
 >
 #### `配置安装：`<br>
 > [![一键安装 本地分流配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules.conf "一键安装：本地分流配置")<br>
 >
+> [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesFull.conf "一键安装：本地完整配置")<br>
+>
 > [![一键安装 本地精简配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesLite.conf "一键安装：本地精简配置")<br>
+>
+> [![一键安装 本地回国配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesBackCN.conf "一键安装：本地回国配置")<br>
 >
 ------
 >
@@ -103,7 +107,7 @@
 >
 #### `模块说明：`<br>
 > 由'向晚'基于“墨鱼去广告模块”定制，重定义部分功能，由生成器每日自动构建；<br>
-> 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`(Local)Rules.conf`或`(Local)RulesLite.conf`的Issues**，请悉知；<br>
+> 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 
