@@ -1,7 +1,7 @@
 name: Update LocalRulesLite
 on:
   schedule:
-    - cron: '6 0 * * *'
+    - cron: '12 0 * * *'
   workflow_dispatch:
 jobs:
   build:
