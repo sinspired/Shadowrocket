@@ -13,10 +13,10 @@
 >
 ------
 >
-### [分流配置介绍](#分流配置介绍)<br>
+### [配置功能介绍](#配置功能介绍)<br>
 >
-#### `配置功能介绍：`<br>
-> 自动分配策略组，无需手动切换节点；<br>
+#### `功能介绍：`<br>
+> 本策略**默认使用Tun模式**接管所有流量；<br>
 > 具有强大的广告拦截功能；<br>
 > 具有有效的防追踪/劫持功能；<br>
 > ChatGPT等AI工具单独分流；<br>
@@ -25,34 +25,39 @@
 > 国内地址/国际地址，国内媒体/国际媒体，可单独分流；<br>
 > 使用加密的DoH，防止DNS泄露，并有效屏蔽未加密的DNS查询；<br>
 > 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
+#### `如何安装：`<br>
+> 使用手机访问此页面，点击安装链接，一键跳转安装，即可完成安装；<br>
+> 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
 >
-#### `配置安装：`<br>
-> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：分流配置")<br>
+#### `修改分流：（仅适用于包含策略组的配置）`<br>
+> 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
+> 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
+>
+------
+>
+### [分流配置介绍](#分流配置介绍)<br>
+> 默认策略既是完整策略，无需调整；<br>
+> 自动分配策略组，无需手动切换节点；<br>
 >
 #### `使用必看：`<br>
-> 本策略**默认使用Tun模式**接管所有流量；<br>
-> 你所使用的节点，**必须包含`香港节点`，`美国节点`，`新加坡节点`的至少一项**；<br>
+> 你所使用的节点，**必须包含`香港节点`，`美国节点`，`新加坡节点`这三项**；<br>
 > 如不完全包含这三个地区节点，则需要自行修改分流/正则；<br>
 > 
 > 本策略默认规则如下：<br>
 > 国内应用直接连接；<br>
 > Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
 > 其他规则及未匹配到的规则使用`香港节点`；<br>
+> **此配置是最适合懒人的配置，如节点包含`港美新`，建议使用此配置！**<br>
 >
-#### `修改分流：`<br>
-> 打开Shadowrocket首页，下拉，选择你想要修改的分流，选择策略即可；<br>
-> 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
->
-#### `配置使用：`<br>
-> 使用手机访问此页面，点击链接，一键安装，应用即可；<br>
-> 如无法加载配置，请切换至[代理]模式，或自行检查网络；<br>
+#### `配置安装：`<br>
+> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：分流配置")<br>
 >
 ------
 >
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`Rules.conf`构建，包含更多策略组，默认使用首页节点，可自由分流，其余配置完全相同；<br>
+> 基于`Rules.conf`构建，包含更多策略组（港台日新美），**默认使用`首页节点`**，可自由分流，其余配置完全相同；<br>
 > **如需要更自由的策略组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
@@ -156,7 +161,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 > 设置-按需求连接：
 开启`始终开启`，其余开关勿动；<br>
 > 设置-配置：
-开启`自动后台更新`，间隔选择`7`；<br>
+开启`自动后台更新`，间隔选择`7`；（如有自定义配置，请勿开启）<br>
 > 设置-订阅：
 开启`自动后台更新`，间隔选择`24`；<br>
 > 设置-GeoLite2数据库：
