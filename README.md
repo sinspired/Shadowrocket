@@ -86,17 +86,17 @@
 >
 #### `配置功能介绍：`<br>
 > 同步提供本仓库所有配置`本地化配置`，由生成器每日自动构建，安装后不依赖外部规则集；<br>
-> **此配置很难自定义，如有个性需求，请慎重使用！**<br>
-> **此配置尚在开发阶段，有问题及时反馈！**<br>
+> **此类配置很难自定义，如有个性需求，请慎重使用！**<br>
+> **此类配置尚在开发阶段，有问题及时反馈！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 本地分流配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules.conf "一键安装：本地分流配置")<br>
+> [![一键安装 本地分流配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地分流配置")<br>
 >
-> [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesFull.conf "一键安装：本地完整配置")<br>
+> [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesFull.conf "一键安装：本地完整配置")<br>
 >
-> [![一键安装 本地精简配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesLite.conf "一键安装：本地精简配置")<br>
+> [![一键安装 本地精简配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesLite.conf "一键安装：本地精简配置")<br>
 >
-> [![一键安装 本地回国配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRulesBackCN.conf "一键安装：本地回国配置")<br>
+> [![一键安装 本地回国配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesBackCN.conf "一键安装：本地回国配置")<br>
 >
 ------
 >
