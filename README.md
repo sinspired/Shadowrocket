@@ -49,6 +49,17 @@
 >
 ------
 >
+### [完整配置介绍](#完整配置介绍)<br>
+>
+#### `配置功能介绍：`<br>
+> 基于`Rules.conf`构建，包含更多策略组，可以使用首页节点，不强制分流，其余配置完全相同；<br>
+> **如需要更自由的策略组及自动分流，建议使用此配置！**<br>
+>
+#### `配置安装：`<br>
+> [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesFull.conf "一键安装：完整配置")<br>
+>
+------
+>
 ### [精简配置介绍](#精简配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
