@@ -132,7 +132,7 @@ localhost = 127.0.0.1
 
 def main():
     script_dir = os.getcwd()
-    output_file = os.path.join(script_dir, "LocalRulesLite.conf")
+    output_file = os.path.join(script_dir, "LocalRulesBackCN.conf")
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
