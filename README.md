@@ -74,6 +74,18 @@
 >
 ------
 >
+### [回国配置介绍](#回国配置介绍)<br>
+>
+#### `配置功能介绍：`<br>
+> 基于`RulesLite.conf`构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
+> **此配置需搭配“回国机场”使用，不适合国内用户使用！**<br>
+>
+#### `配置安装：`<br>
+> [![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesBackCN.conf "一键安装：回国分流配置")<br>
+>
+------
+>
+
 ### [去广告融合模块](#去广告融合模块)<br>
 >
 #### `模块安装：`<br>
