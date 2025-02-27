@@ -2,6 +2,8 @@ name: Update GitHubPages
 on:
   push:
     branches: ["main"]
+    paths:
+      - "README.md"
   workflow_dispatch:
 permissions:
   contents: read
