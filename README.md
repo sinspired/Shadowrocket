@@ -1,6 +1,6 @@
 ## [Shadowrocket -- 仓库简介](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > [!NOTE]<br>
-> 本仓库提供由**向晚**维护的**Shadowrocket**相关规则，包含多款**配置文件**、一款**去广告模块**，由生成器每日自动构建；<br>
+> 本仓库提供由**向晚**维护的**Shadowrocket**的多款**配置文件**、一款**去广告模块**，由生成器每日自动构建；<br>
 >
 ------
 >
