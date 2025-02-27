@@ -1,8 +1,6 @@
 ## [Shadowrocket -- 仓库简介](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > [!NOTE]<br>
-> 本仓库提供由`向晚`维护的`Shadowrocket`相关规则，包含多款`配置文件`、一款`去广告模块`，由生成器每日自动构建；<br>
->
-![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)<br>
+> 本仓库提供由**向晚**维护的**Shadowrocket**相关规则，包含多款**配置文件**、一款**去广告模块**，由生成器每日自动构建；<br>
 >
 ------
 >
@@ -89,7 +87,7 @@
 >
 ### [本地配置介绍](#本地配置介绍)<br>
 >
-#### `配置功能介绍：`<br>
+#### `功能介绍：`<br>
 > 同步提供本仓库所有配置`本地化配置`，由生成器每日自动构建，安装后不依赖外部规则集；<br>
 > **此类配置很难自定义，如有个性需求，请慎重使用！**<br>
 > **此类配置尚在开发阶段，有问题及时反馈！**<br>
@@ -179,6 +177,10 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@Maasea*](https://github.com/Maasea/sgmodule)
 [*@wf021325*](https://github.com/wf021325/qx)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
+>
+------
+>
+![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)<br>
 >
 ------
 >
