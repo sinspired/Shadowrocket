@@ -95,14 +95,14 @@ youtube =type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtub
         filename = re.search(r'/([^/]+)$', script_path).group(1)
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
-        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1, timeout=60\n"
+        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1\n"
     script_content= '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content +=script_content
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=-1, timeout=60\n"
+        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=-1\n"
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
     unique_content = ','.join(sorted({item.strip() for item in mitm_match_content.split(',')}))
     mitm_match_content = unique_content
