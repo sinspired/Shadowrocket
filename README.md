@@ -167,7 +167,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 > 设置-GeoLite2数据库：
 开启`自动后台更新`，间隔选择`7`；<br>
 > 设置-GeoLite2数据库：
-国家-URL，长按后复制此链接：[*`Country.mmdb`*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，输入并点击更新；<br>
+国家-URL，长按后复制此链接：[*`Country.mmdb`*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，输入后点击更新；<br>
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
 >
