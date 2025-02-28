@@ -31,14 +31,14 @@
 >
 ------
 >
-### [基本配置介绍](#基本配置介绍)<br>
+### [基础配置介绍](#基础配置介绍)<br>
 #### `配置功能介绍：`<br>
-> 默认策略既是合理策略，无需调整；<br>
-> 代理分组自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
+> 默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
+> 代理分组内的策略自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**必须包含`香港节点`，`美国节点`，`新加坡节点`这三项**；<br>
-> 如不完全包含这三个地区的节点，则需要自行修改分组/正则；<br>
+> 如不完全包含这三个地区的节点，则需要自行修改代理分组/正则；<br>
 > 
 > 本配置默认规则如下：<br>
 > 国内应用直接连接；<br>
@@ -48,7 +48,7 @@
 > **此配置是最适合懒人的配置，如节点包含`港美新`，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 基本配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：基本配置")<br>
+> [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：基础配置")<br>
 >
 ------
 >
@@ -93,7 +93,7 @@
 > **此类配置尚在开发阶段，有问题及时反馈！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 本地基本配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地基本配置")<br>
+> [![一键安装 本地基础配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地基础配置")<br>
 >
 > [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesFull.conf "一键安装：本地完整配置")<br>
 >
