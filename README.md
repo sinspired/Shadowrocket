@@ -20,43 +20,43 @@
 > ChatGPT等AI工具单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > Apple/Microsoft/Google单独分流；<br>
-> 国内地址/国际地址，国内媒体/国际媒体，可单独分流；<br>
+> 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
 > 完善的规则，配合Shadowrocket的配置自动更新，一次操作，无须后续操作；<br>
 #### `如何安装：`<br>
 > 使用手机访问此页面，点击安装链接，一键跳转安装，即可完成安装；<br>
 > 如无法加载配置，请将全局路由切换至[代理]模式，或自行检查网络；<br>
 >
-#### `修改分流：`（仅适用于包含策略组的配置）<br>
+#### `修改分流：`（仅适用于包含代理分组的配置）<br>
 > 打开Shadowrocket首页，下拉，选择你想要修改的代理分组，选择策略即可；<br>
 >
 ------
 >
-### [分流配置介绍](#分流配置介绍)<br>
+### [基本配置介绍](#基本配置介绍)<br>
 #### `配置功能介绍：`<br>
-> 默认策略既是完整策略，无需调整；<br>
-> 自动分配策略组，无需手动切换节点；<br>
+> 默认策略既是合理策略，无需调整；<br>
+> 代理分组自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**必须包含`香港节点`，`美国节点`，`新加坡节点`这三项**；<br>
 > 如不完全包含这三个地区的节点，则需要自行修改分组/正则；<br>
 > 
-> 本策略默认规则如下：<br>
+> 本配置默认规则如下：<br>
 > 国内应用直接连接；<br>
 > Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
 > 其他规则及未匹配到的规则使用`香港节点`；<br>
-> 为了保证完全接管流量，本策略**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
+> 为了保证完全接管流量，本配置**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
 > **此配置是最适合懒人的配置，如节点包含`港美新`，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 分流配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：分流配置")<br>
+> [![一键安装 基本配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：基本配置")<br>
 >
 ------
 >
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`Rules.conf`构建，包含更多策略组（港台日新美），**默认使用`首页节点`分流**，可自由配置分组，其余配置完全相同；<br>
-> **如需要更自由的策略组及自动分流，建议使用此配置！**<br>
+> 基于`Rules.conf`构建，包含更多代理分组（港台日新美），**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
+> **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
 > [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesFull.conf "一键安装：完整配置")<br>
@@ -66,8 +66,8 @@
 ### [精简配置介绍](#精简配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`Rules.conf`构建，除不包含策略组以外，其余配置完全相同；<br>
-> **如不需要策略组及自动分流，强烈建议使用此配置！**<br>
+> 基于`Rules.conf`构建，除不包含代理分组以外，其余配置完全相同；<br>
+> **如不需要代理分组及自动分流，强烈建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
 > [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/RulesLite.conf "一键安装：精简配置")<br>
@@ -93,7 +93,7 @@
 > **此类配置尚在开发阶段，有问题及时反馈！**<br>
 >
 #### `配置安装：`<br>
-> [![一键安装 本地分流配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地分流配置")<br>
+> [![一键安装 本地基本配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地基本配置")<br>
 >
 > [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesFull.conf "一键安装：本地完整配置")<br>
 >
