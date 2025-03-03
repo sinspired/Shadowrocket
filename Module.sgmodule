@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每日自动构建；
-#!update=2025-03-03 16:34:28
+#!update=2025-03-03 16:38:24
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
@@ -509,7 +509,7 @@ hanglvzongheng.js =type=http-response, pattern=^https?:\/\/.*umetrip\.com\.cn\/g
 iqiyi_open_ads.js =type=http-response, pattern=^https?:\/\/.*cupid\.iqiyi\.com\/mixer\?, script-path=https://github.com/ddgksf2013/Scripts/raw/master/iqiyi_open_ads.js, requires-body=true, max-size=-1
 ithome.js =type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/news\/indexv\d\/iphone, script-path=https://github.com/ddgksf2013/Scripts/raw/master/ithome.js, requires-body=true, max-size=-1
 jd_json.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms), script-path=https://github.com/ddgksf2013/Scripts/raw/master/jd_json.js, requires-body=true, max-size=-1
-jd_price.js =type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://github.com/mw418/Loon/blob/main/script/jd_price.js, requires-body=true, max-size=-1
+jd_price.js =type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js, requires-body=true, max-size=-1
 pinganads.js =type=http-response, pattern=^https?:\/\/api\.jk\.cn\/m\.api, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pinganads.js, requires-body=true, max-size=-1
 pupumarket.js =type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v\d\?position, script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pupumarket.js, requires-body=true, max-size=-1
 qidian.js =type=http-response, pattern=^https?:\/\/apps\.teamair\.cn\/app\/version, script-path=https://github.com/ddgksf2013/Scripts/raw/master/qidian.js, requires-body=true, max-size=-1
