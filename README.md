@@ -116,16 +116,18 @@
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 
 > 融合功能说明：<br>
-> 功能模块：
+> 功能模块：<br>
 `墨鱼去开屏(ddgksf2013)`
-`京东历史比价(mw418)(需开启Shadowrocket通知权限)`<br>
-> 软件净化：
+`京东历史比价(mw418)`<br>
+> 软件净化：<br>
 `YouTube(Maasea)`
 `哔哩哔哩(ddgksf2013)`
 `小红书(ddgksf2013)`
 `菜鸟裹裹(ddgksf2013)`
 `高德地图(XiangwanGuan)`
 `一汽大众(XiangwanGuan)`
+> 特别说明：<br>
+> 使用`京东历史比价`，必须开启Shadowrocket的通知权限；<br>
 >
 ------
 >
