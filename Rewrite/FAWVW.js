@@ -23,6 +23,7 @@ hostname = oneapp-api.faw-vw.com
 try {
     const jsonResponse = {
         returnStatus: "SUCCEED",
+        hasMore: false,
         data: []
     };
     const responseBody = JSON.stringify(jsonResponse);
