@@ -1,7 +1,7 @@
 /*
 # 京东比价
 # 由向晚维护；
-# 脚本修改来源 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
+# 脚本修改来源 https://github.com/mw418/Loon/blob/main/script/jd_price.js
 
 [rewrite_local]
 ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/jd_price.js
@@ -141,32 +141,25 @@ function request_history_price(share_url) {
 }
 
 function Env(t, e) {
-    class s {
-      constructor(t) {
-        this.env = t;
+    class HttpClient {
+      constructor(env) {
+        this.env = env;
       }
       send(t, e = "GET") {
-        t = "string" == typeof t ? { url: t } : t;
-        let s = this.get;
-        if ("POST" === e) s = this.post;
-        const i = new Promise((e, i) => {
-          s.call(this, t, (t, s, o) => {
-            t ? i(t) : e(s);
+        const method = e === "POST" ? this.post : this.get;
+        const requestPromise = new Promise((resolve, reject) => {
+          method.call(this.env, t, (err, response) => {
+            err ? reject(err) : resolve(response);
           });
         });
-        return t.timeout
-          ? ((t, e = 1000) =>
-              Promise.race([t, new Promise((t, s) => {
-                setTimeout(() => {
-                  s(new Error("请求超时"));
-                }, e);
-              })]))(i, t.timeout)
-          : i;
+        return t.timeout ? this.timeout(requestPromise, t.timeout) : requestPromise;
+      }
+      timeout(promise, ms) {
+        return Promise.race([promise, new Promise((_, reject) => setTimeout(() => reject(new Error("请求超时")), ms))]);
       }
       get(t) {
         return this.send.call(this.env, t);
       }
-  
       post(t) {
         return this.send.call(this.env, t, "POST");
       }
@@ -174,58 +167,83 @@ function Env(t, e) {
     return new class {
       constructor(t, e) {
         this.name = t;
-        this.http = new s(this);
+        this.http = new HttpClient(this);
         this.data = null;
         this.dataFile = "box.dat";
         this.isMute = false;
         this.isNeedRewrite = false;
+        this.encoding = "utf-8";
         this.startTime = new Date().getTime();
         Object.assign(this, e);
       }
-      msg(e = "", s = "", i = "", o = {}) {
-        if (!this.isMute) {
-          const r = t => {
-            const { $open: e, $copy: s, $media: i, $mediaMime: o } = t;
-            switch (typeof t) {
-              case "string":
-                return { url: t };
-              case "object":
-                const r = {};
-                let a = t.openUrl || t.url || t["open-url"] || e;
-                a && Object.assign(r, { action: "open-url", url: a });
-                let n = t["update-pasteboard"] || t.updatePasteboard || s;
-                n && Object.assign(r, { action: "clipboard", text: n });
-                if (i) {
-                  let t, e, s;
-                  if (i.startsWith("http")) t = i;
-                  else if (i.startsWith("data:")) {
-                    const [a] = i.split(";");
-                    [, o] = i.split(",");
-                    e = o;
-                    s = a.replace("data:", "");
-                  } else {
-                    e = i;
-                    s = (t => {
-                      const e = { JVBERi0: "application/pdf", R0lGODdh: "image/gif", iVBORw0KGgo: "image/png" };
-                      for (var s in e)
-                        if (0 === t.indexOf(s)) return e[s];
-                      return null;
-                    })(i);
-                  }
-                  Object.assign(r, { "media-url": t, "media-base64": e, "media-base64-mime": o ?? s });
-                }
-                return Object.assign(r, { "auto-dismiss": t["auto-dismiss"], sound: t.sound });
-              default:
-                return {};
+      getEnv() {
+        return typeof $rocket !== "undefined" ? "Shadowrocket" : undefined;
+      }
+      getdata(t) {
+        return this.isShadowrocket() ? $persistentStore.read(t) : this.data && this.data[t] || null;
+      }
+      setdata(t, e) {
+        return this.isShadowrocket() ? $persistentStore.write(t, e) : (this.data[e] = t, this.writedata(), true);
+      }
+      loaddata() {
+        if (!this.isNode()) return {};
+        const fs = require("fs");
+        const path = require("path");
+        const filePath = path.resolve(this.dataFile) || path.resolve(process.cwd(), this.dataFile);
+        if (!fs.existsSync(filePath)) return {};
+        try {
+          return JSON.parse(fs.readFileSync(filePath));
+        } catch (e) {
+          return {};
+        }
+      }
+      writedata() {
+        if (this.isNode()) {
+          const fs = require("fs");
+          const path = require("path");
+          const filePath = path.resolve(this.dataFile) || path.resolve(process.cwd(), this.dataFile);
+          fs.writeFileSync(filePath, JSON.stringify(this.data));
+        }
+      }
+      initGotEnv(t) {
+        this.got = this.got || require("got");
+        this.cktough = this.cktough || require("tough-cookie");
+        this.ckjar = this.ckjar || new this.cktough.CookieJar();
+        if (t) {
+          t.headers = t.headers || {};
+          t.headers.cookie = t.headers.cookie || t.cookieJar && (t.cookieJar = this.ckjar);
+        }
+      }
+      get(t, e = () => {}) {
+        if (this.getEnv() === "Shadowrocket") {
+          $httpClient.get(t, (err, res, body) => {
+            if (!err && res) {
+              res.body = body;
+              res.statusCode = res.status || res.statusCode;
+              res.status = res.statusCode;
             }
-          };
-          $notification.post(e, s, i, r(o));
+            e(err, res, body);
+          });
+        }
+      }
+      post(t, e = () => {}) {
+        const method = t.method ? t.method.toLowerCase() : "post";
+        if (this.getEnv() === "Shadowrocket") {
+          $httpClient[method](t, (err, res, body) => {
+            if (!err && res) {
+              res.body = body;
+              res.statusCode = res.status || res.statusCode;
+              res.status = res.statusCode;
+            }
+            e(err, res, body);
+          });
         }
       }
       done(t = {}) {
-        const e = (new Date().getTime() - this.startTime) / 1000;
-        $done(t);
+        const duration = (new Date().getTime() - this.startTime) / 1000;
+        if (this.getEnv() === "Shadowrocket") {
+          $done(t);
+        }
       }
     }(t, e);
   }
-  

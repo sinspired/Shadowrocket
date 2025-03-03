@@ -118,7 +118,7 @@
 > 融合功能说明：<br>
 > 功能模块：
 `墨鱼去开屏(ddgksf2013)`
-`京东历史比价(wf021325)`<br>
+`京东历史比价(XiangwanGuan)`<br>
 > 软件净化：
 `YouTube(Maasea)`
 `哔哩哔哩(ddgksf2013)`
@@ -178,7 +178,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
-[*@wf021325*](https://github.com/wf021325/qx)
+[*@mw418*](https://github.com/mw418/Loon)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
 >
 ------
