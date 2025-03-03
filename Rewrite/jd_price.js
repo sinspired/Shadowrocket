@@ -172,33 +172,14 @@ function Env(t, e) {
     }
     return new class {
       constructor(t, e) {
-        this.logLevels = { debug: 0, info: 1, warn: 2, error: 3 };
-        this.logLevelPrefixs = { debug: "[DEBUG] ", info: "[INFO] ", warn: "[WARN] ", error: "[ERROR] " };
-        this.logLevel = "info";
         this.name = t;
         this.http = new s(this);
         this.data = null;
         this.dataFile = "box.dat";
-        this.logs = [];
         this.isMute = false;
         this.isNeedRewrite = false;
-        this.logSeparator = "\n";
-        this.encoding = "utf-8";
         this.startTime = new Date().getTime();
         Object.assign(this, e);
-        this.log("", `🔔${this.name}, 开始!`);
-      }
-      isShadowrocket() {
-        return "Shadowrocket" === this.getEnv();
-      }
-      getEnv() {
-        return "undefined" != typeof $rocket ? "Shadowrocket" : undefined;
-      }
-      log(...t) {
-        if (t.length > 0) {
-          this.logs = [...this.logs, ...t];
-          console.log(t.map((t) => t ?? String(t)).join(this.logSeparator));
-        }
       }
       msg(e = "", s = "", i = "", o = {}) {
         if (!this.isMute) {
@@ -242,9 +223,8 @@ function Env(t, e) {
       }
       done(t = {}) {
         const e = (new Date().getTime() - this.startTime) / 1000;
-        this.log("", `🔔${this.name}, 结束! 🕛 ${e} 秒`);
-        this.log();
         $done(t);
       }
     }(t, e);
   }
+  
