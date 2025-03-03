@@ -165,7 +165,6 @@ function Env(t, e) {
       get(t) {
         return this.send.call(this.env, t);
       }
-  
       post(t) {
         return this.send.call(this.env, t, "POST");
       }
@@ -227,4 +226,3 @@ function Env(t, e) {
       }
     }(t, e);
   }
-  
