@@ -4,7 +4,7 @@
 # 脚本修改来源 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
 
 [rewrite_local]
-^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/jd_price.js
 
 [mitm]
 hostname = in.m.jd.com
