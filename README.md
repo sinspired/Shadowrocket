@@ -118,7 +118,7 @@
 > 融合功能说明：<br>
 > 功能模块：
 `墨鱼去开屏(ddgksf2013)`
-`京东历史比价(mw418)`<br>
+`京东历史比价(mw418)(需开启Shadowrocket通知权限)`<br>
 > 软件净化：
 `YouTube(Maasea)`
 `哔哩哔哩(ddgksf2013)`
