@@ -115,18 +115,18 @@
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 特别说明：使用`京东历史比价`，必须开启Shadowrocket的**通知权限**；<br>
-> 
-#### `融合功能说明：`<br>
-> `功能模块：`<br>
-[*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
-[*京东历史比价(mw418)(弹窗通知版)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
-> `软件净化：`<br>
-[*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
-[*哔哩哔哩(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
-[*小红书(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
-[*菜鸟裹裹(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
-[*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
-[*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
+>
+#### `融合说明：`<br>
+##### `功能模块：`<br>
+> [*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
+> [*京东历史比价(mw418)(弹窗通知版)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
+##### `软件净化：`<br>
+> [*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
+> [*哔哩哔哩(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
+> [*小红书(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
+> [*菜鸟裹裹(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
+> [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
+> [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
 ------
 >
