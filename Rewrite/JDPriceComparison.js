@@ -1,6 +1,7 @@
 /*
 # 京东比价
-# 由向晚维护；
+# 京东比价，历史价格查询；
+# 由向晚整合维护；
 # 脚本修改来源 https://github.com/mw418/Loon/blob/main/script/jd_price.js
 
 [rewrite_local]

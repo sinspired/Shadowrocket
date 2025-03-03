@@ -1,7 +1,7 @@
 /*
 # 高德地图
 # 去除广告和无关内容，无需卸载重装；
-# 由向晚维护；
+# 由向晚改写维护；
 
 [rewrite_local]
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? url reject-dict
