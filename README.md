@@ -117,15 +117,15 @@
 > 
 > 融合功能说明：<br>
 > 功能模块：<br>
-`墨鱼去开屏(ddgksf2013)`
-`京东历史比价(mw418)`<br>
+[*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)
+[*京东历史比价(mw418)(弹窗通知版)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 > 软件净化：<br>
-`YouTube(Maasea)`
-`哔哩哔哩(ddgksf2013)`
-`小红书(ddgksf2013)`
-`菜鸟裹裹(ddgksf2013)`
-`高德地图(XiangwanGuan)`
-`一汽大众(XiangwanGuan)`
+[*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)
+[*哔哩哔哩(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)
+[*小红书(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)
+[*菜鸟裹裹(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)
+[*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)
+[*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 > 特别说明：<br>
 > 使用`京东历史比价`，必须开启Shadowrocket的通知权限；<br>
 >
