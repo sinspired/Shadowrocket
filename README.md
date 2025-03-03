@@ -147,7 +147,7 @@
 #!name = 证书模块
 [MITM]
 enable = true
-ca-passphrase = 证书密码（即「已安装证书的配置文件」的证书密码，默认密码是Shadowrocket）
+ca-passphrase = Shadowrocket（即「已安装证书的配置文件」的证书密码，Shadowrocket是默认密码；）
 ca-p12 = 证书内容（即剪贴板复制的内容）
 ```
 >按说明填写`证书密码`和`证书内容`，保存即可；<br>
