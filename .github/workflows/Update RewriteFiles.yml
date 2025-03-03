@@ -21,7 +21,6 @@ jobs:
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Bilibili.conf"
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/XiaoHongShu.conf"
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/Cainiao.conf"
-          "https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js"
         )
         for LINK in "${LINKS[@]}"; do
           FILE_NAME=$(basename $LINK)
