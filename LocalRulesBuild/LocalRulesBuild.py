@@ -131,6 +131,7 @@ udp-policy-not-supported-behaviour = REJECT
 美国优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bUS\\b|🇺🇸|美国|States|American)
 
 [Rule]
+AND, ((PROTOCOL, UDP), (DST-PORT, 443)), REJECT-NO-DROP
 """
         
         footer = """
