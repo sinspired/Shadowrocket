@@ -1,9 +1,9 @@
 #!name=融合模块
 #!desc=基于墨鱼规则定制，每日自动构建；
-#!update=2025-03-04 21:49:10
+#!update=2025-03-04 22:04:54
 
 [Rule]
-AND, ((PROTOCOL, UDP), (DST-PORT, 443)), REJECT-NO-DROP
+AND, ((PROTOCOL,UDP), (DST-PORT,443)), REJECT-NO-DROP
 
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject
