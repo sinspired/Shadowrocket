@@ -115,7 +115,7 @@ dns-direct-fallback-proxy = true
 udp-policy-not-supported-behaviour = REJECT
 
 [Rule]
-AND, ((PROTOCOL,UDP), (DST-PORT,443)), REJECT-NO-DROP
+AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 """
         
         footer = """
