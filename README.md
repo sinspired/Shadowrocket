@@ -111,7 +111,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由`向晚`基于`墨鱼去开屏`与`奶思去广告`定制，可去除常见应用的开屏广告，及部分应用的内置广告，由生成器每日自动构建；<br>
+> 由`向晚`基于`墨鱼去开屏`与`奶思去广告`定制，可去除常见应用的开屏广告，及部分应用的内置广告，部分规则由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
@@ -120,21 +120,21 @@
 >
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
-> [*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
-> [*京东历史比价(mw418)(弹窗通知版)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
+> [*墨鱼去开屏(ddgksf2013)(生成器自动构建)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
+> [*京东历史比价(mw418)(弹窗通知版)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
-> [*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
-> [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
-> [*皮皮虾(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf)<br>
-> [*哔哩哔哩(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
-> [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
-> [*闲鱼(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
-> [*淘宝(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Taobao.conf)<br>
-> [*菜鸟裹裹(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
-> [*什么值得买(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
-> [*滴滴出行(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/DidiTaxi.conf)<br>
-> [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
-> [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
+> [*YouTube(Maasea)(由向晚维护)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
+> [*小红书(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
+> [*皮皮虾(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf)<br>
+> [*哔哩哔哩(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
+> [*知乎(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
+> [*闲鱼(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
+> [*淘宝(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Taobao.conf)<br>
+> [*菜鸟裹裹(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
+> [*什么值得买(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
+> [*滴滴出行(fmz200)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/DidiTaxi.conf)<br>
+> [*高德地图(XiangwanGuan)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
+> [*一汽大众(XiangwanGuan)(由向晚维护)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
 ------
 >
