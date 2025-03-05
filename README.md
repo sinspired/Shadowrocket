@@ -128,6 +128,7 @@
 > [*喜马拉雅(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Ximalaya.conf)<br>
 > [*菜鸟裹裹(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
 > [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
+> [*咸鱼(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
 > [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
 > [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
