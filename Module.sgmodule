@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
-#!update=2025-03-05 17:35:39
+#!update=2025-03-05 17:39:00
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -10,6 +10,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/2025.03.03/c370/v2.0.570 - reject
 ^http:\/\/.*babytree\.com/(plough\.do|go_search\/api\/mobile_search_new\/get_multi_search_default_keywords) - reject
 ^http:\/\/ads.?s?ervice(retry)?\.(kugou|kglink).(com|cn)\/v\d\/ - reject
+^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 ^http:\/\/app\.api\.d3yuiw4\.com\/api\/app\/ad - reject
 ^http:\/\/gateway2\.etnet\.com\.hk\/etnetApp\/theme\/seasonal\/v30\/theme.json - reject
 ^http:\/\/m\.meitun\.com\/newapi\/router\/topic\/hometptf\/feedRecommend - reject
@@ -135,6 +136,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/adx-cn\.anythinktech\.com\/bid - reject
 ^https?:\/\/adx.*anythinktech\.com\/bid - reject
 ^https?:\/\/aikanvod\.miguvideo\.com\/video\/p\/i_adverseInterface\.jsp - reject
+^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ - reject
 ^https?:\/\/api-access\.[0-9a-zA-Z_-]+\.com\/api\/ad - reject
 ^https?:\/\/api-new\.app\.acfun\.cn\/rest\/app\/flash\/screen\/ - reject
 ^https?:\/\/api-one-wscn\.awtmt\.com\/apiv\d\/advertising\/ads - reject
