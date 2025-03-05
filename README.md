@@ -124,7 +124,7 @@
 > [*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
 > [*京东历史比价(mw418)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
-> [*YouTube(Maasea)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
+> [*YouTube(iab0x00)*](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
 > [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
 > [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
 > [*皮皮虾(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf)<br>
@@ -185,7 +185,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
-[*@Maasea*](https://github.com/Maasea/sgmodule)
+[*@iab0x00*](https://github.com/iab0x00/ProxyRules)
 [*@mw418*](https://github.com/mw418/Loon)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
 >
