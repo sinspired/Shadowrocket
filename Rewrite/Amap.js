@@ -9,7 +9,7 @@
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution url reject
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend url reject-dict
 ^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif url reject-img
-^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
+^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amdc.js
 ^https?://.*.amap.com/ws/valueadded/alimama/splash_screen url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 ^https?://.*.amap.com/ws/message/notice/list url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 ^https?://.*.amap.com/ws/shield/frogserver/aocs/updatable url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
