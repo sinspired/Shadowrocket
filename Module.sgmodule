@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
-#!update=2025-03-05 16:46:39
+#!update=2025-03-05 17:07:30
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -496,7 +496,6 @@ Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/near
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/new_hotword, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/valueadded/alimama/splash_screen, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1
 Amdc.js =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amdc.js, requires-body=true, max-size=-1
-Amdc.js =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amdc.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_CAR_ZHIHU_COLLEGE, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_BANNER, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_KONGO, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
@@ -543,7 +542,6 @@ didiAds.js =type=http-response, pattern=^https?:\/\/res\.xiaojukeji\.com\/resapi
 didiAds.js =type=http-response, pattern=^https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js, requires-body=true, max-size=-1
 fly.js =type=http-response, pattern=^https?:\/\/.*flyert.*\/source\/plugin\/mobile\/mobile\.php\?module=threadpost&.+?&page=1, script-path=https://github.com/ddgksf2013/Scripts/raw/master/fly.js, requires-body=true, max-size=-1
 hanglvzongheng.js =type=http-response, pattern=^https?:\/\/.*umetrip\.com\.cn\/gateway\/api\/umetrip\/native$, script-path=https://github.com/ddgksf2013/Scripts/raw/master/hanglvzongheng.js, requires-body=true, max-size=-1
-header.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/header.js, requires-body=true, max-size=-1
 iqiyi_open_ads.js =type=http-response, pattern=^https?:\/\/.*cupid\.iqiyi\.com\/mixer\?, script-path=https://github.com/ddgksf2013/Scripts/raw/master/iqiyi_open_ads.js, requires-body=true, max-size=-1
 ithome.js =type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/news\/indexv\d\/iphone, script-path=https://github.com/ddgksf2013/Scripts/raw/master/ithome.js, requires-body=true, max-size=-1
 jd_json.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(hotWords|hotSearchTerms), script-path=https://github.com/ddgksf2013/Scripts/raw/master/jd_json.js, requires-body=true, max-size=-1
