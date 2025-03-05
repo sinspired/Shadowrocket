@@ -129,6 +129,7 @@
 > [*哔哩哔哩(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
 > [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
 > [*闲鱼(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
+> [*淘宝(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Taobao.conf)<br>
 > [*菜鸟裹裹(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
 > [*什么值得买(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
 > [*滴滴出行(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/DidiTaxi.conf)<br>
