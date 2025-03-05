@@ -125,6 +125,7 @@
 ##### `软件净化：`<br>
 > [*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
 > [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
+> [*皮皮虾(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf.conf)<br>
 > [*哔哩哔哩(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
 > [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
 > [*闲鱼(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
