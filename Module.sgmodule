@@ -1,6 +1,6 @@
 #!name=融合模块
-#!desc=基于墨鱼规则定制，每日自动构建；
-#!update=2025-03-05 09:39:59
+#!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
+#!update=2025-03-05 09:46:35
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
