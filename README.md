@@ -111,7 +111,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由`向晚`基于`墨鱼去广告模块`定制，重定义部分功能，由生成器每日自动构建；<br>
+> 由`向晚`基于`墨鱼去开屏`与`奶思去广告定制`，重定义部分功能，由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
@@ -123,9 +123,9 @@
 > [*京东历史比价(mw418)(弹窗通知版)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
 > [*YouTube(Maasea)(手动构建)*](https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/YouTube.Enhance.sgmodule)<br>
-> [*哔哩哔哩(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
-> [*小红书(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
-> [*菜鸟裹裹(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
+> [*哔哩哔哩(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
+> [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
+> [*菜鸟裹裹(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
 > [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
 > [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
@@ -179,6 +179,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 ### [鸣谢：](#鸣谢：)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
+[*@fmz200*](https://github.com/fmz200/wool_scripts)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
 [*@mw418*](https://github.com/mw418/Loon)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
