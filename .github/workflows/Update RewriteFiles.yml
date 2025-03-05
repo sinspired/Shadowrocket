@@ -18,7 +18,7 @@ jobs:
         mkdir -p Rewrite
         LINKS=(
           "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf"
-          "https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt"
+          "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         )
         for LINK in "${LINKS[@]}"; do
           FILE_NAME=$(basename $LINK)
