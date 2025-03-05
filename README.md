@@ -129,6 +129,7 @@
 > [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
 > [*闲鱼(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Xianyu.conf)<br>
 > [*菜鸟裹裹(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Cainiao.conf)<br>
+> [*滴滴出行(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/DidiTaxi.conf)<br>
 > [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
 > [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
