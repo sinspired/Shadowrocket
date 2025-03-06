@@ -178,6 +178,8 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 国家-URL，长按后复制此链接：[*`Country.mmdb`*](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，输入后点击更新；<br>
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
+>更多详情，可参阅：[*使用手册*](https://github.com/LOWERTOP/Shadowrocket)！
+
 >
 ------
 >
