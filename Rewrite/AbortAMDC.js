@@ -4,7 +4,7 @@
 # 由向晚重写维护；
 
 [rewrite_local]
-^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliUserAgent.js
+^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AbortAMDC.js
 
 */
 
