@@ -2,10 +2,6 @@
 # 阿里AMDC脚本
 # 根据 User-Agent 判断请求来源，并修改匹配的请求的响应内容；
 # 由向晚重写维护，生成器直接引用；
-
-[rewrite_local]
-^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AbortAMDC.js
-
 */
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
