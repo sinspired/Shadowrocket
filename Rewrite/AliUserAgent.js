@@ -1,13 +1,11 @@
 /*
-AMDC脚本
-# 根据 User-Agent 判断请求来源，并修改匹配的请求的响应内容
+# 阿里AMDC脚本
+# 根据 User-Agent 判断请求来源，并修改匹配的请求的响应内容；
 # 由向晚重写维护；
 
 [rewrite_local]
-^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amdc.js
+^http:\/\/amdc\.m\.taobao\.com url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliUserAgent.js
 
-[mitm]
-hostname = amdc.m.taobao.com
 */
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
