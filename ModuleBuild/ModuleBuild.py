@@ -108,7 +108,7 @@ AMDC.js =type=http-response, pattern=^http:\/\/amdc\.m\.taobao\.com, script-path
     mitm_match_content = unique_content
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% *.googlevideo.com, youtubei.googleapis.com,{mitm_match_content}
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,{mitm_match_content}
 """
     return sgmodule_content
 
