@@ -24,83 +24,72 @@ hostname = *.amap.com
 */
 
 var obj = JSON.parse($response.body);
-if ($request.url.indexOf("search/nearbyrec_smart") !== -1) {
+let modified = false;
+if ($request.url.includes("search/nearbyrec_smart")) {
     let fieldsToRemove = ["coupon", "scene", "activity", "commodity_rec", "operation_activity"];
     if (obj.data) {
-        fieldsToRemove.forEach(field => {
+        for (let field of fieldsToRemove) {
             delete obj.data[field];
-        });
-        if (obj.data.modules) {
+        }
+        if (Array.isArray(obj.data.modules)) {
             obj.data.modules = obj.data.modules.filter(module => 
-                !fieldsToRemove.includes(module)
+                !fieldsToRemove.includes(module.name)
             );
         }
+        modified = true;
     }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("valueadded/alimama/splash_screen") !== -1) {
-    if (obj.data && obj.data.ad) {
+} else if ($request.url.includes("valueadded/alimama/splash_screen")) {
+    if (obj.data?.ad) {
         for (let ad of obj.data.ad) {
-            ad.set.setting.display_time = 0;
-            ad.creative[0].start_time = 2240150400;
-            ad.creative[0].end_time = 2240150400;
+            if (ad.set?.setting) {
+                ad.set.setting.display_time = 0;
+            }
+            if (Array.isArray(ad.creative)) {
+                for (let creative of ad.creative) {
+                    creative.start_time = 2240150400;
+                    creative.end_time = 2240150400;
+                }
+            }
         }
+        modified = true;
     }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("faas/amap-navigation/main-page") !== -1) {
-    if (obj.data?.cardList) {
-        obj.data.cardList = Object.values(obj.data.cardList).filter(a => 
-            a.dataType === "LoginCard" || a.dataType === "FrequentLocation"
-        );
+} else if ($request.url.includes("faas/amap-navigation/main-page")) {
+    if (Array.isArray(obj.data?.cardList)) {
+        const allowedCards = new Set(["LoginCard", "FrequentLocation"]);
+        obj.data.cardList = obj.data.cardList.filter(a => allowedCards.has(a.dataType));
     }
-    if (obj.data?.pull3?.msgs) {
-        obj.data.pull3.msgs = [];
+    if (obj.data?.pull3?.msgs) obj.data.pull3.msgs = [];
+    if (obj.data?.business_position) obj.data.business_position = [];
+    if (obj.data?.mapBizList) obj.data.mapBizList = [];
+    modified = true;
+} else if ($request.url.includes("profile/index/node")) {
+    delete obj.data?.tipData;
+    if (Array.isArray(obj.data?.cardList)) {
+        const allowedCards = new Set(["MyOrderCard", "GdRecommendCard"]);
+        obj.data.cardList = obj.data.cardList.filter(a => allowedCards.has(a.dataType));
     }
-    if (obj.data?.business_position) {
-        obj.data.business_position = [];
-    }
-    if (obj.data?.mapBizList) {
-        obj.data.mapBizList = [];
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("profile/index/node") !== -1) {
-    delete obj.data.tipData;
-    if (obj.data?.cardList) {
-        obj.data.cardList = Object.values(obj.data.cardList).filter(a => 
-            a.dataType === "MyOrderCard" || a.dataType === "GdRecommendCard"
-        );
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("new_hotword") !== -1) {
-    if (obj.data?.header_hotword) {
-        obj.data.header_hotword = [];
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("ws/promotion-web/resource") !== -1) {
+    modified = true;
+} else if ($request.url.includes("new_hotword")) {
+    if (obj.data?.header_hotword) obj.data.header_hotword = [];
+    modified = true;
+} else if ($request.url.includes("ws/promotion-web/resource")) {
     let resourceTypes = ["icon", "banner", "tips", "popup", "bubble", "other"];
     for (let type of resourceTypes) {
-        if (obj.data?.[type]) {
-            obj.data[type] = [];
-        }
+        if (obj.data?.[type]) obj.data[type] = [];
     }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("ws/msgbox/pull") !== -1) {
-    if (obj.msgs) {
-        obj.msgs = [];
-    }
-    if (obj.pull3?.msgs) {
-        obj.pull3.msgs = [];
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("ws/message/notice/list") !== -1) {
-    if (obj.data?.noticeList) {
-        obj.data.noticeList = [];
-    }
-    $done({ body: JSON.stringify(obj) });
-} else if ($request.url.indexOf("ws/shield/frogserver/aocs") !== -1) {
+    modified = true;
+} else if ($request.url.includes("ws/msgbox/pull")) {
+    if (obj.msgs) obj.msgs = [];
+    if (obj.pull3?.msgs) obj.pull3.msgs = [];
+    modified = true;
+} else if ($request.url.includes("ws/message/notice/list")) {
+    if (obj.data?.noticeList) obj.data.noticeList = [];
+    modified = true;
+} else if ($request.url.includes("ws/shield/frogserver/aocs")) {
     let keysToClear = [
-        "gd_notch_logo", 
-        "home_business_position_config", 
-        "his_input_tip", 
+        "gd_notch_logo",
+        "home_business_position_config",
+        "his_input_tip",
         "operation_layer"
     ];
     for (let key of keysToClear) {
@@ -108,7 +97,6 @@ if ($request.url.indexOf("search/nearbyrec_smart") !== -1) {
             obj.data[key] = { status: 1, version: "", value: "" };
         }
     }
-    $done({ body: JSON.stringify(obj) });
-} else {
-    $done({ body: JSON.stringify(obj) });
+    modified = true;
 }
+$done({ body: modified ? JSON.stringify(obj) : $response.body });
