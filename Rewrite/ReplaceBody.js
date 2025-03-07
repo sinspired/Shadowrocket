@@ -1,6 +1,7 @@
 /*
 # 修改HTTP请求或响应的Body内容；
 # 由向晚重写维护；
+# 更新时间: 20250303
 */
 
 function getRegexp(re_str) {

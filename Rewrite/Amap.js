@@ -2,6 +2,7 @@
 # 高德地图
 # 高德地图应用净化；
 # 由向晚重写维护；
+# 更新时间: 20250307
 
 [rewrite_local]
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? url reject-dict
