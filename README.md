@@ -107,7 +107,7 @@
 >
 ------
 >
-### [融合模块](#融合模块)<br>
+### [融合模块介绍](#融合模块介绍)<br>
 >
 #### `模块安装：`<br>
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
