@@ -7,7 +7,7 @@
 >
 ## [Shadowrocket -- 仓库简介](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > [!NOTE]<br>
-> **本仓库提供由`向晚`维护的`Shadowrocket`的多款`配置文件`、一款`去广告模块`，由生成器每日自动构建；**<br>
+> **本仓库提供由`向晚`维护的`Shadowrocket`的多款`配置文件`、一款`融合模块`，由生成器每日自动构建；**<br>
 > **如果此项目对您有帮助，欢迎给予Star！**<br>
 > **如有您有其他需求或问题，请提交Issues！**<br>
 >
@@ -17,7 +17,7 @@
 >
 #### `功能介绍：`<br>
 > 默认使用**TUN模式**接管所有流量；<br>
-> 具有强大的**广告拦截**功能；<br>
+> 具有强大的**骚扰拦截**功能；<br>
 > 具有有效的**防追踪/劫持**功能；<br>
 > 使用加密的**DoH**，并有效屏蔽未加密的DNS查询；<br>
 > ChatGPT等AI工具单独分流；<br>
@@ -107,13 +107,13 @@
 >
 ------
 >
-### [去广告融合模块](#去广告融合模块)<br>
+### [融合模块](#融合模块)<br>
 >
 #### `模块安装：`<br>
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由[*向晚*](https://t.me/xiangwanguan)基于[*墨鱼去开屏*](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)与[*奶思去广告*](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)定制，可去除常见应用的开屏广告，及部分应用的内置广告，部分规则由生成器每日自动构建；<br>
+> 由[*向晚*](https://t.me/xiangwanguan)基于[*墨鱼*](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)和[*奶思*](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的规则定制，可去除常见应用的开屏，及净化部分应用，部分规则由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
@@ -149,7 +149,7 @@
 ### [推荐设置](#推荐设置)<br>
 >
 #### `MitM&证书模块：`<br>
-> 如需使用`融合模块`来去除广告，则**必须开启MitM**，否则模块不能正常去除广告；<br>
+> 如需使用`融合模块`来净化应用，则**必须开启MitM**，否则模块将不能正常工作；<br>
 > **建议添加证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
 > 证书模块添加成功后，“HTTPS解密”开关将不再重要，默认开启（模块的优先级高于配置）；<br>
