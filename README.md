@@ -122,8 +122,8 @@
 >
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
-> [墨鱼去开屏(ddgksf2013)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
-> [京东历史比价(mw418)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
+> [墨鱼去开屏 (ddgksf2013)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
+> [京东历史比价 (mw418)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
 > [YouTube(iab0x00)](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
 > [知乎(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
