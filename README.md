@@ -113,12 +113,12 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由`向晚`基于[*墨鱼去开屏*](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)与[*奶思去广告*](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)定制，可去除常见应用的开屏广告，及部分应用的内置广告，部分规则由生成器每日自动构建；<br>
+> 由[*向晚*](https://t.me/xiangwanguan)基于[*墨鱼去开屏*](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)与[*奶思去广告*](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)定制，可去除常见应用的开屏广告，及部分应用的内置广告，部分规则由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 特别说明：使用`京东历史比价`，**必须开启Shadowrocket的通知权限**；<br>
-> **特别警告：本模块不做任何“解锁”等相关支持，如侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
+> **特别警告：本模块不做任何“解锁”等相关支持，如侵犯了您的利益，请联系[*向晚*](https://t.me/xiangwanguan)进行移除，谢谢！**<br>
 >
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
