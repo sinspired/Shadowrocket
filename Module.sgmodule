@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
-#!update=2025-03-10 14:36:53
+#!update=2025-03-10 15:18:23
 
 [Rule]
 AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
@@ -608,7 +608,6 @@ https?:\/\/res\.xiaojukeji\.com\/resapi\/activity\/get(Ruled|Preload|PasMultiNot
 [Script]
 YouTube =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.preview.js, requires-body=true, binary-body-mode=true, max-size=-1, argument='{"lyricLang":"zh-Hans","captionLang":"zh-Hans","blockUpload":true,"blockImmersive":true,"debug":false}'
 AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js, requires-body=true, max-size=-1
-
 12306.js =type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList, script-path=https://github.com/ddgksf2013/Scripts/raw/master/12306.js, requires-body=true, max-size=-1
 123pan.js =type=http-response, pattern=^https?:\/\/www\.123pan\.com\/s\/[0-9a-zA-Z=_/-]+\.html, script-path=https://github.com/ddgksf2013/Scripts/raw/master/123pan.js, requires-body=true, max-size=-1
 555Ad.js =type=http-response, pattern=^https?:\/\/[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){1,4}(:\d+)?\/api\/v\d\/movie\/index_recommend, script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body=true, max-size=-1
