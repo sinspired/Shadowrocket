@@ -123,26 +123,26 @@
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
 > [墨鱼去开屏(ddgksf2013)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
-> [*京东历史比价(mw418)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
+> [京东历史比价(mw418)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
-> [*YouTube(iab0x00)*](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
-> [*知乎(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
-> [*网易云音乐(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Music163.conf)<br>
-> [*芒果TV(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/MGTV.conf)<br>
-> [*优酷(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Youku.conf)<br>
-> [*爱奇艺(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Iqiyi.conf)<br>
-> [*皮皮虾(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf)<br>
-> [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
-> [*哔哩哔哩系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
-> [*起点读书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Qidian.conf)<br>
-> [*百度全家桶(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Baidu.conf)<br>
-> [*阿里巴巴系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Alibaba.conf)<br>
-> [*腾讯系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Tencent.conf)<br>
-> [*什么值得买(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
-> [*京东系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Jingdong.conf)<br>
-> [*四大运营商(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/CommsProvider.conf)<br>
-> [*高德地图(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
-> [*一汽大众(XiangwanGuan)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
+> [YouTube(iab0x00)](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
+> [知乎(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
+> [网易云音乐(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Music163.conf)<br>
+> [芒果TV(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/MGTV.conf)<br>
+> [优酷(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Youku.conf)<br>
+> [爱奇艺(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Iqiyi.conf)<br>
+> [皮皮虾(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Pipixia.conf)<br>
+> [小红书(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
+> [哔哩哔哩系列(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
+> [起点读书(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Qidian.conf)<br>
+> [百度全家桶(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Baidu.conf)<br>
+> [阿里巴巴系列(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Alibaba.conf)<br>
+> [腾讯系列(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Tencent.conf)<br>
+> [什么值得买(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
+> [京东系列(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Jingdong.conf)<br>
+> [四大运营商(fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/CommsProvider.conf)<br>
+> [高德地图(XiangwanGuan)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
+> [一汽大众(XiangwanGuan)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 >
 ------
 >
