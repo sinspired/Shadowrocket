@@ -140,7 +140,7 @@
 > [字节系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ByteDance.conf) `fmz200`<br>
 > [京东系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Jingdong.conf) `fmz200`<br>
 > [什么值得买](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf) `fmz200`<br>
-> [运营商](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/CommsProvider.conf) `fmz200`<br>
+> [四大运营商](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/CommsProvider.conf) `fmz200`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
 >
