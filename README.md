@@ -135,7 +135,7 @@
 > [*小红书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf)<br>
 > [*哔哩哔哩系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf)<br>
 > [*起点读书(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Qidian.conf)<br>
-> [*淘宝(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Taobao.conf)<br>
+> [*阿里巴巴系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Alibaba.conf)<br>
 > [*什么值得买(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf)<br>
 > [*百度全家桶(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Baidu.conf)<br>
 > [*京东系列(fmz200)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Jingdong.conf)<br>
