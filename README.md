@@ -113,7 +113,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由[*向晚*](https://t.me/xiangwanguan)基于[*墨鱼*](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)和[*奶思*](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的规则定制，可去除常见应用的开屏，及净化部分应用，部分规则由生成器每日自动构建；<br>
+> 由[向晚](https://t.me/xiangwanguan)基于[墨鱼](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)和[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的规则定制，可去除常见应用的开屏，及净化部分应用，部分规则由生成器每日自动构建；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
@@ -122,7 +122,7 @@
 >
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
-> [*墨鱼去开屏(ddgksf2013)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
+> [墨鱼去开屏(ddgksf2013)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
 > [*京东历史比价(mw418)*](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
 > [*YouTube(iab0x00)*](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
