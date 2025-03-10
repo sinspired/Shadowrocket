@@ -125,7 +125,7 @@
 > [墨鱼去开屏 (ddgksf2013)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf)<br>
 > [京东历史比价 (mw418)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
 ##### `软件净化：`<br>
-> [YouTube (iab0x00)](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)<br>
+> [YouTube ](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule)(iab0x00)<br>
 > [知乎 (fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf)<br>
 > [网易云音乐 (fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Music163.conf)<br>
 > [芒果TV (fmz200)](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/MGTV.conf)<br>
