@@ -67,8 +67,8 @@ AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} - {reject_type}\n"
-    url_lines = url_content.splitlines()
-    unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
+    url_lines = [line for line in url_content.splitlines() if line.strip()]
+    unique_lines = sorted(set(url_lines))
     url_content = '\n'.join(unique_lines)
     sgmodule_content += url_content
     sgmodule_content += f"""
