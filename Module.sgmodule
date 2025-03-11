@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
-#!update=2025-03-11 09:58:13
+#!update=2025-03-11 13:38:29
 
 [Rule]
 AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
@@ -303,6 +303,7 @@ AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
 ^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json - reject-200
 ^https?:\/\/cdn\.dianshihome\.com\/static\/ad\/ - reject-200
 ^https?:\/\/cdns\.chinastock\.com\.cn\/cdn\/omc\/app\/app\/(index_pop_banner|startup_banner) - reject-200
+^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
 ^https?:\/\/client-api-v2\.oray\.com\/materials\/(SUNLOGIN_CLIENT_IOS_PROMOTION|SLCC_IOS_DEVICE|SLCC_IOS_STARTUP) - reject-200
 ^https?:\/\/client-api\.oray\.com\/materials\/SLCC_IOS_STARTUP\?lang=zh-Hans-CN - reject-200
 ^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList - reject
@@ -831,6 +832,7 @@ ReplaceBody.js =type=http-response, pattern=^https?:\/\/tft-app\.cdtft\.cn\/gate
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/lcen\.xiaote\.net\/api\/graphql, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument=screenSplashAd->ddgksf2013,max-size=-1
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/apps\.workair\.cn\/app\/version, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument=ads"->ddgksf2013",max-size=-1
 ReplaceBody.js =type=http-response, pattern=^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument="recommend_queries":\{.+\}->"recommend_queries":{},max-size=-1
+ReplaceBody.js =type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument=red_id->fmz200,max-size=-1
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument=jdLiteAdvertisingVO->fmz200,max-size=-1
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_SmartPush, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument=pushData->fmz200,max-size=-1
 
