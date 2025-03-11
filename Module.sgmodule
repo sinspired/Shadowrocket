@@ -1,5 +1,6 @@
 #!name=融合模块
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
+#!homepage=https://github.com/XiangwanGuan/Shadowrocket
 #!update=2025-03-11 08:23:47
 
 [Rule]

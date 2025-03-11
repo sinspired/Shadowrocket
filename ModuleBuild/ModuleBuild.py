@@ -48,6 +48,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
 #!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
+#!source=https://github.com/XiangwanGuan/Shadowrocket
 #!update={timestamp}
 
 [Rule]
