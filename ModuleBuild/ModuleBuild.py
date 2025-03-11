@@ -57,15 +57,16 @@ AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject
 """
-    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject|reject-200|reject-img|reject-dict|reject-array)'
+    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
-    url_content = "";
+    url_content = ""
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
-        url_content += f"{pattern} - reject\n"
+        reject_type = match.group(2).strip()
+        url_content += f"{pattern} - {reject_type}\n"
     url_lines = url_content.splitlines()
     unique_lines = [url_lines[0]] + sorted(set(url_lines[1:]))
     url_content = '\n'.join(unique_lines)
