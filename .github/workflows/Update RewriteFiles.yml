@@ -45,7 +45,7 @@ jobs:
             # 如果文件在 Rewrite/JavaScript 中，替换为本地仓库地址
             if [ -f "Rewrite/JavaScript/$js_file" ]; then
               new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_file"
-              # 替换 RewriteBuild.conf 中的链接
+              # 替换 RewriteBuild.conf 中的链接，使用 '|' 作为分隔符
               sed -i "s|$line|$new_url|g" Rewrite/RewriteBuild.conf
               echo "Replaced: $line with $new_url"
             fi
