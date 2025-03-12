@@ -113,7 +113,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由[向晚](https://t.me/xiangwanguan)基于[墨鱼](https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf)和[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的规则定制，可去除常见应用的开屏，及净化部分应用，部分规则由生成器每日自动构建；<br>
+> 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制，融合部分其他功能，可支持五百余款应用或小程序的净化；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
@@ -122,25 +122,10 @@
 >
 #### `融合说明：`<br>
 ##### `功能模块：`<br>
-> [墨鱼去开屏](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/StartUp.conf) `ddgksf2013`<br>
 > [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418`<br>
 ##### `软件净化：`<br>
 > [YouTube](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
-> [知乎](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Zhihu.conf) `fmz200`<br>
-> [优酷](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Youku.conf) `fmz200`<br>
-> [芒果TV](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/MGTV.conf) `fmz200`<br>
-> [爱奇艺](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Iqiyi.conf) `fmz200`<br>
-> [小红书](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiaoHongShu.conf) `fmz200`<br>
-> [起点读书](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Qidian.conf) `fmz200`<br>
-> [百度系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Baidu.conf) `fmz200`<br>
-> [阿里系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Alibaba.conf) `fmz200`<br>
-> [腾讯系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Tencent.conf) `fmz200`<br>
-> [网易系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/NetEase.conf) `fmz200`<br>
-> [字节系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ByteDance.conf) `fmz200`<br>
-> [哔哩哔哩系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Bilibili.conf) `fmz200`<br>
-> [京东系列](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Jingdong.conf) `fmz200`<br>
-> [什么值得买](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/SMZDM.conf) `fmz200`<br>
-> [四大运营商](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/CommsProvider.conf) `fmz200`<br>
+> [奶思合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ModuleBuild.conf) `fmz200`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
 >
