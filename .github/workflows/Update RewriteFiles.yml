@@ -22,52 +22,23 @@ jobs:
         LINK2="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || true
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || true
-        
-        # 提取所有的 .js 和 .json 文件链接
         grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf | sort -u > Temp.list
         > Rewrite/JavaScript/JavaScript.list
-
         seen=""
-        
-        # 首先检查所有 URL 是否有效
-        valid_urls=""
-        invalid_urls=""
         while IFS= read -r url; do
           filename=$(basename "$url")
-          
-          # 如果已经检查过这个 URL，跳过
           if echo "$seen" | grep -Fxq "$url"; then
             continue
           fi
-          
           seen="$seen\n$url"
           
-          # 使用 curl 检查 URL 是否有效，验证 HTTP 状态码是否为 200
-          http_status=$(curl -o /dev/null -s -w "%{http_code}" "$url")
-          if [ "$http_status" -eq 200 ]; then
-            valid_urls="$valid_urls\n$url"
+          # 使用 curl 检查文件是否成功下载
+          if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
+            echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
           else
-            invalid_urls="$invalid_urls\n$url"
+            echo "$url invalid (download failed)" >> Rewrite/JavaScript/JavaScript.list
           fi
         done < Temp.list
-
-        # 输出有效和无效的 URL 列表
-        echo -e "$valid_urls" > Rewrite/JavaScript/ValidURLs.list
-        echo -e "$invalid_urls" > Rewrite/JavaScript/InvalidURLs.list
-
-        # 现在下载有效的文件
-        for url in $(echo -e "$valid_urls" | tail -n +2); do
-          filename=$(basename "$url")
-          curl -fsS -o "Rewrite/JavaScript/$filename" "$url"
-          echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
-        done
-
-        # 处理无效 URL，首先检查 invalid_urls 是否为空
-        if [ -n "$invalid_urls" ]; then
-          echo -e "$invalid_urls" | while IFS= read -r url; do
-            echo "$url invalid (HTTP status not 200)" >> Rewrite/JavaScript/JavaScript.list
-          done
-        fi
     
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
