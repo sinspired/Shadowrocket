@@ -13,7 +13,6 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
     - name: Download files
       run: |
         mkdir -p Rewrite/JavaScript
@@ -21,6 +20,9 @@ jobs:
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
         YT_MODULE="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$YT_MODULE" || true
+    - name: Clear previous JavaScript.list contents
+      run: |
+        > Rewrite/JavaScript.list
     - name: Process and validate local files
       run: |
         for file in Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf; do
