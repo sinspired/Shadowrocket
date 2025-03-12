@@ -23,7 +23,10 @@ jobs:
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || true
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || true
         grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf | sort -u > Temp.list
-        > Rewrite/JavaScript/JavaScript.list
+        
+        # 清空 JavaScript.list 文件，确保每次写入新的内容
+        > Rewrite/JavaScript.list
+        
         seen=""
         while IFS= read -r url; do
           filename=$(basename "$url")
@@ -34,9 +37,9 @@ jobs:
           
           # 使用 curl 检查文件是否成功下载
           if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
-            echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
+            echo "$url valid" >> Rewrite/JavaScript.list
           else
-            echo "$url invalid (download failed)" >> Rewrite/JavaScript/JavaScript.list
+            echo "$url invalid (download failed)" >> Rewrite/JavaScript.list
           fi
         done < Temp.list
     
@@ -50,6 +53,7 @@ jobs:
           Rewrite/Chongxie.conf
           Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JavaScript/*
+          Rewrite/JavaScript.list
           Rewrite/JDPriceComparison.conf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
