@@ -35,16 +35,19 @@ jobs:
         done < js_links.txt
     - name: Replace links in RewriteBuild.conf
       run: |
-        # Define the replacement function for each JavaScript URL
         while IFS= read -r url; do
-          # Extract the filename from the URL
           filename=$(basename "$url")
-          # Replace the URL in RewriteBuild.conf
           if grep -q "$url" Rewrite/RewriteBuild.conf; then
             echo "Replacing $url with https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$filename"
             sed -i "s|$url|https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$filename|g" Rewrite/RewriteBuild.conf
           fi
         done < Rewrite/JavaScript/JavaScript.list
+    - name: Debug RewriteBuild.conf after replacement
+      run: |
+        cat Rewrite/RewriteBuild.conf
+    - name: Check git status
+      run: |
+        git status
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
