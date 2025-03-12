@@ -40,14 +40,23 @@ jobs:
         if [ -f "Rewrite/RewriteBuild.conf" ]; then
           echo "Reading RewriteBuild.conf and replacing JS links..."
           while IFS= read -r line; do
+            # 打印每个 line
+            echo "Processing line: $line"
             # 提取 .js 文件名
             js_file=$(echo "$line" | grep -oP 'https?://[^ ]+\.js' | sed 's|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt||g' | sed 's|https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|g')
+            
+            echo "Extracted js_file: $js_file"
             # 如果文件在 Rewrite/JavaScript 中，替换为本地仓库地址
             if [ -f "Rewrite/JavaScript/$js_file" ]; then
               new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_file"
+              echo "Replacing $line with $new_url"
+
               # 使用不同的分隔符，并进行 URL 转义处理
               safe_line=$(echo "$line" | sed 's/[&/\]/\\&/g')  # 转义 & / 等特殊字符
               safe_new_url=$(echo "$new_url" | sed 's/[&/\]/\\&/g')  # 转义 & / 等特殊字符
+              echo "Safe line: $safe_line"
+              echo "Safe new URL: $safe_new_url"
+
               # 替换 RewriteBuild.conf 中的链接
               sed -i "s|$safe_line|$safe_new_url|g" Rewrite/RewriteBuild.conf
               echo "Replaced: $line with $new_url"
