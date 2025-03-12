@@ -14,12 +14,15 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    
     - name: Download & copy links
       run: |
         mkdir -p Rewrite/JavaScript
-        LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
-        grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf | sort -u > Temp.list
+        LINK1="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
+        LINK2="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
+        curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || true
+        curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || true
+        grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf | sort -u > Temp.list
         > Rewrite/JavaScript/JavaScript.list
         seen=""
         while IFS= read -r url; do
@@ -34,6 +37,7 @@ jobs:
             echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
           fi
         done < Temp.list
+    
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
@@ -42,6 +46,8 @@ jobs:
         message: 'Update RewriteFiles'
         add: |
           Rewrite/Chongxie.conf
+          Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JavaScript/*
+          Rewrite/JDPriceComparison.conf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
