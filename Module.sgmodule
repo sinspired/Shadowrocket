@@ -1,6 +1,6 @@
 #!name=融合模块
-#!desc=基于墨鱼去开屏与奶思去广告定制，每日自动构建；
-#!update=2025-03-12 10:46:37
+#!desc=基于奶思去广告定制，融合部分功能，适配Shadowrocket；
+#!update=2025-03-12 11:02:19
 
 [Rule]
 AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
@@ -90,7 +90,6 @@ AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
 ^https:\/\/p0\.pipi\.cn\/adAdmin\/\w+\.jpg\?imageMogr2\/quality\/ - reject-dict
 ^https:\/\/patient-api\.suh\.cn\/apt\/api\/userinfo\/GetNotice\?appname=pmsys&channel=6&device=ios&language=1&source=2&version= - reject-dict
 ^https:\/\/qiye\.gaoding\.com\/api\/v3\/oc\/v2\/delivery-pits\/ios-splash\/ - reject-dict
-^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? - reject-dict
 ^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? - reject-dict
 ^https:\/\/se-api\.djiits\.com\/api\/components\/launch_ad\.json\?abbrv_url=1&country=cn&language=zh-CN - reject-dict
 ^https:\/\/sf\d+-fe-tos\.pglstatp-toutiao\.com\/obj\/ad-pattern\/ - reject
@@ -1457,7 +1456,6 @@ xmly_json.js =type=http-response, pattern=^https?:\/\/.*\.xima.*\.com\/discovery
 xmly_json.js =type=http-response, pattern=^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js, requires-body=true, max-size=-1
 xmly_json.js =type=http-response, pattern=^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js, requires-body=true, max-size=-1
 xmly_json.js =type=http-response, pattern=^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js, requires-body=true, max-size=-1
-youtube.response.js =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js, requires-body=true, max-size=-1
 yx.js =type=http-response, pattern=^https?:\/\/api\.ulife\.group\/market\/homeIconDetail\/list\/v7, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js, requires-body=true, max-size=-1
 zhangshanggongjiao.js =type=http-response, pattern=^https?:\/\/wx\.mygolbs\.com\/WxBusServer\/ApiData\.do, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js, requires-body=true, max-size=-1
 zhihu.js =type=http-response, pattern=^https:\/\/api\.zhihu\.com\/(answers|articles)\/v2\/\d+, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js, requires-body=true, max-size=-1
