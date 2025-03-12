@@ -22,9 +22,13 @@ jobs:
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
         echo "Found JS links, downloading..."
         while IFS= read -r url; do
-          filename=$(basename "$url")
-          echo "Downloading JS file: $filename"
-          curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
+          if [ -n "$url" ]; then
+            filename=$(basename "$url")
+            echo "Downloading JS file: $filename"
+            curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
+          else
+            echo "Skipping empty URL"
+          fi
         done < js_links.txt
         if [ -f "Rewrite/RewriteBuild.conf" ]; then
           while IFS= read -r line; do
