@@ -9,64 +9,20 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
     - name: Download & copy links
       run: |
-        echo "Creating directories..."
         mkdir -p Rewrite/JavaScript
-
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        echo "Downloading Chongxie.conf from $LINK..."
-        curl -o "Rewrite/Chongxie.conf" "$LINK" || { echo "Failed to download Chongxie.conf"; exit 1; }
-        
-        # 提取 Chongxie.conf 中的 JS 文件链接
-        echo "Extracting JS links from Chongxie.conf..."
-        grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt || { echo "Failed to extract JS links from Chongxie.conf"; exit 1; }
-
-        # 下载并保存 JS 文件
-        echo "Downloading JS files..."
+        curl -o "Rewrite/Chongxie.conf" "$LINK" || true
+        grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
         while IFS= read -r url; do
           filename=$(basename "$url")
-          # 这里加上 || true，下载失败也跳过
-          curl -f -o "Rewrite/JavaScript/$filename" "$url" || { echo "Failed to download $url, skipping..."; continue; }
+          curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
         done < js_links.txt
-
-        # 读取 RewriteBuild.conf 文件并替换 JS 文件链接
-        if [ -f "Rewrite/RewriteBuild.conf" ]; then
-          echo "Reading RewriteBuild.conf and replacing JS links..."
-          while IFS= read -r line; do
-            # 仅处理包含 .js 链接的行
-            js_file=$(echo "$line" | grep -oP 'https?://[^ ]+\.js')
-            if [ ! -z "$js_file" ]; then
-              echo "Processing line: $line"
-              # 获取文件名并检查文件是否存在
-              js_filename=$(basename "$js_file")
-              if [ -f "Rewrite/JavaScript/$js_filename" ]; then
-                new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_filename"
-                echo "Replacing $js_file with $new_url"
-
-                # 使用 sed 替换 URL 地址
-                safe_js_file=$(echo "$js_file" | sed 's/[&/\]/\\&/g')  # 转义特殊字符
-                safe_new_url=$(echo "$new_url" | sed 's/[&/\]/\\&/g')  # 转义特殊字符
-
-                # 仅替换链接部分，不改变其他内容
-                line=$(echo "$line" | sed "s|$safe_js_file|$safe_new_url|g")
-                echo "Updated line: $line"
-              fi
-            fi
-            # 将替换后的行写回文件
-            echo "$line" >> Rewrite/RewriteBuild.conf.tmp
-          done < Rewrite/RewriteBuild.conf
-
-          # 将更新后的内容覆盖原文件
-          mv Rewrite/RewriteBuild.conf.tmp Rewrite/RewriteBuild.conf
-        fi
-
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
@@ -76,11 +32,5 @@ jobs:
         add: |
           Rewrite/Chongxie.conf
           Rewrite/JavaScript/*
-          Rewrite/RewriteBuild.conf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Check if changes are detected
-      run: |
-        git status
-        git diff --stat
