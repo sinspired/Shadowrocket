@@ -56,16 +56,18 @@ jobs:
         echo -e "$invalid_urls" > Rewrite/JavaScript/InvalidURLs.list
 
         # 现在下载有效的文件
-        for url in $(echo "$valid_urls" | tail -n +2); do
+        for url in $(echo -e "$valid_urls" | tail -n +2); do
           filename=$(basename "$url")
           curl -fsS -o "Rewrite/JavaScript/$filename" "$url"
           echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
         done
 
-        # 将无效 URL 写入 JavaScript.list 文件
-        for url in $(echo "$invalid_urls" | tail -n +2); do
-          echo "$url invalid (HTTP status not 200)" >> Rewrite/JavaScript/JavaScript.list
-        done
+        # 处理无效 URL，首先检查 invalid_urls 是否为空
+        if [ -n "$invalid_urls" ]; then
+          echo -e "$invalid_urls" | while IFS= read -r url; do
+            echo "$url invalid (HTTP status not 200)" >> Rewrite/JavaScript/JavaScript.list
+          done
+        fi
     
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
