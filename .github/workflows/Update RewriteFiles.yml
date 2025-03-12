@@ -1,10 +1,8 @@
 name: Update RewriteFiles
-
 on:
   schedule:
     - cron: '5 0 * * *'
   workflow_dispatch:
-
 jobs:
   copy-links:
     runs-on: ubuntu-latest
@@ -16,39 +14,26 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
     - name: Download & copy links
       run: |
         mkdir -p Rewrite/JavaScript
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-
-        # 下载规则文件
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
-
-        # 只匹配 .js 和 .json 结尾的 URL，并去重
         grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf | sort -u > Temp.list
-
-        # 初始化存储文件
         > Rewrite/JavaScript/JavaScript.list
         seen=""
-
         while IFS= read -r url; do
-          filename=$(basename "$url")  # 获取原始文件名
-
-          # 避免重复下载
+          filename=$(basename "$url")
           if echo "$seen" | grep -Fxq "$url"; then
             continue
           fi
           seen="$seen\n$url"
-
-          # 下载文件，并记录状态
           if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
             echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
           else
             echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
           fi
         done < Temp.list
-
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
