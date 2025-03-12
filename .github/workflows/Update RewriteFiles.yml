@@ -19,13 +19,15 @@ jobs:
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         curl -o "Rewrite/Chongxie.conf" "$LINK" || true
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
-        > Rewrite/JavaScript/invalid_links.list
+        > Rewrite/JavaScript/absent.list
         while IFS= read -r url; do
           filename=$(basename "$url")
           if curl -f --head "$url" 2>/dev/null | grep -q "200 OK"; then
             curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
           else
-            echo "$url" >> Rewrite/JavaScript/invalid_links.list
+            if ! grep -Fxq "$url" Rewrite/JavaScript/absent.list; then
+              echo "$url" >> Rewrite/JavaScript/absent.list
+            fi
           fi
         done < js_links.txt
     - name: Commit & copy RewriteFiles
