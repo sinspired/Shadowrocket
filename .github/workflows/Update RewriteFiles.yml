@@ -20,34 +20,33 @@ jobs:
         mkdir -p Rewrite/JavaScript
         LINK1="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         LINK2="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
+        curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || true
+        curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || true
         
-        echo "Downloading $LINK1"
-        curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || echo "Failed to download $LINK1"
-
-        echo "Downloading $LINK2"
-        curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || echo "Failed to download $LINK2"
-        
-        # 提取所有 JS/JSON 链接并去重
+        # 提取链接并去重
         grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf | sort -u > Temp.list
-        echo "Found the following URLs to download:"
-        cat Temp.list
-
         > Rewrite/JavaScript/JavaScript.list
-        seen=""
         
+        seen=""
         while IFS= read -r url; do
           filename=$(basename "$url")
           
-          # 防止重复下载
+          # 检查是否已处理过该 URL
           if echo "$seen" | grep -Fxq "$url"; then
-            echo "Skipping already seen URL: $url"
             continue
           fi
+          
           seen="$seen\n$url"
           
-          echo "Downloading file from: $url"
-          if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
-            echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
+          # 下载文件并判断其有效性
+          echo "Downloading: $url"
+          if curl -fsS -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url"; then
+            # 如果文件大小非零并且下载成功，则标记为 valid
+            if [ -s "Rewrite/JavaScript/$filename" ]; then
+              echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
+            else
+              echo "$url invalid (empty file)" >> Rewrite/JavaScript/JavaScript.list
+            fi
           else
             echo "$url invalid (download failed)" >> Rewrite/JavaScript/JavaScript.list
           fi
