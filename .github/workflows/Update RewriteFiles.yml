@@ -36,7 +36,9 @@ jobs:
           seen="$seen\n$url"
           
           # 使用 curl 检查文件是否成功下载并检查 HTTP 状态
-          response=$(curl -fsI -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url")
+          response=$(curl -I -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url")
+          
+          echo "Response for $url: $response"  # Debug the response here
           
           # 判断 HTTP 状态码是否为 200 (下载成功)
           if [[ "$response" == "200" ]]; then
