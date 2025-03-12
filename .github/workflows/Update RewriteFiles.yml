@@ -55,7 +55,6 @@ jobs:
         add: |
           Rewrite/Chongxie.conf
           Rewrite/YouTubeNoAd.sgmodule
-          Rewrite/JDPriceComparison.conf
           Rewrite/JavaScript/*
           Rewrite/JavaScriptCheck.list
       env:
