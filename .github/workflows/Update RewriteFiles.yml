@@ -1,16 +1,14 @@
 name: Update RewriteFiles
 on:
   schedule:
-    - cron: '5 0 * * *'  # 每天00:05运行
+    - cron: '5 0 * * *'
   workflow_dispatch:
-
 jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
@@ -19,23 +17,15 @@ jobs:
     - name: Download files
       run: |
         mkdir -p Rewrite/JavaScript
-
-        # 下载 chongxie.txt 配置文件
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
-
-        # 下载 YouTubeNoAd.sgmodule 文件
         YT_MODULE="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$YT_MODULE" || true
-
     - name: Process and validate local files
       run: |
-        # 处理本地文件 JDPriceComparison.conf 和 YouTubeNoAd.sgmodule
         for file in Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf; do
-          # 判断文件是否存在
           if [ -f "$file" ]; then
             echo "Processing file: $file"
-            # 判断文件中的 URL 链接（针对 js 或 json）
             grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
             seen=""
             while IFS= read -r url; do
@@ -45,16 +35,15 @@ jobs:
               fi
               seen="$seen\n$url"
               if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
-                echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
+                echo "$url valid" >> Rewrite/JavaScript.list
               else
-                echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
+                echo "$url invalid" >> Rewrite/JavaScript.list
               fi
             done < Temp.list
           else
             echo "$file not found"
           fi
         done
-
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
@@ -63,8 +52,9 @@ jobs:
         message: 'Update RewriteFiles'
         add: |
           Rewrite/Chongxie.conf
-          Rewrite/JavaScript/*
           Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JDPriceComparison.conf
+          Rewrite/JavaScript/*
+          Rewrite/JavaScript.list
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
