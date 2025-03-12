@@ -125,7 +125,7 @@ def process_urls(urls, project_name):
     if sgmodule_content:
         output_file = 'Module.sgmodule'
         save_content(sgmodule_content, output_file)
-        print(sgmodule_content);
+        print(sgmodule_content)
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
