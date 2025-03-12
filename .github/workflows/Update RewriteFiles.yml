@@ -17,10 +17,13 @@ jobs:
       run: |
         mkdir -p Rewrite/JavaScript
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        curl -f -o "Rewrite/Chongxie.conf" "$LINK" || true
+        echo "Downloading $LINK"
+        curl -o "Rewrite/Chongxie.conf" "$LINK" || true
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
+        echo "Found JS links, downloading..."
         while IFS= read -r url; do
           filename=$(basename "$url")
+          echo "Downloading JS file: $filename"
           curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
         done < js_links.txt
         if [ -f "Rewrite/RewriteBuild.conf" ]; then
@@ -29,6 +32,7 @@ jobs:
             if [ -n "$js_file" ]; then
               if [ -f "Rewrite/JavaScript/$js_file" ]; then
                 new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_file"
+                echo "Updating $line to $new_url"
                 sed -i "s|$line|$new_url|g" Rewrite/RewriteBuild.conf
               fi
             fi
