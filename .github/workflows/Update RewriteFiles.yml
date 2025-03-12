@@ -18,18 +18,11 @@ jobs:
         mkdir -p Rewrite/JavaScript
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         curl -o "Rewrite/Chongxie.conf" "$LINK" || true
-        ls -l Rewrite/Chongxie.conf
-        cat Rewrite/Chongxie.conf
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
-        cat js_links.txt
         while IFS= read -r url; do
           filename=$(basename "$url")
           curl -v -f -o "Rewrite/JavaScript/$filename" "$url" || true
         done < js_links.txt
-    - name: Check git status
-      run: |
-        git status
-        git diff
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
