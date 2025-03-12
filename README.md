@@ -125,7 +125,7 @@
 > [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418`<br>
 ##### `软件净化：`<br>
 > [YouTube](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
-> [奶思合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ModuleBuild.conf) `fmz200`<br>
+> [奶思合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
 >
