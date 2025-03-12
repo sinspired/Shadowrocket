@@ -16,23 +16,14 @@ jobs:
     - name: Download & copy links
       run: |
         mkdir -p Rewrite
-        LINKS=(
-          "https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/StartUp.conf"
-          "https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        )
-        for LINK in "${LINKS[@]}"; do
-          FILE_NAME=$(basename $LINK)
-          if [[ $FILE_NAME == *.txt ]]; then
-            FILE_NAME="${FILE_NAME%.txt}.conf"
-          fi
-          curl -f -o "Rewrite/$FILE_NAME" $LINK || curl -f -o "Rewrite/$FILE_NAME" $LINK
-        done
+        LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
+        curl -f -o "Rewrite/Chongxie.conf" "$LINK"
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
         author_name: 'GitHub Actions'
         author_email: 'actions@github.com'
         message: 'Update RewriteFiles'
-        add: 'Rewrite/*'
+        add: 'Rewrite/Chongxie.conf'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

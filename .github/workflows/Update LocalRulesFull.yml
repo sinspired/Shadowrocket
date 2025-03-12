@@ -1,7 +1,7 @@
 name: Update LocalRulesFull
 on:
   schedule:
-    - cron: '25 0 * * *'
+    - cron: '20 0 * * *'
   workflow_dispatch:
 jobs:
   build:
