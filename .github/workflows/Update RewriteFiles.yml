@@ -17,17 +17,16 @@ jobs:
     
     - name: Download & copy links
       run: |
-        mkdir -p Rewrite/JavaScript  # 创建 JavaScript 文件夹
+        # 创建 JavaScript 目录
+        mkdir -p Rewrite/JavaScript
         
         # 下载文件链接
         LINK1="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         LINK2="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
-        
-        # 下载文件并保存到对应目录
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK1" || true
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$LINK2" || true
 
-        # 从下载的文件中提取 URL 并去重
+        # 提取文件中的所有 JS 和 JSON URL，并去重
         grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf | sort -u > Temp.list
         
         # 清空 JavaScript.list 文件，确保每次写入新的内容
@@ -41,10 +40,11 @@ jobs:
           fi
           seen="$seen\n$url"
           
-          # 使用 curl 下载并检查 HTTP 状态
-          response=$(curl -I -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url")
+          # 使用 curl 检查文件并保存到本地路径
+          response=$(curl -fsI -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url")
           
-          echo "Response for $url: $response"  # Debug the response here
+          # 调试信息
+          echo "Response for $url: $response"
           
           # 判断 HTTP 状态码是否为 200 (下载成功)
           if [[ "$response" == "200" ]]; then
