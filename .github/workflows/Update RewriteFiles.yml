@@ -19,17 +19,20 @@ jobs:
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         curl -o "Rewrite/Chongxie.conf" "$LINK" || true
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
-        > Rewrite/JavaScript/absent.list
+        
+        # 清空 JavaScript.list 文件
+        > Rewrite/JavaScript/JavaScript.list
+        
         while IFS= read -r url; do
           filename=$(basename "$url")
-          if curl -f --head "$url" 2>/dev/null | grep -q "200 OK"; then
-            curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
+          # 下载链接，成功则记录为 valid，失败则记录为 invalid
+          if curl -f -o "Rewrite/JavaScript/$filename" "$url"; then
+            echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
           else
-            if ! grep -Fxq "$url" Rewrite/JavaScript/absent.list; then
-              echo "$url" >> Rewrite/JavaScript/absent.list
-            fi
+            echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
           fi
         done < js_links.txt
+        
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
