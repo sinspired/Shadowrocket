@@ -25,11 +25,14 @@ jobs:
         
         while IFS= read -r url; do
           filename=$(basename "$url")
-          # 下载链接，成功则记录为 valid，失败则记录为 invalid
-          if curl -f -o "Rewrite/JavaScript/$filename" "$url"; then
-            echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
-          else
-            echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
+          # 检查是否已经存在相同的链接
+          if ! grep -Fxq "$url" Rewrite/JavaScript/JavaScript.list; then
+            # 下载链接，成功则记录为 valid，失败则记录为 invalid
+            if curl -f -o "Rewrite/JavaScript/$filename" "$url"; then
+              echo "$url valid" >> Rewrite/JavaScript/JavaScript.list
+            else
+              echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
+            fi
           fi
         done < js_links.txt
         
