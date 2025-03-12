@@ -40,28 +40,31 @@ jobs:
         if [ -f "Rewrite/RewriteBuild.conf" ]; then
           echo "Reading RewriteBuild.conf and replacing JS links..."
           while IFS= read -r line; do
-            # 打印每个 line
-            echo "Processing line: $line"
-            # 提取 .js 文件名
-            js_file=$(echo "$line" | grep -oP 'https?://[^ ]+\.js' | sed 's|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt||g' | sed 's|https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|g')
-            
-            echo "Extracted js_file: $js_file"
-            # 如果文件在 Rewrite/JavaScript 中，替换为本地仓库地址
-            if [ -f "Rewrite/JavaScript/$js_file" ]; then
-              new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_file"
-              echo "Replacing $line with $new_url"
+            # 仅处理包含 .js 链接的行
+            js_file=$(echo "$line" | grep -oP 'https?://[^ ]+\.js')
+            if [ ! -z "$js_file" ]; then
+              echo "Processing line: $line"
+              # 获取文件名并检查文件是否存在
+              js_filename=$(basename "$js_file")
+              if [ -f "Rewrite/JavaScript/$js_filename" ]; then
+                new_url="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/$js_filename"
+                echo "Replacing $js_file with $new_url"
 
-              # 使用不同的分隔符，并进行 URL 转义处理
-              safe_line=$(echo "$line" | sed 's/[&/\]/\\&/g')  # 转义 & / 等特殊字符
-              safe_new_url=$(echo "$new_url" | sed 's/[&/\]/\\&/g')  # 转义 & / 等特殊字符
-              echo "Safe line: $safe_line"
-              echo "Safe new URL: $safe_new_url"
+                # 使用 sed 替换 URL 地址
+                safe_js_file=$(echo "$js_file" | sed 's/[&/\]/\\&/g')  # 转义特殊字符
+                safe_new_url=$(echo "$new_url" | sed 's/[&/\]/\\&/g')  # 转义特殊字符
 
-              # 替换 RewriteBuild.conf 中的链接
-              sed -i "s|$safe_line|$safe_new_url|g" Rewrite/RewriteBuild.conf
-              echo "Replaced: $line with $new_url"
+                # 仅替换链接部分，不改变其他内容
+                line=$(echo "$line" | sed "s|$safe_js_file|$safe_new_url|g")
+                echo "Updated line: $line"
+              fi
             fi
+            # 将替换后的行写回文件
+            echo "$line" >> Rewrite/RewriteBuild.conf.tmp
           done < Rewrite/RewriteBuild.conf
+
+          # 将更新后的内容覆盖原文件
+          mv Rewrite/RewriteBuild.conf.tmp Rewrite/RewriteBuild.conf
         fi
 
     - name: Commit & copy RewriteFiles
