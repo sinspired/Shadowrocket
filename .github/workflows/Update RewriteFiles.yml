@@ -35,11 +35,14 @@ jobs:
           fi
           seen="$seen\n$url"
           
-          # 使用 curl 检查文件是否成功下载
-          if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
+          # 使用 curl 检查文件是否成功下载并检查 HTTP 状态
+          response=$(curl -fsI -w "%{http_code}" -o "Rewrite/JavaScript/$filename" "$url")
+          
+          # 判断 HTTP 状态码是否为 200 (下载成功)
+          if [[ "$response" == "200" ]]; then
             echo "$url valid" >> Rewrite/JavaScript.list
           else
-            echo "$url invalid (download failed)" >> Rewrite/JavaScript.list
+            echo "$url invalid (HTTP status: $response)" >> Rewrite/JavaScript.list
           fi
         done < Temp.list
     
