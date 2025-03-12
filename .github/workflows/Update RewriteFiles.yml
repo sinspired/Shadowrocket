@@ -18,7 +18,7 @@ jobs:
         mkdir -p Rewrite/JavaScript
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
         curl -o "Rewrite/Chongxie.conf" "$LINK" || true
-        grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
+        grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/Chongxie.conf > Temp.txt
         > Rewrite/JavaScript/JavaScript.list
         seen=""
         while IFS= read -r url; do
@@ -32,7 +32,9 @@ jobs:
           else
             echo "$url invalid" >> Rewrite/JavaScript/JavaScript.list
           fi
-        done < js_links.txt
+        done < Temp.txt
+
+        done < Temp.txt
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
