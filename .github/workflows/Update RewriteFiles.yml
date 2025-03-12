@@ -7,23 +7,30 @@ jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Set up Git configuration
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Download & copy links
-      run: |
-        mkdir -p Rewrite
-        LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        curl -f -o "Rewrite/Chongxie.conf" "$LINK"
-    - name: Commit & copy RewriteFiles
-      uses: EndBug/add-and-commit@v9
-      with:
-        author_name: 'GitHub Actions'
-        author_email: 'actions@github.com'
-        message: 'Update RewriteFiles'
-        add: 'Rewrite/Chongxie.conf'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Git configuration
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Download and copy RewriteFile
+        run: |
+          mkdir -p Rewrite/JsBackup
+          LINK="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Chongxie.conf"
+          curl -f -o "Rewrite/Chongxie.conf" "$LINK"
+          grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
+          while IFS= read -r url; do
+            filename=$(basename "$url")
+            curl -f -o "Rewrite/JsBackup/$filename" "$url"
+          done < js_links.txt
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update RewriteFiles'
+          add: |
+            Rewrite/Chongxie.conf
+            Rewrite/JsBackup/*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
