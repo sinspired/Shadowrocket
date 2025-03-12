@@ -21,7 +21,7 @@ jobs:
         grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
         while IFS= read -r url; do
           filename=$(basename "$url")
-          curl -v -f -o "Rewrite/JavaScript/$filename" "$url" || true
+          curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
         done < js_links.txt
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
