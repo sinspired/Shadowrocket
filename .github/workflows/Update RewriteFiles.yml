@@ -17,22 +17,27 @@ jobs:
 
     - name: Download & copy links
       run: |
+        echo "Creating directories..."
         mkdir -p Rewrite/JavaScript
+
         LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        curl -o "Rewrite/Chongxie.conf" "$LINK" || true
+        echo "Downloading Chongxie.conf from $LINK..."
+        curl -o "Rewrite/Chongxie.conf" "$LINK" || { echo "Failed to download Chongxie.conf"; exit 1; }
         
         # 提取 Chongxie.conf 中的 JS 文件链接
-        grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt
+        echo "Extracting JS links from Chongxie.conf..."
+        grep -Eo 'https?://[^ ]+\.js' Rewrite/Chongxie.conf > js_links.txt || { echo "Failed to extract JS links from Chongxie.conf"; exit 1; }
 
         # 下载并保存 JS 文件
+        echo "Downloading JS files..."
         while IFS= read -r url; do
           filename=$(basename "$url")
-          curl -f -o "Rewrite/JavaScript/$filename" "$url" || true
+          curl -f -o "Rewrite/JavaScript/$filename" "$url" || { echo "Failed to download $url"; exit 1; }
         done < js_links.txt
 
         # 读取 RewriteBuild.conf 文件并替换 JS 文件链接
         if [ -f "Rewrite/RewriteBuild.conf" ]; then
-          # 对 Rewrite/RewriteBuild.conf 中的每一行进行替换
+          echo "Reading RewriteBuild.conf and replacing JS links..."
           while IFS= read -r line; do
             # 提取 .js 文件名
             js_file=$(echo "$line" | grep -oP 'https?://[^ ]+\.js' | sed 's|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt||g' | sed 's|https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|g')
