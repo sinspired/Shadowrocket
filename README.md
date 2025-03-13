@@ -7,7 +7,7 @@
 >
 ## [Shadowrocket -- 仓库简介](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > [!NOTE]<br>
-> **本仓库提供由`向晚`维护的`Shadowrocket`的多款`配置文件`、一款`融合模块`，由生成器每日自动构建；**<br>
+> **本仓库提供由`向晚`维护的`Shadowrocket`的多款`配置文件`、一款`融合模块`，部分资源由生成器自动构建；**<br>
 > **如果此项目对您有帮助，欢迎给予Star！**<br>
 > **如有您有其他需求或问题，请提交Issues！**<br>
 >
@@ -17,7 +17,7 @@
 >
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
-> 默认使用加密的**DoH**，使用**system**进行回退；<br>
+> 默认使用加密的**DoH**进行DNS解析，使用**system**进行回退；<br>
 > 具有有效的**防追劫持、隐私保护**的功能；<br>
 > 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由GitHub Actions每日自动同步；<br>
 > ChatGPT等AI工具单独分流；<br>
@@ -114,6 +114,7 @@
 >
 #### `模块说明：`<br>
 > 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制，融合部分其他功能，可支持五百余款应用或小程序的净化；<br>
+> 融合模块由生成器构建，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/JavaScriptCheck.list)；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
