@@ -25,6 +25,9 @@ jobs:
         > Rewrite/JavaScriptCheck.list
     - name: Process and validate local files
       run: |
+        echo -e "[Invalid]\n" > Rewrite/JavaScriptCheck.list
+        invalid_list=""
+        valid_list=""
         for file in Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf; do
           if [ -f "$file" ]; then
             echo "Processing file: $file"
@@ -37,15 +40,16 @@ jobs:
               fi
               seen="$seen\n$url"
               if curl -fsS -o "Rewrite/JavaScript/$filename" "$url"; then
-                echo "$url valid" >> Rewrite/JavaScriptCheck.list
+                valid_list="${valid_list}${url}\n"
               else
-                echo "$url invalid" >> Rewrite/JavaScriptCheck.list
+                invalid_list="${invalid_list}${url}\n"
               fi
             done < Temp.list
           else
             echo "$file not found"
           fi
         done
+        echo -e "$invalid_list\n[Valid]\n$valid_list" >> Rewrite/JavaScriptCheck.list
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
