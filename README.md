@@ -17,7 +17,7 @@
 >
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
-> 默认使用加密的**DoH**进行DNS解析，使用**system**进行回退；<br>
+> 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
 > 具有有效的**防追劫持、隐私保护**的功能；<br>
 > 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由GitHub Actions每日自动同步；<br>
 > ChatGPT等AI工具单独分流；<br>
