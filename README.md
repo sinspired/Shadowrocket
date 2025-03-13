@@ -16,15 +16,15 @@
 ### [配置功能介绍](#配置功能介绍)<br>
 >
 #### `功能介绍：`<br>
-> 默认使用**TUN模式**接管所有流量；<br>
-> 具有强大的**骚扰拦截**功能；<br>
-> 具有有效的**防追踪/劫持**功能；<br>
-> 使用加密的**DoH**，并有效屏蔽未加密的DNS查询；<br>
+> 所有配置，默认使用**TUN模式**接管所有流量；<br>
+> 默认使用加密的**DoH**，使用**system**进行回退；<br>
+> 具有有效的**防追劫持、隐私保护**的功能；<br>
+> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由GitHub Actions每日自动同步；<br>
 > ChatGPT等AI工具单独分流；<br>
-> WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > Apple/Microsoft/Google单独分流；<br>
+> WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
-> 如搭配Shadowrocket的配置自动更新，一次操作，可无须后续管理；<br>
+> 如搭配Shadowrocket的配置自动更新，可一次操作，无须后续管理；<br>
 #### `如何安装：`<br>
 > 使用手机访问此页面，点击安装链接，一键跳转安装，即可完成安装；<br>
 > 如无法加载配置，请将全局路由切换至[代理]模式，或自行检查网络；<br>
@@ -49,7 +49,7 @@
 > Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
 > 其他规则及未匹配到的规则使用`香港节点`；<br>
 > 为了保证完全接管流量，本配置**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
-> **此配置是最适合懒人的配置，如节点包含`港美新`，建议使用此配置！**<br>
+> **此配置是最适合大众的配置，添加后无需调整，如节点包含`港美新`，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
 > [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules.conf "一键安装：基础配置")<br>
