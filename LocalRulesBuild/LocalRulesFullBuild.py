@@ -161,12 +161,9 @@ def main():
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
-        ("RULE-SET", "Rules/BlockHttpDNS.list", "骚扰拦截"),
         ("RULE-SET", "Rules/Hijacking.list", "骚扰拦截"),
         ("RULE-SET", "Rules/Privacy.list", "骚扰拦截"),
         ("DOMAIN-SET", "Rules/Privacy_Domain.list", "骚扰拦截"),
-        ("RULE-SET", "Rules/AdvertisingLite.list", "骚扰拦截"),
-        ("DOMAIN-SET", "Rules/AdvertisingLite_Domain.list", "骚扰拦截"),
         ("RULE-SET", "Rules/WeChat.list", "微信消息"),
         ("RULE-SET", "Rules/Telegram.list", "电报消息"),
         ("RULE-SET", "Rules/OpenAI.list", "人工智能"),

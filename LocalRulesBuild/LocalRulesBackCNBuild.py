@@ -136,12 +136,9 @@ def main():
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
-        ("RULE-SET", "Rules/BlockHttpDNS.list", "REJECT"),
         ("RULE-SET", "Rules/Hijacking.list", "REJECT"),
         ("RULE-SET", "Rules/Privacy.list", "REJECT"),
         ("DOMAIN-SET", "Rules/Privacy_Domain.list", "REJECT"),
-        ("RULE-SET", "Rules/AdvertisingLite.list", "REJECT"),
-        ("DOMAIN-SET", "Rules/AdvertisingLite_Domain.list", "REJECT"),
         ("RULE-SET", "Rules/ChinaMedia.list", "PROXY"),
         ("RULE-SET", "Rules/ChinaNoMedia.list", "PROXY"),
         ("DOMAIN-SET", "Rules/ChinaNoMedia_Domain.list", "PROXY"),
