@@ -114,7 +114,7 @@
 >
 #### `模块说明：`<br>
 > 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制，融合部分其他功能，可支持五百余款应用或小程序的净化；<br>
-> 融合模块由生成器构建，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/JavaScriptCheck.list)；<br>
+> 融合模块由生成器构建，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.list)；<br>
 > 使用办法：使用手机访问此页面，点击上方链接，一键安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
@@ -127,7 +127,7 @@
 > [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418`<br>
 ##### `软件净化：`<br>
 > [YouTube](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
-> [奶思合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200`<br>
+> [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `XiangwanGuan`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
 >
