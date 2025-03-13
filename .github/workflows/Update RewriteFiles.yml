@@ -9,12 +9,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
     - name: Download files
       run: |
         mkdir -p Rewrite/JavaScript
@@ -22,16 +20,13 @@ jobs:
         curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
         YT_MODULE="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
         curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$YT_MODULE" || true
-
     - name: Clear previous JavaScriptCheck.list contents
       run: |
         > Rewrite/JavaScriptCheck.list
-
     - name: Process and validate local files
       run: |
         invalid_list=""
         valid_list=""
-        
         for file in Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf; do
           if [ -f "$file" ]; then
             echo "Processing file: $file"
@@ -53,16 +48,12 @@ jobs:
             echo "$file not found"
           fi
         done
-        
-        # 按照正确格式写入 JavaScriptCheck.list
         {
           echo "[Invalid]"
           echo -e "$invalid_list"
-          echo ""  # 这里添加一个空行
           echo "[Valid]"
           echo -e "$valid_list"
         } > Rewrite/JavaScriptCheck.list
-
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
