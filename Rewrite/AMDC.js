@@ -5,9 +5,9 @@
 # 更新时间: 20250306
 */
 
-var ua = $request.headers["User-Agent"] || $request.headers["user-agent"];
-var pattern = /(AMap|Alibaba|Cainiao|DMPortal|Hema4iPhone|Moon|%E5%96%B5%E8%A1%97|%E5%A4%A9%E7%8C%AB|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA%E6%97%85%E8%A1%8C)/;
-if (pattern.test(ua)) {
+var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
+var pattern = /(amap|alibaba|cainiao|dmportal|hema4iphone|moon|喵街|天猫|闲鱼|飞猪旅行)/;
+if (pattern.test(decodeURIComponent(ua))) {
     $done({ body: "SUCCEED" });
 } else {
     $done({});
