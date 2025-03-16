@@ -2,7 +2,7 @@
 # 一汽大众
 # 一汽大众应用净化；
 # 由向晚制作维护；
-# 更新时间: 20250315
+# 更新时间: 20250316
 
 [rewrite_local]
 ^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js
