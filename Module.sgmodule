@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思去广告定制，融合部分功能，适配Shadowrocket；
-#!update=2025-03-15 12:25:05
+#!update=2025-03-16 09:21:26
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1221,6 +1221,7 @@ Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/near
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/shield/search/new_hotword, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/valueadded/alimama/splash_screen, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js, requires-body=true, max-size=-1
 BahamutAnimeAds.js =type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js, requires-body=true, max-size=-1
+FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.*, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_CAR_ZHIHU_COLLEGE, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_BANNER, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_CUSTOM_KONGO, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js, requires-body=true, max-size=-1
