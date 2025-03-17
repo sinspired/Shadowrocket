@@ -34,21 +34,32 @@ jobs:
         files_to_check=(
           "Rewrite/Chongxie.conf"
           "Rewrite/YouTubeNoAd.sgmodule"
+          "Rewrite/JDPriceComparison.conf"
         )
         for file in "${files_to_check[@]}"; do
           if [ -f "$file" ]; then
             echo "Processing file: $file"
-            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u | while IFS= read -r url; do
-              filename=$(basename "$url")
-              dest_path="Rewrite/JavaScript/$filename"
-              echo "Downloading JS: $url -> $dest_path"
-              curl -fsS -o "$dest_path" "$url" || true
-              if curl -fsS --output /dev/null --silent --head --fail "$url"; then
-                valid_list="${valid_list}${url}\n"
-              else
-                invalid_list="${invalid_list}${url}\n"
+            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
+            seen=""
+            while IFS= read -r url; do
+              if echo "$seen" | grep -Fxq "$url"; then
+                continue
               fi
-            done
+              seen="$seen\n$url"
+              if echo "$url" | grep -q "https://github.com/.*/raw/"; then
+                raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
+              else
+                raw_url="$url"
+              fi
+              if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
+                filepath="Rewrite/JavaScript/$(basename "$raw_url")"
+                echo "Downloading: $raw_url -> $filepath"
+                curl -fsS -o "$filepath" "$raw_url" || true
+                valid_list="${valid_list}${raw_url}\n"
+              else
+                invalid_list="${invalid_list}${raw_url}\n"
+              fi
+            done < Temp.list
           else
             echo "$file not found"
           fi
