@@ -20,7 +20,7 @@
 > `BlockHttpDNS.list`<br>
 > `AdvertisingLite.list`<br>
 > `AdvertisingLite_Domain.list`<br>
-> 生成器会继续支持如上规则集更新到**2025-03-31**，请及时更新配置，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)获取新地址，谢谢！<br>
+> 生成器会继续支持如上规则集更新到**2025-03-31**，请及时**更新配置**，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)获取新地址，谢谢！<br>
 >
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
