@@ -13,13 +13,17 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Download files
+    - name: Define file paths and links
       run: |
         mkdir -p Rewrite/JavaScript
-        LINK="https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt"
-        curl -fsS -o "Rewrite/Chongxie.conf" "$LINK" || true
-        YT_MODULE="https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule"
-        curl -fsS -o "Rewrite/YouTubeNoAd.sgmodule" "$YT_MODULE" || true
+        echo "Rewrite/Chongxie.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
+        echo "Rewrite/YouTubeNoAd.sgmodule|https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule" >> file_links.txt
+    - name: Download files
+      run: |
+        while IFS='|' read -r filepath url; do
+          echo "Downloading: $url -> $filepath"
+          curl -fsS -o "$filepath" "$url" || true
+        done < file_links.txt
     - name: Clear previous JavaScriptCheck.list contents
       run: |
         > Rewrite/JavaScriptCheck.list
@@ -27,7 +31,12 @@ jobs:
       run: |
         invalid_list=""
         valid_list=""
-        for file in Rewrite/Chongxie.conf Rewrite/YouTubeNoAd.sgmodule Rewrite/JDPriceComparison.conf; do
+        files_to_check=(
+          "Rewrite/Chongxie.conf"
+          "Rewrite/YouTubeNoAd.sgmodule"
+          "Rewrite/JDPriceComparison.conf"
+        )
+        for file in "${files_to_check[@]}"; do
           if [ -f "$file" ]; then
             echo "Processing file: $file"
             grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
