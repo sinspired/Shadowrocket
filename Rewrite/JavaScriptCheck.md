@@ -86,6 +86,5 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freship
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js
 https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
-https://github.com/mw418/Loon/blob/main/script/jd_price.js
 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
 
