@@ -33,7 +33,7 @@ jobs:
         valid_list=""
         files_to_check=(
           "Rewrite/Naisi.conf"
-          "Rewrite/YouTubeNoAd.sgmodule"
+          "Rewrite/YouTube.conf"
           "Rewrite/JDPriceComparison.conf"
         )
         for file in "${files_to_check[@]}"; do
@@ -82,8 +82,6 @@ jobs:
         add: |
           Rewrite/Naisi.conf
           Rewrite/YouTube.conf
-          Rewrite/Chongxie.conf
-          Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JavaScript/*
           Rewrite/JavaScriptCheck.md
       env:

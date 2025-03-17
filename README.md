@@ -132,7 +132,7 @@
 #### `融合说明：`<br>
 ##### `软件净化：`<br>
 > [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200` `XiangwanGuan`<br>
-> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00` `XiangwanGuan`<br>
+> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTube.conf) `iab0x00` `XiangwanGuan`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
 ##### `功能模块：`<br>
