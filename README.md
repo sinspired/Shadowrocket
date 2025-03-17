@@ -15,6 +15,13 @@
 >
 ### [配置功能介绍](#配置功能介绍)<br>
 >
+#### `重要提醒：`<br>
+> 出于种种考虑，本仓库内的配置，已移除如下规则集：<br>
+> `BlockHttpDNS.list`<br>
+> `AdvertisingLite.list`<br>
+> `AdvertisingLite_Domain.list`<br>
+> 生成器会继续该规则集维护到2025-04-01，请及时更新配置，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)获取地址，谢谢！<br>
+>
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
@@ -126,7 +133,7 @@
 ##### `功能模块：`<br>
 > [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418`<br>
 ##### `软件净化：`<br>
-> [YouTube](https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
+> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
 > [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
