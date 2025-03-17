@@ -22,7 +22,7 @@ jobs:
       run: |
         while IFS='|' read -r filepath url; do
           echo "Downloading: $url -> $filepath"
-          curl -LfsS -o "$filepath" "$url" || true
+          curl -fsS -o "$filepath" "$url" || true
         done < file_links.txt
     - name: Clear previous JavaScriptCheck.md contents
       run: |
@@ -46,10 +46,15 @@ jobs:
                 continue
               fi
               seen="$seen\n$url"
-              if curl -fsS --output /dev/null --silent --head --fail "$url"; then
-                valid_list="${valid_list}${url}\n"
+              if echo "$url" | grep -q "https://github.com/.*/raw/"; then
+                raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
               else
-                invalid_list="${invalid_list}${url}\n"
+                raw_url="$url"
+              fi
+              if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
+                valid_list="${valid_list}${raw_url}\n"
+              else
+                invalid_list="${invalid_list}${raw_url}\n"
               fi
             done < Temp.list
           else
