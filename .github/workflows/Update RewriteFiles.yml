@@ -57,7 +57,8 @@ jobs:
           fi
         done
         {
-          echo "#update = $(date '+%Y-%m-%d')"
+          echo "[Update]"
+          echo "$(date '+%Y-%m-%d')"
           echo ""
           echo "[Invalid]"
           echo -e "$invalid_list"
