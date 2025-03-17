@@ -130,13 +130,13 @@
 > **特别警告：本模块不做任何“解锁”等相关支持，如侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
 >
 #### `融合说明：`<br>
-##### `功能模块：`<br>
-> [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418`<br>
 ##### `软件净化：`<br>
-> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00`<br>
-> [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200`<br>
+> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTubeNoAd.sgmodule) `iab0x00` `XiangwanGuan`<br>
+> [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf) `fmz200` `XiangwanGuan`<br>
 > [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js) `XiangwanGuan`<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js) `XiangwanGuan`<br>
+##### `功能模块：`<br>
+> [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf) `mw418` `XiangwanGuan`<br>
 >
 ------
 >
