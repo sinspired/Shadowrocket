@@ -16,7 +16,7 @@ jobs:
     - name: Define file paths and links
       run: |
         mkdir -p Rewrite/JavaScript
-        echo "Rewrite/Chongxie.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
+        echo "Rewrite/Naisi.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
         echo "Rewrite/YouTubeNoAd.sgmodule|https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd_NoArgs.sgmodule" >> file_links.txt
     - name: Download files
       run: |
@@ -80,6 +80,7 @@ jobs:
         author_email: 'actions@github.com'
         message: 'Update RewriteFiles'
         add: |
+          Rewrite/Naisi.conf
           Rewrite/Chongxie.conf
           Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JavaScript/*
