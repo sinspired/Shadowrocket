@@ -22,7 +22,7 @@ jobs:
       run: |
         while IFS='|' read -r filepath url; do
           echo "Downloading: $url -> $filepath"
-          curl -fsS -o "$filepath" "$url" || true
+          curl -LfsS -o "$filepath" "$url" || true
         done < file_links.txt
     - name: Clear previous JavaScriptCheck.md contents
       run: |
