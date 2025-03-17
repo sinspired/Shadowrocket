@@ -47,7 +47,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
-#!desc=基于奶思合集定制，融合多种功能，完整适配Shadowrocket；
+#!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
 #!update={timestamp}
 
 [Rule]
@@ -108,7 +108,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
     mitm_match_content = unique_content
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,{mitm_match_content}
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com{mitm_match_content}
 """
     return sgmodule_content
 
