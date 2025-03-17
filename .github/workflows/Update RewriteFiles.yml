@@ -42,7 +42,6 @@ jobs:
             grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
             seen=""
             while IFS= read -r url; do
-              filename=$(basename "$url")
               if echo "$seen" | grep -Fxq "$url"; then
                 continue
               fi
@@ -58,6 +57,7 @@ jobs:
           fi
         done
         {
+          echo "update = $(date '+%Y-%m-%d')"
           echo "[Invalid]"
           echo -e "$invalid_list"
           echo "[Valid]"
