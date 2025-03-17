@@ -24,9 +24,9 @@ jobs:
           echo "Downloading: $url -> $filepath"
           curl -fsS -o "$filepath" "$url" || true
         done < file_links.txt
-    - name: Clear previous JavaScriptCheck.list contents
+    - name: Clear previous JavaScriptCheck.md contents
       run: |
-        > Rewrite/JavaScriptCheck.list
+        > Rewrite/JavaScriptCheck.md
     - name: Process and validate local files
       run: |
         invalid_list=""
@@ -57,12 +57,13 @@ jobs:
           fi
         done
         {
-          echo "update = $(date '+%Y-%m-%d')"
+          echo "#update = $(date '+%Y-%m-%d')"
+          echo ""
           echo "[Invalid]"
           echo -e "$invalid_list"
           echo "[Valid]"
           echo -e "$valid_list"
-        } > Rewrite/JavaScriptCheck.list
+        } > Rewrite/JavaScriptCheck.md
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
       with:
@@ -73,6 +74,6 @@ jobs:
           Rewrite/Chongxie.conf
           Rewrite/YouTubeNoAd.sgmodule
           Rewrite/JavaScript/*
-          Rewrite/JavaScriptCheck.list
+          Rewrite/JavaScriptCheck.md
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
