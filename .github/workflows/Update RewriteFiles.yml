@@ -51,6 +51,7 @@ jobs:
               else
                 raw_url="$url"
               fi
+              echo "Downloading: $url -> $filepath"
               if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                 valid_list="${valid_list}${raw_url}\n"
               else
