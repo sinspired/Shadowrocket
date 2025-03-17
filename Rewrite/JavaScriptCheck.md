@@ -1,4 +1,5 @@
-#update = 2025-03-17
+[Update]
+2025-03-17
 
 [Invalid]
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
