@@ -6,10 +6,11 @@ https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
 https://raw.githubusercontent.com/Yu9191/Script/main/shijuan.js
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/PPX.js
+https://raw.githubusercontent.com/mw418/Loon/blob/main/script/jd_price.js
 
 [Valid]
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js
+https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js
+https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js
 https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json
 https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
@@ -86,6 +87,5 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freship
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js
 https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
-https://github.com/mw418/Loon/blob/main/script/jd_price.js
 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
 
