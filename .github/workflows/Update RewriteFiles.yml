@@ -17,7 +17,7 @@ jobs:
       run: |
         mkdir -p Rewrite/JavaScript
         echo "Rewrite/Chongxie.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
-        echo "Rewrite/YouTubeNoAd.sgmodule|https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule" >> file_links.txt
+        echo "Rewrite/YouTubeNoAd.sgmodule|https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd_NoArgs.sgmodule" >> file_links.txt
     - name: Download files
       run: |
         while IFS='|' read -r filepath url; do
