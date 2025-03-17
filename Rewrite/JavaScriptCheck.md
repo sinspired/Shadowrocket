@@ -8,8 +8,8 @@ https://raw.githubusercontent.com/Yu9191/Script/main/shijuan.js
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/PPX.js
 
 [Valid]
-https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js
-https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js
 https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json
 https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js
