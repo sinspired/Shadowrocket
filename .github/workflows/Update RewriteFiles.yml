@@ -47,9 +47,9 @@ jobs:
               fi
               seen="$seen\n$url"
               if echo "$url" | grep -q "https://github.com/.*/raw/"; then
-                raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
-              else
                 raw_url="$url"
+              else
+                raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
               fi
               if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                 valid_list="${valid_list}${raw_url}\n"
