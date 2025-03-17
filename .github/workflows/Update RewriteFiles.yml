@@ -51,8 +51,10 @@ jobs:
               else
                 raw_url="$url"
               fi
-              echo "Downloading: $url -> $filepath"
               if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
+                filepath="Rewrite/JavaScript/$(basename "$raw_url")"
+                echo "Downloading: $raw_url -> $filepath"
+                curl -fsS -o "$filepath" "$raw_url" || true
                 valid_list="${valid_list}${raw_url}\n"
               else
                 invalid_list="${invalid_list}${raw_url}\n"
