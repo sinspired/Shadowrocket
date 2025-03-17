@@ -120,8 +120,8 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制，融合多种功能，完整适配Shadowrocket，支持五百余款应用或小程序的净化；<br>
-> 融合模块由生成器构建，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)；<br>
+> 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制并手动维护，融合多种其他功能，完整适配Shadowrocket，支持五百余款应用或小程序的净化；<br>
+> 融合模块由生成器依据规则构建，不定期更新，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)；<br>
 > 使用办法：使用手机访问此页面，点击上方的安装链接，一键安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
