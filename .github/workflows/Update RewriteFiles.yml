@@ -49,6 +49,10 @@ jobs:
               else
                 raw_url="$url"
               fi
+              if echo "$raw_url" | grep -q "XiangwanGuan"; then
+                echo "Skipping download for: $raw_url"
+                continue
+              fi
               if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                 filepath="Rewrite/JavaScript/$(basename "$raw_url")"
                 echo "Downloading: $raw_url -> $filepath"
