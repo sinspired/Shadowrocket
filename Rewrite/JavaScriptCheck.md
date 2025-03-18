@@ -1,8 +1,6 @@
 [Update]
 2025-03-18
 
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/
-
 [Invalid]
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
@@ -87,6 +85,5 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/flyert.
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freshippo.js
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js
-https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/youtube.response.js
 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
 
