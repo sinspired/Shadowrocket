@@ -202,7 +202,6 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 [*@kokoryh*](https://github.com/kokoryh/Script)
 [*@zZPiglet*](https://github.com/zZPiglet/Task)
 [*@zirawell*](https://github.com/zirawell/Ad-Cleaner)
-[*@NobyDa*](https://github.com/NobyDa/Script)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
 >
 ------
