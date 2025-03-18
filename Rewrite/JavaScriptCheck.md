@@ -85,5 +85,7 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/flyert.
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freshippo.js
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js
+https://raw.githubusercontent.com/GitHub-YungHsin/QuantumultX/8f14ab006910b485cb62b0c7e27db6113592ca30/Scripts/QidianMy.js
+https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_input/js/index.js
 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
 
