@@ -32,6 +32,7 @@ jobs:
         valid_list=""
         files_to_check=(
           "Rewrite/Naisi.conf"
+          "Rewrite/JavaScriptFixes.conf"
           "Rewrite/JDPriceComparison.conf"
         )
         for file in "${files_to_check[@]}"; do
