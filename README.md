@@ -208,7 +208,3 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 >
 ------
 >
-![GitHubStats](https://github-readme-stats.vercel.app/api?username=XiangwanGuan&show_icons=true&theme=default)<br>
->
-------
->
