@@ -17,7 +17,6 @@ jobs:
       run: |
         mkdir -p Rewrite/JavaScript
         echo "Rewrite/Naisi.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
-        echo "Rewrite/YouTube.conf|https://raw.githubusercontent.com/iab0x00/ProxyRules/main/Rewrite/YouTubeNoAd.sgmodule" >> file_links.txt
     - name: Download files
       run: |
         while IFS='|' read -r filepath url; do
@@ -81,7 +80,6 @@ jobs:
         message: 'Update RewriteFiles'
         add: |
           Rewrite/Naisi.conf
-          Rewrite/YouTube.conf
           Rewrite/JavaScript/*
           Rewrite/JavaScriptCheck.md
       env:
