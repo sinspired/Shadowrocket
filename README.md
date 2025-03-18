@@ -148,7 +148,7 @@
 > **建议添加证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
 > 证书模块添加成功后，“HTTPS解密”开关将不再重要，默认开启（模块的优先级高于配置）；<br>
-> 
+>
 > 证书模块制作办法：<br>
 > 配置 > 点击配置文件的 ⓘ 图标 > HTTPS 解密 > 证书 > 生成新的 CA 证书 > 安装证书；<br>
 > 系统设置 > 已下载描述文件 > 安装；<br>
@@ -183,11 +183,11 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 国家-URL，长按后复制此链接：[Country.mmdb](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，输入后点击更新；<br>
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
->更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
+> 更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
 >
 ------
 >
-### [鸣谢：](#鸣谢：)<br>
+### [特别鸣谢：](#特别鸣谢：)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
