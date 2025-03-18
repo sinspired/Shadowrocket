@@ -1,6 +1,8 @@
 [Update]
 2025-03-18
 
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/
+
 [Invalid]
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
