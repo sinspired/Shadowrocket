@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-18 09:51:55
+#!update=2025-03-18 10:01:54
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1308,7 +1308,7 @@ header.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/m
 huifutianxia_ads.js =type=http-response, pattern=^https:\/\/mcsp\.cloudpnr\.com\/api\/miniapp\/popular\/T_MINIAPP$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/huifutianxia_ads.js, requires-body=true, max-size=-1
 huifutianxia_ads.js =type=http-response, pattern=^https:\/\/saas-ad\.cloudpnr\.com\/huifuad-base-api\/api\/tactics\/ad, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/huifutianxia_ads.js, requires-body=true, max-size=-1
 ithome.js =type=http-response, pattern=^https?:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/ithome.js, requires-body=true, max-size=-1
-jd_price.js =type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js, requires-body=true, max-size=-1
+jd_price.js =type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/jd_price.js, requires-body=true, max-size=-1
 jingdong.js =type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/jingdong.js, requires-body=true, max-size=-1
 jingxiAd.js =type=http-response, pattern=^https?:\/\/api\.m\.jd\.com\/api\?functionId=delivery_show, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/jingxiAd.js, requires-body=true, max-size=-1
 json.js =type=http-response, pattern=^https?:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=-1
