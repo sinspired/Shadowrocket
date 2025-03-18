@@ -121,7 +121,8 @@
 >
 #### `模块说明：`<br>
 > 由[向晚](https://github.com/XiangwanGuan/Shadowrocket)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集定制并手动维护，融合多种其他功能，完整适配Shadowrocket，支持五百余款应用或小程序的净化；<br>
-> 融合模块由生成器依据规则构建，不定期更新，同时由GitHub Actions每日自动备份/监测远程资源，详情可查看：[检测列表](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)；<br>
+> 融合模块由生成器依据规则构建，依据规则变化，不定期更新；
+> 所有远程资源已同步/指向至本仓库，同时由GitHub Actions每日自动备份/监测，详情可查看：[检测列表](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)；<br>
 > 使用办法：使用手机访问此页面，点击上方的安装链接，一键安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
@@ -187,11 +188,21 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 ------
 >
 ### [鸣谢：](#鸣谢：)<br>
-[*@blackmatrix7*](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)
+[*@blackmatrix7*](https://github.com/blackmatrix7)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
 [*@mw418*](https://github.com/mw418/Loon)
+[*@Keywos*](https://github.com/Keywos/rule)
+[*@Maasea*](https://github.com/Maasea/sgmodule)
+[*@NobyDa*](https://github.com/NobyDa/Script)
+[*@Sliverkiss*](https://github.com/Sliverkiss/QuantumultX)
+[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
+[*@app2smile*](https://github.com/app2smile/rules)
+[*@kokoryh*](https://github.com/kokoryh/Script)
+[*@zZPiglet*](https://github.com/zZPiglet/Task)
+[*@zirawell*](https://github.com/zirawell/Ad-Cleaner)
+[*@NobyDa*](https://github.com/NobyDa/Script)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)<br>
 >
 ------
