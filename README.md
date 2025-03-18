@@ -132,9 +132,9 @@
 >
 #### `融合说明：`<br>
 ##### `软件净化：`<br>
-> [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)
-> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTube.conf)
-> [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)
+> [定制合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)<br>
+> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTube.conf)<br>
+> [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
 > [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
 ##### `功能模块：`<br>
 > [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
