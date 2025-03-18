@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-18 09:49:19
+#!update=2025-03-18 09:51:55
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1256,7 +1256,7 @@ cainiao.js =type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw
 cainiao.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show\.cn, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/cainiao.js, requires-body=true, max-size=-1
 cainiao.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(pickup\.empty\.page|protocol\.homepage)\.get\.cn, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/cainiao.js, requires-body=true, max-size=-1
 cainiao.js =type=http-response, pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.conversation\.list\.cn, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/cainiao.js, requires-body=true, max-size=-1
-caixinAd.js =type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/caixin/caixinAd.js, requires-body=true, max-size=-1
+caixinAd.js =type=http-response, pattern=^https?:\/\/gg\.caixin\.com\/s\?z=caixin&op=1&c=3362, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/caixinAd.js, requires-body=true, max-size=-1
 ccbLifeAds.js =type=http-response, pattern=^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB04, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/ccbLifeAds.js, requires-body=true, max-size=-1
 cnftp.js =type=http-response, pattern=^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/cnftp.js, requires-body=true, max-size=-1
 cnftp.js =type=http-response, pattern=^https?:\/\/[\d\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/cnftp.js, requires-body=true, max-size=-1
