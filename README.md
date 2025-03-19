@@ -122,10 +122,9 @@
 > **规则构成：以[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能，并手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/RewriteBuild.conf)为基础，融合：[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/FAWVW.js)、[京东历史比价](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JDPriceComparison.conf)；**<br>
 > **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，规则指向的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
-> 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
-> 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
-> 特别说明：使用[京东历史比价]，**必须开启Shadowrocket的通知权限**；<br>
-> 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
+> 使用须知：使用融合模块，**必须开启MitM**，教程参考下方说明；<br>
+> 特别说明：使用融合模块，会**禁用QUIC协议**，请自行评估影响；<br>
+> 特别说明：使用`京东历史比价`，必须开启Shadowrocket的**通知权限**；<br>
 > **特别警告：融合模块不做“解锁”功能，请支持开发者！如本项目侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
 >
 ------
