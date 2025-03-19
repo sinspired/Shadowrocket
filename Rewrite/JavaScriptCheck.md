@@ -1,13 +1,13 @@
-[Update]
+[Update]<br>
 2025-03-19
 
-[Invalid]
+[Invalid]<br>
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
 https://raw.githubusercontent.com/Yu9191/Script/main/shijuan.js
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/PPX.js
 
-[Valid]
+[Valid]<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js
 https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json
