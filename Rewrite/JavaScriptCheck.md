@@ -1,12 +1,12 @@
 #### 更新时间：2025-03-19<br>
 
-#### 失效资源<br>
+#### 失效资源：<br>
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
 https://raw.githubusercontent.com/Yu9191/Script/main/shijuan.js
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/PPX.js
-
-#### 有效资源<br>
+<br>
+#### 有效资源：<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js
 https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json
@@ -85,4 +85,4 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freship
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js
 https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
-
+<br>
