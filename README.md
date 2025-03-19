@@ -48,7 +48,7 @@
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**尽量包含`港美新`这三项**；<br>
-> 如不完全包含这三个地区的节点，则需要自行修改代理分组/正则，或使用`精简配置`、`完整配置`；<br>
+> 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用`精简配置`、`完整配置`；<br>
 > 
 > 本配置默认规则如下：<br>
 > 国内应用直接连接；<br>
@@ -119,10 +119,10 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> `融合模块`由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，重写部分内容并手动维护，融合多种功能，适配Shadowrocket，用于应用的净化；<br>
-> 融合模块由生成器依据规则构建，随规则变化不定期更新；<br>
-> 所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由GitHub Actions每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；<br>
-> 使用办法：使用手机访问此页面，点击上方的安装链接，一键安装；<br>
+> **`融合模块`由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合多种其他功能，适配Shadowrocket；**<br>
+> **融合模块由生成器依据规则构建，随规则变化不定期更新；**<br>
+> **所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由GitHub Actions每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
+> 使用办法：使用安装Shadowrocket的手机访问此页面，点击上方的**安装链接**，一键安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
 > 特别说明：使用`京东历史比价`，**必须开启Shadowrocket的通知权限**；<br>
