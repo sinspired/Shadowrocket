@@ -57,9 +57,9 @@ jobs:
                 filepath="Rewrite/JavaScript/$(basename "$raw_url")"
                 echo "Downloading: $raw_url -> $filepath"
                 curl -fsS -o "$filepath" "$raw_url" || true
-                valid_list="${valid_list}${raw_url}\n"
+                valid_list="${valid_list}${raw_url}<br>\n"
               else
-                invalid_list="${invalid_list}${raw_url}\n"
+                invalid_list="${invalid_list}${raw_url}<br>\n"
               fi
             done < Temp.list
           else
@@ -70,9 +70,9 @@ jobs:
           echo "#### 更新时间：$(date '+%Y-%m-%d')<br>"
           echo ""
           echo "#### 失效资源：<br>"
-          echo -e "$invalid_list<br>"
+          echo -e "$invalid_list"
           echo "#### 有效资源：<br>"
-          echo -e "$valid_list<br>"
+          echo -e "$valid_list"
         } > Rewrite/JavaScriptCheck.md
     - name: Commit & copy RewriteFiles
       uses: EndBug/add-and-commit@v9
