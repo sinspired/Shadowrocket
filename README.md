@@ -124,7 +124,7 @@
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
-> 特别说明：使用`京东历史比价`，**必须开启Shadowrocket的通知权限**；<br>
+> 特别说明：使用[京东历史比价]，**必须开启Shadowrocket的通知权限**；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > **特别警告：融合模块不做“解锁”功能，请支持开发者！如本项目侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
 >
