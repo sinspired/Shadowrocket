@@ -67,7 +67,8 @@ jobs:
           fi
         done
         {
-          echo "#### 更新时间： **$(date '+%Y-%m-%d')**<br>"
+          echo "#### 更新时间：$(date '+%Y-%m-%d')<br>"
+          echo ""
           echo "#### 失效资源<br>"
           echo -e "$invalid_list"
           echo "#### 有效资源<br>"
