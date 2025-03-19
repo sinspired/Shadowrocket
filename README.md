@@ -43,14 +43,14 @@
 >
 ### [基础配置介绍](#基础配置介绍)<br>
 #### `配置功能介绍：`<br>
-> 默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
+> [基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)的默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
 > 代理分组内的策略自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**尽量包含`港美新`这三项**；<br>
 > 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用`精简配置`、`完整配置`；<br>
 > 
-> 本配置默认规则如下：<br>
+> 基础配置默认规则如下：<br>
 > 国内应用直接连接；<br>
 > Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
 > 其他规则及未匹配到的规则使用`香港节点`；<br>
@@ -65,7 +65,7 @@
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`基础配置`构建，包含更多代理分组：`港台日新美`*，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
+> 基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`*，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
 > **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
@@ -76,7 +76,7 @@
 ### [精简配置介绍](#精简配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`基础配置`构建，除不包含代理分组以外，其余配置完全相同；<br>
+> 基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
 > **如不需要代理分组及自动分流，强烈建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
@@ -87,7 +87,7 @@
 ### [回国配置介绍](#回国配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于`精简配置`构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
+> 基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
 > **此配置需搭配`回国机场`使用，不适合国内用户使用！**<br>
 >
 #### `配置安装：`<br>
@@ -98,7 +98,7 @@
 ### [本地配置介绍](#本地配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 同步提供本仓库所有配置`本地化配置`，由[生成器](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRulesBuild)每日自动构建，安装后不依赖外部规则集；<br>
+> 同步提供本仓库所有配置`本地化配置`，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20LocalRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRulesBuild)每日自动构建，安装后不依赖外部规则集；<br>
 > **此类配置很难自定义，如有个性需求，请慎重使用！**<br>
 > **此类配置尚在开发阶段，有问题及时反馈！**<br>
 >
@@ -119,9 +119,9 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> **由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合[多种功能](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#%E8%9E%8D%E5%90%88%E8%AF%B4%E6%98%8E)，完全适配Shadowrocket；**<br>
-> **[融合模块](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)由[生成器](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/ModuleBuild/ModuleBuild.py)依据[规则](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/ModuleBuild/BuildList.conf)构建，随规则变化不定期更新；**<br>
-> **所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
+> **由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合[多种功能](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#%E8%9E%8D%E5%90%88%E8%AF%B4%E6%98%8E)，完全适配Shadowrocket；**<br>
+> **[融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)构建，随规则变化不定期更新；**<br>
+> **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
