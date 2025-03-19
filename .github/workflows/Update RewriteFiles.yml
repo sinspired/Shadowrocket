@@ -67,12 +67,12 @@ jobs:
           fi
         done
         {
-          echo "#### [Update]<br>"
+          echo "#### 更新时间<br>"
           echo "**$(date '+%Y-%m-%d')**"
           echo ""
-          echo "#### [Invalid]<br>"
+          echo "#### 失效资源<br>"
           echo -e "$invalid_list"
-          echo "#### [Valid]<br>"
+          echo "#### 有效资源<br>"
           echo -e "$valid_list"
         } > Rewrite/JavaScriptCheck.md
     - name: Commit & copy RewriteFiles
