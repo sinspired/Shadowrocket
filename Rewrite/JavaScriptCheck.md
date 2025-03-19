@@ -1,5 +1,5 @@
 [Update]
-2025-03-18
+2025-03-19
 
 [Invalid]
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
