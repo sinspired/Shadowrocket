@@ -1,6 +1,4 @@
-#### 更新时间<br>
-**2025-03-19**
-
+#### 更新时间： **2025-03-19**<br>
 #### 失效资源<br>
 https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
 https://raw.githubusercontent.com/Yu9191/Rewrite/main/Qidian_my.js
