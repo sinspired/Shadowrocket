@@ -119,7 +119,7 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> **`融合模块`由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合多种其他功能，适配Shadowrocket；**<br>
+> **由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合多种其他功能，适配Shadowrocket；**<br>
 > **融合模块由生成器依据规则构建，随规则变化不定期更新；**<br>
 > **所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由GitHub Actions每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击上方的**安装链接**，一键安装；<br>
