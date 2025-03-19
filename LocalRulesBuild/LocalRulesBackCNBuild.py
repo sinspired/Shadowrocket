@@ -110,7 +110,6 @@ fallback-dns-server = https://doh.sb/dns-query
 hijack-dns = *:53
 icmp-auto-reply = true
 private-ip-answer = true
-always-reject-url-rewrite = true
 dns-direct-fallback-proxy = true
 udp-policy-not-supported-behaviour = REJECT
 
