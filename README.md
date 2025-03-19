@@ -25,7 +25,7 @@
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
 > 具有有效的**防追劫持、隐私保护**的功能；<br>
-> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由GitHub Actions每日自动同步；<br>
+> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步；<br>
 > ChatGPT等AI工具单独分流；<br>
 > Apple/Microsoft/Google单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
@@ -119,10 +119,10 @@
 > [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule "一键安装：融合模块")<br>
 >
 #### `模块说明：`<br>
-> **由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合多种[其他功能](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#%E8%9E%8D%E5%90%88%E8%AF%B4%E6%98%8E)，完全适配Shadowrocket；**<br>
+> **由[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/raw/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能并手动维护，同时融合[多种功能](https://github.com/XiangwanGuan/Shadowrocket?tab=readme-ov-file#%E8%9E%8D%E5%90%88%E8%AF%B4%E6%98%8E)，完全适配Shadowrocket；**<br>
 > **[融合模块](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)由[生成器](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/ModuleBuild/ModuleBuild.py)依据[规则](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/ModuleBuild/BuildList.conf)构建，随规则变化不定期更新；**<br>
-> **所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由GitHub Actions每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
-> 使用办法：使用安装Shadowrocket的手机访问此页面，点击上方的**安装链接**，一键安装；<br>
+> **所有[远程资源](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，[重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)中的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
+> 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
 > 特别说明：使用`京东历史比价`，**必须开启Shadowrocket的通知权限**；<br>
