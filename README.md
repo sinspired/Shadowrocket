@@ -8,8 +8,7 @@
 ## [Shadowrocket -- 仓库简介](https://github.com/XiangwanGuan/Shadowrocket)<br>
 > [!NOTE]<br>
 > **本仓库提供由`向晚`维护的`Shadowrocket`的多款`配置文件`、一款`融合模块`，部分资源由生成器自动构建；**<br>
-> **如果此项目对您有帮助，欢迎给予Star！**<br>
-> **如有您有其他需求或问题，请提交Issues！**<br>
+> **如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！**<br>
 >
 ------
 >
