@@ -128,15 +128,6 @@
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > **特别警告：本模块不做任何“解锁”等相关支持，请支持开发者！如本项目侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
 >
-#### `融合说明：`<br>
-##### `软件净化：`<br>
-> [重写合集](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/RewriteBuild.conf)<br>
-> [YouTube](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/YouTube.conf)<br>
-> [高德地图](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js)<br>
-> [一汽大众](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js)<br>
-##### `功能模块：`<br>
-> [京东历史比价](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JDPriceComparison.conf)<br>
->
 ------
 >
 ### [推荐设置](#推荐设置)<br>
