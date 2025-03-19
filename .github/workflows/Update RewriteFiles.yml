@@ -67,12 +67,12 @@ jobs:
           fi
         done
         {
-          echo "[Update]<br>"
-          echo "$(date '+%Y-%m-%d')"
+          echo "#### [Update]<br>"
+          echo "**$(date '+%Y-%m-%d')**"
           echo ""
-          echo "[Invalid]<br>"
+          echo "#### [Invalid]<br>"
           echo -e "$invalid_list"
-          echo "[Valid]<br>"
+          echo "#### [Valid]<br>"
           echo -e "$valid_list"
         } > Rewrite/JavaScriptCheck.md
     - name: Commit & copy RewriteFiles
