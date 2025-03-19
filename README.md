@@ -47,7 +47,7 @@
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**尽量包含`港美新`这三项**；<br>
-> 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)或[完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)；<br>
+> 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用[完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)或[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)；<br>
 > 
 > 基础配置默认规则如下：<br>
 > 国内应用直接连接；<br>
@@ -86,7 +86,7 @@
 ### [回国配置介绍](#回国配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
+> [回国配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesBackCN.conf)基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
 > **此配置需搭配`回国机场`使用，不适合国内用户使用！**<br>
 >
 #### `配置安装：`<br>
