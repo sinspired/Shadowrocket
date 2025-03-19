@@ -25,18 +25,17 @@
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
 > 具有有效的**防追劫持、隐私保护**的功能；<br>
-> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步；<br>
 > ChatGPT等AI工具单独分流；<br>
 > Apple/Microsoft/Google单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
-> 如搭配Shadowrocket的配置自动更新，可一次操作，无须后续管理；<br>
+> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RuleFiles.yml)**每日自动同步**；<br>
 #### `如何安装：`<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
 > 如无法加载配置，请将全局路由切换至[代理]模式，或自行检查网络；<br>
 >
 #### `修改分流：`<br>
-> **仅适用于包含代理分组的配置**<br>
+> **仅适用于包含代理分组的配置；**<br>
 > 打开Shadowrocket首页，下拉，选择你想要修改的代理分组，选择策略即可；<br>
 >
 ------
@@ -48,7 +47,7 @@
 >
 #### `使用必看：`<br>
 > 你所使用的节点，**尽量包含`港美新`这三项**；<br>
-> 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用`精简配置`、`完整配置`；<br>
+> 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)或[完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)；<br>
 > 
 > 基础配置默认规则如下：<br>
 > 国内应用直接连接；<br>
@@ -65,7 +64,7 @@
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`*，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
+> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`*，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
 > **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
@@ -76,7 +75,7 @@
 ### [精简配置介绍](#精简配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
+> [精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
 > **如不需要代理分组及自动分流，强烈建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
@@ -98,7 +97,7 @@
 ### [本地配置介绍](#本地配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> 同步提供本仓库所有配置`本地化配置`，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20LocalRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRulesBuild)每日自动构建，安装后不依赖外部规则集；<br>
+> 同步提供本仓库所有配置[本地化配置](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRules)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20LocalRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRulesBuild)每日自动构建，安装后不依赖外部规则集；<br>
 > **此类配置很难自定义，如有个性需求，请慎重使用！**<br>
 > **此类配置尚在开发阶段，有问题及时反馈！**<br>
 >
@@ -125,7 +124,7 @@
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用要求：使用本模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用本模块，会**禁用QUIC协议**，请自行评估影响；<br>
-> 特别说明：使用`京东历史比价`，**必须开启Shadowrocket的通知权限**；<br>
+> 特别说明：使用[京东历史比价](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JDPriceComparison.conf)，**必须开启Shadowrocket的通知权限**；<br>
 > 由于配置及网络的多样及不确定性，**本模块仅接受搭配使用`本仓库内的配置`的Issues**，请悉知；<br>
 > **特别警告：本模块不做任何“解锁”等相关支持，请支持开发者！如本项目侵犯了您的利益，请联系本人进行移除，谢谢！**<br>
 >
