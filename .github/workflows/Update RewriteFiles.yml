@@ -16,9 +16,9 @@ jobs:
       - name: Define file paths and links
         run: |
           mkdir -p Rewrite/JavaScript
-          echo "Rewrite/NaisiQX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
-          echo "Rewrite/NaisiLoon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
-          echo "Rewrite/NaisiWeibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> file_links.txt
+          echo "Rewrite/Naisi/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
+          echo "Rewrite/Naisi/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
+          echo "Rewrite/Naisi/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> file_links.txt
       - name: Download files
         run: |
           while IFS='|' read -r filepath url; do
@@ -98,9 +98,9 @@ jobs:
           author_email: 'actions@github.com'
           message: 'Update RewriteFiles'
           add: |
-            Rewrite/NaisiQX.conf
-            Rewrite/NaisiLoon.conf
-            Rewrite/NaisiWeibo.conf
+            Rewrite/Naisi/QX.conf
+            Rewrite/Naisi/Loon.conf
+            Rewrite/Naisi/Weibo.conf
             Rewrite/JavaScript/*
             Rewrite/JavaScriptCheck.md
         env:
