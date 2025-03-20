@@ -80,4 +80,11 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freship
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bilibili/protoC.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_vip.js<br>
+https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/reject-dict.json<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
+https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
+https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
 
