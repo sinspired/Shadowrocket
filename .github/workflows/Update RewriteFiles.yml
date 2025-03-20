@@ -3,111 +3,121 @@ on:
   schedule:
     - cron: '10 0 * * *'
   workflow_dispatch:
+
 jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Git configuration
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Set up Git configuration
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Define file paths and links
-      run: |
-        mkdir -p Rewrite/JavaScript
-        echo "Rewrite/NaisiQX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
-        echo "Rewrite/NaisiLoon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
+      - name: Define file paths and links
+        run: |
+          mkdir -p Rewrite/JavaScript
+          echo "Rewrite/NaisiQX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
+          echo "Rewrite/NaisiLoon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
 
-    - name: Download files
-      run: |
-        while IFS='|' read -r filepath url; do
-          echo "Downloading: $url -> $filepath"
-          curl -fsS -o "$filepath" "$url" || true
-        done < file_links.txt
+      - name: Download files
+        run: |
+          while IFS='|' read -r filepath url; do
+            echo "Downloading: $url -> $filepath"
+            curl -fsS -o "$filepath" "$url" || true
+          done < file_links.txt
 
-    - name: Clear previous JavaScriptCheck.md contents
-      run: |
-        > Rewrite/JavaScriptCheck.md
+      - name: Clear previous JavaScriptCheck.md contents
+        run: |
+          > Rewrite/JavaScriptCheck.md
 
-    - name: Process and validate local files
-      run: |
-        invalid_list=""
-        valid_list=""
-        files_to_check=(
-          "Rewrite/NaisiQX.conf"
-          "Rewrite/NaisiLoon.conf"
-          "Rewrite/JDPriceComparison.conf"
-        )
+      - name: Process and validate local files
+        run: |
+          invalid_list=""
+          valid_list=""
+          files_to_check=(
+            "Rewrite/NaisiQX.conf"
+            "Rewrite/NaisiLoon.conf"
+            "Rewrite/JDPriceComparison.conf"
+          )
 
-        # 存放已下载的 URL，避免重复
-        declare -A downloaded_urls
+          # 存放已下载的 URL，避免重复
+          declare -A downloaded_urls
 
-        for file in "${files_to_check[@]}"; do
-          if [ -f "$file" ]; then
-            echo "Processing file: $file"
+          for file in "${files_to_check[@]}"; do
+            if [ -f "$file" ]; then
+              echo "Processing file: $file"
 
-            # 先过滤掉被注释的行，再提取 URL
-            grep -E "^(?!#).*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
+              # 过滤掉被注释的行，并提取 URL
+              grep -E "^[^#].*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
 
-            while IFS= read -r url; do
-              # 处理 GitHub raw 链接
-              if echo "$url" | grep -q "https://github.com/.*/raw/"; then
-                raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
-              else
-                raw_url="$url"
-              fi
+              while IFS= read -r url; do
+                # 处理 GitHub raw 链接
+                if echo "$url" | grep -q "https://github.com/.*/raw/"; then
+                  raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
+                else
+                  raw_url="$url"
+                fi
 
-              # 跳过包含 "XiangwanGuan" 的 URL
-              if echo "$raw_url" | grep -q "XiangwanGuan"; then
-                echo "Skipping download for: $raw_url"
-                continue
-              fi
+                # 跳过包含 "XiangwanGuan" 的 URL
+                if echo "$raw_url" | grep -q "XiangwanGuan"; then
+                  echo "Skipping download for: $raw_url"
+                  continue
+                fi
 
-              # 避免重复下载
-              if [[ -n "${downloaded_urls[$raw_url]}" ]]; then
-                echo "Skipping duplicate: $raw_url"
-                continue
-              fi
+                # 避免重复下载
+                if [[ -n "${downloaded_urls[$raw_url]}" ]]; then
+                  echo "Skipping duplicate: $raw_url"
+                  continue
+                fi
 
-              # 检查 URL 是否有效
-              if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
-                filepath="Rewrite/JavaScript/$(basename "$raw_url")"
-                echo "Downloading: $raw_url -> $filepath"
-                curl -fsS -o "$filepath" "$raw_url" || true
-                valid_list="${valid_list}${raw_url}<br>\n"
-                downloaded_urls[$raw_url]=1  # 标记 URL 已下载
-              else
-                invalid_list="${invalid_list}${raw_url}<br>\n"
-              fi
-            done < Temp.list
-          else
-            echo "$file not found"
-          fi
-        done
+                # 检查 URL 是否有效
+                if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
+                  filepath="Rewrite/JavaScript/$(basename "$raw_url")"
+                  echo "Downloading: $raw_url -> $filepath"
+                  curl -fsS -o "$filepath" "$raw_url" || true
+                  valid_list="${valid_list}${raw_url}<br>\n"
+                  downloaded_urls[$raw_url]=1  # 标记 URL 已下载
+                else
+                  invalid_list="${invalid_list}${raw_url}<br>\n"
+                fi
+              done < Temp.list
+            else
+              echo "$file not found"
+            fi
+          done
 
-        # 生成 Markdown 文件
-        {
-          echo "#### 更新时间：$(date '+%Y-%m-%d')<br>"
-          echo ""
-          echo "#### 失效资源：<br>"
-          echo -e "$invalid_list"
-          echo "#### 有效资源：<br>"
-          echo -e "$valid_list"
-        } > Rewrite/JavaScriptCheck.md
+          # 生成 Markdown 文件
+          {
+            echo "#### 更新时间：$(date '+%Y-%m-%d')<br>"
+            echo ""
+            echo "#### 失效资源：<br>"
+            if [[ -n "$invalid_list" ]]; then
+              echo -e "$invalid_list"
+            else
+              echo "无失效资源<br>"
+            fi
+            echo ""
+            echo "#### 有效资源：<br>"
+            if [[ -n "$valid_list" ]]; then
+              echo -e "$valid_list"
+            else
+              echo "无有效资源<br>"
+            fi
+          } > Rewrite/JavaScriptCheck.md
 
-    - name: Commit & copy RewriteFiles
-      uses: EndBug/add-and-commit@v9
-      with:
-        author_name: 'GitHub Actions'
-        author_email: 'actions@github.com'
-        message: 'Update RewriteFiles'
-        add: |
-          Rewrite/NaisiQX.conf
-          Rewrite/NaisiLoon.conf
-          Rewrite/JavaScript/*
-          Rewrite/JavaScriptCheck.md
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit & copy RewriteFiles
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: 'GitHub Actions'
+          author_email: 'actions@github.com'
+          message: 'Update RewriteFiles'
+          add: |
+            Rewrite/NaisiQX.conf
+            Rewrite/NaisiLoon.conf
+            Rewrite/JavaScript/*
+            Rewrite/JavaScriptCheck.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
