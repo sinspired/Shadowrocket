@@ -158,6 +158,7 @@ def main():
     rule_definitions = [
         ("RULE-SET", "Rules/Lan.list", "DIRECT"),
         ("RULE-SET", "Rules/Direct.list", "DIRECT"),
+        ("RULE-SET", "https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/QuantumultX/filter/fenliu.list", "DIRECT"),
         ("RULE-SET", "Rules/Hijacking.list", "骚扰拦截"),
         ("RULE-SET", "Rules/Privacy.list", "骚扰拦截"),
         ("DOMAIN-SET", "Rules/Privacy_Domain.list", "骚扰拦截"),
