@@ -18,6 +18,7 @@ jobs:
           mkdir -p Rewrite/JavaScript
           echo "Rewrite/NaisiQX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
           echo "Rewrite/NaisiLoon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
+          echo "Rewrite/NaisiWeibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/QuantumultX/rewrite/weibo.snippet" >> file_links.txt
       - name: Download files
         run: |
           while IFS='|' read -r filepath url; do
