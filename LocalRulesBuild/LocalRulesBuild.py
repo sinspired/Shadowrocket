@@ -47,11 +47,11 @@ def process_rules(rule_definitions):
                         line = line.strip()
                         if line:
                             if rule_type == "RULE-SET":
-                                parts = line.split(",")
+                                parts = [p.strip() for p in line.split(",")]
                                 if len(parts) < 3:
                                     parts.append(action)
-                                rule_type_upper = parts[0].strip().upper()
-                                domain_or_ip = parts[1].strip()
+                                rule_type_upper = parts[0].upper()
+                                domain_or_ip = parts[1]
                                 if rule_type_upper == "HOST-SUFFIX":
                                     domain = domain_or_ip.lower()
                                     if domain not in seen_domains:
@@ -68,13 +68,22 @@ def process_rules(rule_definitions):
                                         seen_domains.add(host)
                                         rules.append(f"HOST,{host},{action}")
                                 elif rule_type_upper == "IP-CIDR":
-                                    ip_cidr = domain_or_ip
-                                    if ip_cidr not in seen_ip_cidr:
-                                        seen_ip_cidr.add(ip_cidr)
-                                        rules.append(f"IP-CIDR,{ip_cidr},{action}")
+                                    if any("no-resolve" in part.lower() for part in parts):
+                                        if len(parts) == 3:
+                                            final_parts = [parts[0], parts[1], action, "no-resolve"]
+                                        else:
+                                            final_parts = parts
+                                        ip_cidr = final_parts[1]
+                                        if ip_cidr not in seen_ip_cidr:
+                                            seen_ip_cidr.add(ip_cidr)
+                                            rules.append(",".join(final_parts))
+                                    else:
+                                        ip_cidr = domain_or_ip
+                                        if ip_cidr not in seen_ip_cidr:
+                                            seen_ip_cidr.add(ip_cidr)
+                                            rules.append(f"IP-CIDR,{ip_cidr},{action}")
                                 else:
                                     rules.append(f"{rule_type_upper},{domain_or_ip},{action}")
-                            
                             elif rule_type == "DOMAIN-SET":
                                 domain = line.strip().lstrip('.').lower()
                                 if domain not in seen_domains:
