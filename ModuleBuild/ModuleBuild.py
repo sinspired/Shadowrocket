@@ -84,8 +84,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
-YouTube.response =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=-1, argument="{{"lyricLang":"zh-Hans","captionLang":"zh-Hans","blockUpload":true,"blockImmersive":true,"debug":false}}"
-AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js, requires-body=true, max-size=-1
+YouTube.response =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=0, argument="{{"lyricLang":"zh-Hans","captionLang":"zh-Hans","blockUpload":true,"blockImmersive":true,"debug":false}}"
+AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js, requires-body=true, max-size=0
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
@@ -95,14 +95,14 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
         filename = re.search(r'/([^/]+)$', script_path).group(1)
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
-        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=-1\n"
+        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=0\n"
     script_content= '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content +=script_content
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=-1\n"
+        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
     mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
     unique_content = ','.join(sorted({item.strip() for item in mitm_match_content.split(',')}))
     mitm_match_content = unique_content
