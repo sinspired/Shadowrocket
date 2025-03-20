@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-20 15:14:33
+#!update=2025-03-20 16:11:03
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -8,7 +8,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 ^http:\/\/ad\.shunchangzhixing\.com\/getAd - reject-dict
-^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch - reject
 ^http:\/\/ebk\.17u\.cn\/tctrafficappversionadmin\/api\/getLatestVersionApp - reject-dict
 ^http:\/\/res1\.hubcloud\.com\.cn - reject-200
 ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
