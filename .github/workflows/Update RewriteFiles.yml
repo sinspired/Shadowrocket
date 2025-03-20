@@ -35,6 +35,7 @@ jobs:
           files_to_check=(
             "Rewrite/NaisiQX.conf"
             "Rewrite/NaisiLoon.conf"
+            "Rewrite/NaisiWeibo.conf"
             "Rewrite/JDPriceComparison.conf"
           )
           declare -A downloaded_urls
