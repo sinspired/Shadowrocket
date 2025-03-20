@@ -15,11 +15,11 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Define file paths and links
         run: |
-          mkdir -p Rewrite/Naisi
+          mkdir -p Rewrite/NaisiScripts
           mkdir -p Rewrite/JavaScript
-          echo "Rewrite/Naisi/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
-          echo "Rewrite/Naisi/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
-          echo "Rewrite/Naisi/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
+          echo "Rewrite/NaisiScripts/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
+          echo "Rewrite/NaisiScripts/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
+          echo "Rewrite/NaisiScripts/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
       - name: Download files
         run: |
           while IFS='|' read -r filepath url; do
@@ -99,9 +99,9 @@ jobs:
           author_email: 'actions@github.com'
           message: 'Update RewriteFiles'
           add: |
-            Rewrite/Naisi/QX.conf
-            Rewrite/Naisi/Loon.conf
-            Rewrite/Naisi/Weibo.conf
+            Rewrite/NaisiScripts/QX.conf
+            Rewrite/NaisiScripts/Loon.conf
+            Rewrite/NaisiScripts/Weibo.conf
             Rewrite/JavaScript/*
             Rewrite/JavaScriptCheck.md
         env:
