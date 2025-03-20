@@ -79,14 +79,14 @@ jobs:
             if [[ -n "$invalid_list" ]]; then
               echo -e "$invalid_list"
             else
-              echo "**无失效资源**<br>"
+              echo "**无失效资源！**<br>"
             fi
             echo ""
             echo "#### 有效资源：<br>"
             if [[ -n "$valid_list" ]]; then
               echo -e "$valid_list"
             else
-              echo "**无有效资源**<br>"
+              echo "**无有效资源！**<br>"
             fi
           } > Rewrite/JavaScriptCheck.md
       - name: Commit & copy RewriteFiles
