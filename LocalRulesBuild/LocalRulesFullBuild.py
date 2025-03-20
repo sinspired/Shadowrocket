@@ -14,7 +14,7 @@ def download_rule(url, index, total):
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()
-        return [line for line in response.text.splitlines() if not line.lstrip().startswith("#")]
+        return [line for line in response.text.splitlines() if not (line.lstrip().startswith("#") or line.lstrip().startswith(";"))]
     except requests.RequestException as e:
         print(f"规则下载失败: {file_name} - {e}")
         return None
@@ -23,68 +23,72 @@ def process_rules(rule_definitions):
     rules = []
     failed_rules = []
     seen_domains = set()
+    seen_ip_cidr = set()
+    seen_rules = set()
     total_rules = sum(1 for rule in rule_definitions if len(rule) == 3 and rule[0] in ("RULE-SET", "DOMAIN-SET"))
     download_index = 0
     for rule in rule_definitions:
         if len(rule) == 2:
             rule_type, action = rule
-            rules.append(f"{rule_type},{action}")
+            if rule_type in {"GEOIP", "FINAL", "DEFAULT"}:
+                rule_str = f"{rule_type},{action}"
+                if rule_str not in seen_rules:
+                    seen_rules.add(rule_str)
+                    rules.append(rule_str)
         else:
             rule_type, url, action = rule
-            if rule_type == "GEOIP":
-                rules.append(f"{rule_type},{url},{action}")
-            elif rule_type == "RULE-SET":
+            if rule_type in {"RULE-SET", "DOMAIN-SET"}:
                 download_index += 1
-                if url.startswith("https://"):
-                    rule_content = download_rule(url, download_index, total_rules)
-                else:
-                    rule_content = read_local_rule(url)
+                rule_content = download_rule(url, download_index, total_rules) if url.startswith("https://") else read_local_rule(url)
                 if rule_content is None:
                     failed_rules.append(url)
                 else:
                     for line in rule_content:
                         line = line.strip()
                         if line:
-                            parts = line.split(",")
-                            if len(parts) == 3:
-                                parts.insert(2, action)
-                            elif len(parts) == 2:
-                                parts.append(action)
-                            elif len(parts) == 1:
-                                parts.append(action)
-                            rule_str = ",".join(parts)
-                            if rule_str.startswith("DOMAIN-SUFFIX"):
-                                domain = parts[1]
+                            if rule_type == "RULE-SET":
+                                parts = [p.strip() for p in line.split(",")]
+                                if len(parts) < 3:
+                                    parts.append(action)
+                                rule_type_upper = parts[0].upper()
+                                domain_or_ip = parts[1]
+                                if rule_type_upper == "HOST-SUFFIX":
+                                    domain = domain_or_ip.lower()
+                                    if domain not in seen_domains:
+                                        seen_domains.add(domain)
+                                        rules.append(f"HOST-SUFFIX,{domain},{action}")
+                                elif rule_type_upper == "HOST-KEYWORD":
+                                    keyword = domain_or_ip
+                                    if keyword not in seen_domains:
+                                        seen_domains.add(keyword)
+                                        rules.append(f"HOST-KEYWORD,{keyword},{action}")
+                                elif rule_type_upper == "HOST":
+                                    host = domain_or_ip
+                                    if host not in seen_domains:
+                                        seen_domains.add(host)
+                                        rules.append(f"HOST,{host},{action}")
+                                elif rule_type_upper == "IP-CIDR":
+                                    if any("no-resolve" in part.lower() for part in parts):
+                                        if len(parts) == 3:
+                                            final_parts = [parts[0], parts[1], action, "no-resolve"]
+                                        else:
+                                            final_parts = parts
+                                        ip_cidr = final_parts[1]
+                                        if ip_cidr not in seen_ip_cidr:
+                                            seen_ip_cidr.add(ip_cidr)
+                                            rules.append(",".join(final_parts))
+                                    else:
+                                        ip_cidr = domain_or_ip
+                                        if ip_cidr not in seen_ip_cidr:
+                                            seen_ip_cidr.add(ip_cidr)
+                                            rules.append(f"IP-CIDR,{ip_cidr},{action}")
+                                else:
+                                    rules.append(f"{rule_type_upper},{domain_or_ip},{action}")
+                            elif rule_type == "DOMAIN-SET":
+                                domain = line.strip().lstrip('.').lower()
                                 if domain not in seen_domains:
                                     seen_domains.add(domain)
-                                    rules.append(rule_str)
-                            elif rule_str.startswith("IP-CIDR"):
-                                ip = parts[1]
-                                if ip not in seen_domains:
-                                    seen_domains.add(ip)
-                                    rules.append(rule_str)
-                            elif rule_str.startswith("DOMAIN"):
-                                domain = parts[1]
-                                if domain not in seen_domains:
-                                    seen_domains.add(domain)
-                                    rules.append(rule_str)
-            elif rule_type == "DOMAIN-SET":
-                download_index += 1
-                if url.startswith("https://"):
-                    rule_content = download_rule(url, download_index, total_rules)
-                else:
-                    rule_content = read_local_rule(url)
-                if rule_content is None:
-                    failed_rules.append(url)
-                else:
-                    for line in rule_content:
-                        domain = line.strip()
-                        if domain:
-                            if domain.startswith('.'):
-                                domain = domain[1:]
-                            if domain not in seen_domains:
-                                seen_domains.add(domain)
-                                rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
+                                    rules.append(f"DOMAIN-SUFFIX,{domain},{action}")
     unique_rules = list(dict.fromkeys(rules))
     return unique_rules, failed_rules
 
@@ -125,7 +129,7 @@ udp-policy-not-supported-behaviour = REJECT
 国际代理 = select, PROXY, 香港优选, 台湾优选, 日本优选, 狮城优选, 美国优选
 国内媒体 = select, DIRECT, PROXY, 香港优选, 台湾优选, 日本优选, 狮城优选, 美国优选
 国内直连 = select, DIRECT, PROXY, 香港优选, 台湾优选, 日本优选, 狮城优选, 美国优选
-香港优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bHK\\b|🇭🇰|香港|香江|Hong\s?Kong)
+香港优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bHK\\b|🇭🇰|香港|香江|Hong\\s?Kong)
 台湾优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bTW\\b|🇹🇼|台湾|Taiwan|Taipei)
 日本优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bJP\\b|🇯🇵|日本|Japan|Tokyo)
 狮城优选 = url-test, url=http://www.gstatic.com/generate_204, interval=900, tolerance=15, timeout=5, select=0, policy-regex-filter=(?i)(?=.*\\bSG\\b|🇸🇬|新加坡|狮城|Singapore)
