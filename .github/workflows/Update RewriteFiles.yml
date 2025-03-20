@@ -54,11 +54,16 @@ jobs:
               grep -E "^[^#].*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
 
               while IFS= read -r url; do
-                # 处理 GitHub raw 链接
-                if echo "$url" | grep -q "https://github.com/.*/raw/"; then
-                  raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
+                # 如果链接以 http://script.hub/convert/_start_/ 开头，则移除这部分
+                if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
+                  raw_url="${BASH_REMATCH[1]}"  # 提取转换后的 URL
                 else
                   raw_url="$url"
+                fi
+
+                # 处理 GitHub raw 链接
+                if echo "$raw_url" | grep -q "https://github.com/.*/raw/"; then
+                  raw_url=$(echo "$raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
                 fi
 
                 # 跳过包含 "XiangwanGuan" 的 URL
