@@ -1,9 +1,10 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-20 11:01:33
+#!update=2025-03-20 14:14:50
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+RULE-SET, https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/AdBlock.list, REJECT
 
 [URL Rewrite]
 ^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
@@ -39,9 +40,9 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/api\.huachenjie\.com\/run-front\/ad - reject-dict
 ^https:\/\/api\.huachenjie\.com\/run-front\/ai\/getAICategory - reject-dict
 ^https:\/\/api\.huachenjie\.com\/run-front\/home\/sports\/getPopup - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels - reject-dict
-^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? - reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch Weibo - reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels Weibo - reject-dict
+^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? Weibo - reject-dict
 ^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2) - reject-dict
 ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) - reject-dict
 ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
@@ -489,8 +490,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/0e83c1821cd2681de08e20bec73d1e75 - reject-dict
 ^https?:\/\/bodianimgcdn\.kuwo\.cn\/images\/198c0b313fe9e53b03240c7b30b4acc9 - reject-dict
 ^https?:\/\/book\.img\.ireader\.com\/group6\/M00 - reject-img
-^https?:\/\/bootpreload\.uve\.weibo\.com\/v\d\/ad\/preload - reject-dict
-^https?:\/\/bootrealtime\.uve\.weibo\.com\/v\d\/ad\/realtime - reject-dict
+^https?:\/\/bootpreload\.uve\.weibo\.com\/v\d\/ad\/preload Weibo - reject-dict
+^https?:\/\/bootrealtime\.uve\.weibo\.com\/v\d\/ad\/realtime Weibo - reject-dict
 ^https?:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject
 ^https?:\/\/bp-image\.bestv\.com\.cn\/[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{25}\.jpg - reject-200
 ^https?:\/\/btrace\.qq\.com - reject-200
@@ -798,8 +799,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/luckman\.suning\.com\/luck-web\/policy\/v\d\/msf\/index\.do - reject-200
 ^https?:\/\/m.360buyimg\.com\/mobilecms\/s1125x2436_jfs\/ - reject-200
 ^https?:\/\/m1\.ad\.10010\.com\/noticeMag\/images\/imageUpload\/2\d{3} - reject-img
-^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/huati\/discovery_home_bottom_getdotinfo - reject
-^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily - reject-dict
+^https?:\/\/m?api\.weibo\.c(n|om)\/2\/!\/huati\/discovery_home_bottom_getdotinfo Weibo - reject
+^https?:\/\/m?api\.weibo\.c(n|om)\/\d/push/daily Weibo - reject-dict
 ^https?:\/\/m\.360buyimg\.com\/babel\/jfs\/t1\/[0-9]{6}\/[0-9]{2}\/[0-9]{5}\/[0-9]{6}\/.*.jpg - reject-200
 ^https?:\/\/m\.aty\.sohu\.com\/openload? - reject-img
 ^https?:\/\/m\.client\.10010\.com\/mobileService\/(activity|customer)\/(accountListData|get_client_adv|get_startadv) - reject-img
@@ -1021,7 +1022,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/advert\?position=[^2]+ - reject-200
 ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/top_notice\? - reject-200
 ^https?:\/\/sdk\.alibaba\.com\.ailbaba\.me\/xgapp\.php\/v\d\/version - reject-200
-^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject-dict
+^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) Weibo - reject-dict
 ^https?:\/\/service\.4gtv\.tv\/4gtv\/Data\/(?>GetAD|ADLog) - reject-200
 ^https?:\/\/service\.busi\.inke\.cn\/api\/flash\/screen - reject
 ^https?:\/\/service\.haiersmarthomes\.com\/management\/banner\/getBannerList\?source=4 - reject-dict
@@ -1383,7 +1384,7 @@ qq-news.js =type=http-response, pattern=^https?:\/\/(news\.ssp\.qq\.com\/app|r\.
 quark.js =type=http-response, pattern=^https?:\/\/open-cms-api\.(uc|quark)\.cn\/open-cms, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/quark.js, requires-body=true, max-size=-1
 reddit.js =type=http-response, pattern=^https?:\/\/gql(-fed)?\.reddit\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/reddit.js, requires-body=true, max-size=-1
 req_replace_body.js =type=http-request, pattern=^https:\/\/data-collector\.soulapp\.cn\/api\/data\/report\/v\d, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/req_replace_body.js, requires-body=true, max-size=-1
-req_replace_body.js =type=http-request, pattern=^https?:\/\/api\.weibo\.c(n|om)\/2\/(push\/active|client\/addlog_batch|ad\/preload), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/req_replace_body.js, requires-body=true, max-size=-1
+req_replace_body.js =type=http-request, pattern=^https?:\/\/api\.weibo\.c(n|om)\/2\/(push\/active|client\/addlog_batch|ad\/preload) Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/req_replace_body.js, requires-body=true, max-size=-1
 rrtv_json.js =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/\w{3}\/level\/info, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/rrtv_json.js, requires-body=true, max-size=-1
 rrtv_json.js =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/ad\/getAll, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/rrtv_json.js, requires-body=true, max-size=-1
 rrtv_json.js =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/app\/config\/h5NativeBar, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/rrtv_json.js, requires-body=true, max-size=-1
@@ -1411,18 +1412,18 @@ soul_ads.js =type=http-response, pattern=^https?:\/\/post\.soulapp\.cn\/v\d\/pos
 tieba-json.js =type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/tieba-json.js, requires-body=true, max-size=-1
 tieba-proto.js =type=http-response, pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/tieba-proto.js, requires-body=true, max-size=-1
 vgtime.js =type=http-response, pattern=^https?:\/\/app02\.vgtime\.com:8080\/vgtime-app\/api\/v2\/init\/ad\.json, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/vgtime.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(page|flowpage)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/groups\/allgroups\/v2, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/searchall\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_timeline_topic\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_timeline_topicpage\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/extend\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
-weibo_launch.js =type=http-response, pattern=^https?:\/\/(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_launch.js, requires-body=true, max-size=-1
-weibo_main.js =type=http-response, pattern=^https?:\/\/api\.weibo\.c(n|om)\/2\/!\/client\/light_skin, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
-weibo_main.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline|repost_timeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
-weibo_main.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)\/littleskin\/preview, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
-weibo_vip.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)/aj/appicon/list, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_vip.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/(page|flowpage)\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/groups\/allgroups\/v2 Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/search\/(finder|container_timeline|container_discover)\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/searchall\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_timeline_topic\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/container_timeline_topicpage\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_ads.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)\/2\/statuses\/extend\? Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_ads.js, requires-body=true, max-size=-1
+weibo_launch.js =type=http-response, pattern=^https?:\/\/(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) Weibo Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_launch.js, requires-body=true, max-size=-1
+weibo_main.js =type=http-response, pattern=^https?:\/\/api\.weibo\.c(n|om)\/2\/!\/client\/light_skin Weibo Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
+weibo_main.js =type=http-response, pattern=^https?:\/\/m?api\.weibo\.c(n|om)/2/(cardlist|searchall|page|messageflow|statuses/(unread_)?friends(/|_)timeline|groups/timeline|statuses/(container_timeline|container_timeline_hot|unread_hot_timeline|extend|video_mixtimeline|repost_timeline)|profile/(me|container_timeline)|video/(community_tab|remind_info|tiny_stream_video_list)|checkin/show|\!/live/media_homelist|comments/build_comments|container/get_item) Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
+weibo_main.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)\/littleskin\/preview Weibo Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_main.js, requires-body=true, max-size=-1
+weibo_vip.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)/aj/appicon/list Weibo, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/weibo_vip.js, requires-body=true, max-size=-1
 wnbz.js =type=http-response, pattern=^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?key=index, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/wnbz.js, requires-body=true, max-size=-1
 wyres.js =type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=-1
 wyres.js =type=http-response, pattern=https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=-1
