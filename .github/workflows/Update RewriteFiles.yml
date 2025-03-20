@@ -36,16 +36,12 @@ jobs:
           "Rewrite/NaisiLoon.conf"
           "Rewrite/JDPriceComparison.conf"
         )
+        declare -A downloaded_urls
         for file in "${files_to_check[@]}"; do
           if [ -f "$file" ]; then
             echo "Processing file: $file"
-            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
-            seen=""
+            grep -E "^(?!#).*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
             while IFS= read -r url; do
-              if echo "$seen" | grep -Fxq "$url"; then
-                continue
-              fi
-              seen="$seen\n$url"
               if echo "$url" | grep -q "https://github.com/.*/raw/"; then
                 raw_url=$(echo "$url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
               else
@@ -55,11 +51,16 @@ jobs:
                 echo "Skipping download for: $raw_url"
                 continue
               fi
+              if [[ -n "${downloaded_urls[$raw_url]}" ]]; then
+                echo "Skipping duplicate: $raw_url"
+                continue
+              fi
               if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                 filepath="Rewrite/JavaScript/$(basename "$raw_url")"
                 echo "Downloading: $raw_url -> $filepath"
                 curl -fsS -o "$filepath" "$raw_url" || true
                 valid_list="${valid_list}${raw_url}<br>\n"
+                downloaded_urls[$raw_url]=1
               else
                 invalid_list="${invalid_list}${raw_url}<br>\n"
               fi
