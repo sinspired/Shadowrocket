@@ -15,6 +15,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - name: Define file paths and links
         run: |
+          mkdir -p Rewrite/Naisi
           mkdir -p Rewrite/JavaScript
           echo "Rewrite/Naisi/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
           echo "Rewrite/Naisi/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
