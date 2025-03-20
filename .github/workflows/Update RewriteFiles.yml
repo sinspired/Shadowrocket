@@ -34,9 +34,9 @@ jobs:
           invalid_list=""
           valid_list=""
           files_to_check=(
-            "Rewrite/Naisi/QX.conf"
-            "Rewrite/Naisi/Loon.conf"
-            "Rewrite/Naisi/Weibo.conf"
+            "Rewrite/NaisiScripts/QX.conf"
+            "Rewrite/NaisiScripts/Loon.conf"
+            "Rewrite/NaisiScripts/Weibo.conf"
             "Rewrite/JDPriceComparison.conf"
           )
           declare -A downloaded_urls
