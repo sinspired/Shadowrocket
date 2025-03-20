@@ -16,7 +16,7 @@ jobs:
     - name: Define file paths and links
       run: |
         mkdir -p Rewrite/JavaScript
-        echo "Rewrite/NaisiQX.conf.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
+        echo "Rewrite/NaisiQX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
         echo "Rewrite/NaisiLoon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
     - name: Download files
       run: |
@@ -32,7 +32,7 @@ jobs:
         invalid_list=""
         valid_list=""
         files_to_check=(
-          "Rewrite/NaisiQX.conf.conf"
+          "Rewrite/NaisiQX.conf"
           "Rewrite/JDPriceComparison.conf"
         )
         for file in "${files_to_check[@]}"; do
@@ -82,7 +82,7 @@ jobs:
         author_email: 'actions@github.com'
         message: 'Update RewriteFiles'
         add: |
-          Rewrite/NaisiQX.conf.conf
+          Rewrite/NaisiQX.conf
           Rewrite/NaisiLoon.conf
           Rewrite/JavaScript/*
           Rewrite/JavaScriptCheck.md
