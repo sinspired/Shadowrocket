@@ -13,40 +13,45 @@ jobs:
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Download & copy links
+    - name: Download files
       run: |
         mkdir -p Rules
-        LINKS=(
-          "https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/QuantumultX/filter/fenliu.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Direct/Direct.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BlockHttpDNS/BlockHttpDNS.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Hijacking/Hijacking.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy_Domain.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AdvertisingLite/AdvertisingLite.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AdvertisingLite/AdvertisingLite_Domain.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Copilot/Copilot.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple_Domain.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia_Domain.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMedia/ChinaMedia.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia.list"
-          "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia_Domain.list"
-        )
-        for LINK in "${LINKS[@]}"; do
-          FILE_NAME=$(basename $LINK)
-          curl -f -o "Rules/$FILE_NAME" $LINK || curl -f -o "Rules/$FILE_NAME" $LINK
-        done
+        echo "Rules/AdBlock.list|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/QuantumultX/filter/fenliu.list" > rule_file_links.list
+        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list" >> rule_file_links.list
+        echo "Rules/Direct.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Direct/Direct.list" >> rule_file_links.list
+        echo "Rules/BlockHttpDNS.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BlockHttpDNS/BlockHttpDNS.list" >> rule_file_links.list
+        echo "Rules/Hijacking.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Hijacking/Hijacking.list" >> rule_file_links.list
+        echo "Rules/Privacy.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy.list" >> rule_file_links.list
+        echo "Rules/Privacy_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy_Domain.list" >> rule_file_links.list
+        echo "Rules/AdvertisingLite.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AdvertisingLite/AdvertisingLite.list" >> rule_file_links.list
+        echo "Rules/AdvertisingLite_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AdvertisingLite/AdvertisingLite_Domain.list" >> rule_file_links.list
+        echo "Rules/WeChat.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list" >> rule_file_links.list
+        echo "Rules/Telegram.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list" >> rule_file_links.list
+        echo "Rules/OpenAI.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list" >> rule_file_links.list
+        echo "Rules/Copilot.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Copilot/Copilot.list" >> rule_file_links.list
+        echo "Rules/Gemini.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list" >> rule_file_links.list
+        echo "Rules/Apple.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list" >> rule_file_links.list
+        echo "Rules/Apple_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple_Domain.list" >> rule_file_links.list
+        echo "Rules/Microsoft.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list" >> rule_file_links.list
+        echo "Rules/Google.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list" >> rule_file_links.list
+        echo "Rules/GlobalMedia.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia.list" >> rule_file_links.list
+        echo "Rules/GlobalMedia_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia_Domain.list" >> rule_file_links.list
+        echo "Rules/Global.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list" >> rule_file_links.list
+        echo "Rules/Global_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list" >> rule_file_links.list
+        echo "Rules/ChinaMedia.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMedia/ChinaMedia.list" >> rule_file_links.list
+        echo "Rules/ChinaNoMedia.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia.list" >> rule_file_links.list
+        echo "Rules/ChinaNoMedia_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia_Domain.list" >> rule_file_links.list
+        MAX_RETRIES=3
+        while IFS='|' read -r filepath url; do
+          echo "Downloading: $url -> $filepath"
+          attempt=1
+          while [ $attempt -le $MAX_RETRIES ]; do
+            curl -fsS -o "$filepath" "$url" && break
+            echo "Download failed. Retrying ($attempt/$MAX_RETRIES)..."
+            attempt=$((attempt+1))
+            sleep 3
+          done
+        done < rule_file_links.list
     - name: Commit & copy RuleFiles
       uses: EndBug/add-and-commit@v9
       with:

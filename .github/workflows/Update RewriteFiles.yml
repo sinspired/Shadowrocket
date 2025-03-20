@@ -17,15 +17,15 @@ jobs:
         run: |
           mkdir -p Rewrite/Naisi
           mkdir -p Rewrite/JavaScript
-          echo "Rewrite/Naisi/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > file_links.txt
-          echo "Rewrite/Naisi/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> file_links.txt
-          echo "Rewrite/Naisi/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> file_links.txt
+          echo "Rewrite/Naisi/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
+          echo "Rewrite/Naisi/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
+          echo "Rewrite/Naisi/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
       - name: Download files
         run: |
           while IFS='|' read -r filepath url; do
             echo "Downloading: $url -> $filepath"
             curl -fsS -o "$filepath" "$url" || true
-          done < file_links.txt
+          done < rewrite_file_links.list
       - name: Clear previous JavaScriptCheck.md contents
         run: |
           > Rewrite/JavaScriptCheck.md
