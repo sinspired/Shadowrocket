@@ -3,16 +3,19 @@ on:
   schedule:
     - cron: '10 0 * * *'
   workflow_dispatch:
+
 jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Set up Git configuration
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Define file paths and links
         run: |
           mkdir -p Rewrite/NaisiScripts
@@ -20,15 +23,18 @@ jobs:
           echo "Rewrite/NaisiScripts/QX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
           echo "Rewrite/NaisiScripts/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
           echo "Rewrite/NaisiScripts/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
+
       - name: Download files
         run: |
           while IFS='|' read -r filepath url; do
             echo "Downloading: $url -> $filepath"
             curl -fsS -o "$filepath" "$url" || true
           done < rewrite_file_links.list
+
       - name: Clear previous JavaScriptCheck.md contents
         run: |
           > Rewrite/JavaScriptCheck.md
+
       - name: Process and validate local files
         run: |
           invalid_list=""
@@ -43,7 +49,11 @@ jobs:
           for file in "${files_to_check[@]}"; do
             if [ -f "$file" ]; then
               echo "Processing file: $file"
-              grep -E "^[^#].*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
+              if [[ "$file" == Rewrite/NaisiScripts/* ]]; then
+                sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
+              else
+                grep -E "^[^#].*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
+              fi
               while IFS= read -r url; do
                 if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
                   raw_url="${BASH_REMATCH[1]}"
@@ -53,7 +63,7 @@ jobs:
                 if echo "$raw_url" | grep -q "https://github.com/.*/raw/"; then
                   raw_url=$(echo "$raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
                 fi
-                if echo "$raw_url" | grep -q "XiangwanGuan"; then
+                if echo "$raw_url" | grep -q "XiangwanGuan/Rewrite"; then
                   echo "Skipping download for: $raw_url"
                   continue
                 fi
@@ -92,6 +102,7 @@ jobs:
               echo "无有效资源！<br>"
             fi
           } > Rewrite/JavaScriptCheck.md
+
       - name: Commit & copy RewriteFiles
         uses: EndBug/add-and-commit@v9
         with:

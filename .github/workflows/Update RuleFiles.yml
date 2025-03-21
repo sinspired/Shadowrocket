@@ -3,16 +3,19 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+
 jobs:
   copy-links:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+
     - name: Set up Git configuration
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
     - name: Download files
       run: |
         mkdir -p Rules
@@ -51,6 +54,7 @@ jobs:
             sleep 3
           done
         done < rule_file_links.list
+
     - name: Commit & copy RuleFiles
       uses: EndBug/add-and-commit@v9
       with:
