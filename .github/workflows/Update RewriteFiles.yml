@@ -52,7 +52,7 @@ jobs:
               if [[ "$file" == Rewrite/NaisiScripts/* ]]; then
                 sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
               else
-                grep -E "^[^#].*https?://[^ ]+\.(js|json)" "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u > Temp.list
+                grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > Temp.list
               fi
               while IFS= read -r url; do
                 if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
