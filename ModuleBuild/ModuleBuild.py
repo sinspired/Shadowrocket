@@ -54,7 +54,6 @@ def rewrite_to_sgmodule(js_content, project_name):
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 
 [URL Rewrite]
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad - reject-200
 """
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
@@ -108,7 +107,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
     mitm_match_content = unique_content
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com{mitm_match_content}
+hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
