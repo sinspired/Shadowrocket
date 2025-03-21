@@ -109,7 +109,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
     mitm_match_content = ','.join(sorted({item for item in mitm_matches if item}))
     sgmodule_content += f"""
 [MITM]
-hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com{mitm_match_content}
+hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com,{mitm_match_content}
 """
     return sgmodule_content
 
