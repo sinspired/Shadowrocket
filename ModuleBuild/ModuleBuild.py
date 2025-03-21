@@ -103,9 +103,10 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
         sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
-    mitm_match_content = ','.join(match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE))
-    unique_content = ','.join(sorted({item.strip() for item in mitm_match_content.split(',')}))
-    mitm_match_content = unique_content
+    mitm_matches = [
+        match.group(1).strip() for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE)
+    ]
+    mitm_match_content = ','.join(sorted({item for item in mitm_matches if item}))
     sgmodule_content += f"""
 [MITM]
 hostname = %APPEND% *.googlevideo.com,youtubei.googleapis.com{mitm_match_content}
