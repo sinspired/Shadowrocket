@@ -1,4 +1,4 @@
-### 更新时间：2025-03-20<br>
+### 更新时间：2025-03-21<br>
 
 ### 失效资源：<br>
 无失效资源！<br>
@@ -87,4 +87,5 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_a
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/jd_price.js<br>
 
