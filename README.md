@@ -94,24 +94,6 @@
 >
 ------
 >
-### [本地配置介绍](#本地配置介绍)<br>
->
-#### `配置功能介绍：`<br>
-> 同步提供本仓库所有配置[本地化配置](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRules)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20LocalRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/tree/main/LocalRulesBuild)每日自动构建，安装后不依赖外部规则集；<br>
-> **此类配置很难自定义，如有个性需求，请慎重使用！**<br>
-> **此类配置尚在开发阶段，有问题及时反馈！**<br>
->
-#### `配置安装：`<br>
-> [![一键安装 本地基础配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRules.conf "一键安装：本地基础配置")<br>
->
-> [![一键安装 本地完整配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesFull.conf "一键安装：本地完整配置")<br>
->
-> [![一键安装 本地精简配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesLite.conf "一键安装：本地精简配置")<br>
->
-> [![一键安装 本地回国配置](https://img.shields.io/static/v1?label=一键安装&message=LocalRulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/LocalRules/LocalRulesBackCN.conf "一键安装：本地回国配置")<br>
->
-------
->
 ### [融合模块介绍](#融合模块介绍)<br>
 >
 #### `模块安装：`<br>
