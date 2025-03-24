@@ -66,7 +66,7 @@ jobs:
                 if echo "$raw_url" | grep -q "https://github.com/.*/raw/"; then
                   raw_url=$(echo "$raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
                 fi
-                if echo "$raw_url" | grep -q "XiangwanGuan/Shadowrocket/main/Rewrite"; then
+                if echo "$raw_url" | grep -q "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript"; then
                   echo "Skipping download for: $raw_url"
                   continue
                 fi
