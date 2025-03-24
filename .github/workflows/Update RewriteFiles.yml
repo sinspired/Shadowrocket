@@ -43,6 +43,9 @@ jobs:
             "Rewrite/NaisiScripts/QX.conf"
             "Rewrite/NaisiScripts/Loon.conf"
             "Rewrite/NaisiScripts/Weibo.conf"
+            "Rewrite/Amap.js"
+            "Rewrite/FAWVW.js"
+            "Rewrite/YouTube.conf"
             "Rewrite/JDPriceComparison.conf"
           )
           declare -A downloaded_urls
