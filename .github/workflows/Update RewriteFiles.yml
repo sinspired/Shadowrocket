@@ -43,7 +43,11 @@ jobs:
             "Rewrite/NaisiScripts/QX.conf"
             "Rewrite/NaisiScripts/Loon.conf"
             "Rewrite/NaisiScripts/Weibo.conf"
+            "Rewrite/Amap.js"
+            "Rewrite/FAWVW.js"
+            "Rewrite/YouTube.conf"
             "Rewrite/JDPriceComparison.conf"
+            "Rewrite/ReplaceBody.js"
           )
           declare -A downloaded_urls
           for file in "${files_to_check[@]}"; do
