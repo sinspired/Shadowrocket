@@ -83,7 +83,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
-AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js, requires-body=true, max-size=0
+AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 YouTube.response =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=0, argument="{{"lyricLang":"zh-Hans","captionLang":"zh-Hans","blockUpload":true,"blockImmersive":true,"debug":false}}"
 """
     script_content = ""
@@ -101,7 +101,7 @@ YouTube.response =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.c
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
+        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
     mitm_matches = set()
     for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE):
         hostnames = match.group(1).split(',')
