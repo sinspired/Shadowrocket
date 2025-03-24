@@ -87,8 +87,9 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_a
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
 https://raw.githubusercontent.com/githubdulong/Script/master/jd_price.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js<br>
 
