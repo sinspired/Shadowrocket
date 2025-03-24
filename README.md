@@ -29,7 +29,6 @@
 > Apple/Microsoft/Google单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
->
 > **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Shadowrocket)，由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
 #### `如何安装：`<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
