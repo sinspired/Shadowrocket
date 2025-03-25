@@ -19,7 +19,6 @@
 > 出于种种考虑，本仓库内的配置，已于**2025-03-13**移除如下规则集：<br>
 > `BlockHttpDNS.list`<br>
 > `AdvertisingLite.list`<br>
-> `AdvertisingLite_Domain.list`<br>
 > 生成器会继续支持如上规则集更新到**2025-03-31**，请及时**更新配置**，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)获取新地址，谢谢！<br>
 ##### 2025-03-25更新：
 > 本仓库的分流规则已同步替换为QuanX的规则集，移除DOMAIN-SET的相关分流；
@@ -105,7 +104,7 @@
 #### `模块说明：`<br>
 > **[融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20ModuleRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)而构建，随规则变化，不定期更新；**<br>
 > **规则构成：以[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)的合集，定制部分功能，并手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/RewriteBuild.conf)为基础，融合：[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/FAWVW.js)、[京东历史比价](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JDPriceComparison.conf)；**<br>
-> **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，规则指向的所有资源已指向至[本仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
+> **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，所有规则指向的资源已重定向至[当前仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用须知：使用融合模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用融合模块，会**禁用QUIC协议**，请自行评估影响；<br>
