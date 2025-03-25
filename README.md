@@ -22,7 +22,7 @@
 > 生成器会继续支持如上规则集更新到**2025-03-31**，请及时**更新配置**，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)获取新地址，谢谢！<br>
 ##### 2025-03-25更新：
 > 本仓库的分流规则已同步替换为QuanX的规则集，移除DOMAIN-SET的相关分流；
-> 请及时更新配置，或自行删除DOMAIN-SET的相关行以免产生大量重复；
+> 请及时更新配置，或自行删除DOMAIN-SET的相关配置，以免产生大量重复；
 >
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
@@ -66,7 +66,7 @@
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍：`<br>
-> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`*，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
+> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
 > **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装：`<br>
