@@ -15,13 +15,15 @@
 ### [配置功能介绍](#配置功能介绍)<br>
 >
 #### `重要提醒：`<br>
+##### 2025-03-13更新：
 > 出于种种考虑，本仓库内的配置，已于**2025-03-13**移除如下规则集：<br>
 > `BlockHttpDNS.list`<br>
 > `AdvertisingLite.list`<br>
 > `AdvertisingLite_Domain.list`<br>
 > 生成器会继续支持如上规则集更新到**2025-03-31**，请及时**更新配置**，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)获取新地址，谢谢！<br>
-> **2025-03-25**更新：
-> 本仓库的分流规则已同步替换为QuanX的规则集，移除DOMAIN-SET的相关配置，请及时更新配置，或自行删除DOMAIN-SET的相关行；
+##### 2025-03-25更新：
+> 本仓库的分流规则已同步替换为QuanX的规则集，移除DOMAIN-SET的相关分流；
+> 请及时更新配置，或自行删除DOMAIN-SET的相关行以免产生大量重复；
 >
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
@@ -31,7 +33,7 @@
 > Apple/Microsoft/Google单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
 > 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
-> **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
+> **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
 #### `如何安装：`<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
 > 如无法加载配置，请将全局路由切换至[代理]模式，或自行检查网络；<br>
