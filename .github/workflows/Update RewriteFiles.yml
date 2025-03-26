@@ -42,7 +42,7 @@ jobs:
           invalid_list=""
           valid_list=""
           files_to_check=(
-            "Rewrite/NaisiScripts/QX.conf"
+            "Rewrite/NaisiScripts/QuanX.conf"
             "Rewrite/NaisiScripts/Loon.conf"
             "Rewrite/NaisiScripts/Weibo.conf"
             "Rewrite/AMDC.js"
