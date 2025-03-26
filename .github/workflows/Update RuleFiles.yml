@@ -19,7 +19,8 @@ jobs:
     - name: Download files
       run: |
         mkdir -p Rules
-        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list" > rule_file_links.list
+        echo "Rules/RejectAD.list|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/QuantumultX/filter/fenliu.list" > rule_file_links.list
+        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list" >> rule_file_links.list
         echo "Rules/Direct.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list" >> rule_file_links.list
         echo "Rules/BlockHttpDNS.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BlockHttpDNS/BlockHttpDNS.list" >> rule_file_links.list
         echo "Rules/Hijacking.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list" >> rule_file_links.list
