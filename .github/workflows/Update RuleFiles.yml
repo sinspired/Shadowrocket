@@ -19,8 +19,7 @@ jobs:
     - name: Download files
       run: |
         mkdir -p Rules
-        echo "Rules/BanAD.list|https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/refs/heads/master/Clash/BanAD.list" > rule_file_links.list
-        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list" >> rule_file_links.list
+        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list" > rule_file_links.list
         echo "Rules/Direct.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list" >> rule_file_links.list
         echo "Rules/BlockHttpDNS.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BlockHttpDNS/BlockHttpDNS.list" >> rule_file_links.list
         echo "Rules/Hijacking.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list" >> rule_file_links.list
