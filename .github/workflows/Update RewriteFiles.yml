@@ -120,8 +120,8 @@ jobs:
             Rewrite/NaisiScripts/QuanX.conf
             Rewrite/NaisiScripts/Loon.conf
             Rewrite/NaisiScripts/Weibo.conf
-            Rewrite/RejectAD-QuanX.list
-            Rewrite/RejectAD-Loon.list
+            Rewrite/NaisiScripts/RejectAD-QuanX.list
+            Rewrite/NaisiScripts/RejectAD-Loon.list
             Rewrite/JavaScript/*
             Rewrite/JavaScriptCheck.md
         env:
