@@ -27,7 +27,7 @@
 #### `功能介绍：`<br>
 > 所有配置，默认使用**TUN模式**接管所有流量；<br>
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
-> 具有有效的**防追劫持、隐私保护**的功能；<br>
+> 具有有效的**防止劫持、隐私保护、过滤广告**的功能；<br>
 > ChatGPT等AI工具单独分流；<br>
 > Apple/Microsoft/Google单独分流；<br>
 > WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
@@ -160,6 +160,7 @@ ca-p12 = 证书内容（即剪贴板复制的内容）
 >
 ### [特别鸣谢：](#特别鸣谢：)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
+[*@ACL4SSR*](https://github.com/ACL4SSR)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
