@@ -1,9 +1,10 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-27 09:29:02
+#!update=2025-03-27 11:00:21
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+RULE-SET, https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/RejectAD.list, REJECT
 
 [URL Rewrite]
 ^http:\/\/ad\.shunchangzhixing\.com\/getAd - reject-dict
