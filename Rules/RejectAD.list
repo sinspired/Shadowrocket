@@ -75,6 +75,17 @@ DOMAIN, webproxy-advp.iad-apple.com.akadns.net
 DOMAIN-SUFFIX, advp.apple.com
 DOMAIN-SUFFIX, iadsdk.apple.com
 
+# 安全浏览限制解除
+DOMAIN, lookup.api.bsb.baidu.com
+DOMAIN, proxy.safebrowsing.apple
+DOMAIN, safebrowsing.g.applimg.com
+DOMAIN, safebrowsing.googleapis.com
+DOMAIN, safebrowsing.urlsec.qq.com
+DOMAIN, token.safebrowsing.apple
+DOMAIN, vs6.bj2ct.u3.ucweb.com
+DOMAIN-SUFFIX, safebrowsing.apple
+DOMAIN-SUFFIX, u3.ucweb.com
+
 # 阿里云
 IP-CIDR, 203.107.1.1/24, no-resolve
 
@@ -129,9 +140,13 @@ IP-CIDR, 124.192.153.42/32, no-resolve
 DOMAIN-SUFFIX, duapps.com
 DOMAIN-SUFFIX, cpro.baidu.com
 DOMAIN-SUFFIX, pos.baidu.com
+DOMAIN, afd.baidu.com
 DOMAIN, als.baidu.com
 DOMAIN, duclick.baidu.com
+DOMAIN, mobads.baidu.com
+DOMAIN, mobads-logs.baidu.com
 DOMAIN, nadvideo2.baidu.com
+DOMAIN, nsclick.baidu.com
 DOMAIN-SUFFIX, bce.baidu.com
 DOMAIN-SUFFIX, bar.baidu.com
 DOMAIN-SUFFIX, baiduyubaidu.com
@@ -268,6 +283,8 @@ DOMAIN-SUFFIX, hmma.baidu.com
 DOMAIN-SUFFIX, mobads.baidu.com
 DOMAIN-SUFFIX, mobads-logs.baidu.com
 DOMAIN-SUFFIX, nsclick.baidu.com
+DOMAIN, hm.baidu.com
+DOMAIN, hmma.baidu.com
 
 # 百度地图
 DOMAIN, afd.baidu.com
@@ -689,8 +706,10 @@ DOMAIN-KEYWORD, av1.xdrig.com
 DOMAIN-KEYWORD, adash.man.aliyuncs.com
 DOMAIN-KEYWORD, v1.log.moji.com
 DOMAIN-KEYWORD, ad.api.moji.com
+DOMAIN, ad.api.moji.com
 DOMAIN, adlaunch.moji.com
 DOMAIN, ads.mojicdn.com
+DOMAIN, v1.log.moji.com
 
 # 咪咕视频
 DOMAIN-SUFFIX, ad.cmvideo.cn
@@ -708,17 +727,31 @@ DOMAIN, sdkconfig.ad.xiaomi.com
 DOMAIN, dflow.bz.mgtv.com
 DOMAIN, encounter.bz.mgtv.com
 DOMAIN, floor.bz.mgtv.com
+DOMAIN, img.da.mgtv.com
 DOMAIN, layer.bz.mgtv.com
 DOMAIN, mob.bz.mgtv.com
+DOMAIN, mobile.da.mgtv.com
 DOMAIN, rc-topic-api.bz.mgtv.com
+DOMAIN, v2.da.mgtv.com
+DOMAIN, video.da.mgtv.com
 DOMAIN, vip.bz.mgtv.com
+DOMAIN, ys.da.mgtv.com
+DOMAIN-SUFFIX, mobile2.da.mgtv.com
 DOMAIN-SUFFIX, cdn.cmop.mgtv.com
 DOMAIN-SUFFIX, cmop.mgtv.com
+DOMAIN-SUFFIX, imgaliyun.da.mgtv.com
 DOMAIN-SUFFIX, imgaliyun.res.mgtv.com
+DOMAIN-SUFFIX, m2.da.mgtv.com
 DOMAIN-SUFFIX, mobaliyun.res.mgtv.com
+DOMAIN-SUFFIX, pc.da.mgtv.com
+DOMAIN-SUFFIX, pc1.da.mgtv.com
 DOMAIN-SUFFIX, pcvideoaliyun.titan.mgtv.com
 DOMAIN-SUFFIX, pcvideoyd.titan.mgtv.com
 DOMAIN-SUFFIX, pcweb.v1.mgtv.com
+DOMAIN-SUFFIX, py.da.mgtv.com
+DOMAIN-SUFFIX, web.da.mgtv.com
+DOMAIN-SUFFIX, x.da.mgtv.com
+DOMAIN-SUFFIX, y.da.mgtv.com
 DOMAIN-SUFFIX, da.mgtv.com
 
 # NicoNico
@@ -807,6 +840,7 @@ DOMAIN, ad-cdn.qingting.fm
 # 七猫小说
 DOMAIN, cdn-new-ad.wtzw.com
 DOMAIN, a-remad.qm989.com
+DOMAIN, mobads.baidu.com
 DOMAIN-SUFFIX, gdt.qq.com
 DOMAIN, qzs.gdtimg.com
 DOMAIN, mobads-pre-config.cdn.bcebos.com
