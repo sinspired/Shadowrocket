@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-03-27 16:20:27
+#!update=2025-03-27 20:49:47
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1270,7 +1270,6 @@ Smzdm.js =type=http-response, pattern=^https?:\/\/homepage-api\.smzdm\.com\/v3\/
 Smzdm.js =type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
 Smzdm.js =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
 Smzdm.js =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-TestFlightAccount.js =type=http-request, pattern=^https?:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/TestFlightAccount.js, requires-body=true, max-size=0
 Umetrip_remove_ads.js =type=http-response, pattern=^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Umetrip_remove_ads.js, requires-body=true, max-size=0
 UnblockURLinWeChat.js =type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/UnblockURLinWeChat.js, requires-body=true, max-size=0
 adrive.js =type=http-response, pattern=^https:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets), script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/adrive.js, requires-body=true, max-size=0
