@@ -16,10 +16,10 @@
 >
 #### `重要提醒：`<br>
 ##### 2025-03-13更新：
-> 出于种种考虑，本仓库内的配置，已于**2025-03-13**移除如下规则集：<br>
+> 出于种种考虑，本仓库内的配置，已于**2025-03-13**暂时移除如下规则集：<br>
 > `BlockHttpDNS.list`<br>
 > `AdvertisingLite.list`<br>
-> 生成器会继续支持如上规则集更新到**2025-03-31**，请及时**更新配置**，或自行前往[blackmatrix7的仓库](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)获取新地址，谢谢！<br>
+> 生成器会继续支持如上规则集更新，请及时**更新配置**！<br>
 ##### 2025-03-25更新：
 > 本仓库的分流规则已同步替换为QuanX的规则集，移除DOMAIN-SET的相关分流；<br>
 > 请及时更新配置，或自行删除DOMAIN-SET的相关配置，以免产生大量重复；<br>
