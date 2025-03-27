@@ -30,9 +30,6 @@ DOMAIN-SUFFIX, zlsdk.1rtb.net
 DOMAIN-KEYWORD, volc
 DOMAIN-KEYWORD, umeng
 
-# 其他
-DOMAIN, api.liquidlink.cn
-
 # 交管12123
 DOMAIN-SUFFIX, v3.fstats.xyz
 DOMAIN-SUFFIX, wss.haoyundmn.com
@@ -297,7 +294,7 @@ DOMAIN, afdconf.baidu.com
 DOMAIN, httpdns.baidubce.com
 DOMAIN, lc.map.baidu.com
 
-# 百度贴吧 屏蔽域名dns查询
+# 百度贴吧
 IP-CIDR, 180.76.76.200/32, no-resolve
 DOMAIN-KEYWORD, api.sobot.com
 DOMAIN-SUFFIX, cm.ad.bilibili.com
@@ -345,15 +342,15 @@ DOMAIN, exp.360in.com
 DOMAIN, atrace.chelaile.net.cn
 DOMAIN, logs.chelaile.net.cn
 
-# 创维
-DOMAIN-SUFFIX, hoisin.coocaa.com
-DOMAIN-SUFFIX, hoisin.coocaatv.com
-DOMAIN, data-hoisin.coocaa.com
-
 # 车来了
 DOMAIN-SUFFIX, atrace.chelaile.net.cn
 DOMAIN, logs.chelaile.net.cn
 DOMAIN, ad.chelaile.net.cn
+
+# 创维
+DOMAIN-SUFFIX, hoisin.coocaa.com
+DOMAIN-SUFFIX, hoisin.coocaatv.com
+DOMAIN, data-hoisin.coocaa.com
 
 # Dr.Peng
 IP-CIDR, 211.161.101.110/32, no-resolve
@@ -450,7 +447,7 @@ DOMAIN-SUFFIX, www.googleadservices.com
 DOMAIN-SUFFIX, www.google-analytics.com
 DOMAIN, ads.youtube.com
 
-# 高德
+# 高德地图
 DOMAIN-SUFFIX, adiu.amap.com
 DOMAIN, aboard.apilocate.amap.com
 DOMAIN, apiinit.amap.com
