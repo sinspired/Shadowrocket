@@ -9,11 +9,15 @@
 */
 
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
-var pattern = /(?:amap|alibaba|cainiao|dmportal|hema4iphone|moon|喵街|天猫|闲鱼|飞猪旅行)/;
+var url = $request.url;
+var uaPattern = /(?:amap|alibaba|cainiao|dmportal|hema4iphone|moon|喵街|大麦|天猫|闲鱼|飞猪旅行)/;
+var appkeyPattern = /(?:23782110)/;
 try {
-    ua = decodeURIComponent(ua); 
+    ua = decodeURIComponent(ua);
 } catch (e) {}
-if (pattern.test(ua)) {
+var appkeyMatch = url.match(/appkey=(\d+)/);
+var appkey = appkeyMatch ? appkeyMatch[1] : "";
+if (uaPattern.test(ua) || appkeyPattern.test(appkey)) {
     $done({ status: "HTTP/1.1 404 Not Found", body: "Not Found" });
 } else {
     $done({});
