@@ -10,11 +10,8 @@
 
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
 var url = $request.url;
-var uaPattern = /(?:amap|alibaba|cainiao|dmportal|hema4iphone|moon|喵街|大麦|天猫|闲鱼|飞猪旅行)/;
+var uaPattern = /(?:amap|alibaba|cainiao|dmportal|hema4iphone|moon|%E5%96%B5%E8%A1%97|%E5%A4%A7%E9%BA%A6|%E5%A4%A9%E8%8B%97|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
 var appkeyPattern = /(?:23782110)/;
-try {
-    ua = decodeURIComponent(ua);
-} catch (e) {}
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
 if (uaPattern.test(ua) || appkeyPattern.test(appkey)) {
