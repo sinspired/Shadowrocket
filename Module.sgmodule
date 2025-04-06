@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能，适配Shadowrocket；
-#!update=2025-04-03 16:42:44
+#!update=2025-04-06 09:30:55
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
