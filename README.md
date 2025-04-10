@@ -46,7 +46,7 @@
 ### [基础配置介绍](#基础配置介绍)<br>
 #### `配置功能介绍`<br>
 > [基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)的默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
-> 代理分组内的策略自动分流，采用`fallback`模式自动测试节点的可用性，在节点不可用时，会自动切换到分组内的其他节点，无需手动切换节点；<br>
+> 代理分组内的策略自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
 >
 #### `使用必看`<br>
 > 你所使用的节点，**尽量包含`港美新`这三项**；<br>
@@ -66,8 +66,7 @@
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### `配置功能介绍`<br>
-> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`；<br>
-> **默认使用`首页节点`进行代理**，可更自由的配置代理分组，代理分组内的策略自动分流，采用`url-test`模式自动测试节点的可用性，优先选择延迟较低的节点，其余配置完全相同；<br>
+> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
 > **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 >
 #### `配置安装`<br>
