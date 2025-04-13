@@ -52,6 +52,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+RULE-SET, https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/RejectAD.list, REJECT
 
 [URL Rewrite]
 """
