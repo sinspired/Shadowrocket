@@ -23,7 +23,7 @@ jobs:
           echo "Rewrite/NaisiScripts/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
           echo "Rewrite/NaisiScripts/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
           echo "Rewrite/NaisiScripts/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
-          echo "Rewrite/NaisiScripts/RejectAD.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Loon/rule/rejectAd.list" >> rewrite_file_links.list
+          echo "Rewrite/NaisiScripts/RejectAD.list|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Loon/rule/rejectAd.list" >> rewrite_file_links.list
 
       - name: Download files
         run: |
@@ -119,7 +119,7 @@ jobs:
             Rewrite/NaisiScripts/QuanX.conf
             Rewrite/NaisiScripts/Loon.conf
             Rewrite/NaisiScripts/Weibo.conf
-            Rewrite/NaisiScripts/RejectAD.conf
+            Rewrite/NaisiScripts/RejectAD.list
             Rewrite/JavaScript/*
             Rewrite/JavaScriptCheck.md
         env:
