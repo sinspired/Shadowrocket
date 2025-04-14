@@ -21,8 +21,10 @@ jobs:
         mkdir -p Rules
         echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Lan/Lan.list" > rule_file_links.list
         echo "Rules/Direct.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Direct/Direct.list" >> rule_file_links.list
+        echo "Rules/BlockHttpDNS.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/BlockHttpDNS/BlockHttpDNS.list" >> rule_file_links.list
         echo "Rules/Hijacking.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Hijacking/Hijacking.list" >> rule_file_links.list
         echo "Rules/Privacy.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Privacy/Privacy.list" >> rule_file_links.list
+        echo "Rules/AdvertisingLite.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/AdvertisingLite/AdvertisingLite.list" >> rule_file_links.list
         echo "Rules/WeChat.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list" >> rule_file_links.list
         echo "Rules/Telegram.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list" >> rule_file_links.list
         echo "Rules/OpenAI.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list" >> rule_file_links.list
