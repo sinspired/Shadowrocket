@@ -1,17 +1,15 @@
-# ------
 # 拦截合集说明：
 # 拦截合集更新时间: 20250414
 # 拦截合集已由向晚修改并维护，移除非精准针对APP的域名，移除会导致问题的域名；
-# ------
+
 # 本合集原作者：奶思
 # 源合集更新时间：20250310
 # 源合集规则仓库：https://github.com/fmz200/wool_scripts
 # 源合集规则链接：https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Loon/rule/rejectAd.list
-# ------
 
 
 
-# >>>>>>>>>>>>>>> ✅ # ✅ <<<<<<<<<<<<<<
+# ------ # ------ #
 # > 广告联盟
 DOMAIN-SUFFIX, miaozhen.com
 DOMAIN-KEYWORD, -ad-sign.byteimg.com
@@ -37,11 +35,11 @@ DOMAIN, api.liquidlink.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ 0 ✅ <<<<<<<<<<<<<<
+# ------ 0 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
+# ------ 1 ------ #
 # > 12123
 DOMAIN-SUFFIX, v3.fstats.xyz
 DOMAIN-SUFFIX, wss.haoyundmn.com
@@ -54,19 +52,19 @@ DOMAIN, ad.mcloud.139.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
+# ------ 2 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
+# ------ 3 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 4 ✅ <<<<<<<<<<<<<<
+# ------ 4 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 5 ✅ <<<<<<<<<<<<<<
+# ------ 5 ------ #
 # > 51wnl
 DOMAIN, ad.51wnl-cq.com
 DOMAIN, adextra.51wnl-cq.com
@@ -84,23 +82,23 @@ DOMAIN, tracklog.58.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ 6 ✅ <<<<<<<<<<<<<<
+# ------ 6 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 7 ✅ <<<<<<<<<<<<<<
+# ------ 7 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 8 ✅ <<<<<<<<<<<<<<
+# ------ 8 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ 9 ✅ <<<<<<<<<<<<<<
+# ------ 9 ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ A ✅ <<<<<<<<<<<<<<
+# ------ A ------ #
 # > Adobe Flash China Special Edition
 DOMAIN, geo2.adobe.com
 
@@ -175,7 +173,7 @@ IP-CIDR, 124.192.153.42/32, no-resolve
 
 
 
-# >>>>>>>>>>>>>>> ✅ B ✅ <<<<<<<<<<<<<<
+# ------ B ------ #
 # > 百度
 DOMAIN-SUFFIX, duapps.com
 DOMAIN-SUFFIX, cpro.baidu.com
@@ -373,7 +371,7 @@ DOMAIN-SUFFIX, xitongqingli.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ C ✅ <<<<<<<<<<<<<<
+# ------ C ------ #
 # > Camera360
 DOMAIN, dispatcher.360in.com
 DOMAIN, ad.360in.com
@@ -395,7 +393,7 @@ DOMAIN, ad.chelaile.net.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ D ✅ <<<<<<<<<<<<<<
+# ------ D ------ #
 # > Dr.Peng
 IP-CIDR, 211.161.101.110/32, no-resolve
 
@@ -428,11 +426,11 @@ DOMAIN-SUFFIX, ad.duoduo.link
 
 
 
-# >>>>>>>>>>>>>>> ✅ E ✅ <<<<<<<<<<<<<<
+# ------ E ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ F ✅ <<<<<<<<<<<<<<
+# ------ F ------ #
 # > 番茄小说
 DOMAIN, i.snssdk.com
 DOMAIN, i-lq.snssdk.com
@@ -467,7 +465,7 @@ DOMAIN-SUFFIX, gz-data.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ G ✅ <<<<<<<<<<<<<<
+# ------ G ------ #
 # > GozenData
 DOMAIN-SUFFIX, gozendata.com
 DOMAIN-SUFFIX, gzads.com
@@ -525,7 +523,7 @@ DOMAIN, apis.alenable.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ H ✅ <<<<<<<<<<<<<<
+# ------ H ------ #
 # > Huawei AspiegelBot
 IP-CIDR, 114.119.160.0/21, no-resolve
 
@@ -562,11 +560,11 @@ DOMAIN-SUFFIX, mob.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
+# ------ I ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
+# ------ J ------ #
 # > 驾校一点通
 DOMAIN, richmanapi.jxedt.com
 DOMAIN, richmanmain.jxedt.com
@@ -619,7 +617,7 @@ DOMAIN, o2o-ad-log-gateway.alibaba.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
+# ------ K ------ #
 # > Keep
 DOMAIN, apm.gotokeep.com
 DOMAIN, kad.gotokeep.com
@@ -717,7 +715,7 @@ DOMAIN-SUFFIX, rich.kuwo.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ L ✅ <<<<<<<<<<<<<<
+# ------ L ------ #
 # > LinkWiFi
 DOMAIN, a.wkanx.com
 DOMAIN, cwx.lianwangtech.com
@@ -738,7 +736,7 @@ DOMAIN, n.mark.letv.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ M ✅ <<<<<<<<<<<<<<
+# ------ M ------ #
 # > MacKeeper
 DOMAIN-SUFFIX, zryydi.com
 
@@ -827,13 +825,13 @@ DOMAIN-SUFFIX, da.mgtv.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ N ✅ <<<<<<<<<<<<<<
+# ------ N ------ #
 # > NicoNico
 DOMAIN, ads.nicovideo.jp
 
 
 
-# >>>>>>>>>>>>>>> ✅ O ✅ <<<<<<<<<<<<<<
+# ------ O ------ #
 # > OPPO
 DOMAIN, adsfs.oppomobile.com
 DOMAIN-SUFFIX, ads.oppomobile.com
@@ -845,7 +843,7 @@ DOMAIN, sin3-ib.adnxs.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ P ✅ <<<<<<<<<<<<<<
+# ------ P ------ #
 # > PPTV
 DOMAIN, ads.aplus.pptv.com
 DOMAIN, ads.aplusapi.pptv.com
@@ -875,7 +873,7 @@ DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ Q ✅ <<<<<<<<<<<<<<
+# ------ Q ------ #
 # > QQ音乐
 DOMAIN, adstats.tencentmusic.com
 DOMAIN, ad.tencentmusic.com
@@ -940,11 +938,11 @@ DOMAIN, adm3.autoimg.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ R ✅ <<<<<<<<<<<<<<
+# ------ R ------ #
 
 
 
-# >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
+# ------ S ------ #
 # > Soul
 DOMAIN, soul-ad.soulapp.cn
 DOMAIN, ad-r.soulapp.cn
@@ -1008,7 +1006,7 @@ DOMAIN, ynuf.aliapp.org
 
 
 
-# >>>>>>>>>>>>>>> ✅ T ✅ <<<<<<<<<<<<<<
+# ------ T ------ #
 # > TubeMax
 DOMAIN-SUFFIX, adjust.com
 DOMAIN-SUFFIX, applvn.com
@@ -1205,7 +1203,7 @@ DOMAIN-KEYWORD, img1.czb365.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ U ✅ <<<<<<<<<<<<<<
+# ------ U ------ #
 # > UC浏览器
 DOMAIN-KEYWORD, m.atm.youku.com
 DOMAIN-KEYWORD, adp.atm.youku.com
@@ -1321,7 +1319,7 @@ DOMAIN, tnc3-aliec2.snssdk.com
 
 
 
-# >>>>>>>>>>>>>>> ✅ V ✅ <<<<<<<<<<<<<<
+# ------ V ------ #
 # > VariFlight
 DOMAIN, adv-adlog.variflight.com
 DOMAIN, adv-ads.variflight.com
@@ -1343,7 +1341,7 @@ DOMAIN-KEYWORD, paradisestatic.vivo.com.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ W ✅ <<<<<<<<<<<<<<
+# ------ W ------ #
 # > 万能钥匙专业版
 DOMAIN-SUFFIX, mi.gdt.qq.com
 DOMAIN, taichi.51y5.net
@@ -1401,7 +1399,7 @@ DOMAIN-SUFFIX, zlsdk.1rtb.net
 
 
 
-# >>>>>>>>>>>>>>> ✅ X ✅ <<<<<<<<<<<<<<
+# ------ X ------ #
 # > 讯飞输入法
 DOMAIN-KEYWORD, ossp.voicecloud.cn
 DOMAIN-KEYWORD, bj.imp.voiceads.cn
@@ -1453,7 +1451,7 @@ DOMAIN, saxn.sina.com.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ Y ✅ <<<<<<<<<<<<<<
+# ------ Y ------ #
 # > 云闪付
 DOMAIN, ads.95516.com
 DOMAIN, cm-10-138.getui.com
@@ -1575,7 +1573,7 @@ DOMAIN-SUFFIX, vdapprecv.app.cntvwb.cn
 
 
 
-# >>>>>>>>>>>>>>> ✅ Z ✅ <<<<<<<<<<<<<<
+# ------ Z ------ #
 # > 知乎
 USER-AGENT, AVOS*
 DOMAIN, appcloud.zhihu.com
