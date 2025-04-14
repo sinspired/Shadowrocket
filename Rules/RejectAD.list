@@ -28,7 +28,7 @@ DOMAIN-SUFFIX, igexin.com
 DOMAIN-SUFFIX, log.aliyuncs.com
 DOMAIN-SUFFIX, zlsdk.1rtb.net
 
-# > 隐私联盟
+# > 收集用户隐私联盟
 DOMAIN-KEYWORD, volc
 DOMAIN-KEYWORD, umeng
 
@@ -562,7 +562,7 @@ DOMAIN-SUFFIX, mob.com
 
 
 # >>>>>>>>>>>>>>> ✅ J ✅ <<<<<<<<<<<<<<
-# > jxedt
+# > 驾校一点通
 DOMAIN, richmanapi.jxedt.com
 DOMAIN, richmanmain.jxedt.com
 DOMAIN, richmanrules.jxedt.com
@@ -615,7 +615,7 @@ DOMAIN, o2o-ad-log-gateway.alibaba.com
 
 
 # >>>>>>>>>>>>>>> ✅ K ✅ <<<<<<<<<<<<<<
-# > keep
+# > Keep
 DOMAIN, apm.gotokeep.com
 DOMAIN, kad.gotokeep.com
 
@@ -940,7 +940,7 @@ DOMAIN, adm3.autoimg.cn
 
 
 # >>>>>>>>>>>>>>> ✅ S ✅ <<<<<<<<<<<<<<
-# > soul
+# > Soul
 DOMAIN, soul-ad.soulapp.cn
 DOMAIN, ad-r.soulapp.cn
 DOMAIN, ad-reward.soulapp.cn
