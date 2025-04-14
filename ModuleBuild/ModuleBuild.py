@@ -51,9 +51,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!update={timestamp}
 
 [Rule]
-AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
-AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
-AND, ((DOMAIN-SUFFIX,xiaohongshu.com),(PROTOCOL,UDP),(DST-PORT,443)), REJECT
+AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 RULE-SET, https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/RejectAD.list, REJECT
 
 [URL Rewrite]
