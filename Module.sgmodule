@@ -1,11 +1,9 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能；
-#!update=2025-04-14 09:30:19
+#!update=2025-04-14 09:50:19
 
 [Rule]
-AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
-AND, ((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)), REJECT
-AND, ((DOMAIN-SUFFIX,xiaohongshu.com),(PROTOCOL,UDP),(DST-PORT,443)), REJECT
+AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 RULE-SET, https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rules/RejectAD.list, REJECT
 
 [URL Rewrite]
