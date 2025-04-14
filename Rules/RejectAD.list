@@ -42,13 +42,15 @@ DOMAIN, api.liquidlink.cn
 
 
 # >>>>>>>>>>>>>>> ✅ 1 ✅ <<<<<<<<<<<<<<
-# > 交管12123
+# > 12123
 DOMAIN-SUFFIX, v3.fstats.xyz
 DOMAIN-SUFFIX, wss.haoyundmn.com
 DOMAIN-SUFFIX, new.xiongzhangad.com
 DOMAIN-SUFFIX, alexametrics.com
 DOMAIN-KEYWORD, in-page-push
 
+# > 139云盘
+DOMAIN, ad.mcloud.139.com
 
 
 # >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
@@ -56,8 +58,6 @@ DOMAIN-KEYWORD, in-page-push
 
 
 # >>>>>>>>>>>>>>> ✅ 3 ✅ <<<<<<<<<<<<<<
-# > 139云盘
-DOMAIN, ad.mcloud.139.com
 
 
 
@@ -121,16 +121,6 @@ DOMAIN, webproxy-advp.iad-apple.com
 DOMAIN, webproxy-advp.iad-apple.com.akadns.net
 DOMAIN-SUFFIX, advp.apple.com
 DOMAIN-SUFFIX, iadsdk.apple.com
-# 安全浏览限制解除
-DOMAIN, lookup.api.bsb.baidu.com
-DOMAIN, proxy.safebrowsing.apple
-DOMAIN, safebrowsing.g.applimg.com
-DOMAIN, safebrowsing.googleapis.com
-DOMAIN, safebrowsing.urlsec.qq.com
-DOMAIN, token.safebrowsing.apple
-DOMAIN, vs6.bj2ct.u3.ucweb.com
-DOMAIN-SUFFIX, safebrowsing.apple
-DOMAIN-SUFFIX, u3.ucweb.com
 
 # > 阿里云
 IP-CIDR, 203.107.1.1/24, no-resolve
