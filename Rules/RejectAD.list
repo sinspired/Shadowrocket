@@ -1,13 +1,13 @@
-#############################################
+# ------
 # 拦截合集说明：
 # 拦截合集更新时间: 20250414
 # 拦截合集已由向晚修改并维护，移除非精准针对APP的域名，移除会导致问题的域名；
-#############################################
+# ------
 # 本合集原作者：奶思
 # 源合集更新时间：20250310
 # 源合集规则仓库：https://github.com/fmz200/wool_scripts
 # 源合集规则链接：https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Loon/rule/rejectAd.list
-#############################################
+# ------
 
 
 
@@ -51,6 +51,7 @@ DOMAIN-KEYWORD, in-page-push
 
 # > 139云盘
 DOMAIN, ad.mcloud.139.com
+
 
 
 # >>>>>>>>>>>>>>> ✅ 2 ✅ <<<<<<<<<<<<<<
@@ -558,6 +559,10 @@ DOMAIN-SUFFIX, v1d.szbdyd.com
 DOMAIN-SUFFIX, anythinktech.com
 DOMAIN-SUFFIX, adkwai.com
 DOMAIN-SUFFIX, mob.com
+
+
+
+# >>>>>>>>>>>>>>> ✅ I ✅ <<<<<<<<<<<<<<
 
 
 
