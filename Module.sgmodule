@@ -1,6 +1,6 @@
 #!name=融合模块
 #!desc=基于奶思合集定制，融合多种功能；
-#!update=2025-04-14 09:24:09
+#!update=2025-04-14 09:27:52
 
 [Rule]
 AND, ((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)), REJECT
