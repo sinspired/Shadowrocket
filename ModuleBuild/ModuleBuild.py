@@ -47,7 +47,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
     sgmodule_content = f"""#!name={project_name}
-#!desc=Built: {timestamp}
+#!构建时间： {timestamp}
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
