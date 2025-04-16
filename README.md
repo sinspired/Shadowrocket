@@ -128,17 +128,17 @@
 > 打开Shadowrocket，点击「已安装证书的配置文件」后面的 ⓘ 图标 > HTTPS 解密 > 证书后面的 ⓘ 图标 > 复制；<br>
 > 配置 > 模块 > 新建模块，粘贴并自行修改以下内容：<br>
 >
-```ini
-#!name = 证书模块
-[MITM]
-enable = true
-
-# 确认"ca-passphrase="后面填写的「已安装证书的配置文件」的证书密码是否正确，Shadowrocket是默认密码；
-ca-passphrase = Shadowrocket
-
-# 须在"ca-p12="后面粘贴证书内容；
-ca-p12 = 
-```
+> ```ini
+> #!name = 证书模块
+> [MITM]
+> enable = true
+>
+> # 确认"ca-passphrase="后面填写的「已安装证书的配置文件」的证书密码是否正确，Shadowrocket是默认密码；
+> ca-passphrase = Shadowrocket
+>
+> # 须在"ca-p12="后面粘贴证书内容；
+> ca-p12 = 
+> ```
 >
 > 按说明确认`证书密码`和填写`证书内容`，保存即可；<br>
 >
