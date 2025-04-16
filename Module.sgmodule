@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=Built: 2025-04-16 14:41:51
+#!desc=构建时间：2025-04-16 14:44:52
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
