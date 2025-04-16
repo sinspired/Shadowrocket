@@ -1,6 +1,5 @@
 #!name=融合模块
-#!desc=基于奶思合集定制，融合多种功能；
-#!update=2025-04-15 08:07:08
+#!desc=Built: 2025-04-16 14:41:51
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
