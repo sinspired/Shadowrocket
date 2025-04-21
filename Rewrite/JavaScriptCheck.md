@@ -1,4 +1,4 @@
-### 更新时间：2025-04-20<br>
+### 更新时间：2025-04-21<br>
 
 ### 失效资源：<br>
 无失效资源！<br>
@@ -76,8 +76,8 @@ https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/alicdn.
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/bilibiliManga.js<br>
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/dianping.js<br>
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/flyert.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/freshippo.js<br>
 https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bilibili/protoC.js<br>
