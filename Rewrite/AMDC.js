@@ -15,7 +15,7 @@ var appkeyPattern = /(?:23782110|23050476)/;
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
 if (uaPattern.test(ua) || appkeyPattern.test(appkey)) {
-    $done({ body: "SUCCEED" });
+    $done({ status: 403, body: "Blocked" });
 } else {
     $done({});
 }
