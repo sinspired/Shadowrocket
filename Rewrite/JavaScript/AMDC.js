@@ -11,11 +11,11 @@
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
 var url = $request.url;
 var uaPattern = /(?:amap|alibaba|cainiao|dmportal|hema4iphone|moon|%E5%96%B5%E8%A1%97|%E5%A4%A7%E9%BA%A6|%E5%A4%A9%E8%8B%97|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
-var appkeyPattern = /(?:23782110)/;
+var appkeyPattern = /(?:23782110|23050476)/;
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
 if (uaPattern.test(ua) || appkeyPattern.test(appkey)) {
-    $done({ body: "SUCCEED" });
+    $done({ status: "HTTP/1.1 404 Not Found", body: "Not Found" });
 } else {
     $done({});
 }
