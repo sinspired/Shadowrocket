@@ -15,7 +15,7 @@ var appkeyPattern = /(?:23782110|23050476)/;
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
 if (uaPattern.test(ua) || appkeyPattern.test(appkey)) {
-    $done({ status: "HTTP/1.1 404 Not Found", body: "Not Found" });
+    $done({ body: "SUCCEED" });
 } else {
     $done({});
 }
