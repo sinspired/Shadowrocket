@@ -20,7 +20,7 @@
 > 具有有效的**劫持保护、隐私保护**的策略；<br>
 > ChatGPT等AI工具单独分流；<br>
 > Apple/Microsoft/Google单独分流；<br>
-> WeChat/Telegram单独分流，规避因配置变化导致的封号风险；<br>
+> WeChat/Telegram单独分流，规避因分流变化导致的封号风险；<br>
 > 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
 > **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
 >
@@ -167,7 +167,6 @@
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
 [*@Hackl0us*](https://github.com/Hackl0us/GeoIP2-CN)
 [*@mw418*](https://github.com/mw418/Loon)
-[*@githubdulong*](https://github.com/githubdulong/Script)
 [*@Keywos*](https://github.com/Keywos/rule)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
 [*@NobyDa*](https://github.com/NobyDa/Script)
