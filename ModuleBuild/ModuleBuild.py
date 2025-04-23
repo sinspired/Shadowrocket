@@ -82,7 +82,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
     sgmodule_content += f"""
 [Script]
-YouTube.response =type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/youtube.response.js, requires-body=true, binary-body-mode=true, max-size=0, argument="{{"captionLang":"zh-Hans","lyricLang":"zh-Hans","blockImmersive":true,"blockUpload":true,"blockShorts":false,"debug":false}}"
 AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 """
     script_content = ""
@@ -93,9 +92,16 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mob
         filename = re.search(r'/([^/]+)$', script_path).group(1)
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
-        script_content += f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=0\n"
-    script_content= '\n'.join(sorted(set(script_content.splitlines())))
-    sgmodule_content +=script_content
+        script_line = f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=0"
+        binary_body_mode = re.search(r'\s*binary-body-mode\s*=\s*(true|false)\s*', js_content)
+        argument = re.search(r'\s*argument\s*=\s*"(.*)"\s*', js_content)
+        if binary_body_mode:
+            script_line += f", binary-body-mode={binary_body_mode.group(1)}"
+        if argument:
+            script_line += f', argument="{argument.group(1)}"'
+        script_content += script_line + "\n"
+    script_content = '\n'.join(sorted(set(script_content.splitlines())))
+    sgmodule_content += script_content
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
