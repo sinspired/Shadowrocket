@@ -145,7 +145,7 @@ if __name__ == "__main__":
     print("Input file path:", input_file_path)
     try:
         with open(input_file_path, 'r') as file:
-            urls = file.readlines()
+            urls = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
     except IOError as e:
         print(f"Error reading the input file: {e}")
         exit(1)
