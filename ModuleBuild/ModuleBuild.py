@@ -55,6 +55,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 [URL Rewrite]
 """
     rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
+    url_and_header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
@@ -64,6 +65,10 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} - {reject_type}\n"
+    for match in re.finditer(url_and_header_pattern, js_content, re.MULTILINE):
+        pattern = match.group(1).strip()
+        reject_type = match.group(2).strip()
+        url_content += f"{pattern} url-and-header {reject_type}\n"
     url_lines = [line for line in url_content.splitlines() if line.strip()]
     unique_lines = sorted(set(url_lines))
     url_content = '\n'.join(unique_lines)
