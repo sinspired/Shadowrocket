@@ -15,13 +15,13 @@
 ### [配置功能介绍](#配置功能介绍)<br>
 >
 #### `功能介绍`<br>
-> 所有配置，默认使用**TUN模式**接管所有流量；<br>
-> 使用加密的**DoH**进行DNS解析，并劫持未加密的查询；<br>
-> 具有有效的**劫持保护、隐私保护**的策略；<br>
+> 所有配置默认使用**TUN模式**接管全部流量；<br>
+> 使用加密的**DoH**进行DNS解析，并劫持未加密的查询请求；<br>
+> 提供有效的**劫持保护**与**隐私保护策略**；<br>
 > ChatGPT等AI工具单独分流；<br>
 > Apple/Microsoft/Google单独分流；<br>
-> WeChat/Telegram单独分流，规避因分流变化导致的封号风险；<br>
-> 国内地址/国际地址，国内媒体/国际媒体，单独分流；<br>
+> WeChat/Telegram单独分流，降低因策略变化导致封号的风险；<br>
+> 国内地址与国际地址，国内媒体与国际媒体，分别进行分流处理；<br>
 > **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
 >
 #### `如何安装`<br>
@@ -30,7 +30,7 @@
 >
 #### `修改分流`<br>
 > **仅适用于包含代理分组的配置；**<br>
-> 打开Shadowrocket首页，下拉，选择你想要修改的代理分组，选择策略即可；<br>
+> 打开Shadowrocket首页，下拉进入`代理分组`，选择你想要修改的代理分组，选择策略即可；<br>
 >
 ------
 >
@@ -99,7 +99,7 @@
 > **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，所有规则指向的资源已重定向至[当前仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Module.sgmodule)，一键跳转安装；<br>
 > 使用须知：使用融合模块，**必须开启MitM**，教程参考下方说明；<br>
-> 特别说明：使用融合模块，会**禁用QUIC协议**，请自行评估影响；<br>
+> 特别说明：使用融合模块，**默认禁用QUIC协议**，请自行评估影响；<br>
 > **特别警告：融合模块不做“解锁”功能，请支持开发者！如本项目侵犯了您的利益，请提交Issues进行移除，谢谢！**<br>
 >
 ------
