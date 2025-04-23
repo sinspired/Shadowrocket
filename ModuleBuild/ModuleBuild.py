@@ -93,12 +93,15 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mob
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
         script_line = f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=0"
-        binary_body_mode = re.search(r'\s*binary-body-mode\s*=\s*(true|false)\s*', js_content)
-        argument = re.search(r'\s*argument\s*=\s*"(.*)"\s*', js_content)
-        if binary_body_mode:
-            script_line += f", binary-body-mode={binary_body_mode.group(1)}"
-        if argument:
-            script_line += f', argument="{argument.group(1)}"'
+        line_start = match.start()
+        line_end = js_content.find('\n', line_start)
+        line = js_content[line_start:line_end if line_end != -1 else None]
+        binary_body_mode_match = re.search(r'binary-body-mode\s*=\s*(true|false)', line)
+        argument_match = re.search(r'argument\s*=\s*"(.*)"', line)
+        if binary_body_mode_match:
+            script_line += f", binary-body-mode={binary_body_mode_match.group(1)}"
+        if argument_match:
+            script_line += f', argument="{argument_match.group(1)}"'
         script_content += script_line + "\n"
     script_content = '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content += script_content
