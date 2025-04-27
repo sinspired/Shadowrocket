@@ -82,8 +82,25 @@ jobs:
                 fi
                 if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                   filepath="Rewrite/JavaScript/$(basename "$raw_url")"
-                  echo "Downloading: $raw_url -> $filepath"
-                  curl -fsS -o "$filepath" "$raw_url" || true
+                  if [ -f "$filepath" ]; then
+                    base_filename=$(basename "$filepath")
+                    existing_filepath="Rewrite/JavaScript/$base_filename"
+                    if [[ "$existing_filepath" != "$filepath" ]]; then
+                      suffix=2
+                      new_filepath="Rewrite/JavaScript/${base_filename%.*}${suffix}.${base_filename##*.}"
+                      while [ -f "$new_filepath" ]; do
+                        suffix=$((suffix + 1))
+                        new_filepath="Rewrite/JavaScript/${base_filename%.*}${suffix}.${base_filename##*.}"
+                      done
+                      echo "Renaming and downloading as: $new_filepath"
+                      curl -fsS -o "$new_filepath" "$raw_url" || true
+                    else
+                      echo "File already exists, skipping: $filepath"
+                    fi
+                  else
+                    echo "Downloading: $raw_url -> $filepath"
+                    curl -fsS -o "$filepath" "$raw_url" || true
+                  fi
                   valid_list="${valid_list}${raw_url}<br>\n"
                   downloaded_urls[$raw_url]=1
                 else
