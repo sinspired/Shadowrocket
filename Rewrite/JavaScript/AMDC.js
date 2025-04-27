@@ -10,7 +10,7 @@
 
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
 var url = $request.url;
-var uaPattern = /(?:AMapiPhone|Alibaba|Cainiao4iPhone|Hema4iPhone|%E5%A4%A9%E7%8C%AB|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
+var uaPattern = /(?:amap|alibaba|cainiao|hema|%E5%A4%A9%E7%8C%AB|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
 var appkeyPattern = /(?:23782110)/;
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
