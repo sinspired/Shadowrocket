@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-04-23 18:05:47
+#!desc=2025-04-27 11:48:53
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1242,7 +1242,7 @@ https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/musi
 ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users WeiboOverseas data="https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/reject-dict.json" header="Content-Type: text/html"
 
 [Script]
-AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
+AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 12306.js =type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/12306.js, requires-body=true, max-size=0
 51card.js =type=http-response, pattern=^https?:\/\/api\.u51\.com\/generic-config-gateway\/api\/v\d\/guanjia\/me-tab2\/config, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/51card.js, requires-body=true, max-size=0
 51card.js =type=http-response, pattern=^https?:\/\/api\.u51\.com\/liabilitygateway\/api\/v\d\/homepage\/liabilityline, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/51card.js, requires-body=true, max-size=0
