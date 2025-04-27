@@ -5,12 +5,12 @@
 # 更新时间: 20250427
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js
 # 生成器写法：
-# AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
+# AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 */
 
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
 var url = $request.url;
-var uaPattern = /(?:amap|alibaba|cainiao|hema|%E5%A4%A9%E7%8C%AB|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
+var uaPattern = /(?:AMapiPhone|Alibaba|Cainiao4iPhone|Hema4iPhone|%E5%A4%A9%E7%8C%AB|%E9%97%B2%E9%B1%BC|%E9%A3%9E%E7%8C%AA)/;
 var appkeyPattern = /(?:23782110)/;
 var appkeyMatch = url.match(/appkey=(\d+)/);
 var appkey = appkeyMatch ? appkeyMatch[1] : "";
