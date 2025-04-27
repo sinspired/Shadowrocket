@@ -81,21 +81,11 @@ jobs:
                   continue
                 fi
                 if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
-                  filename="$(basename "$raw_url")"
-                  filepath="Rewrite/JavaScript/$filename"
-                  if [[ -f "$filepath" && "$raw_url" != "${downloaded_urls[$filename]}" ]]; then
-                    n=2
-                    name="${filename%.*}"
-                    ext="${filename##*.}"
-                    while [[ -f "Rewrite/JavaScript/${name}${n}.${ext}" ]]; do
-                      ((n++))
-                    done
-                    filepath="Rewrite/JavaScript/${name}${n}.${ext}"
-                  fi
+                  filepath="Rewrite/JavaScript/$(basename "$raw_url")"
                   echo "Downloading: $raw_url -> $filepath"
                   curl -fsS -o "$filepath" "$raw_url" || true
                   valid_list="${valid_list}${raw_url}<br>\n"
-                  downloaded_urls[$filename]="$raw_url"
+                  downloaded_urls[$raw_url]=1
                 else
                   invalid_list="${invalid_list}${raw_url}<br>\n"
                 fi
