@@ -93,17 +93,16 @@ if (url.includes("/x/resource/show/tab/v2")) {
     }
   }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
-  // ipad我的页面
-  delete obj.data.ipad_upper_sections; // 投稿 创作首页 稿件管理 有奖活动
+  if (obj?.data?.ipad_upper_sections?.length > 0) {
+    obj.data.ipad_upper_sections = obj.data.ipad_upper_sections.filter(i => !(i?.title?.includes("创作") || i?.title?.includes("活动")));
+  }
   if (obj?.data?.ipad_recommend_sections?.length > 0) {
-    // 789我的关注 790我的消息 791我的钱包 792直播中心 793大会员 794我的课程 2542我的游戏
-    const itemList = [789, 790];
-    obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter((i) => itemList?.includes(i.id));
+    const itemList = [789,790];
+    obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter(i=>itemList.includes(i.id));
   }
   if (obj?.data?.ipad_more_sections?.length > 0) {
-    // 797我的客服 798设置 1070青少年守护
-    const itemList = [797, 798];
-    obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter((i) => itemList?.includes(i.id));
+    const itemList = [797,798];
+    obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter(i=>itemList.includes(i.id));
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
   // 非会员开启会员专属清晰度
