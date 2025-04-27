@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-04-27 21:31:05
+#!desc=2025-04-27 21:36:24
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1357,7 +1357,7 @@ json.js =type=http-response, pattern=^https?:\/\/api\.live\.bilibili\.com\/xlive
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
-json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
+json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|myinfo)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
