@@ -55,6 +55,7 @@ jobs:
             "Rewrite/YouTube.conf"
           )
           declare -A downloaded_urls
+          declare -A downloaded_files
           for file in "${files_to_check[@]}"; do
             if [ -f "$file" ]; then
               echo "Processing file: $file"
@@ -83,15 +84,18 @@ jobs:
                 if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                   filename=$(basename "$raw_url")
                   filepath="Rewrite/JavaScript/$filename"
-                  if [ -f "$filepath" ]; then
-                    basename_noext="${filename%.*}"
-                    ext="${filename##*.}"
-                    filepath="Rewrite/JavaScript/${basename_noext}2.${ext}"
+                  if [[ -n "${downloaded_files[$filename]}" ]]; then
+                    if [[ "${downloaded_files[$filename]}" != "$raw_url" ]]; then
+                      basename_noext="${filename%.*}"
+                      ext="${filename##*.}"
+                      filepath="Rewrite/JavaScript/${basename_noext}2.${ext}"
+                    fi
                   fi
                   echo "Downloading: $raw_url -> $filepath"
                   curl -fsS -o "$filepath" "$raw_url" || true
                   valid_list="${valid_list}${raw_url}<br>\n"
                   downloaded_urls[$raw_url]=1
+                  downloaded_files[$filename]="$raw_url"
                 else
                   invalid_list="${invalid_list}${raw_url}<br>\n"
                 fi
