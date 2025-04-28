@@ -1,4 +1,4 @@
-// 2024-10-19 12:35
+// 2025-04-28 13:20
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -93,16 +93,16 @@ if (url.includes("/x/resource/show/tab/v2")) {
     }
   }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
-  // ipad我的页面
-  delete obj.data.ipad_upper_sections; // 投稿 创作首页 稿件管理 有奖活动
+  // iPad 我的页面
+  delete obj.data.ipad_upper_sections; // 删除不需要的模块，如投稿、创作首页等
   if (obj?.data?.ipad_recommend_sections?.length > 0) {
-    // 789我的关注 790我的消息 791我的钱包 792直播中心 793大会员 794我的课程 2542我的游戏
-    const itemList = [789, 790];
+    // 过滤 ipad_recommend_sections 只保留特定 id
+    const itemList = [789, 790]; // 我的关注、我的消息
     obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter((i) => itemList?.includes(i.id));
   }
   if (obj?.data?.ipad_more_sections?.length > 0) {
-    // 797我的客服 798设置 1070青少年守护
-    const itemList = [797, 798];
+    // 过滤 ipad_more_sections 只保留特定 id
+    const itemList = [797, 798]; // 我的客服、设置
     obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter((i) => itemList?.includes(i.id));
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
