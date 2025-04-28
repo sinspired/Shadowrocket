@@ -1,4 +1,4 @@
-// 2025-4-28 13:36
+// 2024-10-19 12:35
 
 const url = $request.url;
 if (!$response.body) $done({});
@@ -41,19 +41,18 @@ if (url.includes("/x/resource/show/tab/v2")) {
         if (item?.style === 1 || item?.style === 2) {
           if (item?.title) {
             if (item?.title === "创作中心" || item?.title === "推荐服务") {
-              // 删除创作中心和推荐服务
+              // 创作中心 推荐服务
               continue;
             } else if (item?.title === "更多服务") {
-              // 保留更多服务
               delete item.title;
               if (item?.items?.length > 0) {
                 let newItems = [];
                 for (let i of item.items) {
                   if (/user_center\/feedback/g.test(i?.uri)) {
-                    // 保留联系客户
+                    // 联系客服
                     newItems.push(i);
                   } else if (/user_center\/setting/g.test(i?.uri)) {
-                    // 保留设置
+                    // 设置
                     newItems.push(i);
                   } else {
                     continue;
@@ -72,20 +71,49 @@ if (url.includes("/x/resource/show/tab/v2")) {
     }
     obj.data.sections_v2 = newSects;
   }
+  // 非会员开启本地会员标识
+  if (obj?.data?.vip) {
+    if (obj?.data?.vip?.status === 0) {
+      obj.data.vip_type = 2;
+      obj.data.vip.type = 2;
+      obj.data.vip.status = 1;
+      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
+      obj.data.vip.label = {
+        path: "",
+        text: "年度大会员",
+        label_theme: "annual_vip",
+        text_color: "#FFFFFF",
+        bg_style: 1,
+        bg_color: "#FB7299",
+        border_color: "",
+        image: "https://i0.hdslb.com/bfs/vip/8d4f8bfc713826a5412a0a27eaaac4d6b9ede1d9.png"
+      };
+      obj.data.vip.nickname_color = "#FB7299";
+      obj.data.vip.role = 3;
+    }
+  }
 } else if (url.includes("/x/v2/account/mine/ipad")) {
-  // iPad 我的页面
-  delete obj.data.ipad_upper_sections; // 删除不需要的模块，如投稿、创作首页等
-
+  // ipad我的页面
+  delete obj.data.ipad_upper_sections; // 投稿 创作首页 稿件管理 有奖活动
   if (obj?.data?.ipad_recommend_sections?.length > 0) {
-    // 保留我的关注和我的消息
-    const itemList = [789, 790]; // 我的关注、我的消息
+    // 789我的关注 790我的消息 791我的钱包 792直播中心 793大会员 794我的课程 2542我的游戏
+    const itemList = [789, 790];
     obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter((i) => itemList?.includes(i.id));
   }
-
   if (obj?.data?.ipad_more_sections?.length > 0) {
-    // 保留我的客服和设置
-    const itemList = [797, 798]; // 我的客服、设置
+    // 797我的客服 798设置 1070青少年守护
+    const itemList = [797, 798];
     obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter((i) => itemList?.includes(i.id));
+  }
+} else if (url.includes("/x/v2/account/myinfo")) {
+  // 非会员开启会员专属清晰度
+  if (obj?.data?.vip) {
+    if (obj?.data?.vip?.status === 0) {
+      obj.data.vip.type = 2;
+      obj.data.vip.status = 1;
+      obj.data.vip.due_date = 3818419199; // Unix 时间戳 2090-12-31 23:59:59
+      obj.data.vip.role = 3;
+    }
   }
 } else if (url.includes("/x/v2/feed/index?")) {
   // 首页推荐信息流
@@ -93,9 +121,14 @@ if (url.includes("/x/resource/show/tab/v2")) {
     // 白名单
     obj.data.items = obj.data.items.filter((i) => i?.card_goto === "av");
   }
+  if (obj?.data?.config?.toast?.has_toast) {
+    obj.data.config.toast.has_toast = false;
+  }
 } else if (url.includes("/x/v2/feed/index/story")) {
   // 竖屏模式信息流
   if (obj?.data?.items?.length > 0) {
+    // vertical_live 直播内容
+    // vertical_pgc 大会员专享
     let newItems = [];
     for (let item of obj.data.items) {
       if (item?.hasOwnProperty("ad_info")) {
