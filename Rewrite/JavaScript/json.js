@@ -95,15 +95,57 @@ if (url.includes("/x/resource/show/tab/v2")) {
 } else if (url.includes("/x/v2/account/mine/ipad")) {
   // iPad 我的页面
   delete obj.data.ipad_upper_sections; // 删除不需要的模块，如投稿、创作首页等
+
   if (obj?.data?.ipad_recommend_sections?.length > 0) {
     // 过滤 ipad_recommend_sections 只保留特定 id
     const itemList = [789, 790]; // 我的关注、我的消息
     obj.data.ipad_recommend_sections = obj.data.ipad_recommend_sections.filter((i) => itemList?.includes(i.id));
   }
+
   if (obj?.data?.ipad_more_sections?.length > 0) {
     // 过滤 ipad_more_sections 只保留特定 id
     const itemList = [797, 798]; // 我的客服、设置
     obj.data.ipad_more_sections = obj.data.ipad_more_sections.filter((i) => itemList?.includes(i.id));
+  }
+
+  if (obj?.data?.sections_v2?.length > 0) {
+    // 保留 "离线缓存"、"历史记录"、"我的收藏"、"稍后再看"
+    let newSects = [];
+    for (let item of obj.data.sections_v2) {
+      delete item.button;
+      if (item?.style) {
+        if (item?.style === 1 || item?.style === 2) {
+          if (item?.title) {
+            if (item?.title === "创作中心" || item?.title === "推荐服务") {
+              // 创作中心 推荐服务
+              continue;
+            } else if (item?.title === "更多服务") {
+              delete item.title;
+              if (item?.items?.length > 0) {
+                let newItems = [];
+                for (let i of item.items) {
+                  if (/user_center\/feedback/g.test(i?.uri)) {
+                    // 联系客服
+                    newItems.push(i);
+                  } else if (/user_center\/setting/g.test(i?.uri)) {
+                    // 设置
+                    newItems.push(i);
+                  } else {
+                    continue;
+                  }
+                }
+                item.items = newItems;
+              }
+            }
+          }
+        } else {
+          // 其他style
+          continue;
+        }
+      }
+      newSects.push(item);
+    }
+    obj.data.sections_v2 = newSects;
   }
 } else if (url.includes("/x/v2/account/myinfo")) {
   // 非会员开启会员专属清晰度
@@ -208,3 +250,4 @@ if (url.includes("/x/resource/show/tab/v2")) {
 }
 
 $done({ body: JSON.stringify(obj) });
+
