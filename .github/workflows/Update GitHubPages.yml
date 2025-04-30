@@ -3,6 +3,13 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  workflow_run:
+    workflows: 
+      - "Update RuleFiles"
+      - "Update RewriteFiles"
+      - "Update ModuleRules"
+    types:
+      - completed
 
 permissions:
   contents: read
