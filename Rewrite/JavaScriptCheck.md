@@ -1,4 +1,4 @@
-### 更新时间：2025-04-30<br>
+### 更新时间：2025-05-01<br>
 
 ### 失效资源：<br>
 无失效资源！<br>
@@ -70,15 +70,15 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.j
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js<br>
 https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
 https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/51job.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/airchina.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/alicdn.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/bilibiliManga.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/dianping.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/flyert.js<br>
-https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/mdb.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/alicdn.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
 https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_vip.js<br>
@@ -89,7 +89,11 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_m
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js<br>
+https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
+https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
+https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js<br>
+https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/youtube.response.js<br>
 
