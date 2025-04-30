@@ -93,20 +93,27 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         script_type_raw = match.group(2)
-        script_path = match.group(3).strip()
-        filename = re.search(r'/([^/]+)$', script_path).group(1)
+        script_path = match.group(3).strip().rstrip(',')
+        filename = re.search(r'/([^/]+)$', script_path).group(1).strip()
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
-        script_line = f"{filename} =type=http-{script_type}, pattern={pattern}, script-path={script_path}, requires-body={needbody}, max-size=0"
+        params = [
+            f"{filename} =type=http-{script_type}",
+            f"pattern={pattern}",
+            f"script-path={script_path}",
+            f"requires-body={needbody}",
+            "max-size=0"
+        ]
         line_start = match.start()
         line_end = js_content.find('\n', line_start)
         line = js_content[line_start:line_end if line_end != -1 else None]
         binary_body_mode_match = re.search(r'binary-body-mode\s*=\s*(true|false)', line)
         argument_match = re.search(r'argument\s*=\s*"(.*)"', line)
         if binary_body_mode_match:
-            script_line += f", binary-body-mode={binary_body_mode_match.group(1)}"
+            params.append(f"binary-body-mode={binary_body_mode_match.group(1)}")
         if argument_match:
-            script_line += f', argument="{argument_match.group(1)}"'
+            params.append(f'argument="{argument_match.group(1)}"')
+        script_line = ', '.join(params)
         script_content += script_line + "\n"
     script_content = '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content += script_content
