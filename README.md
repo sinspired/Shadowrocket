@@ -1,19 +1,19 @@
->
-------
->
+
+---
+
 ### [敬告](#敬告)<br>
 > **禁止在中国大陆的任何平台传播此项目！**<br>
 > **禁止将本仓库中的任何内容用于违法活动或用于盈利目的！**<br>
 > **本项目仅供学习交流及测试，使用本项目中的内容所造成的一切后果，均由使用者承担！**<br>
->
-------
->
+
+---
+
 ## [仓库简介](#仓库简介)<br>
 > **本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；**<br>
 > **如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！**<br>
->
-------
->
+
+---
+
 ### [配置功能介绍](#配置功能介绍)<br>
 >
 #### 功能介绍<br>
@@ -33,9 +33,9 @@
 #### 修改分流<br>
 > **仅适用于包含代理分组的配置；**<br>
 > 打开Shadowrocket首页，下拉进入`代理分组`，选择你想要修改的代理分组，选择策略即可；<br>
->
-------
->
+
+---
+
 ### [基础配置介绍](#基础配置介绍)<br>
 >
 #### 配置功能介绍<br>
@@ -54,9 +54,9 @@
 >
 #### 配置安装<br>
 > [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/Rules.conf "一键安装：基础配置")<br>
->
-------
->
+
+---
+
 ### [完整配置介绍](#完整配置介绍)<br>
 >
 #### 配置功能介绍<br>
@@ -65,9 +65,9 @@
 >
 #### 配置安装<br>
 > [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesFull.conf "一键安装：完整配置")<br>
->
-------
->
+
+---
+
 ### [精简配置介绍](#精简配置介绍)<br>
 >
 #### 配置功能介绍<br>
@@ -76,9 +76,9 @@
 >
 #### 配置安装<br>
 > [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesLite.conf "一键安装：精简配置")<br>
->
-------
->
+
+---
+
 ### [回国配置介绍](#回国配置介绍)<br>
 >
 #### 配置功能介绍<br>
@@ -87,9 +87,9 @@
 >
 #### 配置安装<br>
 > [![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesBackCN.conf "一键安装：回国分流配置")<br>
->
-------
->
+
+---
+
 ### [融合模块介绍](#融合模块介绍)<br>
 >
 #### 模块安装<br>
@@ -103,9 +103,9 @@
 > 使用须知：使用融合模块，**必须开启MitM**，教程参考下方说明；<br>
 > 特别说明：使用融合模块，**默认禁用QUIC协议**，请自行评估影响；<br>
 > **特别警告：融合模块不做“解锁”功能，请支持开发者！如本项目侵犯了您的利益，请提交Issues进行移除，谢谢！**<br>
->
-------
->
+
+---
+
 ### [推荐设置](#推荐设置)<br>
 >
 #### MitM&证书模块<br>
@@ -158,9 +158,9 @@
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
 > 更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
->
-------
->
+
+---
+
 ### [特别鸣谢](#特别鸣谢)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
@@ -178,6 +178,5 @@
 [*@kokoryh*](https://github.com/kokoryh/Script)
 [*@zZPiglet*](https://github.com/zZPiglet/Task)
 [*@zirawell*](https://github.com/zirawell/Ad-Cleaner)<br>
->
-------
->
+
+---
