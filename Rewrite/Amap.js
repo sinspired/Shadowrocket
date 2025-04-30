@@ -2,7 +2,7 @@
 # 高德地图
 # 高德地图应用净化；
 # 由向晚重写维护；
-# 更新时间: 20250324
+# 更新时间: 20250430
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 
 [rewrite_local]
@@ -11,15 +11,15 @@
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution url reject
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend url reject-dict
 ^https?:\/\/.*\.amap\.com\/uploadimg\/\w+\.gif url reject-img
-^https?://.*.amap.com/ws/valueadded/alimama/splash_screen url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/message/notice/list url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/shield/frogserver/aocs/updatable url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/shield/search/nearbyrec_smart url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/promotion-web/resource url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/faas/amap-navigation/main-page url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/msgbox/pull url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/shield/dsp/profile/index/nodefaas url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
-^https?://.*.amap.com/ws/shield/search/new_hotword url script-response-body https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/valueadded/alimama/splash_screen url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/message/notice/list url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/shield/frogserver/aocs/updatable url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/shield/search/nearbyrec_smart url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/promotion-web/resource url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/faas/amap-navigation/main-page url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/msgbox/pull url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/shield/dsp/profile/index/nodefaas url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?://.*.amap.com/ws/shield/search/new_hotword url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 
 [mitm]
 hostname = *.amap.com
