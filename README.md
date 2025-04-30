@@ -51,7 +51,7 @@
 > **此配置是最适合大众的配置，添加后无需调整，如节点包含`港新美`，建议使用此配置！**<br>
 
 #### 配置安装<br>
-> [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/Rules.conf "一键安装：基础配置")<br>
+[![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/Rules.conf "一键安装：基础配置")<br>
 
 ---
 
@@ -61,7 +61,7 @@
 > **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
 
 #### 配置安装<br>
-> [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesFull.conf "一键安装：完整配置")<br>
+[![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesFull.conf "一键安装：完整配置")<br>
 
 ---
 
@@ -71,7 +71,7 @@
 > **如不需要代理分组及自动分流，强烈建议使用此配置！**<br>
 
 #### 配置安装<br>
-> [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesLite.conf "一键安装：精简配置")<br>
+[![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesLite.conf "一键安装：精简配置")<br>
 
 ---
 
@@ -81,13 +81,13 @@
 > **此配置需搭配`回国机场`使用，不适合国内用户使用！**<br>
 
 #### 配置安装<br>
-> [![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesBackCN.conf "一键安装：回国分流配置")<br>
+[![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesBackCN.conf "一键安装：回国分流配置")<br>
 
 ---
 
 ### [融合模块介绍](#融合模块介绍)<br>
 #### 模块安装<br>
-> [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule "一键安装：融合模块")<br>
+[![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule "一键安装：融合模块")<br>
 
 #### 模块说明<br>
 > **[融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20ModuleRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)而构建，随规则变化，不定期更新；**<br>
