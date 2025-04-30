@@ -2,16 +2,15 @@ name: Update GitHubPages
 on:
   push:
     branches: ["main"]
-    paths:
-      - "README.md"
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
-  group: "pages"
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
