@@ -1,7 +1,6 @@
 import os
 import requests
 import re
-import time
 import datetime
 
 def download_content(url):
