@@ -145,7 +145,7 @@
 > 设置-GeoLite2数据库：
 开启`自动后台更新`，间隔选择`7`；<br>
 > 设置-GeoLite2数据库：
-长按后拷贝此链接：[Country.mmdb](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，粘贴至国家-URL后，点击更新；<br>
+长按后拷贝此链接：[Country.mmdb](https://raw.githubusercontent.com/0x2E/someip/build/Country.mmdb)，粘贴至国家-URL后，点击更新；<br>
 > 设置-温和策略机制：
 选择`开启`；<br>
 > 设置-排除路由0.0.0.0/31：
@@ -160,7 +160,7 @@
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
-[*@Hackl0us*](https://github.com/Hackl0us/GeoIP2-CN)
+[*@0x2E*](https://github.com/0x2E/someip)
 [*@mw418*](https://github.com/mw418/Loon)
 [*@Keywos*](https://github.com/Keywos/rule)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
