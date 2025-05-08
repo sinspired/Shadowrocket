@@ -139,13 +139,13 @@
 > 设置-代理：
 代理类型选择`None`，代理地址选择`198.18.0.3`；<br>
 > 设置-配置：
-开启`自动后台更新`，间隔选择`7`；**（如有自定义配置，请勿开启！）**<br>
+开启`自动后台更新`，间隔选择`7`；**（如配置有自定义设置，请勿开启！）**<br>
 > 设置-订阅：
 开启`自动后台更新`，间隔选择`24`；<br>
 > 设置-GeoLite2数据库：
 开启`自动后台更新`，间隔选择`7`；<br>
 > 设置-GeoLite2数据库：
-国家-URL，长按后复制此链接：[Country.mmdb](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，输入后点击更新；<br>
+国家-URL，长按后拷贝此链接：[Country.mmdb](https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb)，粘贴到对应位置后，点击更新；<br>
 > 设置-温和策略机制：
 选择`开启`；<br>
 > 设置-排除路由0.0.0.0/31：
