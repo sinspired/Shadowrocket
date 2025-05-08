@@ -55,7 +55,6 @@ jobs:
     - name: Generate Ai.list
       run: |
         echo "# NAME: AI Collection" > Rules/Ai.list
-        echo "# INCLUDE: OpenAI Copilot Gemini Claude Grok" >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/OpenAI.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Copilot.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Gemini.list >> Rules/Ai.list
