@@ -152,7 +152,6 @@
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
-[*@0x2E*](https://github.com/0x2E/someip)
 [*@mw418*](https://github.com/mw418/Loon)
 [*@Keywos*](https://github.com/Keywos/rule)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
