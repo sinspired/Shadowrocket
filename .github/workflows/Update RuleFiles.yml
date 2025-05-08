@@ -61,6 +61,8 @@ jobs:
         cat Rules/Gemini.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list
         cat Rules/Claude.list >> Rules/Ai.list
+        echo "" >> Rules/Ai.list
+        cat Rules/Grok.list >> Rules/Ai.list
 
     - name: Commit & copy RuleFiles
       uses: EndBug/add-and-commit@v9
