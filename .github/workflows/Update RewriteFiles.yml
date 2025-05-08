@@ -133,10 +133,7 @@ jobs:
           author_email: 'actions@github.com'
           message: 'Update RewriteFiles'
           add: |
-            Rewrite/NaisiScripts/QuanX.conf
-            Rewrite/NaisiScripts/Loon.conf
-            Rewrite/NaisiScripts/Weibo.conf
-            Rewrite/NaisiScripts/RejectList.conf
+            Rewrite/NaisiScripts/*
             Rewrite/JavaScript/*
             Rewrite/JavaScriptCheck.md
         env:
