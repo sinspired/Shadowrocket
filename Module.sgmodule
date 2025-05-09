@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-08 10:01:15
+#!desc=2025-05-09 08:20:55
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -41,7 +41,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/api\.weibo\.cn\/2\/!\/chaohua\/discovery\/home_bottom\/switch Weibo - reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels Weibo - reject-dict
 ^https:\/\/api\.weibo\.cn\/2\/!\/was\/finder\/searchbarchange\? Weibo - reject-dict
-^https:\/\/api\.xiaoyuzhoufm\.com\/v1\/flash-screen\/list - reject-dict
 ^https:\/\/api\.zhihu\.com\/(bazaar\/float_window|market\/popovers_v2) - reject-dict
 ^https:\/\/api\.zhihu\.com\/(moments\/lastread|drama\/hot-drama-list) - reject-dict
 ^https:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config - reject
@@ -414,6 +413,11 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/api\.wmpvp\.com\/api\/v\d\/config\/promote - reject
 ^https?:\/\/api\.xbxxhz\.com\/big_data\/v1\/home_pages - reject
 ^https?:\/\/api\.xiachufang\.com\/v\d\/ad/ - reject
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/ai-summary - reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/category\/list-daily-suggestion - reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/flash- - reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/membership\/platform - reject-dict
+^https?:\/\/api\.xiaoyuzhoufm\.com\/v\d\/search - reject-dict
 ^https?:\/\/api\.xueqiu\.com\/brand\/search\/v1\.json\? - reject
 ^https?:\/\/api\.xueqiu\.com\/snowpard\/launch_strategy\/query\.json\? - reject-dict
 ^https?:\/\/api\.ycapp\.yiche\.com\/appnews\/getadlist - reject-img
