@@ -136,6 +136,14 @@
 开启`始终开启`；<br>
 > 设置-代理：
 代理类型选择`None`，代理地址选择`198.18.0.3`；<br>
+> 设置-配置：
+开启`自动后台更新`，间隔选择`7`；**（如有自定义配置，请勿开启！）**<br>
+> 设置-订阅：
+开启`自动后台更新`，间隔选择`24`；<br>
+> 设置-GeoLite2数据库：
+开启`自动后台更新`，间隔选择`7`；<br>
+> 设置-GeoLite2数据库：
+长按后分别拷贝对应链接：[Country](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) & [ASN](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb)，粘贴至对应区域的`URL`位置，点击`更新`；<br>
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
 > 更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
