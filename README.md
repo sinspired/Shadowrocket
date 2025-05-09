@@ -143,7 +143,7 @@
 > 设置-GeoLite2数据库：
 开启`自动后台更新`，间隔选择`7`；<br>
 > 设置-GeoLite2数据库：
-长按后分别拷贝对应链接：[Country](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) & [ASN](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb)，粘贴至对应区域的`URL`位置，点击`更新`；<br>
+长按后拷贝此链接：[Country](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb) ，粘贴至`国家`-`URL`后，点击`更新`；<br>
 > 设置-排除路由0.0.0.0/31：
 选择`关闭`；<br>
 > 更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
