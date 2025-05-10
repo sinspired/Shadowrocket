@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-09 14:45:52
+#!desc=2025-05-10 10:52:48
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -205,7 +205,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/101\.91\.69\.26:8080\/.+ - reject
 ^https?:\/\/103\.91\.210\.141\:2515\/xgapp\.php\/v2\/top_notice - reject
 ^https?:\/\/118\.178\.214\.118\/yyting\/advertclient\/ClientAdvertList\.action - reject-img
-^https?:\/\/119\.29\.29\.98\/d - reject-200
+^https?:\/\/119\.29\.29\.\d+\/d - reject-200
 ^https?:\/\/182\.92\.244\.70\/d\/json - reject-dict
 ^https?:\/\/39\.98\.135\.211\/admin\/filter\/crowdFunding\/getNewProductData - reject-dict
 ^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement - reject-200
@@ -1337,6 +1337,7 @@ cnftp.js =type=http-response, pattern=^https?:\/\/un-acs\.youku\.com\/gw\/mtop\.
 coolapk.js =type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/coolapk.js, requires-body=true, max-size=0
 coolapk.js =type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/coolapk.js, requires-body=true, max-size=0
 coolapk.js =type=http-response, pattern=^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/coolapk.js, requires-body=true, max-size=0
+ddxq.js =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/(?>bottomNavi|homeFlowDetail), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ddxq.js, requires-body=true, max-size=0
 dianping.js =type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dianping.js, requires-body=true, max-size=0
 dianyinglieshou.js =type=http-response, pattern=^https:\/\/app-v1\.ecoliving168\.com\/api\/v1\/movie\/index_recommend\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dianyinglieshou.js, requires-body=true, max-size=0
 dict-youdao-ad.js =type=http-response, pattern=^https?:\/\/dict\.youdao\.com\/(homepage\/promotion|course\/tab\/home|homepage\/tile), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/dict-youdao-ad.js, requires-body=true, max-size=0
