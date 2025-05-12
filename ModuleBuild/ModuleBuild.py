@@ -50,6 +50,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+RULE-SET, https://xiangwanguan.github.io/Shadowrocket/Rules/AntiAD.list, REJECT
 
 [URL Rewrite]
 """
