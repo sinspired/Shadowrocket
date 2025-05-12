@@ -1,8 +1,9 @@
 #!name=融合模块
-#!desc=2025-05-10 10:52:48
+#!desc=2025-05-12 15:42:44
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+RULE-SET, https://xiangwanguan.github.io/Shadowrocket/Rules/AntiAD.list, REJECT
 
 [URL Rewrite]
 ^http:\/\/ad\.shunchangzhixing\.com\/getAd - reject-dict
@@ -104,6 +105,9 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/gethotrecommend - reject-dict
 ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/getindexlayoutcelllist - reject-dict
 ^https:\/\/tcmobileapi\.17usoft\.com\/appindexnew\/index\/openscreen - reject-dict
+^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide - reject-dict
+^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover - reject-dict
+^https:\/\/tiebac\.baidu\.com\/c\/u\/chat\/getChatSubscriptionList - reject-dict
 ^https:\/\/userpms-api\.suh\.cn\/apt\/api\/bannar\/PageList\?sysSearchKey=sysPat&showSearchKey=advertising&pageIndex=1&pagesize=100&lanSearchValue=1&locationSearchKey=&status=1& - reject-dict
 ^https:\/\/vapp\.tmuyun\.com\/api\/app_start_page\/list\/new - reject-dict
 ^https:\/\/vapp\.tmuyun\.com\/api\/buoy\/list - reject-dict
