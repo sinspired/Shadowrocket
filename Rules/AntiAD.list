@@ -1,0 +1,36 @@
+# NAME: AntiAD
+# AUTHOR: XiangwanGuan
+# REPO: https://github.com/XiangwanGuan/Shadowrocket
+# UPDATED: 2025-05-12
+# HOST: 16
+# IP-CIDR: 3
+# IP6-CIDR: 1
+# TOTAL: 20
+
+# > 百度贴吧
+HOST,afd.baidu.com,AntiAD
+HOST,mobads.baidu.com,AntiAD
+HOST,180.76.76.200,AntiAD
+IP-CIDR,180.76.76.200/32,AntiAD,no-resolve
+
+# > 哔哩哔哩
+HOST,api.biliapi.com,AntiAD
+HOST,app.biliapi.com,AntiAD
+HOST,api.biliapi.net,AntiAD
+HOST,app.biliapi.net,AntiAD
+
+# > Keep
+HOST,httpdns.n.netease.com,AntiAD
+HOST,httpdns.calorietech.com,AntiAD
+HOST,hc-ssp.sm.cn,AntiAD
+
+# > 知乎
+HOST,appcloud.zhihu.com,AntiAD
+HOST,appcloud2.in.zhihu.com,AntiAD
+HOST,crash2.zhihu.com,AntiAD
+HOST,mqtt.zhihu.com,AntiAD
+HOST,sugar.zhihu.com,AntiAD
+HOST,zxid-m.mobileservice.cn,AntiAD
+IP-CIDR,103.41.167.237/32,AntiAD,no-resolve
+IP-CIDR,118.89.204.198/32,AntiAD,no-resolve
+IP6-CIDR,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,AntiAD,no-resolve
