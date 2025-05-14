@@ -154,20 +154,20 @@
 
 ### [特别鸣谢](#特别鸣谢)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
-[*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
-[*@fmz200*](https://github.com/fmz200/wool_scripts)
-[*@iab0x00*](https://github.com/iab0x00/ProxyRules)
-[*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
-[*@Loyalsoldier*](https://github.com/Loyalsoldier/geoip)
-[*@mw418*](https://github.com/mw418/Loon)
-[*@Keywos*](https://github.com/Keywos/rule)
-[*@Maasea*](https://github.com/Maasea/sgmodule)
-[*@NobyDa*](https://github.com/NobyDa/Script)
-[*@Sliverkiss*](https://github.com/Sliverkiss/QuantumultX)
-[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
-[*@app2smile*](https://github.com/app2smile/rules)
-[*@kokoryh*](https://github.com/kokoryh/Script)
-[*@zZPiglet*](https://github.com/zZPiglet/Task)
-[*@zirawell*](https://github.com/zirawell/Ad-Cleaner)<br>
+[*@ddgksf2013*](https://github.com/ddgksf2013)
+[*@fmz200*](https://github.com/fmz200)
+[*@zirawell*](https://github.com/zirawell)
+[*@iab0x00*](https://github.com/iab0x00)
+[*@LOWERTOP*](https://github.com/LOWERTOP)
+[*@Loyalsoldier*](https://github.com/Loyalsoldier)
+[*@mw418*](https://github.com/mw418)
+[*@Keywos*](https://github.com/Keywos)
+[*@Maasea*](https://github.com/Maasea)
+[*@NobyDa*](https://github.com/NobyDa)
+[*@Sliverkiss*](https://github.com/Sliverkiss)
+[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi)
+[*@app2smile*](https://github.com/app2smile)
+[*@kokoryh*](https://github.com/kokoryh)
+[*@zZPiglet*](https://github.com/zZPiglet)<br>
 
 ---
