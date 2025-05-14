@@ -20,12 +20,15 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Define file paths and links
+      - name: Create necessary directories
         run: |
           mkdir -p Rewrite/NaisiConfig
           mkdir -p Rewrite/JavaScript
           mkdir -p Rewrite/ZirawellConfig
           mkdir -p Rewrite/ZirawellScripts
+
+      - name: Define file paths and links
+        run: |
           echo "Rewrite/NaisiConfig/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt" > rewrite_file_links.list
           echo "Rewrite/NaisiConfig/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
           echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
