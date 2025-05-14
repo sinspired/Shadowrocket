@@ -31,6 +31,7 @@ jobs:
           echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
           echo "Rewrite/NaisiConfig/RejectList.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/refs/heads/main/Loon/rule/rejectAd.list" >> rewrite_file_links.list
           echo "Rewrite/ZirawellConfig/AllAdRewrite.conf|https://raw.githubusercontent.com/zirawell/R-Store/refs/heads/main/Rule/QuanX/Adblock/All/rewrite/allAdRewrite.conf" >> rewrite_file_links.list
+          echo "Rewrite/ZirawellConfig/AllAdBlock.list|https://raw.githubusercontent.com/zirawell/R-Store/refs/heads/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list" >> rewrite_file_links.list
 
       - name: Download files
         run: |
