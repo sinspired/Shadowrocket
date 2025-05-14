@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-14 14:34:31
+#!desc=2025-05-14 17:38:31
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1424,6 +1424,8 @@ myBlockAds.js =type=http-response, pattern=^https?:\/\/guide-acs\.m\.taobao\.com
 myBlockAds.js =type=http-response, pattern=^https?:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/myBlockAds.js, requires-body=true, max-size=0
 picc_ads.js =type=http-response, pattern=^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/a\/config\/homeInit\/v, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/picc_ads.js, requires-body=true, max-size=0
 picc_ads.js =type=http-response, pattern=^https?:\/\/zgrb\.epicc\.com\.cn\/G-HAPP\/mpageconfig\/myPageConfigList\/v, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/picc_ads.js, requires-body=true, max-size=0
+ppx.js =type=http-response, pattern=^https?:\/\/.+\.pipix\.com\/bds\/feed\/channel_list\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ppx.js, requires-body=true, max-size=0
+ppx.js =type=http-response, pattern=^https?:\/\/.+\.pipix\.com\/bds\/user\/check_in\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ppx.js, requires-body=true, max-size=0
 protoA.js =type=http-response, pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/protoA.js, requires-body=true, max-size=0
 protoA.js =type=http-response, pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/protoA.js, requires-body=true, max-size=0
 protoA.js =type=http-response, pattern=^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/protoA.js, requires-body=true, max-size=0
