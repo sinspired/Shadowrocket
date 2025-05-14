@@ -95,6 +95,6 @@ https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Replace
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
 
-### 单独引用：<br>
+### 额外引用：<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ppx.js<br>
 
