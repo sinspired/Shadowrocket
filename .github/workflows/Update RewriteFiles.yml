@@ -163,8 +163,10 @@ jobs:
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
           selected_scripts=(
-            "ppx.js"
+            "goofish.js"
             "pdd.js"
+            "ppx.js"
+            "tiebaJson.js"
           )
           original_links=""
           for script in "${selected_scripts[@]}"; do
