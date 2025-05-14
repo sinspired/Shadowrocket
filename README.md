@@ -91,7 +91,7 @@
 
 #### 模块说明<br>
 > **[融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20ModuleRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)而构建，随规则变化，不定期更新；**<br>
-> **规则构成：以[向晚](https://t.me/xiangwanguan)基于[奶思](https://github.com/fmz200)的[重写合集](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)所定制并持续手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/RewriteBuild.conf)为基础，融合了[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/FAWVW.js)的专用规则，以及来自[Dark Wang](https://github.com/zirawell)的[重写合集](https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list)中的部分内容；**<br>
+> **规则构成：以[向晚](https://t.me/xiangwanguan)基于[奶思重写合集](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)定制，并持续手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/RewriteBuild.conf)为基础，融合了[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/FAWVW.js)的专用规则，以及来自[DarkWang重写合集](https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list)中的部分规则；**<br>
 > **所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)每日自动备份&监测，所有规则指向的资源已重定向至[当前仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；**<br>
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule)，一键跳转安装；<br>
 > 使用须知：使用融合模块，**必须开启MitM**，教程参考下方的[推荐设置](#推荐设置)；<br>
@@ -154,20 +154,20 @@
 
 ### [特别鸣谢](#特别鸣谢)<br>
 [*@blackmatrix7*](https://github.com/blackmatrix7)
-[*@ddgksf2013*](https://github.com/ddgksf2013)
-[*@fmz200*](https://github.com/fmz200)
-[*@zirawell*](https://github.com/zirawell)
-[*@iab0x00*](https://github.com/iab0x00)
-[*@LOWERTOP*](https://github.com/LOWERTOP)
-[*@Loyalsoldier*](https://github.com/Loyalsoldier)
-[*@mw418*](https://github.com/mw418)
-[*@Keywos*](https://github.com/Keywos)
-[*@Maasea*](https://github.com/Maasea)
-[*@NobyDa*](https://github.com/NobyDa)
-[*@Sliverkiss*](https://github.com/Sliverkiss)
-[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi)
-[*@app2smile*](https://github.com/app2smile)
-[*@kokoryh*](https://github.com/kokoryh)
-[*@zZPiglet*](https://github.com/zZPiglet)<br>
+[*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
+[*@fmz200*](https://github.com/fmz200/wool_scripts)
+[*@zirawell*](https://github.com/zirawell/R-Store)
+[*@iab0x00*](https://github.com/iab0x00/ProxyRules)
+[*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
+[*@Loyalsoldier*](https://github.com/Loyalsoldier/geoip)
+[*@mw418*](https://github.com/mw418/Loon)
+[*@Keywos*](https://github.com/Keywos/rule)
+[*@Maasea*](https://github.com/Maasea/sgmodule)
+[*@NobyDa*](https://github.com/NobyDa/Script)
+[*@Sliverkiss*](https://github.com/Sliverkiss/QuantumultX)
+[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
+[*@app2smile*](https://github.com/app2smile/rules)
+[*@kokoryh*](https://github.com/kokoryh/Script)
+[*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
 
 ---
