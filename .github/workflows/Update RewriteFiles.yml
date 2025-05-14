@@ -164,7 +164,7 @@ jobs:
           add: |
             Rewrite/NaisiConfig/*
             Rewrite/JavaScript/*
-            Rewrite/ZZirawellConfig/*
+            Rewrite/ZirawellConfig/*
             Rewrite/ZirawellScripts/*
             Rewrite/JavaScriptCheck.md
         env:
