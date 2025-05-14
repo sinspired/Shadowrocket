@@ -177,7 +177,7 @@ jobs:
           done
           if [[ -n "$original_links" ]]; then
             {
-              echo "### 单独引用：<br>"
+              echo "### 额外引用：<br>"
               echo -e "$original_links"
             } >> Rewrite/JavaScriptCheck.md
           else
