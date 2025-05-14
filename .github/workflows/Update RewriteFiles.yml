@@ -164,6 +164,7 @@ jobs:
         run: |
           selected_scripts=(
             "ppx.js"
+            "pdd.js"
           )
           original_links=""
           for script in "${selected_scripts[@]}"; do
