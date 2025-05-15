@@ -90,12 +90,8 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_a
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
-https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
 
-### 额外引用：<br>
+### 附加引用：<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/163news.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/360cam.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51cto.js<br>
@@ -120,4 +116,11 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xiaoheihe.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xunlei.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ys7.js<br>
+
+### 本地调用：<br>
+https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AMDC.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/FAWVW.js<br>
+https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js<br>
 
