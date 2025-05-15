@@ -47,7 +47,7 @@ jobs:
         run: |
           > Rewrite/JavaScriptCheck.md
 
-      - name: Process and validate local files
+      - name: Preprocess Naisi Scripts
         run: |
           invalid_list=""
           valid_list=""
@@ -56,23 +56,14 @@ jobs:
             "Rewrite/NaisiConfig/Loon.conf"
             "Rewrite/NaisiConfig/Weibo.conf"
             "Rewrite/NaisiConfig/RejectList.conf"
-            "Rewrite/AMDC.js"
-            "Rewrite/ReplaceBody.js"
-            "Rewrite/Amap.js"
-            "Rewrite/FAWVW.js"
-            "Rewrite/YouTube.conf"
           )
           declare -A downloaded_urls
           declare -A downloaded_files
-          > Script.list
+          > NaisiScripts.list
           for file in "${files_to_check[@]}"; do
             if [ -f "$file" ]; then
               echo "Processing file: $file"
-              if [[ "$file" == Rewrite/NaisiConfig/* ]]; then
-                sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u >> Script.list
-              else
-                grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u >> Script.list
-              fi
+              sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u >> NaisiScripts.list
               while IFS= read -r url; do
                 if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
                   raw_url="${BASH_REMATCH[1]}"
@@ -82,29 +73,17 @@ jobs:
                 if echo "$raw_url" | grep -q "https://github.com/.*/raw/"; then
                   raw_url=$(echo "$raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
                 fi
-                if echo "$raw_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/"; then
-                  echo "Skipping download for: $raw_url"
-                  continue
-                fi
-                if echo "$raw_url" | grep -q "xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
-                  echo "Skipping download for: $raw_url"
-                  continue
-                fi
                 if [[ -n "${downloaded_urls[$raw_url]}" ]]; then
-                  echo "Skipping duplicate: $raw_url"
                   continue
                 fi
                 if curl -fsS --output /dev/null --silent --head --fail "$raw_url"; then
                   filename=$(basename "$raw_url")
                   filepath="Rewrite/JavaScript/$filename"
-                  if [[ -n "${downloaded_files[$filename]}" ]]; then
-                    if [[ "${downloaded_files[$filename]}" != "$raw_url" ]]; then
-                      basename_noext="${filename%.*}"
-                      ext="${filename##*.}"
-                      filepath="Rewrite/JavaScript/${basename_noext}2.${ext}"
-                    fi
+                  if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$raw_url" ]]; then
+                    basename_noext="${filename%.*}"
+                    ext="${filename##*.}"
+                    filepath="Rewrite/JavaScript/${basename_noext}_2.${ext}"
                   fi
-                  echo "Downloading: $raw_url -> $filepath"
                   curl -fsS -o "$filepath" "$raw_url" || true
                   valid_list="${valid_list}${raw_url}<br>\n"
                   downloaded_urls[$raw_url]=1
@@ -112,81 +91,46 @@ jobs:
                 else
                   invalid_list="${invalid_list}${raw_url}<br>\n"
                 fi
-              done < Script.list
-            else
-              echo "$file not found"
+              done < NaisiScripts.list
             fi
           done
           {
             echo "### 更新时间：$(TZ='Asia/Shanghai' date '+%Y-%m-%d')<br>"
             echo ""
             echo "### 失效资源：<br>"
-            if [[ -n "$invalid_list" ]]; then
-              echo -e "$invalid_list"
-            else
-              echo "无失效资源！<br>"
-            fi
+            [[ -n "$invalid_list" ]] && echo -e "$invalid_list" || echo "无失效资源！<br>"
             echo ""
             echo "### 有效资源：<br>"
-            if [[ -n "$valid_list" ]]; then
-              echo -e "$valid_list"
-            else
-              echo "无有效资源！<br>"
-            fi
+            [[ -n "$valid_list" ]] && echo -e "$valid_list" || echo "无有效资源！<br>"
           } > Rewrite/JavaScriptCheck.md
 
-      - name: Preprocess ZirawellScripts
+      - name: Preprocess Zirawell Scripts
         run: |
           file="Rewrite/ZirawellConfig/AllAdRewrite.conf"
           if [ -f "$file" ]; then
-            echo "Processing ZirawellScripts for JS"
-            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u > ZirawellScripts.list
+            > ZirawellScripts.list
+            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u >> ZirawellScripts.list
             declare -A downloaded_files
             while IFS= read -r url; do
               filename=$(basename "$url")
               filepath="Rewrite/ZirawellScripts/$filename"
-              if [[ -n "${downloaded_files[$filename]}" ]]; then
-                if [[ "${downloaded_files[$filename]}" != "$url" ]]; then
-                  basename_noext="${filename%.*}"
-                  ext="${filename##*.}"
-                  filepath="Rewrite/ZirawellScripts/${basename_noext}2.${ext}"
-                fi
+              if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$url" ]]; then
+                base="${filename%.*}"
+                ext="${filename##*.}"
+                filepath="Rewrite/ZirawellScripts/${base}_2.${ext}"
               fi
-              echo "Downloading: $url -> $filepath"
               curl -fsS -o "$filepath" "$url" || true
               downloaded_files[$filename]="$url"
             done < ZirawellScripts.list
-          else
-            echo "$file not found"
           fi
 
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
           selected_scripts=(
-            "163news.js"
-            "360cam.js"
-            "51cto.js"
-            "babytree.js"
-            "dubbingShow.js"
-            "duitang.js"
-            "dushu365.js"
-            "ecny.js"
-            "goofish.js"
-            "haier.js"
-            "kuaikanComic.js"
-            "meituan.js"
-            "mishop.js"
-            "pdd.js"
-            "ppx.js"
-            "quark.js"
-            "sdb.js"
-            "sqkb.js"
-            "sougou.js"
-            "tiebaJson.js"
-            "tuhu.js"
-            "xiaoheihe.js"
-            "xunlei.js"
-            "ys7.js"
+            "163news.js" "360cam.js" "51cto.js" "babytree.js" "dubbingShow.js" "duitang.js"
+            "dushu365.js" "ecny.js" "goofish.js" "haier.js" "kuaikanComic.js" "meituan.js"
+            "mishop.js" "pdd.js" "ppx.js" "quark.js" "sdb.js" "sqkb.js" "sougou.js"
+            "tiebaJson.js" "tuhu.js" "xiaoheihe.js" "xunlei.js" "ys7.js"
           )
           original_links=""
           for script in "${selected_scripts[@]}"; do
@@ -194,23 +138,58 @@ jobs:
             dst="Rewrite/JavaScript/$script"
             original_url=$(grep -Eo 'https?://[^ ]+\.(js|json)' ZirawellScripts.list | grep "$script")
             if [ -f "$src" ]; then
-              echo "Copying $src to $dst"
               cp "$src" "$dst"
               original_links="${original_links}${original_url}<br>\n"
-            else
-              echo "Not found: $src"
             fi
           done
           if [[ -n "$original_links" ]]; then
             {
-              echo "### 额外引用：<br>"
+              echo "### 附加引用：<br>"
               echo -e "$original_links"
             } >> Rewrite/JavaScriptCheck.md
-          else
-            echo "No links to add."
           fi
 
-      - name: Commit & copy RewriteFiles
+      - name: Preprocess Local Scripts
+        run: |
+          invalid_list=""
+          valid_list=""
+          files_to_check=(
+            "Rewrite/AMDC.js"
+            "Rewrite/ReplaceBody.js"
+            "Rewrite/Amap.js"
+            "Rewrite/FAWVW.js"
+            "Rewrite/YouTube.conf"
+          )
+          declare -A downloaded_files
+          > LocalScripts.list
+          for file in "${files_to_check[@]}"; do
+            [ -f "$file" ] && grep -Eo 'https?://[^ ]+\.(js|json)' "$file" >> LocalScripts.list
+          done
+          sort -u -o LocalScripts.list LocalScripts.list
+          original_links=""
+          while IFS= read -r local_url; do
+            if echo "$local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+              continue
+            fi
+            filename=$(basename "$local_url")
+            filepath="Rewrite/JavaScript/$filename"
+            if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$local_url" ]]; then
+              basename_noext="${filename%.*}"
+              ext="${filename##*.}"
+              filepath="Rewrite/JavaScript/${basename_noext}2.${ext}"
+            fi
+            curl -fsS -o "$filepath" "$local_url" || echo "Failed to download $local_url"
+            downloaded_files[$filename]="$local_url"
+            original_links+="$local_url<br>\n"
+          done < LocalScripts.list
+          if [[ -n "$original_links" ]]; then
+            {
+              echo "### 本地调用：<br>"
+              echo -e "$original_links"
+            } >> Rewrite/JavaScriptCheck.md
+          fi
+
+      - name: Commit & Copy RewriteFiles
         uses: EndBug/add-and-commit@v9
         with:
           author_name: 'GitHub Actions'
