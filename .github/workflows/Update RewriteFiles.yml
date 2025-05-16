@@ -119,7 +119,7 @@ jobs:
                 ext="${filename##*.}"
                 filepath="Rewrite/ZirawellScripts/${base}_2.${ext}"
               fi
-              curl -fsS -o "$filepath" "$url" || true
+              curl -fsS -o "$filepath" "$url" || echo "Failed to download $url"
               downloaded_files[$filename]="$url"
             done < ZirawellScripts.list
           fi
