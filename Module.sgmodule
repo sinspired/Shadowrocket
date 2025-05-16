@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-16 15:07:54
+#!desc=2025-05-16 16:25:39
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -181,7 +181,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.(discover|shade)\/ - reject-dict
 ^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.wireless\.home\.xianyu(\.my)?\.awesome\.get - reject-dict
 ^https?:\/\/(gw|img)\.alicdn\.com\/imgextra\/.+\/[\w!]+\d+-\d+-.+-\b([8-9]\d{2,}|[1-9]\d{3,})\b-\b([5-9]\d{2,}|[1-9]\d{3,})\b - reject-dict
-^https?:\/\/(ipv4|interface\d?)\.music\.163.com\/e?api\/ad - reject-dict
+^https?:\/\/(ipv4|interface\d?)\.music\.163.com\/w?e?api\/ad - reject-dict
+^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/(comment\/feed\/inserted|hotcomment\/collect|tips\/v\d\/get) - reject-dict
 ^https?:\/\/(mobile|shop)\.laichon\.com\/api\/(v1\/goods\/goodsList|exposureAdvStatistics|getWebAdvList) - reject
 ^https?:\/\/(nr-op|cube)\.elemecdn\.com\/.+\.jpeg\?x-oss-process=image\/resize,m_fill,w_\d{4,},h_\d{4,}\/($|format,webp\/$) - reject
 ^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/.+\.(?>gif|jpg|mp4) - reject-img
@@ -968,9 +969,9 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/intellicc\.bcs\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.adrender\.api\.AdWork\/getAdsBySlotId - reject-dict
 ^https?:\/\/interface3?\.music\.163\.com/eapi/(ad|abtest|sp|hot|store|mlog|search/(specialkeyword|defaultkeyword|hot)) - reject-img
 ^https?:\/\/interface\.aomiapp\.com\/aomi-ads - reject
-^https?:\/\/interface\d?\.music\.163.com\/eapi\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) - reject-dict
+^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(mlivestream\/entrance\/playpage|link\/(position\/show\/strategy|scene\/show)|ios\/version|v\d\/content\/exposure\/comment\/banner) - reject-dict
 ^https?:\/\/interface\d?\.music\.163.com\/w?e?api\/(search\/(chart|default|rcmd\/keyword|specialkeyword)|resource-exposure\/|activity\/bonus\/playpage\/time\/query) - reject-dict
-^https?:\/\/interface\d?\.music\.163\.com\/eapi\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) - reject-dict
+^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(resource\/comments?\/musiciansaid|community\/friends\/fans-group\/artist\/group\/get|user\/sub\/artist|music\/songshare\/text\/recommend\/get|mine\/applet\/redpoint|resniche\/position\/play\/new\/get) - reject-dict
 ^https?:\/\/interface\d?\.music\.163\.com\/w?e?api\/(side-bar\/mini-program\/music-service\/account|delivery\/(batch-deliver|deliver)|moment\/tab\/info\/get|yunbei\/account\/entrance\/get) - reject-dict
 ^https?:\/\/iobs\.pingan\.com\.cn\/download\/bweb-per-sf-prd\/bweb - reject-200
 ^https?:\/\/iobs\.pingan\.com\.cn\/download\/icore-aops-base-dmz-prd\/(?>YourSystemName|icore-apps-ad) - reject-200
@@ -1793,13 +1794,13 @@ weibo_main_2.js =type=http-response, pattern=^https?:\/\/api\.weibo\.c(n|om)\/2\
 weibo_main_2.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)\/littleskin\/preview, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/weibo_main_2.js, requires-body=true, max-size=0
 weibo_vip.js =type=http-response, pattern=^https?:\/\/new\.vip\.weibo\.c(n|om)/aj/appicon/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/weibo_vip.js, requires-body=true, max-size=0
 wnbz.js =type=http-response, pattern=^https:\/\/vue3-api\.zhixiny\.cn\/v1\/initui\?key=index, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wnbz.js, requires-body=true, max-size=0
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
-wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/(batch|v\d\/resource\/comment\/floor\/get), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/link\/home\/framework\/tab, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/link\/page\/discovery\/resource\/show, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/link\/position\/show\/resource, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/song\/play\/more\/list\/v\d, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/user\/follow\/users\/mixed\/get, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
 xiaoheihe.js =type=http-response, pattern=^https?:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaoheihe.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
