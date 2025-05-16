@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-15 22:30:10
+#!desc=2025-05-16 08:44:46
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -395,7 +395,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/api\.chelaile\.net\.cn\/goocity\/advert\/ - reject
 ^https?:\/\/api\.cloud\.189\.cn\/guns\/(img\/recommendedPosition|getOpenscreenBanners) - reject-dict
 ^https?:\/\/api\.club\.lenovo\.cn\/common\/open_ad - reject
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-dict
 ^https?:\/\/api\.dangdang\.com\/mapi\d\/mobile\/init - reject
 ^https?:\/\/api\.daydaycook\.com\.cn\/daydaycook\/server\/ad\/ - reject
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* - reject-dict
@@ -1653,7 +1652,6 @@ json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/(fee
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|myinfo)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 json.js =type=http-response, pattern=^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/json.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
-keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/config\/v\d\/basic, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/homepage\/v\d\/tab, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/nuocha\/course\/v\d/\w+\/preview, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
 keep.js =type=http-response, pattern=^https?:\/\/api\.gotokeep\.com\/sportpage\/sport\/v\d\/mysport, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/keep.js, requires-body=true, max-size=0
