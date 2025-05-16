@@ -146,6 +146,7 @@ jobs:
             "ppx.js"
             "quark.js"
             "sdb.js"
+            "spotify.js"
             "sqkb.js"
             "sougou.js"
             "tiebaJson.js"
