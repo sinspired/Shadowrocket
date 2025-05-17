@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-17 12:03:12
+#!desc=2025-05-17 12:16:41
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -153,7 +153,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/(api|atrace)\.chelaile\.net\.cn\/adpub\/ - reject
 ^https?:\/\/(api|b)\.zhuishushenqi\.com\/advert - reject-200
 ^https?:\/\/(api|promo)\.xueqiu\.com\/promotion\/(?>display_cache|display_ad|feed_display|search_ad) - reject
-^https?:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v\d\.Search\/DefaultWords - reject-dict
 ^https?:\/\/(bdsp-x|dsp-x)\.jd\.com\/adx\/ - reject-200
 ^https?:\/\/(cdn-)?api\.kkmh\.com\/v\d\/ad - reject
 ^https?:\/\/(cdn-)?api\.kkmh\.com\/v\d\/business\/activities\/get - reject-dict
