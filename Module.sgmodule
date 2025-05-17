@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-17 12:16:41
+#!desc=2025-05-17 12:46:03
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1597,7 +1597,7 @@ airchina.js =type=http-response, pattern=^https:\/\/m\.airchina\.com\.cn\/airchi
 alicdn.js =type=http-response, pattern=^https?:\/\/g\.alicdn\.com\/.*o2o-ad, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/alicdn.js, requires-body=true, max-size=0
 babytree.js =type=http-response, pattern=^https?:\/\/go\.babytree\.com\/go_pregnancy\/api\/(?>app_index|cms_column), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/babytree.js, requires-body=true, max-size=0
 baidumap.js =type=http-response, pattern=^https?:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/baidumap.js, requires-body=true, max-size=0
-bilibili.protobuf.js =type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.js, requires-body=true, max-size=0, binary-body-mode=true
+bilibili.protobuf.js =type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v\d\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v\d\.Popular\/Index|dynamic\.v\d\.Dynamic\/DynAll|view(?:unite)?\.v\d\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v\d\.PlayURL\/PlayView|playerunite\.v\d\.Player\/PlayViewUnite)|polymer\.app\.search\.v\d\.Search\/SearchAll|community\.service\.dm\.v\d\.DM\/DmView|main\.community\.reply\.v\d\.Reply\/MainList|pgc\.gateway\.player\.v\d\.PlayURL\/PlayView)$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibili.protobuf.js, requires-body=true, max-size=0, binary-body-mode=true
 bilibiliManga.js =type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Home\/HomeFeed, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibiliManga.js, requires-body=true, max-size=0
 bilibiliManga.js =type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/GetInitInfo, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibiliManga.js, requires-body=true, max-size=0
 bilibiliManga.js =type=http-response, pattern=^https?:\/\/manga\.bilibili\.com\/twirp\/user\.v\d\.User\/UCenterConf, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/bilibiliManga.js, requires-body=true, max-size=0
