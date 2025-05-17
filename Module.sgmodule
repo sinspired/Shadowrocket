@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-17 18:24:14
+#!desc=2025-05-17 20:50:15
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1510,37 +1510,36 @@ https://api.rr.tv/storage/business/rootName/app/homePage\?dataType=JSON - reject
 https://apis.lifeweek.com.cn/api/baseConfig/getIosNewConfig - reject
 https://mgesq.api.mgtv.com/v2/user/center/icon - reject-dict
 https://support.you.163.com/appversync/check.do - reject
-https:\/\/a\.line\.me\/cs\/v\d\/oa$ - reject
-https:\/\/a\.line\.me\/er\/l.*\/v\d\/event\/image - reject-img
-https:\/\/a\.line\.me\/er\/lads\/v\d\/ei\? - reject-img
-https:\/\/a\.line\.me\/lass\/api\/v\d\/ads$ - reject
-https:\/\/a\.line\.me\/oa\/v\d\/e$ - reject
-https:\/\/ad\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$ - reject-img
-https:\/\/buy\.line\.me\/api\/graphql\?variables - reject
-https:\/\/cix\.line-apps\.com\/R4\? - reject
-https:\/\/crs-event\.line\.me\/v\d\/imp - reject
-https:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(jpg|jpeg|png) - reject-img
-https:\/\/gw\.line\.naver\.jp\/ext\/lgfp\/lad\/v1$ - reject
-https:\/\/gw\.line\.naver\.jp\/lass\/api\/v1\/ads$ - reject
-https:\/\/gw\.line\.naver\.jp\/tr\/event$ - reject
-https:\/\/legy\.line-apps\.com\/ext\/lgfp\/lad\/v1$ - reject
-https:\/\/legy\.line-apps\.com\/ext\/smartch\/banner\/sch\/v1$ - reject
-https:\/\/legy\.line-apps\.com\/tr\/event$ - reject
-https:\/\/nelo2-col\.linecorp\.com\/_store$ - reject
-https:\/\/obs\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$ - reject
-https:\/\/obs\.line-scdn\.net\/0h.+\/\d+p\.mp4$ - reject
-https:\/\/obs\.line-scdn\.net\/0hGH\d - reject
-https:\/\/obs\.line-scdn\.net\/r\/linecrs\/.+\/m180x180$ - reject-img
-https:\/\/scdn\.line-apps\.com\/appresources\/moretab\/list\.json - reject
-https:\/\/scdn\.line-apps\.com\/lan\/document\/pageEvent\/line\/ios\/ - reject
-https:\/\/scdn\.line-apps\.com\/lan\/image\/line\/bannerImageEvent\/ - reject
-https:\/\/sch\.line\.me\/api\/v\d\/ads$ - reject
-https:\/\/static\.line-scdn\.net\/ad-sdk\/ - reject
-https:\/\/uts-front\.line-apps\.com\/event$ - reject
-https:\/\/uts-front\.line-apps\.com\/settings$ - reject
-https:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
+https?:\/\/a\.line\.me\/cs\/v\d\/oa$ - reject
+https?:\/\/a\.line\.me\/er\/l.*\/v\d\/event\/image - reject-img
+https?:\/\/a\.line\.me\/er\/lads\/v\d\/ei\? - reject-img
+https?:\/\/a\.line\.me\/lass\/api\/v\d\/ads$ - reject
+https?:\/\/a\.line\.me\/oa\/v\d\/e$ - reject
+https?:\/\/ad\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$ - reject-img
 https?:\/\/awg\.enmonster\.com\/apa\/(advert\/demand\/home\/poster|index\/advert\/skin) - reject-dict
+https?:\/\/buy\.line\.me\/api\/graphql\?variables - reject
+https?:\/\/cix\.line-apps\.com\/R4\? - reject
+https?:\/\/crs-event\.line\.me\/v\d\/imp - reject
+https?:\/\/d\.line-scdn\.net\/lcp-prod-photo\/20.+\.(?>jpg|jpeg|png) - reject-img
+https?:\/\/gw\.line\.naver\.jp\/ext\/lgfp\/lad\/v1$ - reject
+https?:\/\/gw\.line\.naver\.jp\/lass\/api\/v1\/ads$ - reject
+https?:\/\/gw\.line\.naver\.jp\/tr\/event$ - reject
 https?:\/\/helper\.2bulu\.com\/(greenPea\/queryTasks|proSpecial\/allData|saveSplashFrequencyStatistics|getPopInfo|getAppEntranceConfig|promote\/list|getSplash|outing\/reqFoundNewList|outing\/reqIndex) - reject
+https?:\/\/legy\.line-apps\.com\/ext\/lgfp\/lad\/v1$ - reject
+https?:\/\/legy\.line-apps\.com\/ext\/smartch\/banner\/sch\/v1$ - reject
+https?:\/\/legy\.line-apps\.com\/tr\/event$ - reject
+https?:\/\/nelo2-col\.linecorp\.com\/_store$ - reject
+https?:\/\/obs\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$ - reject
+https?:\/\/obs\.line-scdn\.net\/0h.+\/\d+p\.mp4$ - reject
+https?:\/\/obs\.line-scdn\.net\/0hGH\d - reject
+https?:\/\/obs\.line-scdn\.net\/r\/linecrs\/.+\/m180x180$ - reject-img
+https?:\/\/scdn\.line-apps\.com\/appresources\/moretab\/list\.json - reject
+https?:\/\/scdn\.line-apps\.com\/lan\/document\/pageEvent\/line\/ios\/ - reject
+https?:\/\/scdn\.line-apps\.com\/lan\/image\/line\/bannerImageEvent\/ - reject
+https?:\/\/sch\.line\.me\/api\/v\d\/ads$ - reject
+https?:\/\/static\.line-scdn\.net\/ad-sdk\/ - reject
+https?:\/\/uts-front\.line-apps\.com\/(?>settings|event)$ - reject
+https?:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
 s?:\/\/api.xueqiu.com\/ucprofile\/api\/user\/batchGetUserBasicInfo.json - reject-dict
 
 [Map Local]
