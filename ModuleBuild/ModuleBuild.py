@@ -107,7 +107,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
         line_end = js_content.find('\n', line_start)
         line = js_content[line_start:line_end if line_end != -1 else None]
         binary_body_mode_match = re.search(r'binary-body-mode\s*=\s*(true|false)', line)
-        argument_match = re.search(r'argument\s*=\s*"(.*)"', line)
+        argument_match = re.search(r'argument\s*=\s*(?:"(.*?)"|\[(.*?)\])', line)
         if binary_body_mode_match:
             params.append(f"binary-body-mode={binary_body_mode_match.group(1)}")
         if argument_match:
