@@ -126,18 +126,40 @@ jobs:
 
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
-          job_name="Zirawell Scripts"
-          conf_path="Rewrite/JavaScriptBuild.conf"
+          selected_scripts=(
+            "163news.js"
+            "360cam.js"
+            "51cto.js"
+            "babytree.js"
+            "dubbingShow.js"
+            "duitang.js"
+            "dushu365.js"
+            "ecny.js"
+            "gaoding.js"
+            "guiderank.js"
+            "goofish.js"
+            "haier.js"
+            "kuaikanComic.js"
+            "meituan.js"
+            "mishop.js"
+            "pdd.js"
+            "ppx.js"
+            "quark.js"
+            "sdb.js"
+            "spotify.js"
+            "sqkb.js"
+            "sougou.js"
+            "tiebaJson.js"
+            "tuhu.js"
+            "xiaoheihe.js"
+            "xunlei.js"
+            "ys7.js"
+          )
           original_links=""
-          scripts=$(awk -v section="[$job_name]" '
-            $0 == section {in_section=1; next}
-            /^\[.*\]/     {in_section=0}
-            in_section && NF
-          ' "$conf_path" | tr -d '"')
-          for script in $scripts; do
+          for script in "${selected_scripts[@]}"; do
             src="Rewrite/ZirawellScripts/$script"
             dst="Rewrite/JavaScript/$script"
-            original_url=$(grep -Eo 'https?://[^ ]+\.(js|json)' Rewrite/ZirawellScripts.list | grep "$script")
+            original_url=$(grep -Eo 'https?://[^ ]+\.(js|json)' ZirawellScripts.list | grep "$script")
             if [ -f "$src" ]; then
               cp "$src" "$dst"
               original_links="${original_links}${original_url}<br>\n"
