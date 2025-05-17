@@ -168,6 +168,7 @@
 [*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
 [*@app2smile*](https://github.com/app2smile/rules)
 [*@kokoryh*](https://github.com/kokoryh/Script)
-[*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
+[*@zZPiglet*](https://github.com/zZPiglet/Task)
+[*@kokoryh*](https://github.com/kokoryh/Sparkle)<br>
 
 ---
