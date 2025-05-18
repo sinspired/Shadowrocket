@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-18 10:54:30
+#!desc=2025-05-18 11:21:49
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -674,7 +674,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/cheyouapi\.ycapp\.yiche\.com\/appforum\/getusermessagecount - reject-img
 ^https?:\/\/cheyouquan\.kakamobi\.com\/api\/open\/group\/recommend-subscribe-tag - reject-dict
 ^https?:\/\/chl\.tf\.cn\/channelmg\/sys\/socso\/socsonew\/queryIsRealNameAdertInfo - reject-dict
-^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark - reject-img
 ^https?:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getAutoSuperConfig - reject
 ^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_DEVICE - reject-dict
 ^https?:\/\/client-api-v2\.oray\.com\/materials\/SLCC_IOS_STARTUP - reject-dict
@@ -1801,6 +1800,7 @@ xiaohongshu.js =type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohon
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/(followfeed|homefeed)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/v\d\/note\/(imagefeed|live_photo\/save), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
+xiaohongshu.js =type=http-response, pattern=^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(banner|hot)_list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/(hint|trending)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
