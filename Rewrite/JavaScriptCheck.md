@@ -1,7 +1,14 @@
 ### 更新时间：2025-05-18<br>
 
 ### 失效资源：<br>
-无失效资源！<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
+
 
 ### 有效资源：<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js<br>
@@ -24,7 +31,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/F
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/51card.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/555Ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/Umetrip_remove_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js<br>
@@ -43,13 +49,11 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/header.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js<br>
@@ -82,7 +86,10 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafen
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
 https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_vip.js<br>
 https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/reject-dict.json<br>
