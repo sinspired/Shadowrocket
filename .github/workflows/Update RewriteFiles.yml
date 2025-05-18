@@ -178,9 +178,10 @@ jobs:
           valid_list=""
           files_to_check=(
             "Rewrite/AMDC.js"
-            "Rewrite/ReplaceBody.js"
             "Rewrite/Amap.js"
+            "Rewrite/Bilibili.conf"
             "Rewrite/FAWVW.js"
+            "Rewrite/ReplaceBody.js"
             "Rewrite/YouTube.conf"
           )
           declare -A downloaded_files
