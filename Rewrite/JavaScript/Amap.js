@@ -2,7 +2,7 @@
 # 高德地图
 # 高德地图应用净化；
 # 由向晚重写维护；
-# 更新时间: 20250516
+# 更新时间: 20250518
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 
 [rewrite_local]
@@ -69,7 +69,7 @@ if ($request.url.includes("search/nearbyrec_smart")) {
 } else if ($request.url.includes("profile/index/node")) {
     delete obj.data?.tipData;
     if (Array.isArray(obj.data?.cardList)) {
-        const allowedCards = new Set(["MyOrderCard", "GdRecommendCard"]);
+        const allowedCards = new Set(["MyOrderCard"]);
         obj.data.cardList = obj.data.cardList.filter(a => allowedCards.has(a.dataType));
     }
     modified = true;
