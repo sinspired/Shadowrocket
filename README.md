@@ -153,22 +153,21 @@
 ---
 
 ### [特别鸣谢](#特别鸣谢)<br>
+[*@app2smile*](https://github.com/app2smile/rules)
 [*@blackmatrix7*](https://github.com/blackmatrix7)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
-[*@zirawell*](https://github.com/zirawell/R-Store)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
+[*@Keywos*](https://github.com/Keywos/rule)
+[*@kokoryh*](https://github.com/kokoryh/Sparkle)
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
 [*@Loyalsoldier*](https://github.com/Loyalsoldier/geoip)
-[*@mw418*](https://github.com/mw418/Loon)
-[*@Keywos*](https://github.com/Keywos/rule)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
+[*@mw418*](https://github.com/mw418/Loon)
 [*@NobyDa*](https://github.com/NobyDa/Script)
 [*@Sliverkiss*](https://github.com/Sliverkiss/QuantumultX)
 [*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
-[*@app2smile*](https://github.com/app2smile/rules)
-[*@kokoryh*](https://github.com/kokoryh/Script)
-[*@zZPiglet*](https://github.com/zZPiglet/Task)
-[*@kokoryh*](https://github.com/kokoryh/Sparkle)<br>
+[*@zirawell*](https://github.com/zirawell/R-Store)
+[*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
 
 ---
