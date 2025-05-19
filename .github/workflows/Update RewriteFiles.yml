@@ -182,6 +182,7 @@ jobs:
             "Rewrite/Bilibili.conf"
             "Rewrite/FAWVW.js"
             "Rewrite/ReplaceBody.js"
+            "Rewrite/Redbook.conf"
             "Rewrite/YouTube.conf"
           )
           declare -A downloaded_files
