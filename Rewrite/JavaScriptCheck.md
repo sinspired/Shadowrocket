@@ -52,6 +52,7 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/meiyou/meiyou_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/picc/picc_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js<br>
