@@ -66,7 +66,6 @@ jobs:
         echo "" >> Rules/Ai.list && cat Rules/Copilot.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Gemini.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Claude.list >> Rules/Ai.list
-        echo "" >> Rules/Ai.list && cat Rules/AppleAi.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Grok.list >> Rules/Ai.list
 
     - name: Commit & copy RuleFiles
