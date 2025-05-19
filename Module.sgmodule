@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-19 09:22:20
+#!desc=2025-05-19 09:33:08
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -68,7 +68,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush - reject
 ^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN - reject-dict
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo - reject-dict
-^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) - reject-dict
 ^https:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/ - reject
 ^https:\/\/gateway\.benewtech\.cn\/resources-app\/app\/startup\/prepage - reject-dict
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad - reject-dict
@@ -778,6 +777,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/ec\.ems\.com\.cn\/mailAd$ - reject
 ^https?:\/\/ecard\.shenzhentong\.com\/wxweb\/bwxppub2\/QryAdvertList\.do - reject-200
 ^https?:\/\/edit\.sinaapp\.com\/ua\?t=adv - reject-200
+^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) - reject-dict
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/guide\/user_banner - reject-dict
 ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/guide\? - reject-dict
 ^https?:\/\/editor\.sm\.cn\/launch_picture - reject
