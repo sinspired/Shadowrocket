@@ -52,11 +52,16 @@ jobs:
           done
         done < rule_file_links.list
 
+    - name: Clean up rule files
+      run: |
+        for file in Rules/*.list; do
+          grep -v '^# AUTHOR' "$file" | grep -v '^# REPO' > cleaned_file.tmp
+          mv cleaned_file.tmp "$file"
+        done
+
     - name: Generate Ai.list
       run: |
         echo "# NAME: AI Collection" > Rules/Ai.list
-        echo "# AUTHOR: XiangwanGuan" >> Rules/Ai.list
-        echo "# REPO: https://github.com/XiangwanGuan/Shadowrocket" >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/OpenAI.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Copilot.list >> Rules/Ai.list
         echo "" >> Rules/Ai.list && cat Rules/Gemini.list >> Rules/Ai.list
