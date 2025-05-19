@@ -1,7 +1,10 @@
 ### 更新时间：2025-05-19<br>
 
 ### 失效资源：<br>
-无失效资源！<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js<br>
+
 
 ### 有效资源：<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js<br>
@@ -15,7 +18,6 @@ https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js<br>
 https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Smzdm.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js<br>
@@ -38,7 +40,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/A3341
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/ccbLifeAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js<br>
@@ -63,7 +64,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js<br>
@@ -82,6 +82,9 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafen
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js<br>
 https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_vip.js<br>
 https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
