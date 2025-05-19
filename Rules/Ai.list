@@ -134,6 +134,19 @@ HOST,cdn.usefathom.com,Claude
 HOST-SUFFIX,anthropic.com,Claude
 HOST-SUFFIX,claude.ai,Claude
 
+# NAME: Apple Intelligence
+# UPDATED: 2025-05-19
+# HOST: 5
+# HOST-SUFFIX: 1
+# TOTAL: 6
+
+HOST-SUFFIX,smoot.apple.com
+HOST,apple-relay.apple.com
+HOST,apple-relay.cloudflare.com
+HOST,apple-relay.fastly-edge.com
+HOST,cp4.cloudflare.com
+HOST,guzzoni.apple.com
+
 # NAME: Grok
 # UPDATED: 2025-05-08
 # HOST-SUFFIX: 2
