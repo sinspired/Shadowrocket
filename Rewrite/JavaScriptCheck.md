@@ -68,6 +68,8 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggon
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js<br>
 https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
+https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.mine.jq<br>
+https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.tab.jq<br>
 https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js<br>
@@ -131,4 +133,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/x
 https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js<br>
 https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.json.js<br>
 https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.js<br>
+https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.mine.jq<br>
+https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.tab.jq<br>
 
