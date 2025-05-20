@@ -63,7 +63,7 @@ jobs:
           for file in "${files_to_check[@]}"; do
             if [ -f "$file" ]; then
               echo "Processing file: $file"
-              sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json)' | sort -u >> NaisiScripts.list
+              sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json|jq)' | sort -u >> NaisiScripts.list
               while IFS= read -r url; do
                 if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
                   raw_url="${BASH_REMATCH[1]}"
@@ -109,7 +109,7 @@ jobs:
           file="Rewrite/ZirawellConfig/AllAdRewrite.conf"
           if [ -f "$file" ]; then
             > ZirawellScripts.list
-            grep -Eo 'https?://[^ ]+\.(js|json)' "$file" | sort -u >> ZirawellScripts.list
+            grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" | sort -u >> ZirawellScripts.list
             declare -A downloaded_files
             while IFS= read -r url; do
               filename=$(basename "$url")
@@ -160,7 +160,7 @@ jobs:
           for script in "${selected_scripts[@]}"; do
             src="Rewrite/ZirawellScripts/$script"
             dst="Rewrite/JavaScript/$script"
-            original_url=$(grep -Eo 'https?://[^ ]+\.(js|json)' ZirawellScripts.list | grep "$script")
+            original_url=$(grep -Eo 'https?://[^ ]+\.(js|json|jq)' ZirawellScripts.list | grep "$script")
             if [ -f "$src" ]; then
               cp "$src" "$dst"
               original_links="${original_links}${original_url}<br>\n"
@@ -189,7 +189,7 @@ jobs:
           declare -A downloaded_files
           > LocalScripts.list
           for file in "${files_to_check[@]}"; do
-            [ -f "$file" ] && grep -Eo 'https?://[^ ]+\.(js|json)' "$file" >> LocalScripts.list
+            [ -f "$file" ] && grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" >> LocalScripts.list
           done
           sort -u -o LocalScripts.list LocalScripts.list
           original_links=""
