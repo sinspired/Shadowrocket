@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-19 22:26:10
+#!desc=2025-05-20 08:36:04
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1537,6 +1537,8 @@ https?:\/\/static\.line-scdn\.net\/ad-sdk\/ - reject
 https?:\/\/uts-front\.line-apps\.com\/(?>settings|event)$ - reject
 https?:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
 
+[Body Rewrite]
+
 [Map Local]
 ^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 data="https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/A3341AB05.json" header="Content-Type: text/json"
 ^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) WeiboOverseas data="https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/reject-dict.json" header="Content-Type: text/html"
@@ -1828,7 +1830,8 @@ zhihu.js =type=http-response, pattern=^https:\/\/api\.zhihu\.com\/v2\/topstory\/
 zhihu.js =type=http-response, pattern=^https:\/\/appcloud2\.zhihu\.com\/v3\/config, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/zhihu.js, requires-body=true, max-size=0
 zhihu.js =type=http-response, pattern=^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/zhihu.js, requires-body=true, max-size=0
 zhihu.js =type=http-response, pattern=^https:\/\/www\.zhihu\.com\/api\/v4\/(articles|answers)\/\d+\/recommendations?\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/zhihu.js, requires-body=true, max-size=0
-zhuanzhuan.js =type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/zhuanzhuan.js, requires-body=true, max-size=0ReplaceBody.js =type=http-response, pattern=^https?:\/\/beta-api\.crunchyroll\.com\/cms, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=0
+zhuanzhuan.js =type=http-response, pattern=^https?:\/\/app\.zhuanzhuan\.com\/zz\/transfer\/getmyprofilev3, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/zhuanzhuan.js, requires-body=true, max-size=0
+ReplaceBody.js =type=http-response, pattern=^https?:\/\/beta-api\.crunchyroll\.com\/cms, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument=offset_ms":\d+->offset_ms":99999999999999,max-size=0
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/adservice\.sigmob\.cn\/extconfig, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument=false->true,max-size=0
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/maicai\.api\.ddxq\.mobi\/homeApi\/newDetails, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument=suspension->random_body,max-size=0
 ReplaceBody.js =type=http-response, pattern=^https?:\/\/47\.100\.65\.202\/api\/mobile\/index\.php\?version=\d&mobile=yes&module=basicdata&type=forumlist, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument=adv->SUCCEED,max-size=0
