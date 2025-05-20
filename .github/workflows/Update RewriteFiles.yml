@@ -32,7 +32,7 @@ jobs:
           echo "Rewrite/NaisiConfig/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/rewrite.snippet" > rewrite_file_links.list
           echo "Rewrite/NaisiConfig/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
           echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
-          echo "Rewrite/NaisiConfig/FilterList.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> rewrite_file_links.list
+          echo "Rewrite/NaisiConfig/Filter.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> rewrite_file_links.list
           echo "Rewrite/ZirawellConfig/AllAdRewrite.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/rewrite/allAdRewrite.conf" >> rewrite_file_links.list
           echo "Rewrite/ZirawellConfig/AllAdBlock.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list" >> rewrite_file_links.list
 
