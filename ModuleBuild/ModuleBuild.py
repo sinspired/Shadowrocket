@@ -71,9 +71,23 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
     url_lines = [line for line in url_content.splitlines() if line.strip()]
     unique_lines = sorted(set(url_lines))
     url_content = '\n'.join(unique_lines)
-    sgmodule_content += url_content
-    sgmodule_content += f"""
+    sgmodule_content += url_content + "\n"
 
+    sgmodule_content += f"""
+[Body Rewrite]
+"""
+    http_response_jq = ""
+    for match in re.finditer(r'^(?!.*#.*)(?!.*;.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")', js_content, re.MULTILINE):
+        pattern = match.group(1).strip()
+        jq_expr = match.group(2)
+        jq_path = match.group(3)
+        if jq_expr:
+            http_response_jq += f"http-response-jq {pattern} '{jq_expr}'\n"
+        elif jq_path:
+            http_response_jq += f'http-response-jq {pattern} jq-path="{jq_path}"\n'
+    sgmodule_content += http_response_jq
+
+    sgmodule_content += f"""
 [Map Local]
 """
     for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
@@ -84,6 +98,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
         else:
             sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
+
     sgmodule_content += f"""
 [Script]
 AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
@@ -115,7 +130,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
         script_line = ', '.join(params)
         script_content += script_line + "\n"
     script_content = '\n'.join(sorted(set(script_content.splitlines())))
-    sgmodule_content += script_content
+    sgmodule_content += script_content + "\n"
     for match in re.finditer(body_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
@@ -126,6 +141,7 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
         hostnames = match.group(1).split(',')
         mitm_matches.update(host.strip() for host in hostnames if host.strip())
     mitm_match_content = ','.join(sorted(mitm_matches))
+
     sgmodule_content += f"""
 [MITM]
 hostname = %APPEND% {mitm_match_content}
