@@ -45,6 +45,13 @@ def rewrite_to_sgmodule(js_content, project_name):
     utc_time = datetime.datetime.now(datetime.timezone.utc)
     beijing_time = utc_time + datetime.timedelta(hours=8)
     timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
+    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
+    echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
+    header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
+    jq_pattern = r'^(?!.*#.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
+    script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
+    body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
+    mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
     sgmodule_content = f"""#!name={project_name}
 #!desc={timestamp}
 
@@ -53,18 +60,15 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 
 [URL Rewrite]
 """
-    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
-    url_header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
-    script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
-    body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
-    echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
-    mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
     url_content = ""
     for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} - {reject_type}\n"
-    for match in re.finditer(url_header_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
+        pattern = match.group(1).strip()
+        url_content += f"{pattern} - reject-200\n"
+    for match in re.finditer(header_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} url-and-header {reject_type}\n"
@@ -77,7 +81,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 [Body Rewrite]
 """
     http_response_jq = ""
-    for match in re.finditer(r'^(?!.*#.*)(?!.*;.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")', js_content, re.MULTILINE):
+    for match in re.finditer(jq_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         jq_expr = match.group(2)
         jq_path = match.group(3)
@@ -86,18 +90,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
         elif jq_path:
             http_response_jq += f'http-response-jq {pattern} jq-path="{jq_path}"\n'
     sgmodule_content += http_response_jq
-
-    sgmodule_content += f"""
-[Map Local]
-"""
-    for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
-        pattern = match.group(1).strip()
-        re1 = match.group(3).strip()
-        re2 = match.group(5).strip()
-        if re1 == "text/html":
-            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/html"\n'
-        else:
-            sgmodule_content += f'{pattern} data="{re2}" header="Content-Type: text/json"\n'
 
     sgmodule_content += f"""
 [Script]
