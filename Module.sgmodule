@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-20 08:36:04
+#!desc=2025-05-20 10:35:22
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -512,6 +512,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/api\.vistopia\.com\.cn\/api\/v\d\/home\/advertisement - reject
 ^https?:\/\/api\.wallstcn\.com\/apiv\d\/advertising\/ - reject
 ^https?:\/\/api\.wallstreetcn\.com\/apiv\d\/advertising\/ - reject
+^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) WeiboOverseas - reject-200
 ^https?:\/\/api\.wfdata\.club\/v\d\/yesfeng\/(infoCenterAd|yesList) - reject
 ^https?:\/\/api\.winbull8\.com\/v1\/marketing\/(advert|activity)\/(list|page) - reject-dict
 ^https?:\/\/api\.wmpvp\.com\/api\/v\d\/config\/promote - reject
@@ -1416,6 +1417,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/webboot\.zhangyue\.com\/zycl\/api\/ad\/ - reject
 ^https?:\/\/webcdn\.m\.qq\.com\/qiantu\/upload\/202[0-9]{5}\/.*.(jpg|png) - reject-200
 ^https?:\/\/wechat\.tf\.cn\/mini-financial\/model\/queryPopup - reject-dict
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users WeiboOverseas - reject-200
 ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/(?>loadInfo|openscreen|startpicture) - reject
 ^https?:\/\/www.baidu.com\/?action=static&ms=1&version=css_page_2@0.*? - reject
 ^https?:\/\/www.icourse163.org\/.*?(Advertisement) - reject-img
@@ -1470,6 +1472,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/yghsh\.cebbank\.com\/static\/picture\/.*.jpg - reject-200
 ^https?:\/\/yun\.feidee\.net\/cab-periodic-activity-ws\/terminal\/v\d\/members\/status - reject
 ^https?:\/\/yun\.tuitiger\.com\/mami-media - reject-200
+^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 - reject-200
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341A(002|006|009|119|120) - reject-200
 ^https?:\/\/yunbusiness\.ccb\.com\/clp_service\/txCtrl\?txcode=A3341C147 - reject-200
 ^https?:\/\/yunmk\.feidee\.net\/cab-market-ws\/market\/v\d\/contents - reject
@@ -1538,11 +1541,6 @@ https?:\/\/uts-front\.line-apps\.com\/(?>settings|event)$ - reject
 https?:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
 
 [Body Rewrite]
-
-[Map Local]
-^https?:\/\/yunbusiness\.ccb\.com\/basic_service\/txCtrl\?txcode=A3341AB05 data="https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/A3341AB05.json" header="Content-Type: text/json"
-^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) WeiboOverseas data="https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/reject-dict.json" header="Content-Type: text/html"
-^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users WeiboOverseas data="https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/reject-dict.json" header="Content-Type: text/html"
 
 [Script]
 AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
