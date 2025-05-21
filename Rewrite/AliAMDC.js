@@ -3,7 +3,7 @@
 # 用于阿里系应用，拦截AMDC请求，并修改响应内容；
 # 由向晚重写维护；
 # 更新时间: 20250521
-# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliAmap.js
+# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliAMDC.js
 # 生成器写法：
 # AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 
