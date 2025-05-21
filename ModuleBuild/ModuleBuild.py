@@ -51,7 +51,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     jq_pattern = r'^(?!.*#.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
-    mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
+    mitm_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
 
     sgmodule_content = f"""#!name={project_name}
 #!desc={time_stamp}
@@ -129,7 +129,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
         re2 = match.group(5).strip()
         sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
     mitm_matches = set()
-    for match in re.finditer(mitm_local_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(mitm_pattern, js_content, re.MULTILINE):
         hostnames = match.group(1).split(',')
         mitm_matches.update(host.strip() for host in hostnames if host.strip())
     mitm_match_content = ','.join(sorted(mitm_matches))
