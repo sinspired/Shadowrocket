@@ -1,65 +1,44 @@
 /*
-# 修改HTTP请求或响应的Body内容；
+# 批量替换HTTP请求/响应Body内容；
 # 由向晚重写维护；
-# 更新时间: 20250324
+# 更新时间: 20250521
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/ReplaceBody.js
 */
 
-function getRegexp(re_str) {
-    let regParts = re_str.match(/^\/(.*?)\/([gims]*)$/);
-    if (regParts) {
+function getRegexp(str) {
+    let m = str.match(/^\/(.*)\/([gimsuy]*)$/);
+    if (m) {
         try {
-            return new RegExp(regParts[1], regParts[2]);
-        } catch (e) {
-            return null;
-        }
-    } else {
-        try {
-            return new RegExp(re_str);
-        } catch (e) {
+            return new RegExp(m[1], m[2]);
+        } catch {
             return null;
         }
     }
+    let escaped = str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(escaped, "g");
 }
-let body;
-if (typeof $argument == "undefined") {
+
+if (!$argument?.trim() || !$script || !["http-response", "http-request"].includes($script.type)) {
     $done({});
 } else {
-    if ($script && $script.type === "http-response") {
-        body = $response.body;
-    } else if ($script && $script.type === "http-request") {
-        body = $request.body;
-    } else {
+    let body = $script.type === "http-response" ? $response.body : $request.body;
+    if (!body) {
         $done({});
-        return;
-    }
-    if (body) {
-        let replacements = [];
-        if (!$argument || $argument.trim() === "") {
-            $done({ body });
-            return;
-        }
-        $argument.split("&").forEach((item) => {
-            if (!/^[^->]+->[^->]+$/.test(item)) {
-                return;
-            }
-            let [match, replace] = item.split("->").map(s => s.trim());
-            if (match && replace) {
+    } else {
+        let replacements = $argument.split(/\r?\n/).map(line => line.trim()).filter(line => line.includes("->"))
+            .map(line => {
+                let [match, replace] = line.split("->").map(s => s.trim());
                 let re = getRegexp(match);
-                if (re) {
-                    replacements.push({ re, replace });
-                }
-            }
-        });
-        if (replacements.length > 0) {
+                return re ? { re, replace } : null;
+            }).filter(Boolean);
+
+        if (replacements.length === 0) {
+            $done({ body });
+        } else {
             replacements.forEach(({ re, replace }) => {
                 body = body.replace(re, replace);
             });
             $done({ body });
-        } else {
-            $done({ body });
         }
-    } else {
-        $done({});
     }
 }
