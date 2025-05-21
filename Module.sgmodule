@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-21 08:58:48
+#!desc=2025-05-21 09:23:31
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -16,6 +16,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\? - reject-dict
 ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\? - reject-dict
 ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/pay\/v5\/check_gift\? - reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ - reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ - reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise - reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit - reject-dict
@@ -74,6 +76,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https:\/\/bp-api\.bestv\.com\.cn\/cms\/api\/free\/open\/advertisingV2 - reject-dict
 ^https:\/\/cache\.bydauto\.com\.cn\/dilink_user_upload\/20 - reject-200
 ^https:\/\/cdn\.sdb\.com\.cn\/ibank\/upgrade\/plugins\/upgradefile\.ios\.simplify - reject-200
+^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
 ^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush - reject
 ^https:\/\/ecloud\.tppension\.cntaiping\.com\/fxtpplatform\/common\/anonymous\/common\/page\/queryStartPageNew\?language=zh-CN - reject-dict
 ^https:\/\/ecssmobile\.e-chinalife\.com:8082\/ecss\/web\/appupdate\/customization\/getFlashScreenInfo - reject-dict
@@ -182,14 +185,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityModule\/userSignInInfo\?activitySignInConfigId - reject-dict
 ^https?:\/\/(cdn-)?topic\.kkmh\.com\/gamecard\/v\d\/activityText\/getUserActivityTextInfo\?activityTextConfigId - reject-dict
 ^https?:\/\/(client\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket - reject
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.live\.home\.ads\.material\.get - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.topic\.banner\/ - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\. - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/ - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.(discover|shade)\/ - reject-dict
-^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.wireless\.home\.xianyu(\.my)?\.awesome\.get - reject-dict
 ^https?:\/\/(gw|img)\.alicdn\.com\/imgextra\/.+\/[\w!]+\d+-\d+-.+-\b([8-9]\d{2,}|[1-9]\d{3,})\b-\b([5-9]\d{2,}|[1-9]\d{3,})\b - reject-dict
 ^https?:\/\/(ipv4|interface\d?)\.music\.163.com\/w?e?api\/ad - reject-dict
 ^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/(comment\/feed\/inserted|hotcomment\/collect|tips\/v\d\/get) - reject-dict
@@ -747,7 +742,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo - reject-dict
 ^https?:\/\/dictvip-business\.youdao\.com\/home\/ad - reject-dict
 ^https?:\/\/dili\.bdatu\.com\/jiekou\/ad\/ - reject
-^https?:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
 ^https?:\/\/direct\.z-bank\.com\/portal\/AdvertImageDownLoad4Mobile\.do - reject-200
 ^https?:\/\/discuz\.gtimg\.cn\/cloud\/scripts\/discuz_tips\.js - reject-img
 ^https?:\/\/dispatcher\.camera360\.com\/api\/v\d\/list$ - reject
@@ -826,7 +820,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/g(.*)\.dushu365\.com\/order-orchestration\/orderWeb\/exchange\/v\d+\/showExchangeButton - reject
 ^https?:\/\/g(.*)\.dushu365\.com\/resource-orchestration-system\/vipLandingPage\/v\d+\/getVipLandingPageApp - reject
 ^https?:\/\/g1.163.com\/madfeedback - reject
-^https?:\/\/g\.alicdn\.com\/IdleFish-F2e\/idlefish-workers\/[0-9.]+\/smartLoader - reject
 ^https?:\/\/ga-album-cdnqn\.52tt\.com\/prod-yunying\/.+.jpg - reject-dict
 ^https?:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver$ - reject
 ^https?:\/\/gaia\.ch\.com\/ECProduct\/homePageRevision\/queryRecommendInfo - reject
@@ -884,7 +877,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/gw\.kaola\.com\/gw\/dgmobile\/newOpenAd - reject
 ^https?:\/\/gzacshow\.kugou\.com\/mfanxing-home\/cdn\/room\/index\/list_v - reject-dict
 ^https?:\/\/gzacshow\.kugou\.com\/mfx-rt-show\/cdn\/mo\/show\/headline - reject-dict
-^https?:\/\/h5\.m\.goofish\.com\/app\/idleFish-F2e\/idlefish-pop - reject
 ^https?:\/\/h5api\.sginput\.qq\.com\/v\d\/gcenter\/ios\/homepage - reject-dict
 ^https?:\/\/h5app\.kuwo\.cn\/m\/bdvipact2205\/index\.html\?fromsrc=huodong - reject-dict
 ^https?:\/\/h5app\.kuwo\.cn\/m\/kwtemplatePage\/index\.html\?id=1157&app=bodianhdzx - reject-dict
@@ -1682,9 +1674,6 @@ flyert.js =type=http-response, pattern=^https?:\/\/www\.flyert\.com(\.cn)?\/.*pl
 freshippo.js =type=http-response, pattern=^https?:\/\/acs(\.|-)m\.(taobao|freshippo)\.com\/gw\/mtop\.wdk\.render\.query(?>indexpage|mypage|tabfeedstream), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/freshippo.js, requires-body=true, max-size=0
 gaoding.js =type=http-response, pattern=^https?:\/\/www\.gaoding\.com\/api\/v\d\/oc\/exhibitions\/app_mine\/resources, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/gaoding.js, requires-body=true, max-size=0
 gaoding.js =type=http-response, pattern=^https?:\/\/www\.gaoding\.com\/api\/v\d\/oc\/exhibitions\/template\/resources$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/gaoding.js, requires-body=true, max-size=0
-goofish.js =type=http-response, pattern=^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/goofish.js, requires-body=true, max-size=0
-goofish.js =type=http-response, pattern=^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/goofish.js, requires-body=true, max-size=0
-goofish.js =type=http-response, pattern=^https?:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/goofish.js, requires-body=true, max-size=0
 guiderank.js =type=http-response, pattern=^https?:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/guiderank.js, requires-body=true, max-size=0
 haier.js =type=http-response, pattern=^https?:\/\/oss-zjrs\.haier\.net\/resource\/confFile\/\d{22}\.json$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/haier.js, requires-body=true, max-size=0
 haier.js =type=http-response, pattern=^https?:\/\/zj\.haier\.net\/omsappapi\/resource\/v\d\/get\/resourceBag$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/haier.js, requires-body=true, max-size=0
@@ -1793,6 +1782,11 @@ wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.16
 wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/link\/position\/show\/resource, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
 wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/song\/play\/more\/list\/v\d, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
 wyres.js =type=http-response, pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/w?e?api\/user\/follow\/users\/mixed\/get, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/wyres.js, requires-body=true, max-size=0, binary-body-mode=true
+xianyu_ads.js =type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xianyu_ads.js, requires-body=true, max-size=0
+xianyu_ads.js =type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xianyu_ads.js, requires-body=true, max-size=0
+xianyu_ads.js =type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xianyu_ads.js, requires-body=true, max-size=0
+xianyu_ads.js =type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xianyu_ads.js, requires-body=true, max-size=0
+xianyu_ads.js =type=http-response, pattern=^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xianyu_ads.js, requires-body=true, max-size=0
 xiaoheihe.js =type=http-response, pattern=^https?:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaoheihe.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(v5\/note\/comment\/list|v3\/note\/comment\/sub_comments)\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
 xiaohongshu.js =type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/xiaohongshu.js, requires-body=true, max-size=0
