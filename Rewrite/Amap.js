@@ -6,7 +6,6 @@
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 
 [rewrite_local]
-^https?:\/\/oss\.amap\.com\/uploadimg\/\w+\.gif url reject-img
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? url reject-dict
 ^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution url reject
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend url reject-dict
