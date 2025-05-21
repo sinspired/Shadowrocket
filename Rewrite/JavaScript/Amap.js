@@ -26,21 +26,14 @@
 hostname = *.amap.com
 */
 
+const obj = JSON.parse($response.body);
 let modified = false;
-let obj;
-
-try {
-    obj = JSON.parse($response.body);
-} catch {
-    $done({ body: $response.body });
-    return;
-}
 
 if ($request.url.includes("search/nearbyrec_smart")) {
     const fieldsToRemove = ["coupon", "scene", "activity", "commodity_rec", "operation_activity"];
     if (obj.data) {
         fieldsToRemove.forEach(field => {
-            if (Object.prototype.hasOwnProperty.call(obj.data, field)) {
+            if (obj.data.hasOwnProperty(field)) {
                 delete obj.data[field];
                 modified = true;
             }
@@ -136,7 +129,7 @@ if ($request.url.includes("search/nearbyrec_smart")) {
     const items = ["banners", "carouselTips", "integratedBanners", "integratedTips", "skins", "skinAndTips", "tips"];
     if (obj?.data?.["105"]) {
         items.forEach(i => {
-            if (Object.prototype.hasOwnProperty.call(obj.data["105"], i)) {
+            if (obj.data["105"].hasOwnProperty(i)) {
                 delete obj.data["105"][i];
                 modified = true;
             }
