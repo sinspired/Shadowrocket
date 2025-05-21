@@ -4,15 +4,12 @@
 # 由向晚重写维护；
 # 更新时间: 20250521
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliAMDC.js
-# 生成器写法：
-# AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 
 [rewrite_local]
 ^https?:\/\/amdc\.m\.taobao\.com url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js 
 
 [mitm]
 hostname = amdc.m.taobao.com
-
 */
 
 var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "").toLowerCase();
