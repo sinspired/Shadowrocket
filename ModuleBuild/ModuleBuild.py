@@ -94,7 +94,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 
     sgmodule_content += f"""
 [Script]
-AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 """
     script_content = ""
     for match in re.finditer(script_pattern, js_content, re.MULTILINE):
