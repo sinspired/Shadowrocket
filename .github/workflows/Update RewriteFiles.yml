@@ -179,6 +179,7 @@ jobs:
           valid_list=""
           files_to_check=(
             "Rewrite/AMDC.js"
+            "Rewrite/AliAMDC.js"
             "Rewrite/Amap.js"
             "Rewrite/Bilibili.conf"
             "Rewrite/FAWVW.js"
