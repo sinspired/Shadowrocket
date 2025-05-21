@@ -44,16 +44,17 @@ def rewrite_to_sgmodule(js_content, project_name):
         return None
     utc_time = datetime.datetime.now(datetime.timezone.utc)
     beijing_time = utc_time + datetime.timedelta(hours=8)
-    timestamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
-    rewrite_local_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
+    time_stamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
+    rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
     jq_pattern = r'^(?!.*#.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
     mitm_local_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
+
     sgmodule_content = f"""#!name={project_name}
-#!desc={timestamp}
+#!desc={time_stamp}
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -61,7 +62,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 [URL Rewrite]
 """
     url_content = ""
-    for match in re.finditer(rewrite_local_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(rewrite_pattern, js_content, re.MULTILINE):
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} - {reject_type}\n"
