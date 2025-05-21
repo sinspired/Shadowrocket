@@ -38,7 +38,7 @@ if ($request.url.includes("search/nearbyrec_smart")) {
                 modified = true;
             }
         });
-        if (Array.isArray(obj.data.modules)) {
+        if (Array.isArray(obj.data?.modules)) {
             const originalLength = obj.data.modules.length;
             obj.data.modules = obj.data.modules.filter(module => !fieldsToRemove.includes(module.name));
             if (obj.data.modules.length !== originalLength) modified = true;
