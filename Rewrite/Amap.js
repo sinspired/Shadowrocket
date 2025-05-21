@@ -79,7 +79,7 @@ if ($request.url.includes("search/nearbyrec_smart")) {
         obj.data.mapBizList = [];
         modified = true;
     }
-} else if ($request.url.includes("profile/index/node")) {
+} else if ($request.url.includes("profile/index/nodefaas")) {
     if (obj.data?.tipData) {
         delete obj.data.tipData;
         modified = true;
