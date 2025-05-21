@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-21 08:52:52
+#!desc=2025-05-21 08:58:48
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1545,7 +1545,6 @@ https?:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
 [Body Rewrite]
 
 [Script]
-AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AMDC.js, requires-body=true, max-size=0
 12306.js =type=http-request, pattern=^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/12306.js, requires-body=true, max-size=0
 163news.js =type=http-response, pattern=^https?:\/\/gw\.m\.163\.com\/nc\/api\/v\d\/feed\/dynamic\/headline-list\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/163news.js, requires-body=true, max-size=0
 163news.js =type=http-response, pattern=^https?:\/\/gw\.m\.163\.com\/nc\/api\/v\d\/search\/hot-word, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/163news.js, requires-body=true, max-size=0
@@ -1557,7 +1556,6 @@ AMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-pa
 51job.js =type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/my-page\/, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/51job.js, requires-body=true, max-size=0
 51job.js =type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/51job.js, requires-body=true, max-size=0
 555Ad.js =type=http-response, pattern=^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/555Ad.js, requires-body=true, max-size=0
-AliAMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js, requires-body=true, max-size=0
 AliAMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js, requires-body=true, max-size=0
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/faas/amap-navigation/main-page, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 Amap.js =type=http-response, pattern=^https?://.*.amap.com/ws/message/notice/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
