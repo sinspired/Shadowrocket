@@ -21,6 +21,7 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bohe/bohe_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cmschina/cmschina.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js<br>
