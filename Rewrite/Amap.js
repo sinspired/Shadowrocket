@@ -209,14 +209,10 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
   if (obj?.data?.tipData) {
     delete obj.data.tipData;
   }
-  // 足迹
-  // if (obj.data.footPrintV2) {
-  //   delete obj.data.footPrintV2;
-  // }
   // 成就勋章
-  // if (obj?.data?.memberInfo) {
-  //   delete obj.data.memberInfo;
-  // }
+  if (obj?.data?.memberInfo) {
+    delete obj.data.memberInfo;
+  }
   // 顶部足迹、贡献卡片
   // if (obj?.data?.topMixedCard) {
   //   delete obj.data.topMixedCard;
