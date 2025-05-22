@@ -111,8 +111,8 @@ jobs:
               naisi_selected_scripts+=("$line")
             fi
           done < "$build_conf_file"
-
           naisi_original_links=""
+          declare -A seen_urls=()
           for naisi_script in "${naisi_selected_scripts[@]}"; do
             naisi_src="Rewrite/NaisiScripts/$naisi_script"
             naisi_dst="Rewrite/JavaScript/$naisi_script"
@@ -121,14 +121,17 @@ jobs:
               ext="${BASH_REMATCH[2]}"
               original_url=$(awk -v s="$naisi_script" '$2 == s {print $4}' NaisiScriptsMap.list)
               if [[ -z "$original_url" ]]; then
-                original_url=$(grep -F "$naisi_script" NaisiScripts.list)
+                original_url=$(grep -F "$naisi_script" NaisiScripts.list | head -n 1)
               fi
             else
-              original_url=$(grep -F "$naisi_script" NaisiScripts.list)
+              original_url=$(grep -F "$naisi_script" NaisiScripts.list | head -n 1)
             fi
             if [ -f "$naisi_src" ]; then
               cp "$naisi_src" "$naisi_dst"
-              naisi_original_links="${naisi_original_links}${original_url}<br>\n"
+              if [[ -n "$original_url" && -z "${seen_urls[$original_url]}" ]]; then
+                naisi_original_links="${naisi_original_links}${original_url}<br>\n"
+                seen_urls[$original_url]=1
+              fi
             fi
           done
           {
