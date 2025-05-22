@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-21 18:16:45
+#!desc=2025-05-22 08:50:36
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -1555,6 +1555,7 @@ Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\
 Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/detail, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 BahamutAnimeAds.js =type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/BahamutAnimeAds.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
