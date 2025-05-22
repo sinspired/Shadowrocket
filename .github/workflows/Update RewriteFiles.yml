@@ -54,7 +54,6 @@ jobs:
             "Rewrite/NaisiConfig/QuanX.conf"
             "Rewrite/NaisiConfig/Loon.conf"
             "Rewrite/NaisiConfig/Weibo.conf"
-            "Rewrite/NaisiConfig/RejectList.conf"
           )
           declare -A naisi_downloaded_urls
           declare -A naisi_downloaded_files
