@@ -1,98 +1,85 @@
-### 更新时间：2025-05-22<br>
+### Update:2025-05-22<br>
 
-### 失效资源：<br>
-无失效资源！<br>
-
-### 有效资源：<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xianyu/xianyu_ads.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js<br>
-https://raw.githubusercontent.com/Keywos/rule/main/mocks/caiyun.json<br>
-https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js<br>
-https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js<br>
-https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js<br>
-https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js<br>
-https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
-https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js<br>
-https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Smzdm.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js<br>
-https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/Flightradar24.js<br>
+### fmz200:<br>
+https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/51card.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/555Ad.js<br>
+https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutAnimeAds.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/scripts/Flightradar24.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/PupuSplashAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/QuDa.js<br>
+https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Smzdm.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/Umetrip_remove_ads.js<br>
+https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/adrive/adrive.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/baidumap.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/blued.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/bohe/bohe_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cainiao/cainiao.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/caixin/caixinAd.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/A3341AB05.json<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ccbLife/ccbLifeAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/cnftp.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/dianyinglieshou.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didiAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fenbi.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/header.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js<br>
+https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/keep.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/lvtusuishenting/ltsst-ad.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/maimai/maimai_ads.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/meiyou/meiyou_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/myBlockAds.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/picc/picc_ads.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/quark.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/reject-dict.json<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/smzdm_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js<br>
+https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js<br>
+https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js
+https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
+https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
+https://github.com/fmz200/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js<br>
+https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
+https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js<br>
+https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js<br>
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js<br>
+https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/youdao/dict-youdao-ad.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js<br>
-https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
-https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.mine.jq<br>
-https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/jq/bilibili.tab.jq<br>
-https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/airchina.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/alicdn.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/bilibiliManga.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ddxq.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/dianping.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mafengwo.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/mdb.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
-https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
-https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.protobuf.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_vip.js<br>
-https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/reject-dict.json<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
-https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
-https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
 
-### 附加引用：<br>
+### Zirawell:<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/163news.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/360cam.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51cto.js<br>
@@ -122,7 +109,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xiaoh
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xunlei.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ys7.js<br>
 
-### 本地调用：<br>
+### Local:<br>
 https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliAMDC.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
