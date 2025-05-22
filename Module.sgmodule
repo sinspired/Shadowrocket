@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-22 08:50:36
+#!desc=2025-05-22 09:44:13
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
@@ -194,11 +194,17 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
 ^https?:\/\/(syh|www)\.zybang\.com\/adx\/ - reject-200
 ^https?:\/\/(tysdk|ads)\.95516\.com - reject-dict
 ^https?:\/\/(www|api)\.duitang\.com\/napi\/ad - reject-dict
-^https?:\/\/.*\.amap\.com\/uploadimg\/.*\.gif - reject-img
-^https?:\/\/.*\.amap\.com\/ws\/asa\/ads_attribution - reject
-^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-route-plan\? - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/banner\/lists\/\? - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/boss\/(order\/car\/king_toolbox_car_bubble|tips\/onscene_visual_optimization) - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/(?>main-page-assets|main-page-location|ridewalk-end-fc) - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?>car-end|route-plan) - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull_mp\? - reject-dict
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init\? - reject-dict
-^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/shield\/scene\/recommend\? - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
+^https?:\/\/.*\.amap\.com\/ws\/valueadded\/ - reject
 ^https?:\/\/.*\.i18n-pglstatp\.com\/obj\/ad-pattern-sg - reject
 ^https?:\/\/.*\.pglstatp-toutiao\.com\/.*ad.* - reject
 ^https?:\/\/.*\.townmalls\.cn:1890\/mossapi\/mossp\.BannerManager\/activityList.* - reject
@@ -1546,17 +1552,20 @@ https?:\/\/w\.line\.me\/adp\/api\/ad\/v\d\/ - reject
 51job.js =type=http-response, pattern=^https?:\/\/cupid\.51job(app)?\.com\/open\/noauth\/recommend\/job-tab-dynamic, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/51job.js, requires-body=true, max-size=0
 555Ad.js =type=http-response, pattern=^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/movie\/index_recommend, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/555Ad.js, requires-body=true, max-size=0
 AliAMDC.js =type=http-response, pattern=^https?:\/\/amdc\.m\.taobao\.com, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/boss\/order_web\/\w{8}_information, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/message\/notice\/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/msgbox\/pull, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/detail, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
-Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/valueadded\/alimama\/splash_screen, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/bus\/plan\/integrate\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/(?>card-service-plan-home|main-page), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/perception\/drive\/(?>routeInfo|routePlan), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource(\/home)?\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv\d\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
+Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 BahamutAnimeAds.js =type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/BahamutAnimeAds.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(recommend\/getRecommendInfoFlows|customize\/getCustomizePageName)\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
