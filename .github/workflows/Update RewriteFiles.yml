@@ -132,9 +132,9 @@ jobs:
             fi
           done
           {
-            echo "### Update:$(TZ='Asia/Shanghai' date '+%Y-%m-%d')<br>"
+            echo "### Update: $(TZ='Asia/Shanghai' date '+%Y-%m-%d')<br>"
             echo ""
-            echo "### fmz200:<br>"
+            echo "### fmz200: <br>"
             echo -e "$naisi_original_links"
           } >> Rewrite/JavaScriptCheck.md
 
@@ -190,7 +190,7 @@ jobs:
           done
           if [[ -n "$zirawell_original_links" ]]; then
             {
-              echo "### Zirawell:<br>"
+              echo "### zirawell: <br>"
               echo -e "$zirawell_original_links"
             } >> Rewrite/JavaScriptCheck.md
           fi
@@ -239,7 +239,7 @@ jobs:
           done < LocalScripts.list
           if [[ -n "$local_original_links" ]]; then
             {
-              echo "### Local:<br>"
+              echo "### local: <br>"
               echo -e "$local_original_links"
             } >> Rewrite/JavaScriptCheck.md
           fi
