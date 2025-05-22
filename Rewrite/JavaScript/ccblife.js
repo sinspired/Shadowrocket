@@ -25,6 +25,7 @@ const moduleKeys = [
   "LIFE_TOP_ROTATION_INFO_V3",    // 生活-上方轮播图
   "EDITOR_RECOMMEND2_AD",         // 生活-小编推荐
   "LIFE_V3_SCENE_AGGREGATION",    // 生活-分期·好生活
+  "LIFE_LIST",                    // 生活-本地优惠标签
 
   "THROUGH_COLUMN_INFO",          // 金融-中间轮播图
 
@@ -42,8 +43,8 @@ const blockKeys = [
 
 const flowKeys = [
   "A3341A095",                    // 精选-种草推荐
-  "A3341A068",                    // 金融-热门资讯
-  "A3341AB08"                     // 金融-楼层开关  
+  "A3341MB22",                    // 生活-本地优惠
+  "A3341A068",                    // 金融-热门资讯 
 ];
 
 if (containKey(url,blockKeys)) {
@@ -75,8 +76,17 @@ if (containKey(url,blockKeys)) {
   if (obj?.data?.data?.topList && obj.data.data.topList.length > 0) {
     delete obj.data.data.topList;
   }
+  if (obj?.data?.MCT_INFO && obj.data.MCT_INFO.length > 0) {
+    delete obj.data.MCT_INFO;
+  }
+// 楼层开关
+} else if (url.includes("A3341AB08")) {
   if (obj?.data?.STOREY_DISPLAY_INFO && obj.data.STOREY_DISPLAY_INFO.length > 0) {
-    obj.data.STOREY_DISPLAY_INFO = obj.data.STOREY_DISPLAY_INFO.map(item => ({ ...item, "IS_DISPLAY" : "0" }));
+    obj.data.STOREY_DISPLAY_INFO.forEach(item => {
+      if (item.STOREY_NM?.match(/广告|热门|轮播|分期|推荐|借|我要/)) {
+        item.IS_DISPLAY = "0";
+      }
+    });
   }
 }
 
