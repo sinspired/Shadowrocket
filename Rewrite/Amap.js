@@ -19,9 +19,6 @@
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/homepage url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/search\/sp url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/sug url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
@@ -33,16 +30,7 @@ hostname = *.amap.com
 const obj = JSON.parse($response.body);
 let modified = false;
 
-const url = $request.url;
-
-function clearArrayField(obj, field) {
-    if (Array.isArray(obj?.[field]) && obj[field].length > 0) {
-        obj[field] = [];
-        modified = true;
-    }
-}
-
-if (url.includes("search/nearbyrec_smart")) {
+if ($request.url.includes("search/nearbyrec_smart")) {
     const fieldsToRemove = ["coupon", "scene", "activity", "commodity_rec", "operation_activity"];
     if (obj.data) {
         fieldsToRemove.forEach(field => {
@@ -51,13 +39,13 @@ if (url.includes("search/nearbyrec_smart")) {
                 modified = true;
             }
         });
-        if (Array.isArray(obj.data.modules)) {
+        if (Array.isArray(obj.data?.modules)) {
             const originalLength = obj.data.modules.length;
-            obj.data.modules = obj.data.modules.filter(m => !fieldsToRemove.includes(m.name));
+            obj.data.modules = obj.data.modules.filter(module => !fieldsToRemove.includes(module.name));
             if (obj.data.modules.length !== originalLength) modified = true;
         }
     }
-} else if (url.includes("valueadded/alimama/splash_screen")) {
+} else if ($request.url.includes("valueadded/alimama/splash_screen")) {
     if (Array.isArray(obj.data?.ad)) {
         obj.data.ad.forEach(ad => {
             if (ad.set?.setting && typeof ad.set.setting === "object") {
@@ -66,125 +54,120 @@ if (url.includes("search/nearbyrec_smart")) {
             }
             if (Array.isArray(ad.creative)) {
                 ad.creative.forEach(creative => {
-                    creative.start_time = 3818332800;
-                    creative.end_time = 3818419199;
+                    creative.start_time = 2240150400;
+                    creative.end_time = 2240150400;
                 });
                 modified = true;
             }
         });
     }
-} else if (url.includes("faas/amap-navigation/main-page")) {
+} else if ($request.url.includes("faas/amap-navigation/main-page")) {
     if (Array.isArray(obj.data?.cardList)) {
-        const allowed = new Set(["LoginCard", "FrequentLocation"]);
         const originalLength = obj.data.cardList.length;
-        obj.data.cardList = obj.data.cardList.filter(c => allowed.has(c.dataType));
+        const allowedCards = new Set(["LoginCard", "FrequentLocation"]);
+        obj.data.cardList = obj.data.cardList.filter(a => allowedCards.has(a.dataType));
         if (obj.data.cardList.length !== originalLength) modified = true;
     }
-    clearArrayField(obj.data, "pull3.msgs");
-    clearArrayField(obj.data, "business_position");
-    clearArrayField(obj.data, "mapBizList");
-} else if (url.includes("profile/index/nodefaas")) {
+    if (Array.isArray(obj.data?.pull3?.msgs) && obj.data.pull3.msgs.length > 0) {
+        obj.data.pull3.msgs = [];
+        modified = true;
+    }
+    if (Array.isArray(obj.data?.business_position) && obj.data.business_position.length > 0) {
+        obj.data.business_position = [];
+        modified = true;
+    }
+    if (Array.isArray(obj.data?.mapBizList) && obj.data.mapBizList.length > 0) {
+        obj.data.mapBizList = [];
+        modified = true;
+    }
+} else if ($request.url.includes("profile/index/nodefaas")) {
     if (obj.data?.tipData) {
         delete obj.data.tipData;
         modified = true;
     }
     if (Array.isArray(obj.data?.cardList)) {
-        const allowed = new Set(["MyOrderCard"]);
         const originalLength = obj.data.cardList.length;
-        obj.data.cardList = obj.data.cardList.filter(c => allowed.has(c.dataType));
+        const allowedCards = new Set(["MyOrderCard"]);
+        obj.data.cardList = obj.data.cardList.filter(a => allowedCards.has(a.dataType));
         if (obj.data.cardList.length !== originalLength) modified = true;
     }
-} else if (url.includes("new_hotword")) {
-    clearArrayField(obj.data, "header_hotword");
-} else if (url.includes("ws/promotion-web/resource")) {
-    ["icon", "banner", "tips", "popup", "bubble", "other"].forEach(type => {
-        clearArrayField(obj.data, type);
+} else if ($request.url.includes("new_hotword")) {
+    if (Array.isArray(obj.data?.header_hotword) && obj.data.header_hotword.length > 0) {
+        obj.data.header_hotword = [];
+        modified = true;
+    }
+} else if ($request.url.includes("ws/promotion-web/resource")) {
+    const resourceTypes = ["icon", "banner", "tips", "popup", "bubble", "other"];
+    resourceTypes.forEach(type => {
+        if (Array.isArray(obj.data?.[type]) && obj.data[type].length > 0) {
+            obj.data[type] = [];
+            modified = true;
+        }
     });
-} else if (url.includes("ws/msgbox/pull")) {
-    clearArrayField(obj, "msgs");
-    clearArrayField(obj.pull3, "msgs");
-} else if (url.includes("ws/message/notice/list")) {
-    clearArrayField(obj.data, "noticeList");
-} else if (url.includes("/shield/search_poi/homepage")) {
-    if (obj?.history_tags) {
-        delete obj.history_tags;
+} else if ($request.url.includes("ws/msgbox/pull")) {
+    if (Array.isArray(obj.msgs) && obj.msgs.length > 0) {
+        obj.msgs = [];
         modified = true;
     }
-} else if (url.includes("/shield/search_poi/search/sp") || url.includes("/shield/search_poi/mps")) {
-    let list;
-    if (obj?.data?.list_data) {
-        list = obj.data.list_data.content[0];
-    } else if (obj?.data?.district?.poi_list) {
-        const poi = obj.data.district.poi_list[0];
-        if (poi?.transportation) {
-            delete poi.transportation;
-            modified = true;
-        }
-        if (poi?.feed_rec_tab) {
-            delete poi.feed_rec_tab;
-            modified = true;
-        }
-    } else if (obj?.data?.modules?.not_parse_result?.data?.list_data) {
-        list = obj.data.modules.not_parse_result.data.list_data.content[0];
-    }
-
-    if (list) {
-        if (list.hookInfo?.data) {
-            const hookData = list.hookInfo.data;
-            if (hookData.header) {
-                delete hookData.header;
-                modified = true;
-            }
-            if (hookData.house_info) {
-                delete hookData.house_info;
-                modified = true;
-            }
-        }
-        if (list.map_bottom_bar?.hotel) {
-            delete list.map_bottom_bar.hotel;
-            modified = true;
-        }
-        if (list.poi?.item_info?.tips_bottombar_button?.hotel) {
-            delete list.poi.item_info.tips_bottombar_button.hotel;
-            modified = true;
-        }
-        if (list.map?.main_point) {
-            delete list.map.main_point;
-            modified = true;
-        }
-        if (list.tips_operation_info) {
-            delete list.tips_operation_info;
-            modified = true;
-        }
-        if (list.bottom?.bottombar_button?.hotel) {
-            delete list.bottom.bottombar_button.hotel;
-            modified = true;
-        }
-        if (list.card) {
-            if ((list.card.card_id === "SearchCardBrand" && list.item_type === "brandAdCard") ||
-                (list.card.card_id === "NearbyGroupBuy" && list.item_type === "toplist") ||
-                (list.card.card_id === "ImageBanner" && list.item_type === "ImageBanner")) {
-                delete list.card;
-                modified = true;
-            }
-        }
-    }
-
-    if (obj?.data?.modules?.list_data?.data?.content?.length > 0) {
-        obj.data.modules.list_data.data.content = obj.data.modules.list_data.data.content.filter(item =>
-            !["brandAdCard", "toplist_al"].includes(item.item_type)
-        );
+    if (Array.isArray(obj.pull3?.msgs) && obj.pull3.msgs.length > 0) {
+        obj.pull3.msgs = [];
         modified = true;
     }
-} else if (url.includes("/shield/search_poi/sug")) {
-    if (Array.isArray(obj.data?.sug)) {
-        obj.data.sug = obj.data.sug.filter(item => item.show_type !== "ad");
+} else if ($request.url.includes("ws/message/notice/list")) {
+    if (Array.isArray(obj.data?.noticeList) && obj.data.noticeList.length > 0) {
+        obj.data.noticeList = [];
         modified = true;
+    }
+} else if ($request.url.includes("ws/shield/frogserver/aocs")) {
+    const keysToClear = ["gd_notch_logo", "home_business_position_config", "his_input_tip", "operation_layer"];
+    keysToClear.forEach(key => {
+        if (obj.data?.[key]) {
+            obj.data[key] = { status: 1, version: "", value: "" };
+            modified = true;
+        }
+    });
+} else if ($request.url.includes("/boss/order_web/friendly_information")) {
+    const items = ["banners", "carouselTips", "integratedBanners", "integratedTips", "skins", "skinAndTips", "tips"];
+    if (obj?.data?.["105"]) {
+        items.forEach(i => {
+            if (obj.data["105"].hasOwnProperty(i)) {
+                delete obj.data["105"][i];
+                modified = true;
+            }
+        });
+    }
+} else if ($request.url.includes("/shield/search/poi/detail")) {
+    const removeModules = [
+        "CouponBanner", "adv_compliance_info", "adv_gift", "bigListBizRec", "bottomDescription", "brand_shop_bar",
+        "checkIn", "check_in", "cityCardFeed", "city_discount", "claim", "co_branded_card", "collector_guide",
+        "common_coupon_bar", "common_coupon_card", "comprehensiveEditEntrance", "contributor", "cpt_service_shop",
+        "dayTripList", "discount_commodity", "divergentRecommendModule", "everyOneToSee", "feedback",
+        "first_surround_estate_tab", "horizontalGoodsShelf", "hotPlay", "hot_new_house_estate", "hot_shop",
+        "hotelCoupon", "hotelList", "hotelMustRead", "houseList", "houseOfficeBrandIntroduction", "houseOfficeInfo",
+        "houseOfficeNotice", "houseOfficeService", "house_apart_info", "house_buying_agent", "house_coupon",
+        "house_cp_clues", "house_cpt_coupon", "house_cpt_grab", "house_price", "house_rent_sale_agency",
+        "image_banner", "kaMarketingCampaign", "kaProductMixServiceShelf", "ka_not_enter", "legSameIndustryRecEntrance",
+        "legal_document", "listBizRec_1", "listBizRec_2", "matrix_banner", "merchantSettlement", "membership",
+        "mini_hook_shelf", "movie_info", "multi_page_anchor", "nearbyGoodCar", "nearbyRecommendModule",
+        "nearby_house", "nearby_new_house_estate", "nearby_office_estate", "nearby_old_sell_estate", "nearby_play_rec",
+        "newGuest", "newRelatedRecommends", "new_operation_banner", "newsellhouse", "officerenthouse",
+        "officesellhouse", "official_account", "oldsellhouse", "operation_banner", "operator_card", "packageShelf",
+        "parentBizRec", "parentPoiRecEntrance", "platformCustomerCommonModule", "platformCustomerComplianceInfo",
+        "poiDetailWaterFeed", "poiDetailWaterFeedTitle", "poster_banner", "portal_entrance", "quickLink",
+        "relatedRecommends", "renthouse", "rentsaleagencyv2", "rentsaleagencyv3", "rentsalehouse",
+        "residentialOwners", "reviews", "sameIndustryRecommendModule", "sameIndustry2RecommendModule",
+        "scenic_coupon", "scenic_filter", "scenic_lifeservices", "scenic_mustplay", "scenic_play_guide",
+        "scenic_recommend", "scenic_voice", "searchPlaMap", "second_surround_estate_tab", "service_shop",
+        "smallListBizRec", "smallOrListBizRec", "surroundHouseTab", "surroundOldSellHouse", "surroundRentHouse",
+        "surround_facility", "surround_facility_new", "surround_house_tab", "surround_oldsellhouse",
+        "surround_renthouse", "surround_rentoffice", "surround_selloffice", "thirdparty_info", "travelGuideRec",
+        "uploadBar", "upload_bar", "verification", "waistRecEntrance", "waterFallFeed", "waterFallFeedTitle"
+    ];
+    if (Array.isArray(obj.data?.modules)) {
+        const originalLength = obj.data.modules.length;
+        obj.data.modules = obj.data.modules.filter(m => !removeModules.includes(m.name));
+        if (obj.data.modules.length !== originalLength) modified = true;
     }
 }
 
-if (modified) {
-    $done({ body: JSON.stringify(obj) });
-} else {
-    $done({});
-}
+$done({ body: modified ? JSON.stringify(obj) : $response.body });
