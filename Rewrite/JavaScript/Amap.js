@@ -240,7 +240,7 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     "hotel_tipsicon",
     "hotsaleConfig", // 酒店限时抢购
     "landing_page_info", // 发现吃喝玩乐好去处
-    "map_weather_switch", // 天气
+    // "map_weather_switch", // 天气
     "maplayers", // 赏花地图
     "navi_end", // 导航结束 领油滴
     "nearby_business_popup",
