@@ -30,19 +30,19 @@ jobs:
 
       - name: Define file paths and links
         run: |
-          echo "Rewrite/NaisiConfig/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/rewrite.snippet" > rewrite_file_links.list
-          echo "Rewrite/NaisiConfig/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> rewrite_file_links.list
-          echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> rewrite_file_links.list
-          echo "Rewrite/NaisiConfig/Filter.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> rewrite_file_links.list
-          echo "Rewrite/ZirawellConfig/AllAdRewrite.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/rewrite/allAdRewrite.conf" >> rewrite_file_links.list
-          echo "Rewrite/ZirawellConfig/AllAdBlock.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list" >> rewrite_file_links.list
+          echo "Rewrite/NaisiConfig/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/rewrite.snippet" > download_file_links.list
+          echo "Rewrite/NaisiConfig/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> download_file_links.list
+          echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> download_file_links.list
+          echo "Rewrite/NaisiConfig/Filter.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> download_file_links.list
+          echo "Rewrite/ZirawellConfig/AllAdRewrite.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/rewrite/allAdRewrite.conf" >> download_file_links.list
+          echo "Rewrite/ZirawellConfig/AllAdBlock.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list" >> download_file_links.list
 
       - name: Download files
         run: |
-          while IFS='|' read -r filepath url; do
-            echo "Downloading: $url -> $filepath"
-            curl -fsS -o "$filepath" "$url" || true
-          done < rewrite_file_links.list
+          while IFS='|' read -r download_filepath download_url; do
+            echo "Downloading: $download_url -> $download_filepath"
+            curl -fsS -o "$download_filepath" "$download_url" || true
+          done < download_file_links.list
 
       - name: Clear previous JavaScriptCheck.md contents
         run: |
@@ -50,51 +50,51 @@ jobs:
 
       - name: Preprocess Naisi Scripts
         run: |
-          files_to_check=(
+          naisi_files_to_check=(
             "Rewrite/NaisiConfig/QuanX.conf"
             "Rewrite/NaisiConfig/Loon.conf"
             "Rewrite/NaisiConfig/Weibo.conf"
             "Rewrite/NaisiConfig/RejectList.conf"
           )
-          declare -A downloaded_urls
-          declare -A downloaded_files
+          declare -A naisi_downloaded_urls
+          declare -A naisi_downloaded_files
           > NaisiScripts.list
           > NaisiScriptsMap.list
-          for file in "${files_to_check[@]}"; do
-            if [ -f "$file" ]; then
-              echo "Processing: $file"
-              sed 's/#.*//' "$file" | grep -Eo 'https?://[^ ]+\.(js|json|jq)' | sort -u >> NaisiScripts.list
+          for naisi_file in "${naisi_files_to_check[@]}"; do
+            if [ -f "$naisi_file" ]; then
+              echo "Processing: $naisi_file"
+              sed 's/#.*//' "$naisi_file" | grep -Eo 'https?://[^ ]+\.(js|json|jq)' | sort -u >> NaisiScripts.list
             fi
           done
           sort -u NaisiScripts.list -o NaisiScripts.list
-          while IFS= read -r url; do
-            if [[ "$url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
-              raw_url="${BASH_REMATCH[1]}"
+          while IFS= read -r naisi_url; do
+            if [[ "$naisi_url" =~ ^http://script.hub/convert/_start_/(.*)/_end_/.*$ ]]; then
+              naisi_raw_url="${BASH_REMATCH[1]}"
             else
-              raw_url="$url"
+              naisi_raw_url="$naisi_url"
             fi
-            if echo "$raw_url" | grep -q "https://github.com/.*/raw/"; then
-              raw_url=$(echo "$raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
+            if echo "$naisi_raw_url" | grep -q "https://github.com/.*/raw/"; then
+              naisi_raw_url=$(echo "$naisi_raw_url" | sed 's#https://github.com/\(.*\)/raw/\(.*\)#https://raw.githubusercontent.com/\1/\2#g')
             fi
-            if [[ -n "${downloaded_urls[$raw_url]}" ]]; then
+            if [[ -n "${naisi_downloaded_urls[$naisi_raw_url]}" ]]; then
               continue
             fi
-            filename=$(basename "$raw_url")
-            filepath="Rewrite/NaisiScripts/$filename"
-            if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$raw_url" ]]; then
-              basename_noext="${filename%.*}"
-              ext="${filename##*.}"
-              filepath="Rewrite/NaisiScripts/${basename_noext}_2.${ext}"
-              echo "$filename $basename_noext"_2."$ext ${downloaded_files[$filename]} $raw_url" >> NaisiScriptsMap.list
+            naisi_filename=$(basename "$naisi_raw_url")
+            naisi_filepath="Rewrite/NaisiScripts/$naisi_filename"
+            if [[ -n "${naisi_downloaded_files[$naisi_filename]}" && "${naisi_downloaded_files[$naisi_filename]}" != "$naisi_raw_url" ]]; then
+              basename_noext="${naisi_filename%.*}"
+              ext="${naisi_filename##*.}"
+              naisi_filepath="Rewrite/NaisiScripts/${basename_noext}_2.${ext}"
+              echo "$naisi_filename ${basename_noext}_2.${ext} ${naisi_downloaded_files[$naisi_filename]} $naisi_raw_url" >> NaisiScriptsMap.list
             fi
-            curl -fsS -o "$filepath" "$raw_url" || echo "Failed to download $raw_url"
-            downloaded_urls[$raw_url]=1
-            downloaded_files[$filename]="$raw_url"
+            curl -fsS -o "$naisi_filepath" "$naisi_raw_url" || echo "Failed to download $naisi_raw_url"
+            naisi_downloaded_urls[$naisi_raw_url]=1
+            naisi_downloaded_files[$naisi_filename]="$naisi_raw_url"
           done < NaisiScripts.list
 
       - name: Copy selected NaisiScripts to JavaScript
         run: |
-          selected_scripts=(
+          naisi_selected_scripts=(
             "12306.js"
             "51card.js"
             "51job.js"
@@ -172,55 +172,55 @@ jobs:
             "zhihu.js"
             "zhuanzhuan.js"
           )
-          original_links=""
-          for script in "${selected_scripts[@]}"; do
-            src="Rewrite/NaisiScripts/$script"
-            dst="Rewrite/JavaScript/$script"
-            if [[ "$script" =~ ^(.+)_2\.(js|json|jq)$ ]]; then
+          naisi_original_links=""
+          for naisi_script in "${naisi_selected_scripts[@]}"; do
+            naisi_src="Rewrite/NaisiScripts/$naisi_script"
+            naisi_dst="Rewrite/JavaScript/$naisi_script"
+            if [[ "$naisi_script" =~ ^(.+)_2\.(js|json|jq)$ ]]; then
               base_name="${BASH_REMATCH[1]}"
               ext="${BASH_REMATCH[2]}"
-              original_url=$(awk -v s="$script" '$2 == s {print $4}' NaisiScriptsMap.list)
+              original_url=$(awk -v s="$naisi_script" '$2 == s {print $4}' NaisiScriptsMap.list)
               if [[ -z "$original_url" ]]; then
-                original_url=$(grep -F "$script" NaisiScripts.list)
+                original_url=$(grep -F "$naisi_script" NaisiScripts.list)
               fi
             else
-              original_url=$(grep -F "$script" NaisiScripts.list)
+              original_url=$(grep -F "$naisi_script" NaisiScripts.list)
             fi
-            if [ -f "$src" ]; then
-              cp "$src" "$dst"
-              original_links="${original_links}${original_url}<br>\n"
+            if [ -f "$naisi_src" ]; then
+              cp "$naisi_src" "$naisi_dst"
+              naisi_original_links="${naisi_original_links}${original_url}<br>\n"
             fi
           done
           {
             echo "### Update:$(TZ='Asia/Shanghai' date '+%Y-%m-%d')<br>"
             echo ""
             echo "### fmz200:<br>"
-            echo -e "$original_links"
+            echo -e "$naisi_original_links"
           } >> Rewrite/JavaScriptCheck.md
 
       - name: Preprocess Zirawell Scripts
         run: |
-          file="Rewrite/ZirawellConfig/AllAdRewrite.conf"
-          if [ -f "$file" ]; then
+          zirawell_file="Rewrite/ZirawellConfig/AllAdRewrite.conf"
+          if [ -f "$zirawell_file" ]; then
             > ZirawellScripts.list
-            grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" | sort -u >> ZirawellScripts.list
-            declare -A downloaded_files
-            while IFS= read -r url; do
-              filename=$(basename "$url")
-              filepath="Rewrite/ZirawellScripts/$filename"
-              if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$url" ]]; then
-                base="${filename%.*}"
-                ext="${filename##*.}"
-                filepath="Rewrite/ZirawellScripts/${base}_2.${ext}"
+            grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$zirawell_file" | sort -u >> ZirawellScripts.list
+            declare -A zirawell_downloaded_files
+            while IFS= read -r zirawell_url; do
+              zirawell_filename=$(basename "$zirawell_url")
+              zirawell_filepath="Rewrite/ZirawellScripts/$zirawell_filename"
+              if [[ -n "${zirawell_downloaded_files[$zirawell_filename]}" && "${zirawell_downloaded_files[$zirawell_filename]}" != "$zirawell_url" ]]; then
+                base="${zirawell_filename%.*}"
+                ext="${zirawell_filename##*.}"
+                zirawell_filepath="Rewrite/ZirawellScripts/${base}_2.${ext}"
               fi
-              curl -fsS -o "$filepath" "$url" || echo "Failed to download $url"
-              downloaded_files[$filename]="$url"
+              curl -fsS -o "$zirawell_filepath" "$zirawell_url" || echo "Failed to download $zirawell_url"
+              zirawell_downloaded_files[$zirawell_filename]="$zirawell_url"
             done < ZirawellScripts.list
           fi
 
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
-          selected_scripts=(
+          zirawell_selected_scripts=(
             "163news.js"
             "360cam.js"
             "51cto.js"
@@ -250,28 +250,28 @@ jobs:
             "xunlei.js"
             "ys7.js"
           )
-          original_links=""
-          for script in "${selected_scripts[@]}"; do
-            src="Rewrite/ZirawellScripts/$script"
-            dst="Rewrite/JavaScript/$script"
-            original_url=$(grep -Eo 'https?://[^ ]+\.(js|json|jq)' ZirawellScripts.list | grep "$script")
-            if [ -f "$src" ]; then
-              cp "$src" "$dst"
-              original_links="${original_links}${original_url}<br>\n"
+          zirawell_original_links=""
+          for zirawell_script in "${zirawell_selected_scripts[@]}"; do
+            zirawell_src="Rewrite/ZirawellScripts/$zirawell_script"
+            zirawell_dst="Rewrite/JavaScript/$zirawell_script"
+            zirawell_original_url=$(grep -Eo 'https?://[^ ]+\.(js|json|jq)' ZirawellScripts.list | grep "$zirawell_script")
+            if [ -f "$zirawell_src" ]; then
+              cp "$zirawell_src" "$zirawell_dst"
+              zirawell_original_links="${zirawell_original_links}${zirawell_original_url}<br>\n"
             fi
           done
-          if [[ -n "$original_links" ]]; then
+          if [[ -n "$zirawell_original_links" ]]; then
             {
               echo "### Zirawell:<br>"
-              echo -e "$original_links"
+              echo -e "$zirawell_original_links"
             } >> Rewrite/JavaScriptCheck.md
           fi
 
       - name: Preprocess Local Scripts
         run: |
-          invalid_list=""
-          valid_list=""
-          files_to_check=(
+          local_invalid_list=""
+          local_valid_list=""
+          local_files_to_check=(
             "Rewrite/AliAMDC.js"
             "Rewrite/Amap.js"
             "Rewrite/Bilibili.conf"
@@ -280,32 +280,32 @@ jobs:
             "Rewrite/ReplaceBody.js"
             "Rewrite/YouTube.conf"
           )
-          declare -A downloaded_files
+          declare -A local_downloaded_files
           > LocalScripts.list
-          for file in "${files_to_check[@]}"; do
-            [ -f "$file" ] && grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" >> LocalScripts.list
+          for local_file in "${local_files_to_check[@]}"; do
+            [ -f "$local_file" ] && grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$local_file" >> LocalScripts.list
           done
           sort -u -o LocalScripts.list LocalScripts.list
-          original_links=""
-          while IFS= read -r local_url; do
-            if echo "$local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+          local_original_links=""
+          while IFS= read -r local_local_url; do
+            if echo "$local_local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
               continue
             fi
-            filename=$(basename "$local_url")
-            filepath="Rewrite/JavaScript/$filename"
-            if [[ -n "${downloaded_files[$filename]}" && "${downloaded_files[$filename]}" != "$local_url" ]]; then
-              basename_noext="${filename%.*}"
-              ext="${filename##*.}"
-              filepath="Rewrite/JavaScript/${basename_noext}2.${ext}"
+            local_filename=$(basename "$local_local_url")
+            local_filepath="Rewrite/JavaScript/$local_filename"
+            if [[ -n "${local_downloaded_files[$local_filename]}" && "${local_downloaded_files[$local_filename]}" != "$local_local_url" ]]; then
+              local_basename_noext="${local_filename%.*}"
+              local_ext="${local_filename##*.}"
+              local_filepath="Rewrite/JavaScript/${local_basename_noext}2.${local_ext}"
             fi
-            curl -fsS -o "$filepath" "$local_url" || echo "Failed to download $local_url"
-            downloaded_files[$filename]="$local_url"
-            original_links+="$local_url<br>\n"
+            curl -fsS -o "$local_filepath" "$local_local_url" || echo "Failed to download $local_local_url"
+            local_downloaded_files[$local_filename]="$local_local_url"
+            local_original_links+="$local_local_url<br>\n"
           done < LocalScripts.list
-          if [[ -n "$original_links" ]]; then
+          if [[ -n "$local_original_links" ]]; then
             {
               echo "### Local:<br>"
-              echo -e "$original_links"
+              echo -e "$local_original_links"
             } >> Rewrite/JavaScriptCheck.md
           fi
 
