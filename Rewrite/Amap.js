@@ -210,13 +210,13 @@ if (url.includes("/aos/perception/publicTravel/beforeNavi")) {
     delete obj.data.tipData;
   }
   // 成就勋章
-  if (obj?.data?.memberInfo) {
-    delete obj.data.memberInfo;
-  }
-  // 顶部足迹、贡献卡片
-  // if (obj?.data?.topMixedCard) {
-  //   delete obj.data.topMixedCard;
+  // if (obj?.data?.memberInfo) {
+  //   delete obj.data.memberInfo;
   // }
+  // 顶部足迹、贡献卡片
+  if (obj?.data?.topMixedCard) {
+    delete obj.data.topMixedCard;
+  }
 } else if (url.includes("/shield/frogserver/aocs/updatable/")) {
   // 整体图层
   const items = [
