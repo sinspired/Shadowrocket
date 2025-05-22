@@ -2,7 +2,7 @@
 # 高德地图
 # 高德地图应用净化；
 # 由向晚重写维护；
-# 更新时间: 20250521
+# 更新时间: 20250522
 # 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
 
 [rewrite_local]
@@ -18,6 +18,7 @@
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaas url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/poi\/detail url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/new_hotword url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 ^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/main-page url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
@@ -134,6 +135,38 @@ if ($request.url.includes("search/nearbyrec_smart")) {
                 modified = true;
             }
         });
+    }
+} else if ($request.url.includes("/shield/search/poi/detail")) {
+    const removeModules = [
+        "CouponBanner", "adv_compliance_info", "adv_gift", "bigListBizRec", "bottomDescription", "brand_shop_bar",
+        "checkIn", "check_in", "cityCardFeed", "city_discount", "claim", "co_branded_card", "collector_guide",
+        "common_coupon_bar", "common_coupon_card", "comprehensiveEditEntrance", "contributor", "cpt_service_shop",
+        "dayTripList", "discount_commodity", "divergentRecommendModule", "everyOneToSee", "feedback",
+        "first_surround_estate_tab", "horizontalGoodsShelf", "hotPlay", "hot_new_house_estate", "hot_shop",
+        "hotelCoupon", "hotelList", "hotelMustRead", "houseList", "houseOfficeBrandIntroduction", "houseOfficeInfo",
+        "houseOfficeNotice", "houseOfficeService", "house_apart_info", "house_buying_agent", "house_coupon",
+        "house_cp_clues", "house_cpt_coupon", "house_cpt_grab", "house_price", "house_rent_sale_agency",
+        "image_banner", "kaMarketingCampaign", "kaProductMixServiceShelf", "ka_not_enter", "legSameIndustryRecEntrance",
+        "legal_document", "listBizRec_1", "listBizRec_2", "matrix_banner", "merchantSettlement", "membership",
+        "mini_hook_shelf", "movie_info", "multi_page_anchor", "nearbyGoodCar", "nearbyRecommendModule",
+        "nearby_house", "nearby_new_house_estate", "nearby_office_estate", "nearby_old_sell_estate", "nearby_play_rec",
+        "newGuest", "newRelatedRecommends", "new_operation_banner", "newsellhouse", "officerenthouse",
+        "officesellhouse", "official_account", "oldsellhouse", "operation_banner", "operator_card", "packageShelf",
+        "parentBizRec", "parentPoiRecEntrance", "platformCustomerCommonModule", "platformCustomerComplianceInfo",
+        "poiDetailWaterFeed", "poiDetailWaterFeedTitle", "poster_banner", "portal_entrance", "quickLink",
+        "relatedRecommends", "renthouse", "rentsaleagencyv2", "rentsaleagencyv3", "rentsalehouse",
+        "residentialOwners", "reviews", "sameIndustryRecommendModule", "sameIndustry2RecommendModule",
+        "scenic_coupon", "scenic_filter", "scenic_lifeservices", "scenic_mustplay", "scenic_play_guide",
+        "scenic_recommend", "scenic_voice", "searchPlaMap", "second_surround_estate_tab", "service_shop",
+        "smallListBizRec", "smallOrListBizRec", "surroundHouseTab", "surroundOldSellHouse", "surroundRentHouse",
+        "surround_facility", "surround_facility_new", "surround_house_tab", "surround_oldsellhouse",
+        "surround_renthouse", "surround_rentoffice", "surround_selloffice", "thirdparty_info", "travelGuideRec",
+        "uploadBar", "upload_bar", "verification", "waistRecEntrance", "waterFallFeed", "waterFallFeedTitle"
+    ];
+    if (Array.isArray(obj.data?.modules)) {
+        const originalLength = obj.data.modules.length;
+        obj.data.modules = obj.data.modules.filter(m => !removeModules.includes(m.name));
+        if (obj.data.modules.length !== originalLength) modified = true;
     }
 }
 
