@@ -94,85 +94,25 @@ jobs:
 
       - name: Copy selected NaisiScripts to JavaScript
         run: |
-          naisi_selected_scripts=(
-            "12306.js"
-            "51card.js"
-            "51job.js"
-            "555Ad.js"
-            "BahamutAnimeAds.js"
-            "Flightradar24.js"
-            "PupuSplashAds.js"
-            "QuDa.js"
-            "Smzdm.js"
-            "Umetrip_remove_ads.js"
-            "UnblockURLinWeChat.js"
-            "adrive.js"
-            "adsense.js"
-            "airchina.js"
-            "baidumap.js"
-            "bilibiliManga.js"
-            "blued.js"
-            "bohe_ads.js"
-            "cainiao.js"
-            "caixinAd.js"
-            "cmschina.js"
-            "cnftp.js"
-            "coolapk.js"
-            "ddxq.js"
-            "dianping.js"
-            "dianyinglieshou.js"
-            "dict-youdao-ad.js"
-            "didiAds.js"
-            "fenbi.js"
-            "fly.js"
-            "flyert.js"
-            "freshippo.js"
-            "hengdian.json"
-            "huifutianxia_ads.js"
-            "index.js"
-            "ithome.js"
-            "jingdong.js"
-            "jingxiAd.js"
-            "keep.js"
-            "kuwo.js"
-            "ltsst-ad.js"
-            "mafengwo.js"
-            "maimai_ads.js"
-            "mdb.js"
-            "meiyou_ads.js"
-            "myBlockAds.js"
-            "picc_ads.js"
-            "qidian.js"
-            "qmai.js"
-            "qq-news.js"
-            "reddit.js"
-            "reject-dict.json"
-            "req_replace_body.js"
-            "rrtv_json.js"
-            "smzdm_ads.js"
-            "soda.js"
-            "soul_ads.js"
-            "tieba-json.js"
-            "tieba-proto.js"
-            "vgtime.js"
-            "wechatApplet.js"
-            "weibo_ads.js"
-            "weibo_launch.js"
-            "weibo_main.js"
-            "weibo_main_2.js"
-            "weibo_vip.js"
-            "wnbz.js"
-            "wyres.js"
-            "xianyu_ads.js"
-            "xiaotucc.js"
-            "xjsp.js"
-            "xmApp.js"
-            "xmly_json.js"
-            "yx.js"
-            "zhangshanggongjiao.js"
-            "zhihu.js"
-            "zhuanzhuan.js"
-          )
+          conf_file="Rewrite/JavaScriptBuild.conf"
+          naisi_selected_scripts=()
+          in_section=0
+          while IFS= read -r line; do
+            line="${line%%#*}"
+            line="${line%%;*}"
+            line="$(echo -e "${line}" | tr -d '[:space:]')"
+            if [[ "$line" == "[NaisiScripts]" ]]; then
+              in_section=1
+              continue
+            fi
+            if [[ "$line" == \[*] ]]; then
+              in_section=0
+            fi
+            if [[ $in_section -eq 1 && -n "$line" ]]; then
+              naisi_selected_scripts+=("$line")
+            fi
+          done < "$conf_file"
+
           naisi_original_links=""
           for naisi_script in "${naisi_selected_scripts[@]}"; do
             naisi_src="Rewrite/NaisiScripts/$naisi_script"
@@ -221,36 +161,24 @@ jobs:
 
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
-          zirawell_selected_scripts=(
-            "163news.js"
-            "360cam.js"
-            "51cto.js"
-            "babytree.js"
-            "baiduPan.js"
-            "ccblife.js"
-            "dubbingShow.js"
-            "duitang.js"
-            "dushu365.js"
-            "ecny.js"
-            "gaoding.js"
-            "guiderank.js"
-            "haier.js"
-            "kuaikanComic.js"
-            "meituan.js"
-            "mishop.js"
-            "pdd.js"
-            "ppx.js"
-            "quark.js"
-            "sdb.js"
-            "spotify.js"
-            "sqkb.js"
-            "sougou.js"
-            "tiebaJson.js"
-            "tuhu.js"
-            "xiaoheihe.js"
-            "xunlei.js"
-            "ys7.js"
-          )
+          conf_file="Rewrite/JavaScriptBuild.conf"
+          zirawell_selected_scripts=()
+          in_section=0
+          while IFS= read -r line; do
+            line="${line%%#*}"
+            line="${line%%;*}"
+            line="$(echo -e "${line}" | tr -d '[:space:]')"
+            if [[ "$line" == "[ZirawellScripts]" ]]; then
+              in_section=1
+              continue
+            fi
+            if [[ "$line" == \[*] ]]; then
+              in_section=0
+            fi
+            if [[ $in_section -eq 1 && -n "$line" ]]; then
+              zirawell_selected_scripts+=("$line")
+            fi
+          done < "$conf_file"
           zirawell_original_links=""
           for zirawell_script in "${zirawell_selected_scripts[@]}"; do
             zirawell_src="Rewrite/ZirawellScripts/$zirawell_script"
@@ -270,17 +198,23 @@ jobs:
 
       - name: Preprocess Local Scripts
         run: |
-          local_invalid_list=""
-          local_valid_list=""
-          local_files_to_check=(
-            "Rewrite/AliAMDC.js"
-            "Rewrite/Amap.js"
-            "Rewrite/Bilibili.conf"
-            "Rewrite/FAWVW.js"
-            "Rewrite/Rednote.conf"
-            "Rewrite/ReplaceBody.js"
-            "Rewrite/YouTube.conf"
-          )
+          local_files_to_check=()
+          in_section=0
+          while IFS= read -r line; do
+            line="${line%%#*}"
+            line="${line%%;*}"
+            line="$(echo -e "${line}" | tr -d '[:space:]')"
+            if [[ "$line" == "[LocalScripts]" ]]; then
+              in_section=1
+              continue
+            fi
+            if [[ "$line" == \[*] ]]; then
+              in_section=0
+            fi
+            if [[ $in_section -eq 1 && -n "$line" ]]; then
+              local_files_to_check+=("Rewrite/$line")
+            fi
+          done < Rewrite/JavaScriptBuild.conf
           declare -A local_downloaded_files
           > LocalScripts.list
           for local_file in "${local_files_to_check[@]}"; do
@@ -288,20 +222,20 @@ jobs:
           done
           sort -u -o LocalScripts.list LocalScripts.list
           local_original_links=""
-          while IFS= read -r local_local_url; do
-            if echo "$local_local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+          while IFS= read -r local_url; do
+            if echo "$local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
               continue
             fi
-            local_filename=$(basename "$local_local_url")
+            local_filename=$(basename "$local_url")
             local_filepath="Rewrite/JavaScript/$local_filename"
-            if [[ -n "${local_downloaded_files[$local_filename]}" && "${local_downloaded_files[$local_filename]}" != "$local_local_url" ]]; then
-              local_basename_noext="${local_filename%.*}"
-              local_ext="${local_filename##*.}"
-              local_filepath="Rewrite/JavaScript/${local_basename_noext}2.${local_ext}"
+            if [[ -n "${local_downloaded_files[$local_filename]}" && "${local_downloaded_files[$local_filename]}" != "$local_url" ]]; then
+              base_noext="${local_filename%.*}"
+              ext="${local_filename##*.}"
+              local_filepath="Rewrite/JavaScript/${base_noext}2.${ext}"
             fi
-            curl -fsS -o "$local_filepath" "$local_local_url" || echo "Failed to download $local_local_url"
-            local_downloaded_files[$local_filename]="$local_local_url"
-            local_original_links+="$local_local_url<br>\n"
+            curl -fsS -o "$local_filepath" "$local_url" || echo "Failed to download $local_url"
+            local_downloaded_files[$local_filename]="$local_url"
+            local_original_links+="$local_url<br>\n"
           done < LocalScripts.list
           if [[ -n "$local_original_links" ]]; then
             {
