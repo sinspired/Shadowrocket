@@ -94,6 +94,7 @@ jobs:
       - name: Copy selected NaisiScripts to JavaScript
         run: |
           build_conf_file="Rewrite/JavaScriptBuild.conf"
+          sed -i -e '$a\' "$build_conf_file"
           naisi_selected_scripts=()
           in_section=0
           while IFS= read -r line; do
@@ -164,6 +165,7 @@ jobs:
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
           build_conf_file="Rewrite/JavaScriptBuild.conf"
+          sed -i -e '$a\' "$build_conf_file"
           zirawell_selected_scripts=()
           in_section=0
           while IFS= read -r line; do
@@ -201,6 +203,7 @@ jobs:
       - name: Preprocess Local Scripts
         run: |
           build_conf_file="Rewrite/JavaScriptBuild.conf"
+          sed -i -e '$a\' "$build_conf_file"
           local_files_to_check=()
           in_section=0
           while IFS= read -r line; do
@@ -246,6 +249,75 @@ jobs:
               echo -e "$local_original_links"
             } >> Rewrite/JavaScriptCheck.md
           fi
+
+      - name: Clean up unused JS files
+        run: |
+          build_conf_file="Rewrite/JavaScriptBuild.conf"
+          sed -i -e '$a\' "$build_conf_file"
+          keep_files=()
+          in_section=""
+          while IFS= read -r line; do
+            line="${line%%#*}"
+            line="${line%%;*}"
+            line="$(echo -e "${line}" | tr -d '[:space:]')"
+            if [[ "$line" == "[NaisiScripts]" ]]; then
+              in_section="NaisiScripts"
+              continue
+            elif [[ "$line" == "[ZirawellScripts]" ]]; then
+              in_section="ZirawellScripts"
+              continue
+            elif [[ "$line" =~ ^\[.*\]$ ]]; then
+              in_section=""
+              continue
+            fi
+            if [[ -n "$line" && ( "$in_section" == "NaisiScripts" || "$in_section" == "ZirawellScripts" ) ]]; then
+              keep_files+=("$line")
+            fi
+          done < "$build_conf_file"
+          in_section=""
+          local_files=()
+          while IFS= read -r line; do
+            line="${line%%#*}"
+            line="${line%%;*}"
+            line="$(echo -e "${line}" | tr -d '[:space:]')"
+            if [[ "$line" == "[LocalScripts]" ]]; then
+              in_section="LocalScripts"
+              continue
+            elif [[ "$line" =~ ^\[.*\]$ ]]; then
+              in_section=""
+              continue
+            fi
+            if [[ -n "$line" && "$in_section" == "LocalScripts" ]]; then
+              local_files+=("Rewrite/$line")
+            fi
+          done < "$build_conf_file"
+          local_js_files=()
+          for file in "${local_files[@]}"; do
+            if [[ -f "$file" ]]; then
+              while IFS= read -r url; do
+                if echo "$url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+                  continue
+                fi
+                filename=$(basename "$url")
+                local_js_files+=("$filename")
+              done < <(grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" | sort -u)
+            fi
+          done
+          declare -A keep_map
+          for f in "${keep_files[@]}"; do
+            keep_map["$f"]=1
+          done
+          for f in "${local_js_files[@]}"; do
+            keep_map["$f"]=1
+          done
+          for f in Rewrite/JavaScript/*; do
+            [ -e "$f" ] || continue
+            filename=$(basename "$f")
+            if [[ -z "${keep_map[$filename]}" ]]; then
+              echo "Deleting unused JS file: $filename"
+              rm -f "$f"
+            fi
+          done
 
       - name: Commit & Copy RewriteFiles
         uses: EndBug/add-and-commit@v9
