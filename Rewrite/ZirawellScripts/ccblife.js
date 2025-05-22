@@ -16,6 +16,7 @@ if (url.includes("A3341AB04")) {
     delete obj.data.ICON_SKIN_INFO;
   }
 } else if (url.includes("A3341AB03")) {
+  // 我的页-悬浮广告
   if (obj?.data?.TAG_AD_INFO) {
     delete obj.data.TAG_AD_INFO;
   }
