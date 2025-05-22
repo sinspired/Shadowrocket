@@ -1,6 +1,6 @@
-### Update:2025-05-22<br>
+### Update: 2025-05-22<br>
 
-### fmz200:<br>
+### fmz200: <br>
 https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/51card.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51job.js<br>
@@ -64,8 +64,7 @@ https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js
-https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
+https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
 https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
 https://github.com/fmz200/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js<br>
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
@@ -80,7 +79,7 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggon
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js<br>
 
-### Zirawell:<br>
+### zirawell: <br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/163news.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/360cam.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/51cto.js<br>
@@ -110,7 +109,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xiaoh
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xunlei.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ys7.js<br>
 
-### Local:<br>
+### local: <br>
 https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/AliAMDC.js<br>
 https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js<br>
