@@ -93,7 +93,7 @@ jobs:
 
       - name: Copy selected NaisiScripts to JavaScript
         run: |
-          conf_file="Rewrite/JavaScriptBuild.conf"
+          build_conf_file="Rewrite/JavaScriptBuild.conf"
           naisi_selected_scripts=()
           in_section=0
           while IFS= read -r line; do
@@ -110,7 +110,7 @@ jobs:
             if [[ $in_section -eq 1 && -n "$line" ]]; then
               naisi_selected_scripts+=("$line")
             fi
-          done < "$conf_file"
+          done < "$build_conf_file"
 
           naisi_original_links=""
           for naisi_script in "${naisi_selected_scripts[@]}"; do
@@ -160,7 +160,7 @@ jobs:
 
       - name: Copy selected ZirawellScripts to JavaScript
         run: |
-          conf_file="Rewrite/JavaScriptBuild.conf"
+          build_conf_file="Rewrite/JavaScriptBuild.conf"
           zirawell_selected_scripts=()
           in_section=0
           while IFS= read -r line; do
@@ -177,7 +177,7 @@ jobs:
             if [[ $in_section -eq 1 && -n "$line" ]]; then
               zirawell_selected_scripts+=("$line")
             fi
-          done < "$conf_file"
+          done < "$build_conf_file"
           zirawell_original_links=""
           for zirawell_script in "${zirawell_selected_scripts[@]}"; do
             zirawell_src="Rewrite/ZirawellScripts/$zirawell_script"
@@ -197,6 +197,7 @@ jobs:
 
       - name: Preprocess Local Scripts
         run: |
+          build_conf_file="Rewrite/JavaScriptBuild.conf"
           local_files_to_check=()
           in_section=0
           while IFS= read -r line; do
@@ -213,7 +214,7 @@ jobs:
             if [[ $in_section -eq 1 && -n "$line" ]]; then
               local_files_to_check+=("Rewrite/$line")
             fi
-          done < Rewrite/JavaScriptBuild.conf
+          done < "$build_conf_file"
           declare -A local_downloaded_files
           > LocalScripts.list
           for local_file in "${local_files_to_check[@]}"; do
