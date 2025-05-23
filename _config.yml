@@ -1,3 +1,4 @@
 # _config.yml
 
-remote_theme: "jekyll/minima@c6e74bb"
+remote_theme: jekyll/minima
+
