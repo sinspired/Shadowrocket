@@ -1,7 +1,7 @@
 import os
-import requests
 import re
 import datetime
+import requests
 
 def download_content(url):
     if os.path.isfile(url):
