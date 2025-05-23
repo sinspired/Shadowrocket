@@ -218,7 +218,7 @@ jobs:
               in_section=0
             fi
             if [[ $in_section -eq 1 && -n "$line" ]]; then
-              local_files_to_check+=("Rewrite/$line")
+              local_files_to_check+=("Rewrite/XiangwanConfig/$line")
             fi
           done < "$build_conf_file"
           declare -A local_downloaded_files
@@ -288,7 +288,7 @@ jobs:
               continue
             fi
             if [[ -n "$line" && "$in_section" == "LocalScripts" ]]; then
-              local_files+=("Rewrite/$line")
+              local_files+=("Rewrite/XiangwanConfig/$line")
             fi
           done < "$build_conf_file"
           local_js_files=()
