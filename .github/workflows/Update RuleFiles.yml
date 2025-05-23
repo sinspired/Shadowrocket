@@ -9,7 +9,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  copy-links:
+  Update-RuleFiles:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
