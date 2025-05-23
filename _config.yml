@@ -3,4 +3,5 @@
 remote_theme: "jekyll/minima@1e8a445"
 
 minima:
-  hide_site_feed_link: false
+  hide_site_feed_link: true
+  
