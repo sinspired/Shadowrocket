@@ -54,7 +54,7 @@ jobs:
 
     - name: Clean up rule files
       run: |
-        for file in Rules/*.list; do
+        find Rules -type f -name "*.list" | while read -r file; do
           grep -v '^# AUTHOR' "$file" | grep -v '^# REPO' > cleaned_file.tmp
           mv cleaned_file.tmp "$file"
         done
