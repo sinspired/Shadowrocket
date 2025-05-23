@@ -41,7 +41,7 @@ jobs:
         run: |
           while IFS='|' read -r download_filepath download_url; do
             echo "Downloading: $download_url -> $download_filepath"
-            curl -fsS -o "$download_filepath" "$download_url" || true
+            curl -fsS -o "$download_filepath" "$download_url" || (echo "Retrying..." && curl -fsS -o "$download_filepath" "$download_url") || true
           done < download_file_links.list
 
       - name: Clear previous JavaScriptCheck.md contents
@@ -86,7 +86,7 @@ jobs:
               naisi_filepath="Rewrite/NaisiScripts/${basename_noext}_2.${ext}"
               echo "$naisi_filename ${basename_noext}_2.${ext} ${naisi_downloaded_files[$naisi_filename]} $naisi_raw_url" >> NaisiScriptsMap.list
             fi
-            curl -fsS -o "$naisi_filepath" "$naisi_raw_url" || echo "Failed to download $naisi_raw_url"
+            curl -fsS -o "$naisi_filepath" "$naisi_raw_url" || (echo "Retrying..." && curl -fsS -o "$naisi_filepath" "$naisi_raw_url") || echo "Download failed: $naisi_raw_url"
             naisi_downloaded_urls[$naisi_raw_url]=1
             naisi_downloaded_files[$naisi_filename]="$naisi_raw_url"
           done < NaisiScripts.list
@@ -157,7 +157,7 @@ jobs:
                 ext="${zirawell_filename##*.}"
                 zirawell_filepath="Rewrite/ZirawellScripts/${base}_2.${ext}"
               fi
-              curl -fsS -o "$zirawell_filepath" "$zirawell_url" || echo "Failed to download $zirawell_url"
+              curl -fsS -o "$zirawell_filepath" "$zirawell_url" || (echo "Retrying..." && curl -fsS -o "$zirawell_filepath" "$zirawell_url") || echo "Download failed: $zirawell_url"
               zirawell_downloaded_files[$zirawell_filename]="$zirawell_url"
             done < ZirawellScripts.list
           fi
@@ -239,7 +239,7 @@ jobs:
               ext="${local_filename##*.}"
               local_filepath="Rewrite/JavaScript/${base_noext}2.${ext}"
             fi
-            curl -fsS -o "$local_filepath" "$local_url" || echo "Failed to download $local_url"
+            curl -fsS -o "$local_filepath" "$local_url" || (echo "Retrying..." && curl -fsS -o "$local_filepath" "$local_url") || echo "Download failed: $local_url"
             local_downloaded_files[$local_filename]="$local_url"
             local_original_links+="$local_url<br>\n"
           done < LocalScripts.list
