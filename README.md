@@ -27,11 +27,11 @@
 
 #### 如何安装<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
-> 如无法加载配置，请将全局路由切换至[代理]模式，或自行检查网络；<br>
+> 如无法加载配置，请将全局路由切换至**代理**模式，或自行检查网络；<br>
 
 #### 修改分流<br>
 > **仅适用于包含代理分组的配置；**<br>
-> 打开Shadowrocket首页，下拉进入`代理分组`，选择你想要修改的代理分组，选择策略即可；<br>
+> 打开Shadowrocket首页，下拉进入**代理分组**，选择你想要修改的代理分组，选择对应策略即可；<br>
 
 ---
 
@@ -41,14 +41,14 @@
 > 代理分组内的策略自动分流，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
 
 #### 使用必看<br>
-> 你所使用的节点，**尽量包含`港美新`这三项**；<br>
+> 你所使用的节点，尽量包含**港美新**这三项；<br>
 > 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用[完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)或[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)；<br>
 > 基础配置默认规则如下：<br>
 > 国内应用直接连接；<br>
-> Telegram使用`新加坡节点`，Google，ChatGPT/Copilot/Gemini，使用`美国节点`；<br>
-> 其他规则及未匹配到的规则使用`香港节点`；<br>
-> 为了保证完全接管流量，本配置**默认使用`香港节点`兜底**，**首页的节点选择将被分组替代，完全失效**；<br>
-> **此配置是最适合大众的配置，添加后无需调整，如节点包含`港美新`，建议使用此配置！**<br>
+> Telegram使用**新加坡节点**，Google，ChatGPT/Copilot/Gemini，使用**美国节点**；<br>
+> 其他规则及未匹配到的规则使用**香港节点**；<br>
+> 为了保证完全接管流量，本配置默认使用**香港节点**兜底，首页的节点选择将被分组替代，完全失效；<br>
+> 此配置是最适合大众的配置，添加后无需调整，如节点包含**港美新**，建议首选此配置！<br>
 
 #### 配置安装<br>
 [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/Rules.conf "一键安装：基础配置")<br>
@@ -57,8 +57,8 @@
 
 ### [完整配置介绍](#完整配置介绍)<br>
 #### 配置功能介绍<br>
-> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：`港台日新美`，**默认使用`首页节点`进行代理**，可更自由的配置代理分组，其余配置完全相同；<br>
-> **如需要更自由的代理分组及自动分流，建议使用此配置！**<br>
+> [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：**港台日新美**，默认使用**首页节点**进行代理，可更自由的配置代理分组，其余配置完全相同；<br>
+> 如需要**更自由的代理分组**，建议使用此配置！<br>
 
 #### 配置安装<br>
 [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesFull.conf "一键安装：完整配置")<br>
@@ -68,7 +68,7 @@
 ### [精简配置介绍](#精简配置介绍)<br>
 #### 配置功能介绍<br>
 > [精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
-> **如不需要代理分组及自动分流，强烈建议使用此配置！**<br>
+> 如**不需要代理分组**，建议使用此配置！<br>
 
 #### 配置安装<br>
 [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesLite.conf "一键安装：精简配置")<br>
@@ -78,7 +78,7 @@
 ### [回国配置介绍](#回国配置介绍)<br>
 #### 配置功能介绍<br>
 > [回国配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesBackCN.conf)基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
-> **此配置需搭配`回国机场`使用，不适合国内用户使用！**<br>
+> 此配置需搭配**回国机场**使用，**不适合国内用户使用！**<br>
 
 #### 配置安装<br>
 [![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesBackCN.conf "一键安装：回国分流配置")<br>
@@ -102,10 +102,10 @@
 
 ### [推荐设置](#推荐设置)<br>
 #### MitM&证书模块<br>
-> 如需使用`融合模块`来净化应用，则**必须开启MitM**，否则模块将不能正常工作；<br>
-> **建议添加证书模块**，避免因配置变化导致证书失效；<br>
+> 如需使用[融合模块](#融合模块介绍)来净化应用，则**必须开启MitM**，否则模块将不能正常工作；<br>
+> 建议添加**证书模块**，避免因配置变化导致证书失效；<br>
 > 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
-> 证书模块添加成功后，“HTTPS解密”开关将不再重要，默认开启（模块的优先级高于配置）；<br>
+> 证书模块启用后，“HTTPS解密”功能默认强制开启，开关设置将不再生效；<br>
 
 > 证书模块制作办法：<br>
 > 配置 > 点击配置文件的 ⓘ 图标 > HTTPS 解密 > 证书 > 生成新的 CA 证书 > 安装证书；<br>
@@ -127,27 +127,27 @@
 > ca-p12 = 
 > ```
 
-> 按说明确认`证书密码`和填写`证书内容`，保存即可；<br>
+> 按说明确认**证书密码**和填写**证书内容**，保存即可；<br>
 
 #### 软件配置<br>
 > 首页-全局路由：
-选择`配置`；<br>
+选择**配置**；<br>
 > 设置-按需求连接：
-开启`始终开启`；<br>
+开启**始终开启**；<br>
 > 设置-代理：
-代理类型选择`None`，代理地址选择`198.18.0.3`；<br>
+代理类型选择**None**，代理地址选择**198.18.0.3**；<br>
 > 设置-配置：
-开启`自动后台更新`，间隔选择`7`；**（如有自定义配置，请勿开启！）**<br>
+开启**自动后台更新**，间隔选择**7**；**（如有自定义配置，请勿开启！）**<br>
 > 设置-订阅：
-开启`自动后台更新`，间隔选择`24`；<br>
+开启**自动后台更新**，间隔选择**24**；<br>
 > 设置-GeoLite2数据库：
-开启`自动后台更新`，间隔选择`7`；<br>
+开启**自动后台更新**，间隔选择**7**；<br>
 > 设置-GeoLite2数据库：
-拷贝下载链接：[Country](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) & [ASN](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb)，粘贴至对应的`URL`位置，点击`更新`；<br>
+拷贝下载链接：[Country](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-only-cn-private.mmdb) & [ASN](https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country-asn.mmdb)，粘贴至对应的**URL**位置，点击**更新**；<br>
 > 设置-温和策略机制：
-选择`开启`；<br>
+选择**开启**；<br>
 > 设置-排除路由0.0.0.0/31：
-选择`关闭`；<br>
+选择**关闭**；<br>
 > 更多使用说明，可参阅：[Shadowrocket使用手册](https://github.com/LOWERTOP/Shadowrocket)
 
 ---
