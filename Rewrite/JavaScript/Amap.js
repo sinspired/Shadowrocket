@@ -3,7 +3,7 @@
 # 高德地图应用净化；
 # 由向晚重写维护；
 # 更新时间: 20250522
-# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/Amap.js
+# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiangwanConfig/Amap.js
 
 [rewrite_local]
 ^https?:\/\/.*\.amap\.com\/ws\/banner\/lists\/\? url reject-dict
