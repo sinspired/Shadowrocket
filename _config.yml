@@ -1,9 +1,3 @@
 # _config.yml
 
-plugins:
-  - jekyll-remote-theme
-
-remote_theme: "jekyll/minima@v2.5.2"
-
-minima:
-  hide_site_feed_link: true
+remote_theme: "jekyll/minima@c6e74bb"
