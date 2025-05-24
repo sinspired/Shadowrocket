@@ -120,7 +120,7 @@
 > [MITM]
 > enable = true
 >
-> # 确认"ca-passphrase="后面填写的「已安装证书的配置文件」的证书密码是否正确，Shadowrocket是默认密码；
+> # 确认"ca-passphrase="后面填写的证书密码是否正确，Shadowrocket是默认密码；
 > ca-passphrase = Shadowrocket
 >
 > # 须在"ca-p12="后面粘贴证书内容；
