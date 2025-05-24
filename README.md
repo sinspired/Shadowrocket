@@ -19,9 +19,9 @@
 > 所有配置默认使用**TUN模式**接管全部流量；<br>
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询请求；<br>
 > 提供有效的**劫持保护**与**隐私保护策略**；<br>
-> **Apple/Microsoft/Google**单独分流；<br>
-> ChatGPT/Copilot/Gemini等**AI工具**单独分流；<br>
-> **WeChat/Telegram**单独分流，降低因策略变化导致封号的风险；<br>
+> Apple/Microsoft/Google：**主要服务商**已单独分流；<br>
+> ChatGPT/Copilot/Gemini等：**AI工具**已单独分流；<br>
+> WeChat/Telegram：**即时通讯工具**类已单独分流，降低因策略变化导致封号的风险；<br>
 > **国内地址**与**国际地址**，**国内媒体**与**国际媒体**，分别进行分流处理；<br>
 > 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步；<br>
 
