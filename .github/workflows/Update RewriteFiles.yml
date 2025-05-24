@@ -32,7 +32,6 @@ jobs:
         run: |
           echo "Rewrite/NaisiConfig/QuanX.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/rewrite.snippet" > download_file_links.list
           echo "Rewrite/NaisiConfig/Loon.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/Loon/plugin/blockAds.plugin" >> download_file_links.list
-          echo "Rewrite/NaisiConfig/Weibo.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/weibo.snippet" >> download_file_links.list
           echo "Rewrite/NaisiConfig/Filter.conf|https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/filter/filter.list" >> download_file_links.list
           echo "Rewrite/ZirawellConfig/AllAdRewrite.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/rewrite/allAdRewrite.conf" >> download_file_links.list
           echo "Rewrite/ZirawellConfig/AllAdBlock.conf|https://raw.githubusercontent.com/zirawell/R-Store/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list" >> download_file_links.list
@@ -53,7 +52,6 @@ jobs:
           naisi_files_to_check=(
             "Rewrite/NaisiConfig/QuanX.conf"
             "Rewrite/NaisiConfig/Loon.conf"
-            "Rewrite/NaisiConfig/Weibo.conf"
           )
           declare -A naisi_downloaded_urls
           declare -A naisi_downloaded_files
