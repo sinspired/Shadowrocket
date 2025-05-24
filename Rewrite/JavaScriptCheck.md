@@ -36,7 +36,6 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/folid
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js<br>
-https://raw.githubusercontent.com/Keywos/rule/master/script/weibo_us/js/index.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingxiAd.js<br>
@@ -53,7 +52,6 @@ https://raw.githubusercontent.com/app2smile/rules/master/js/qidian.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/qq-news.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/reddit.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/reject-dict.json<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/template/req_replace_body.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/rrtv_json.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/smzdm/smzdm_ads.js<br>
@@ -63,11 +61,6 @@ https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_ads.js<br>
-https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_launch.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/weibo/weibo_main.js<br>
-https://raw.githubusercontent.com/zmqcherish/proxy-script/main/weibo_main.js<br>
-https://github.com/fmz200/wool_scripts/raw/main/Scripts/weibo/weibo_vip.js<br>
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
 https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js<br>
 https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js<br>
@@ -105,6 +98,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/sqkb.
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/sougou.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tiebaJson.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/tuhu.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/weibo.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xiaoheihe.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xunlei.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ys7.js<br>
