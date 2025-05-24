@@ -2,15 +2,15 @@
 ---
 
 ## [仓库简介](#仓库简介)<br>
-> **本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；**<br>
-> **如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！**<br>
+> 本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；<br>
+> 如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！<br>
 
 ---
 
 ### [重要声明](#重要声明)<br>
-> **禁止在中国大陆的任何平台传播此项目！**<br>
-> **禁止将本仓库中的任何内容用于违法活动或用于盈利目的！**<br>
-> **本项目仅供学习交流及测试，使用本项目中的内容所造成的一切后果，均由使用者承担！**<br>
+> 禁止在中国大陆的任何平台传播此项目！<br>
+> 禁止将本仓库中的任何内容用于违法活动或用于盈利目的！<br>
+> 本项目仅供学习交流及测试，使用本项目中的内容所造成的一切后果，均由使用者承担！<br>
 
 ---
 
@@ -20,17 +20,17 @@
 > 使用加密的**DoH**进行DNS解析，并劫持未加密的查询请求；<br>
 > 提供有效的**劫持保护**与**隐私保护策略**；<br>
 > **Apple/Microsoft/Google**单独分流；<br>
-> **ChatGPT/Copilot/Gemini**等AI工具单独分流；<br>
+> ChatGPT/Copilot/Gemini等**AI工具**单独分流；<br>
 > **WeChat/Telegram**单独分流，降低因策略变化导致封号的风险；<br>
 > **国内地址**与**国际地址**，**国内媒体**与**国际媒体**，分别进行分流处理；<br>
-> **本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步**；<br>
+> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步；<br>
 
 #### 如何安装<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
 > 如无法加载配置，请将**全局路由**切换至**代理**模式，或自行检查网络；<br>
 
 #### 修改分流<br>
-> **仅适用于包含代理分组的配置；**<br>
+> 仅适用于包含**代理分组**的配置；<br>
 > 打开Shadowrocket首页，下拉进入**代理分组**，选择你想要修改的代理分组，选择对应的**策略**即可；<br>
 
 ---
@@ -96,7 +96,7 @@
 > 使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule)，一键跳转安装；<br>
 > 使用须知：使用融合模块，**必须开启MitM**，教程参考下方的[推荐设置](#推荐设置)；<br>
 > 特别说明：使用融合模块，**默认禁用QUIC协议**，请自行评估影响；<br>
-> **特别警告：融合模块不做“解锁”功能，请支持开发者！如本项目侵犯了您的利益，请提交Issues进行移除，谢谢！**<br>
+> 特别警告：融合模块**已移除“解锁类”功能**，请支持开发者！如本项目侵犯了您的利益，请提交Issues进行移除，谢谢！<br>
 
 ---
 
@@ -108,12 +108,12 @@
 > 证书模块启用后，“HTTPS解密”功能默认**强制开启**，开关设置将不再生效；<br>
 
 > 证书模块制作办法：<br>
-> 配置 > 点击配置文件的 ⓘ 图标 > HTTPS 解密 > 证书 > 生成新的 CA 证书 > 安装证书；<br>
-> 同一iCloud的多设备用户，另一台设备请点击证书 > 后面的 ⓘ 图标，选择**粘贴**，请勿重新生成新的证书，否则上一证书将会失效；<br>
-> 系统设置 > 已下载描述文件 > 安装；<br>
-> 系统设置 > 通用 > 关于本机 > 证书信任设置 > 启用此证书的根证书完全信任；<br>
-> 打开Shadowrocket，点击「已安装证书的配置文件」后面的 ⓘ 图标 > HTTPS 解密 > 证书后面的 ⓘ 图标 > 复制；<br>
-> 配置 > 模块 > 新建模块，粘贴并自行修改以下内容：<br>
+> **配置** > 点击**配置文件**的 **ⓘ图标** > **HTTPS解密** > **证书** > **生成新的CA证书** > **安装证书**；<br>
+> 同一iCloud的多设备用户，另一台设备请点击**证书** > 后面的**ⓘ图标**，选择**粘贴**，> **安装证书**，请勿重新生成新的证书，否则上一证书将会失效；<br>
+> **系统设置** > **已下载描述文件** > **安装**；<br>
+> **系统设置** > **通用** > **关于本机** > **证书信任设置** > **启用**此证书的根证书完全信任；<br>
+> 打开**Shadowrocket**，点击「已安装证书的配置文件」后面的**ⓘ图标** > **HTTPS解密** > 证书后面的**ⓘ图标** > **复制**；<br>
+> **配置** > **模块** > **新建模块**，**粘贴**并**自行修改**以下内容：<br>
 
 > ```ini
 > #!name = 证书模块
@@ -127,7 +127,7 @@
 > ca-p12 = 
 > ```
 
-> 按说明确认**证书密码**和填写**证书内容**，保存即可；<br>
+> 按说明确认**证书密码**和填写**证书内容**，**保存**即可；<br>
 
 #### 软件配置<br>
 > 首页-全局路由：
