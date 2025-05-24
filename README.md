@@ -1,16 +1,16 @@
 
 ---
 
+## [仓库简介](#仓库简介)<br>
+> **本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；**<br>
+> **如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！**<br>
+
+---
+
 ### [重要声明](#重要声明)<br>
 > **禁止在中国大陆的任何平台传播此项目！**<br>
 > **禁止将本仓库中的任何内容用于违法活动或用于盈利目的！**<br>
 > **本项目仅供学习交流及测试，使用本项目中的内容所造成的一切后果，均由使用者承担！**<br>
-
----
-
-## [仓库简介](#仓库简介)<br>
-> **本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；**<br>
-> **如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！**<br>
 
 ---
 
