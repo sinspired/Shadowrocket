@@ -23,7 +23,7 @@
 > ChatGPT/Copilot/Gemini等：**AI工具**已单独分流；<br>
 > WeChat/Telegram：**即时通讯工具**类已单独分流，降低因策略变化导致封号的风险；<br>
 > **国内地址**与**国际地址**，**国内媒体**与**国际媒体**，分别进行分流处理；<br>
-> 本仓库所使用的规则集源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)每日自动同步；<br>
+> 本仓库所使用的**规则集**源于[blackmatrix7](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/QuantumultX)，由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RuleFiles.yml)**每日自动同步**；<br>
 
 #### 如何安装<br>
 > 使用安装Shadowrocket的手机访问此页面，点击安装链接，一键跳转安装；<br>
@@ -38,7 +38,7 @@
 ### [基础配置介绍](#基础配置介绍)<br>
 #### 配置功能介绍<br>
 > [基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)的默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
-> 代理分组内的策略**自动分流**，自动测试节点的可用性，优先选择延迟较低的节点，无需手动切换节点；<br>
+> 代理分组内的策略**自动分流**，自动测试节点的可用性，优先选择**延迟较低**的节点，无需手动切换节点；<br>
 
 #### 使用必看<br>
 > 你所使用的节点，尽量包含**港美新**这三项；<br>
