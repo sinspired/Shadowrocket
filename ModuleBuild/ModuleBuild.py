@@ -48,7 +48,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
-    jq_pattern = r'^(?!.*#.*)(.*?)\s+response-body-json-jq\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
+    jq_pattern = r'^(?!.*#.*)(.*?)\s+jsonjq-response-body\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
     script_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(script-response-body|script-request-body|script-echo-response|script-request-header|script-response-header|script-analyze-echo-response)\s+(\S+)'
     body_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(response-body)\s+(\S+)\s+(response-body)\s+(\S+)'
     mitm_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
