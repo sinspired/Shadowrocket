@@ -9,8 +9,6 @@ minima:
   skin: auto
   show_excerpts: false
   hide_site_feed_link: true
-  nav_pages:
-    README.md
 
 title: Xiangwan's GitHub
 show_downloads: false
