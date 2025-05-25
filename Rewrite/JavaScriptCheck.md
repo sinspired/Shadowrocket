@@ -70,7 +70,6 @@ https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmAp
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xmly_json.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/yx.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhangshanggongjiao.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhihu/zhihu.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/zhuanzhuan/zhuanzhuan.js<br>
 
 ### zirawell: <br>
@@ -102,6 +101,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/weibo
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xiaoheihe.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/xunlei.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/ys7.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/zhihu.js<br>
 
 ### local: <br>
 https://raw.githubusercontent.com/Maasea/sgmodule/refs/heads/master/Script/Youtube/youtube.response.js<br>
