@@ -45,7 +45,6 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 国内应用直接连接，其他规则及未匹配到的规则使用**香港节点**；<br>
 为了保证完全接管流量，本配置默认使用**香港节点**兜底，首页的节点选择将被分组替代，完全失效；<br>
 此配置是最适合大众的配置，添加后无需调整，如节点包含**港美新**，建议首选此配置！<br>
-
 [![一键安装 基础配置](https://img.shields.io/static/v1?label=一键安装&message=Rules.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/Rules.conf "一键安装：基础配置")<br>
 
 ---
@@ -53,7 +52,6 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 ### [完整配置介绍](#完整配置介绍)
 [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：**港台日新美**，默认使用**首页节点**进行代理，可更自由的配置代理分组，其余配置完全相同；<br>
 如需要**更自由的代理分组**，建议使用此配置！<br>
-
 [![一键安装 完整配置](https://img.shields.io/static/v1?label=一键安装&message=RulesFull.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesFull.conf "一键安装：完整配置")<br>
 
 ---
@@ -61,7 +59,6 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 ### [精简配置介绍](#精简配置介绍)
 [精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
 如**不需要代理分组**，建议使用此配置！<br>
-
 [![一键安装 精简配置](https://img.shields.io/static/v1?label=一键安装&message=RulesLite.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesLite.conf "一键安装：精简配置")<br>
 
 ---
@@ -69,7 +66,6 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 ### [回国配置介绍](#回国配置介绍)
 [回国配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesBackCN.conf)基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
 此配置需搭配**回国机场**使用，**不适合国内用户使用！**<br>
-
 [![一键安装 回国分流配置](https://img.shields.io/static/v1?label=一键安装&message=RulesBackCN.conf&color=grey&logo=googledocs&logoColor=white&labelColor=orange&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://config/add/https://xiangwanguan.github.io/Shadowrocket/RulesBackCN.conf "一键安装：回国分流配置")<br>
 
 ---
@@ -78,11 +74,9 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 [融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20ModuleRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)而构建，随规则变化，不定期更新；<br>
 规则构成：以[向晚](https://t.me/xiangwanguan)基于[fmz200的重写合集](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)与[zirawell的重写合集](https://github.com/zirawell/R-Store/blob/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list)定制，并持续手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/RewriteBuild.conf)为基础，融合了[小红书](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Rednote.conf)、[哔哩哔哩](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Bilibili.conf)、[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/FAWVW.js)的专用规则；<br>
 所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptBuild.conf)每日自动构建&监测&清理，所有规则指向的资源已重定向至[当前仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；<br>
-使用办法：使用安装Shadowrocket的手机访问此页面，点击[安装链接](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule)，一键跳转安装；<br>
 使用须知：使用融合模块，**必须开启MitM**，教程参考下方的[推荐设置](#推荐设置)；<br>
 特别说明：使用融合模块，**默认禁用QUIC协议**，请自行评估影响；<br>
 特别警告：融合模块**已移除“解锁类”功能**，请支持开发者！如本项目侵犯了您的利益，请提交Issues进行移除，谢谢！<br>
-
 [![一键安装 融合模块](https://img.shields.io/static/v1?label=一键安装&message=融合模块&color=grey&logo=lvgl&logoColor=white&labelColor=blue&messageColor=white)](https://lowertop.github.io/Shadowrocket-First/redirect.html?url=shadowrocket://install?module=https://xiangwanguan.github.io/Shadowrocket/Module.sgmodule "一键安装：融合模块")<br>
 
 ---
@@ -101,7 +95,6 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 **系统设置** > **通用** > **关于本机** > **证书信任设置** > **启用**此证书的根证书完全信任；<br>
 打开**Shadowrocket**，点击「已安装证书的配置文件」后面的**ⓘ图标** > **HTTPS解密** > 证书后面的**ⓘ图标** > **复制**；<br>
 **配置** > **模块** > **新建模块**，**粘贴**并**自行修改**以下内容：<br>
-
 ```ini
 #!name = 证书模块
 [MITM]
@@ -113,7 +106,6 @@ ca-passphrase = Shadowrocket
 # 须在"ca-p12="后面粘贴证书内容；
 ca-p12 = 
 ```
-
 按说明确认**证书密码**和填写**证书内容**，**保存**即可；<br>
 
 #### 软件配置
