@@ -41,7 +41,7 @@ WeChat/Telegram：**即时通讯工具**类已单独分流，降低因策略变�
 你所使用的节点，尽量包含**港美新**这三项；<br>
 如**不完全包含**这三个地区的节点，则需要自行修改代理分组/正则，或使用[完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)或[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)；<br>
 基础配置默认规则如下：<br>
-Telegram使用**新加坡节点**，Google，AI工具，使用**美国节点**；<br>
+Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<br>
 国内应用直接连接，其他规则及未匹配到的规则使用**香港节点**；<br>
 为了保证完全接管流量，本配置默认使用**香港节点**兜底，首页的节点选择将被分组替代，完全失效；<br>
 此配置是最适合大众的配置，添加后无需调整，如节点包含**港美新**，建议首选此配置！<br>
