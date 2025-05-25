@@ -7,10 +7,8 @@ plugins:
 
 minima:
   skin: auto
-  show_excerpts: true
   hide_site_feed_link: true
   nav_pages:
-    README.md
+    - README.md
 
 title: Xiangwan's GitHub
-show_downloads: false
