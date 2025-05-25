@@ -9,6 +9,5 @@ minima:
   skin: auto
   hide_site_feed_link: true
   nav_pages:
-    - README.md
 
 title: Xiangwan's GitHub
