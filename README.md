@@ -16,8 +16,8 @@
 
 ### [配置功能介绍](#配置功能介绍)<br>
 #### 功能介绍<br>
-所有配置默认使用**TUN模式**接管全部流量；<br>
-使用加密的**DoH**进行DNS解析，并劫持未加密的查询请求；<br>
+所有配置默认使用`TUN模式`接管全部流量；<br>
+使用加密的`DoH`进行DNS解析，并劫持未加密的查询请求；<br>
 提供有效的**劫持保护**与**隐私保护策略**；<br>
 Apple/Microsoft/Google：**主要服务商**已单独分流；<br>
 ChatGPT/Copilot/Gemini等：**AI工具**已单独分流；<br>
@@ -171,5 +171,3 @@ ca-p12 =
 [*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
 
 ---
-
-`测试内容` `Test` <br>
