@@ -1,13 +1,9 @@
 # _config.yml
 
-remote_theme: "jekyll/minima"
+remote_theme: pages-themes/minimal
 
 plugins:
   - jekyll-remote-theme
 
-minima:
-  skin: auto
-  hide_site_feed_link: true
-  nav_pages:
-
 title: Xiangwan's GitHub
+show_downloads: false
