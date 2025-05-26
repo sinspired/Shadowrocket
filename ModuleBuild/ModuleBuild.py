@@ -57,7 +57,7 @@ def rewrite_to_sgmodule(js_content, project_name):
 #!desc={time_stamp}
 
 [Rule]
-AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 
 [URL Rewrite]
 """
