@@ -1,4 +1,6 @@
 
+---
+
 ## [仓库简介](#仓库简介)
 本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置说明)、一款[融合模块](#融合模块)，部分资源由生成器自动构建；<br>
 如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！<br>
@@ -150,3 +152,5 @@ ca-p12 =
 [*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
 [*@zirawell*](https://github.com/zirawell/R-Store)
 [*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
+
+---
