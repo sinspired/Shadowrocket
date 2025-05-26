@@ -1,8 +1,8 @@
 #!name=融合模块
-#!desc=2025-05-25 18:53:09
+#!desc=2025-05-26 10:05:47
 
 [Rule]
-AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT-NO-DROP
+AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 
 [URL Rewrite]
 ^http:\/\/.+\.gamersky\.com\/.+\/adSystem\/ad\/.+ - reject-dict
