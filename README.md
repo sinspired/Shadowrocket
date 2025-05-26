@@ -2,7 +2,7 @@
 ---
 
 ## [仓库简介](#仓库简介)
-本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能介绍)、一款[融合模块](#融合模块介绍)，部分资源由生成器自动构建；<br>
+本[仓库](https://github.com/XiangwanGuan/Shadowrocket)由[向晚](https://t.me/xiangwanguan)维护，提供[Shadowrocket](https://apps.apple.com/app/shadowrocket/id932747118)的多款[配置文件](#配置功能)、一款[融合模块](#融合模块)，部分资源由生成器自动构建；<br>
 如果此项目对您有帮助，欢迎给予Star；若有其他需求或问题，请提交Issues！<br>
 
 ---
@@ -14,7 +14,7 @@
 
 ---
 
-### [配置功能介绍](#配置功能介绍)
+### [配置功能](#配置功能)
 所有配置默认使用**TUN模式**接管全部流量；<br>
 使用加密的**DoH**进行DNS解析，并劫持未加密的查询请求；<br>
 提供有效的**劫持保护**与**隐私保护策略**；<br>
@@ -34,7 +34,7 @@ WeChat/Telegram：**即时通讯工具**类已单独分流，降低因策略变�
 
 ---
 
-### [基础配置介绍](#基础配置介绍)
+### [基础配置](#基础配置)
 [基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)的默认策略既是完善的策略，如无特殊需求，无需自行调整；<br>
 代理分组内的策略**自动分流**，自动测试节点的可用性，优先选择**延迟较低**的节点，无需手动切换节点；<br>
 你所使用的节点，尽量包含**港美新**这三项；<br>
@@ -49,7 +49,7 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 
 ---
 
-### [完整配置介绍](#完整配置介绍)
+### [完整配置](#完整配置)
 [完整配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesFull.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，包含更多代理分组：**港台日新美**，默认使用**首页节点**进行代理，可更自由的配置代理分组，其余配置完全相同；<br>
 如需要**更自由的代理分组**，建议使用此配置！<br>
 
@@ -57,7 +57,7 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 
 ---
 
-### [精简配置介绍](#精简配置介绍)
+### [精简配置](#精简配置)
 [精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)基于[基础配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rules.conf)构建，除不包含代理分组以外，其余配置完全相同；<br>
 如**不需要代理分组**，建议使用此配置！<br>
 
@@ -65,7 +65,7 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 
 ---
 
-### [回国配置介绍](#回国配置介绍)
+### [回国配置](#回国配置)
 [回国配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesBackCN.conf)基于[精简配置](https://github.com/XiangwanGuan/Shadowrocket/blob/main/RulesLite.conf)构建，适合外国华侨使用，国内域名代理，其余域名直连；<br>
 此配置需搭配**回国机场**使用，**不适合国内用户使用！**<br>
 
@@ -73,7 +73,7 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 
 ---
 
-### [融合模块介绍](#融合模块介绍)
+### [融合模块](#融合模块)
 [融合模块](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Module.sgmodule)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20ModuleRules.yml)调用[生成器](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/ModuleBuild.py)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/ModuleBuild/BuildList.conf)而构建，随规则变化，不定期更新；<br>
 规则构成：以[向晚](https://t.me/xiangwanguan)基于[fmz200的重写合集](https://github.com/fmz200/wool_scripts/blob/main/QuantumultX/rewrite/chongxie.txt)与[zirawell的重写合集](https://github.com/zirawell/R-Store/blob/main/Rule/QuanX/Adblock/All/filter/allAdBlock.list)定制，并持续手动维护的[重写合集](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/RewriteBuild.conf)为基础，融合了[小红书](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Rednote.conf)、[哔哩哔哩](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Bilibili.conf)、[YouTube](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/YouTube.conf)、[高德地图](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/Amap.js)、[一汽大众](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/XiangwanConfig/FAWVW.js)的专用规则；<br>
 所有[远程资源](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptCheck.md)由[GitHub Actions](https://github.com/XiangwanGuan/Shadowrocket/blob/main/.github/workflows/Update%20RewriteFiles.yml)依据[规则](https://github.com/XiangwanGuan/Shadowrocket/blob/main/Rewrite/JavaScriptBuild.conf)每日自动构建&监测&清理，所有规则指向的资源已重定向至[当前仓库](https://github.com/XiangwanGuan/Shadowrocket/tree/main/Rewrite/JavaScript)；<br>
@@ -87,7 +87,7 @@ Telegram使用**新加坡节点**，Google、AI工具使用**美国节点**；<b
 ---
 
 ### [推荐设置](#推荐设置)
-如需使用[融合模块](#融合模块介绍)来净化应用，则**必须开启MitM**，否则模块将不能正常工作；<br>
+如需使用[融合模块](#融合模块)来净化应用，则**必须开启MitM**，否则模块将不能正常工作；<br>
 建议添加**证书模块**，避免因配置变化导致证书失效；<br>
 证书信任之后，**请勿在设置中移除证书**，否则MitM将会失效；<br>
 证书模块启用后，“HTTPS解密”功能默认**强制开启**，开关设置将不再生效；<br>
