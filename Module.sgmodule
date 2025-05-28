@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-27 11:41:34
+#!desc=2025-05-28 08:25:01
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -602,7 +602,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/appapi\.51job(app)?\.com\/api\/market\/(?>adtrace|get_launch|get_prompt) - reject
 ^https?:\/\/appapi\.51job(app)?\.com\/api\/util\/get_version - reject-dict
 ^https?:\/\/appapi\.huazhu\.com:\d+\/client\/app\/getAppStartPage\/ - reject
-^https?:\/\/appapi\.huazhu\.com:\d{4}\/client\/app\/getAppStartPage\/ - reject
 ^https?:\/\/appcloud2\.zhihu\.com\/v\d\/resource\?group_name=mp - reject-dict
 ^https?:\/\/appconf\.mail\.163\.com\/mmad\/ - reject
 ^https?:\/\/appconf\.mail\.163\.com\/mmad\/ - reject-200
