@@ -100,7 +100,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
         pattern = match.group(1).strip()
         script_type_raw = match.group(2)
         script_path = match.group(3).strip().rstrip(',')
-        filename = re.search(r'/([^/]+)$', script_path).group(1).strip()
+        filename_match = re.search(r'/([^/]+)$', script_path)
+        filename = filename_match.group(1).strip() if filename_match else script_path
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
         params = [
