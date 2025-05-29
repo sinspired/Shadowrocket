@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-28 08:25:01
+#!desc=2025-05-29 13:21:47
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -239,6 +239,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/119\.29\.29\.\d+\/d - reject-200
 ^https?:\/\/180\.76\.76\.112\/v\d\/ - reject
 ^https?:\/\/182\.92\.244\.70\/d\/json - reject-dict
+^https?:\/\/39\.98\.135\.211\/admin\/filter\/advert\/getAdvertLists - reject-dict
 ^https?:\/\/39\.98\.135\.211\/admin\/filter\/crowdFunding\/getNewProductData - reject-dict
 ^https?:\/\/3g\.csair\.com\/CSMBP\/bookProcess\/homepopup\/queryAdvertisement - reject-200
 ^https?:\/\/3g\.csair\.com\/CSMBP\/data\/homePage\/getLaunchInfoNew - reject-dict
