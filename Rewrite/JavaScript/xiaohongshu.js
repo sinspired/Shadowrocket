@@ -375,22 +375,6 @@ if (url.includes("/api/sns/v5/note/comment/list?") || url.includes("/api/sns/v3/
   }
 }
 
-if (url.includes("/system_config/watermark")) {
-  // 水印控制接口，全部设为 false，表示禁用水印
-  if (obj?.data) {
-    for (let key in obj.data) {
-      obj.data[key] = false;
-    }
-  } else {
-    obj.data = {
-      show_watermark: false,
-      enable_watermark: false,
-      enable_video_watermark: false,
-      enable_image_watermark: false
-    };
-  }
-}
-
 // 下载评论区live图
 if (url.includes("/api/sns/v1/interaction/comment/video/download?")) {
   const commitsCache = $.getdata("fmz200.xiaohongshu.comments.rsp");
