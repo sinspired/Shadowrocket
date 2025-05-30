@@ -45,7 +45,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     utc_time = datetime.datetime.now(datetime.timezone.utc)
     beijing_time = utc_time + datetime.timedelta(hours=8)
     time_stamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
-    rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-img|-dict|-array)?)'
+    rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-array|-dict|-img|-tinygif)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
     jq_pattern = r'^(?!.*#.*)(.*?)\s+jsonjq-response-body\s+(?:\'([^\']+)\'|jq-path="([^"]+)")'
