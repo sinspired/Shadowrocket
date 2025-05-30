@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-05-29 13:21:47
+#!desc=2025-05-30 09:55:44
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -1581,8 +1581,7 @@ Amap.js =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/sear
 BahamutAnimeAds.js =type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/BahamutAnimeAds.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(recommend\/getRecommendInfoFlows|customize\/getCustomizePageName)\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
-FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(KONGO|CUSTOM_BANNER|CUSTOM_KONGO|CAR_ZHIHU_COLLEGE), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
-FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
+FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|CUSTOM_BANNER|CAR_ZHIHU_COLLEGE|KONGO|CUSTOM_KONGO), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW.js =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
