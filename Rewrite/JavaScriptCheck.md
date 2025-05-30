@@ -34,7 +34,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/fly.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyert.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/foliday.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/hengdian.json<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/huifutianxia_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/ithome/ithome.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/jingdong/jingdong.js<br>
