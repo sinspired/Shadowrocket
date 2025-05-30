@@ -248,7 +248,7 @@ jobs:
             } >> Rewrite/JavaScriptCheck.md
           fi
 
-      - name: Clean up unused JS files
+      - name: Clean up unused local script files
         run: |
           build_conf_file="Rewrite/JavaScriptBuild.conf"
           sed -i -e '$a\' "$build_conf_file"
@@ -289,7 +289,7 @@ jobs:
               local_files+=("Rewrite/XiangwanConfig/$line")
             fi
           done < "$build_conf_file"
-          local_js_files=()
+          local_script_files=()
           for file in "${local_files[@]}"; do
             if [[ -f "$file" ]]; then
               while IFS= read -r url; do
@@ -297,7 +297,7 @@ jobs:
                   continue
                 fi
                 filename=$(basename "$url")
-                local_js_files+=("$filename")
+                local_script_files+=("$filename")
               done < <(grep -Eo 'https?://[^ ]+\.(js|json|jq)' "$file" | sort -u)
             fi
           done
@@ -305,14 +305,14 @@ jobs:
           for f in "${keep_files[@]}"; do
             keep_map["$f"]=1
           done
-          for f in "${local_js_files[@]}"; do
+          for f in "${local_script_files[@]}"; do
             keep_map["$f"]=1
           done
           for f in Rewrite/JavaScript/*; do
             [ -e "$f" ] || continue
             filename=$(basename "$f")
             if [[ -z "${keep_map[$filename]}" ]]; then
-              echo "Deleting unused JS file: $filename"
+              echo "Deleting unused local script file: $filename"
               rm -f "$f"
             fi
           done
@@ -323,12 +323,6 @@ jobs:
           author_name: 'GitHub Actions'
           author_email: 'actions@github.com'
           message: 'Update RewriteFiles'
-          add: |
-            Rewrite/JavaScript/*
-            Rewrite/NaisiConfig/*
-            Rewrite/NaisiScripts/*
-            Rewrite/ZirawellConfig/*
-            Rewrite/ZirawellScripts/*
-            Rewrite/JavaScriptCheck.md
+          add: Rewrite/**
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
