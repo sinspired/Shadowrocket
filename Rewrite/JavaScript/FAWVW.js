@@ -12,7 +12,7 @@
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(recommend\/getRecommendInfoFlows|customize\/getCustomizePageName)\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|KONGO|CUSTOM_BANNER|CUSTOM_KONGO|CAR_ZHIHU_COLLEGE) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|CUSTOM_BANNER|CAR_ZHIHU_COLLEGE|KONGO|CUSTOM_KONGO) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 
 [mitm]
 hostname = oneapp-api.faw-vw.com
