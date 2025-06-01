@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-01 11:48:37
+#!desc=2025-06-01 16:13:39
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -1577,14 +1577,6 @@ FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/search\/
 Flightradar24 =type=http-response, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Flightradar24.js, requires-body=true, max-size=0
 PupuSplashAds =type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7\?position_types=2(%[A-Z0-9]+)+&store_id, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/PupuSplashAds.js, requires-body=true, max-size=0
 QuDa =type=http-response, pattern=^https?:\/\/iqushangwang\.8quan\.com\/index\.php\/i\/index\/index, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/QuDa.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/loading, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/update, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/haojia-api\.smzdm\.com\/home\/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/homepage-api\.smzdm\.com\/v3\/home, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
-Smzdm =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
 Umetrip_remove_ads =type=http-response, pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Umetrip_remove_ads.js, requires-body=true, max-size=0
 UnblockURLinWeChat =type=http-response, pattern=^https?:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/UnblockURLinWeChat.js, requires-body=true, max-size=0
 adrive =type=http-response, pattern=^https?:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/adrive.js, requires-body=true, max-size=0
@@ -1735,8 +1727,15 @@ rrtv_json =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/drama\/app\/get_
 rrtv_json =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/user\/privilege\/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/rrtv_json.js, requires-body=true, max-size=0
 rrtv_json =type=http-response, pattern=^https?:\/\/api\.rr\.tv\/v3plus\/index\/channel\?pageNum=1&position=CHANNEL_MY, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/rrtv_json.js, requires-body=true, max-size=0
 sdb =type=http-response, pattern=^https?:\/\/cdn\.sdb\.com\.cn\/bron-coms\/bron-coms\/material-image, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/sdb.js, requires-body=true, max-size=0
-smzdm_ads =type=http-response, pattern=^https?:\/\/haojia-api\.smzdm\.com\/ranking_list\/articles\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm_ads.js, requires-body=true, max-size=0
-smzdm_ads =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm_ads.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/loading, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/app-api\.smzdm\.com\/util\/update, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/article-api\.smzdm\.com\/publish\/get_bubble, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/haojia-api\.smzdm\.com\/home\/list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/homepage-api\.smzdm\.com\/v\d\/home, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\/home, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
+smzdm =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/creator_user_center, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/smzdm.js, requires-body=true, max-size=0
 soda =type=http-response, pattern=^https?:\/\/api\.sodalife\.xyz\/v1\/posters\?location=SODA_APP%3AHOME%3ATOP, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/soda.js, requires-body=true, max-size=0
 sougou =type=http-response, pattern=^https?:\/\/sec\.sginput\.qq\.com\/q, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/sougou.js, requires-body=true, max-size=0
 soul_ads =type=http-response, pattern=^https?:\/\/47\.110\.187\.87\/winterfell\/v2\/getIpByDomain, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/soul_ads.js, requires-body=true, max-size=0
