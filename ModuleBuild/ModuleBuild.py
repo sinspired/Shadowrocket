@@ -100,7 +100,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
         pattern = match.group(1).strip()
         script_type_raw = match.group(2)
         script_path = match.group(3).strip().rstrip(',')
-        filename_match = re.search(r'/([^/]+)$', script_path)
+        filename_match = re.search(r'/([^/]+?)(?:\.js)?$', script_path)
         filename = filename_match.group(1).strip() if filename_match else script_path
         script_type = 'response' if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header'] else 'request'
         needbody = "true" if script_type_raw in ['script-response-body', 'script-echo-response', 'script-response-header', 'script-request-body', 'script-analyze-echo-response'] else "false"
@@ -128,7 +128,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
-        sgmodule_content += f"ReplaceBody.js =type=http-response, pattern={pattern}, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
+        sgmodule_content += f"ReplaceBody =type=http-response, pattern={pattern}, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
     mitm_matches = set()
     for match in re.finditer(mitm_pattern, js_content, re.MULTILINE):
         hostnames = match.group(1).split(',')
