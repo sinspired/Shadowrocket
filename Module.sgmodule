@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-01 11:33:19
+#!desc=2025-06-01 11:35:49
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -1586,7 +1586,7 @@ Smzdm.js =type=http-response, pattern=^https?:\/\/qianbao\.smzdm\.com\/v\d\/app\
 Smzdm.js =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
 Smzdm.js =type=http-response, pattern=^https?:\/\/user-api\.smzdm\.com\/vip\/bottom_card_list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Smzdm.js, requires-body=true, max-size=0
 Umetrip_remove_ads.js =type=http-response, pattern=^https?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Umetrip_remove_ads.js, requires-body=true, max-size=0
-UnblockURLinWeChat.js =type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/UnblockURLinWeChat.js, requires-body=true, max-size=0
+UnblockURLinWeChat.js =type=http-response, pattern=^https?:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/UnblockURLinWeChat.js, requires-body=true, max-size=0
 adrive.js =type=http-response, pattern=^https?:\/\/api\.alipan\.com\/apps\/v2\/users\/home\/(news|widgets), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/adrive.js, requires-body=true, max-size=0
 adrive.js =type=http-response, pattern=^https?:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/adrive.js, requires-body=true, max-size=0
 adsense.js =type=http-response, pattern=^https?:\/\/(api-access\.pangolin-sdk-toutiao\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/adsense.js, requires-body=true, max-size=0
