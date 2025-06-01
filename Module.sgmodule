@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-01 10:50:21
+#!desc=2025-06-01 11:01:01
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -13,7 +13,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native - reject
 ^http?:\/\/.*\.pglstatp-toutiao\.com - reject-200
 ^http?:\/\/tianqi\.2345\.com\/api\/content\/getContentFeeds\.php - reject-dict
-^http[s]?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh - reject-dict
 ^https:\/\/(?:gmp|wallet)\.lakala\.com\/(?:gmp\/openapi\/v2\/resource_space\/getResourceSpace|m\/(?:a\/lama\/mgt\/activity\/biz\/query\/byMerInfo|lama\/mgt\/activity\/(?:bank|biz)\/query\/list)) - reject-dict
 ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/adshow\? - reject-dict
 ^https:\/\/(h3\.)?open\.taou\.com\/maimai\/go_gossip_darwin\/external\/v2\/query_flow_cards\? - reject-dict
@@ -1075,6 +1074,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv - reject-dict
 ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/adv\/getadvlistbatch - reject
 ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/getTopOperation - reject-dict
+^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/bookshelf\/refresh - reject-dict
 ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v1\/followsubscribe - reject-dict
 ^https?:\/\/magev6\.if\.qidian\.com\/argus\/api\/v2\/adv\/getadvlistbatch - reject-dict
 ^https?:\/\/maicai\.api\.ddxq\.mobi\/advert\/ - reject
