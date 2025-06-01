@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-01 11:19:11
+#!desc=2025-06-01 11:23:07
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -195,6 +195,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/ad\.line-scdn\.net\/0h.+\/(o|m)\d+x\d+$ - reject-img
 ^https?:\/\/ad\.lofter.com\/v1\.1\/yitou\/madr - reject-200
 ^https?:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/adv-filter\/AdInfoFilter\/getAdInfos - reject-dict
+^https?:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
 ^https?:\/\/ad\.shunchangzhixing\.com\/getAd - reject-dict
 ^https?:\/\/ad\.xiaotucc\.com\/advert - reject
 ^https?:\/\/ad\.ysepay\.com\/yst-ad\/ST101001\/[0-9]{11}\.jpg - reject
@@ -686,6 +687,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/dict\.youdao\.com\/dictusertask\/system - reject-dict
 ^https?:\/\/dict\.youdao\.com\/vip\/activity\/couponinfo - reject-dict
 ^https?:\/\/dictvip-business\.youdao\.com\/home\/ad - reject-dict
+^https?:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 ^https?:\/\/dili\.bdatu\.com\/jiekou\/ad\/ - reject
 ^https?:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ - reject
 ^https?:\/\/direct\.z-bank\.com\/portal\/AdvertImageDownLoad4Mobile\.do - reject-200
@@ -1535,8 +1537,6 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 ^https?:\/\/ztoread\.ziroom\.com\/foka-card-api\/popup\/v2\/get - reject-dict
 ^https?:\/\/ztoread\.ziroom\.com\/ymerApi\/v\d\/index\/open - reject-dict
 ^https?:\/\/zua\.zhidiantianxia\.cn\/api\/adverts - reject
-http:\/\/ad\.myfriday\.cn\/d\/json\/1\.1 - reject
-http:\/\/dili.sqcosmos.com\/jiekou\/endpage\/ad - reject-dict
 
 [Body Rewrite]
 
