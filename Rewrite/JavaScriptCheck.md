@@ -48,7 +48,6 @@ https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.
 https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
 https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js<br>
-https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaotucc.js<br>
 https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/xjsp.js<br>
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/xmApp.js<br>
@@ -77,6 +76,7 @@ https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/flyer
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/foliday.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/freshippo.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/gaoding.js<br>
+https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/goofish.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/guiderank.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/haier.js<br>
 https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/kuaikanComic.js<br>
