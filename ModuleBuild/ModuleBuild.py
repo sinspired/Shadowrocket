@@ -40,9 +40,7 @@ def save_content(content, file_path):
         print(f"Error saving content to {file_path}: {e}")
 
 def rewrite_to_sgmodule(js_content, project_name):
-    utc_time = datetime.datetime.now(datetime.timezone.utc)
-    beijing_time = utc_time + datetime.timedelta(hours=8)
-    time_stamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
+    formatted_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
     rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-array|-dict|-img|-tinygif)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
     header_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url-and-header\s+(reject(?:-drop|-no-drop)?)\s*'
@@ -52,7 +50,7 @@ def rewrite_to_sgmodule(js_content, project_name):
     mitm_pattern = r'^\s*hostname\s*=\s*([^\n#]*)\s*(?=#|$)'
 
     sgmodule_content = f"""#!name={project_name}
-#!desc={time_stamp}
+#!desc={formatted_time}
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
