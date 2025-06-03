@@ -165,8 +165,7 @@ def main():
     except IOError as e:
         print(f"Error reading the input file: {e}")
         exit(1)
-    project_name = "融合模块"
-    process_urls(urls, project_name, parent_dir)
+    process_urls(urls, "融合模块", parent_dir)
 
 if __name__ == "__main__":
     main()
