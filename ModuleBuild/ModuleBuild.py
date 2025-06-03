@@ -32,7 +32,7 @@ def load_content(url):
             print(f"File not found at {local_path}")
             return None
 
-def build_sgmodule(js_content, project_name):
+def build_sgmodule(rule_text, project_name):
     formatted_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
     rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-array|-dict|-img|-tinygif)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
@@ -51,14 +51,14 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 [URL Rewrite]
 """
     url_content = ""
-    for match in re.finditer(rewrite_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(rewrite_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} - {reject_type}\n"
-    for match in re.finditer(echo_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(echo_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         url_content += f"{pattern} - reject-200\n"
-    for match in re.finditer(header_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(header_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         reject_type = match.group(2).strip()
         url_content += f"{pattern} url-and-header {reject_type}\n"
@@ -71,7 +71,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 [Body Rewrite]
 """
     http_response_jq = ""
-    for match in re.finditer(jq_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(jq_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         jq_expr = match.group(2)
         jq_path = match.group(3)
@@ -85,7 +85,7 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
 [Script]
 """
     script_content = ""
-    for match in re.finditer(script_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(script_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         script_type_raw = match.group(2)
         script_path = match.group(3).strip().rstrip(',')
@@ -101,8 +101,8 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
             "max-size=0"
         ]
         line_start = match.start()
-        line_end = js_content.find('\n', line_start)
-        line = js_content[line_start:line_end if line_end != -1 else None]
+        line_end = rule_text.find('\n', line_start)
+        line = rule_text[line_start:line_end if line_end != -1 else None]
         binary_body_mode_match = re.search(r'binary-body-mode\s*=\s*(true|false)', line)
         if binary_body_mode_match:
             params.append(f"binary-body-mode={binary_body_mode_match.group(1)}")
@@ -113,13 +113,13 @@ AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
         script_content += script_line + "\n"
     script_content = '\n'.join(sorted(set(script_content.splitlines())))
     sgmodule_content += script_content + "\n"
-    for match in re.finditer(body_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(body_pattern, rule_text, re.MULTILINE):
         pattern = match.group(1).strip()
         re1 = match.group(3).strip()
         re2 = match.group(5).strip()
         sgmodule_content += f"ReplaceBody =type=http-response, pattern={pattern}, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/ReplaceBody.js, requires-body=true, argument={re1}->{re2},max-size=0\n"
     mitm_matches = set()
-    for match in re.finditer(mitm_pattern, js_content, re.MULTILINE):
+    for match in re.finditer(mitm_pattern, rule_text, re.MULTILINE):
         hostnames = match.group(1).split(',')
         mitm_matches.update(host.strip() for host in hostnames if host.strip())
     mitm_match_content = ','.join(sorted(mitm_matches))
@@ -130,15 +130,15 @@ hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
-def process_urls(urls, project_name, parent_dir):
-    combined_js_content = ""
-    for url in urls:
-        js_content = load_content(url)
-        if js_content:
-            combined_js_content += js_content + "\n"
+def process_urls(rule_sources, project_name, parent_dir):
+    merged_rule_text = ""
+    for url in rule_sources:
+        rule_text = load_content(url)
+        if rule_text:
+            merged_rule_text += rule_text + "\n"
         else:
             print(f"Failed to download or process the content from {url}.")
-    sgmodule_content = build_sgmodule(combined_js_content, project_name)
+    sgmodule_content = build_sgmodule(merged_rule_text, project_name)
     if sgmodule_content:
         output_file = os.path.join(parent_dir, "Module.sgmodule")
         save_content(sgmodule_content, output_file)
@@ -161,11 +161,11 @@ def main():
     print("Input file path:", input_file_path)
     try:
         with open(input_file_path, 'r') as file:
-            urls = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
+            rule_sources = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
     except IOError as e:
         print(f"Error reading the input file: {e}")
         exit(1)
-    process_urls(urls, "融合模块", parent_dir)
+    process_urls(rule_sources, "融合模块", parent_dir)
 
 if __name__ == "__main__":
     main()
