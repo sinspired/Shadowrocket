@@ -23,7 +23,7 @@ try {
     const url = $request.url;
 
     const body = url.includes("collection/getCollectionList")
-        ? { returnStatus: "SUCCEED", data: {} }
+        ? { returnStatus: "SUCCEED", hasMore: false, data: {} }
         : { returnStatus: "SUCCEED", hasMore: false, data: [] };
 
     $done({
