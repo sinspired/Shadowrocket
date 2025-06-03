@@ -130,7 +130,7 @@ hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
-def process_urls(rule_sources, project_name, parent_dir):
+def merge_rules(rule_sources, project_name, parent_dir):
     merged_rule_text = ""
     for url in rule_sources:
         rule_text = load_content(url)
@@ -161,11 +161,11 @@ def main():
     print("Input file path:", input_file_path)
     try:
         with open(input_file_path, 'r') as file:
-            rule_sources = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
+            build_entries = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
     except IOError as e:
         print(f"Error reading the input file: {e}")
         exit(1)
-    process_urls(rule_sources, "融合模块", parent_dir)
+    merge_rules(build_entries, "融合模块", parent_dir)
 
 if __name__ == "__main__":
     main()
