@@ -130,7 +130,7 @@ hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
-def process_urls(urls, project_name):
+def process_urls(urls, project_name, parent_dir):
     combined_js_content = ""
     for url in urls:
         js_content = load_content(url)
@@ -140,7 +140,7 @@ def process_urls(urls, project_name):
             print(f"Failed to download or process the content from {url}.")
     sgmodule_content = build_sgmodule(combined_js_content, project_name)
     if sgmodule_content:
-        output_file = 'Module.sgmodule'
+        output_file = os.path.join(parent_dir, "Module.sgmodule")
         save_content(sgmodule_content, output_file)
         print(sgmodule_content)
         print(f"Successfully converted and saved to {output_file}")
@@ -154,7 +154,7 @@ def save_content(content, file_path):
     except IOError as e:
         print(f"Error saving content to {file_path}: {e}")
 
-if __name__ == "__main__":
+def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
     parent_dir = os.path.dirname(current_dir)
     input_file_path = os.path.join(parent_dir, "ModuleBuild", "BuildList.conf")
@@ -166,4 +166,7 @@ if __name__ == "__main__":
         print(f"Error reading the input file: {e}")
         exit(1)
     project_name = "融合模块"
-    process_urls([url.strip() for url in urls if url.strip()], project_name)
+    process_urls(urls, project_name, parent_dir)
+
+if __name__ == "__main__":
+    main()
