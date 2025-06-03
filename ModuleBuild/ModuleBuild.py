@@ -3,7 +3,7 @@ import re
 import datetime
 import requests
 
-def download_content(url):
+def load_content(url):
     if os.path.isfile(url):
         try:
             with open(url, 'r', encoding='utf-8') as file:
@@ -32,14 +32,7 @@ def download_content(url):
             print(f"File not found at {local_path}")
             return None
 
-def save_content(content, file_path):
-    try:
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-    except IOError as e:
-        print(f"Error saving content to {file_path}: {e}")
-
-def rewrite_to_sgmodule(js_content, project_name):
+def build_sgmodule(js_content, project_name):
     formatted_time = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=8)).strftime("%Y-%m-%d %H:%M:%S")
     rewrite_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(reject(?:-200|-array|-dict|-img|-tinygif)?)'
     echo_pattern = r'^(?!.*#.*)(?!.*;.*)(.*?)\s*url\s+(echo-response)\s+(\S+)\s+(echo-response)\s+(\S+)'
@@ -140,12 +133,12 @@ hostname = %APPEND% {mitm_match_content}
 def process_urls(urls, project_name):
     combined_js_content = ""
     for url in urls:
-        js_content = download_content(url)
+        js_content = load_content(url)
         if js_content:
             combined_js_content += js_content + "\n"
         else:
             print(f"Failed to download or process the content from {url}.")
-    sgmodule_content = rewrite_to_sgmodule(combined_js_content, project_name)
+    sgmodule_content = build_sgmodule(combined_js_content, project_name)
     if sgmodule_content:
         output_file = 'Module.sgmodule'
         save_content(sgmodule_content, output_file)
@@ -153,6 +146,13 @@ def process_urls(urls, project_name):
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
+
+def save_content(content, file_path):
+    try:
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+    except IOError as e:
+        print(f"Error saving content to {file_path}: {e}")
 
 if __name__ == "__main__":
     current_dir = os.path.dirname(os.path.abspath(__file__))
