@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-03 14:22:33
+#!desc=2025-06-03 15:56:39
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -1765,8 +1765,6 @@ sqkb =type=http-response, pattern=^https?:\/\/api\.17gwx\.com\/operate\/elements
 sqkb =type=http-response, pattern=^https?:\/\/api\.17gwx\.com\/v\d\/history\/remind\/listV, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/sqkb.js, requires-body=true, max-size=0
 tieba-json =type=http-response, pattern=^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tieba-json.js, requires-body=true, max-size=0
 tieba-proto =type=http-response, pattern=^https?:\/\/(tiebac|c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tieba-proto.js, requires-body=true, max-size=0, binary-body-mode=true
-tiebaJson =type=http-response, pattern=^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/sync$, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tiebaJson.js, requires-body=true, max-size=0
-tiebaJson =type=http-response, pattern=^https?:\/\/tiebac\.baidu\.com\/tiebaads\/commonbatch\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tiebaJson.js, requires-body=true, max-size=0
 tuhu =type=http-response, pattern=^https?:\/\/cl-gateway\.tuhu\.cn\/cl-common-api\/api\/personalCenter\/getCmsModuleList, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tuhu.js, requires-body=true, max-size=0
 tuhu =type=http-response, pattern=^https?:\/\/cl-gateway\.tuhu\.cn\/cl-homepage-service\/homePage\/getHomePageInfo, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tuhu.js, requires-body=true, max-size=0
 tuhu =type=http-response, pattern=^https?:\/\/cl-gateway\.tuhu\.cn\/cl-shop-api\/shopTab\/getModuleForC, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/tuhu.js, requires-body=true, max-size=0
