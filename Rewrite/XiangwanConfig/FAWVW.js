@@ -21,10 +21,13 @@ hostname = oneapp-api.faw-vw.com
 
 try {
     const url = $request.url;
+    let body;
 
-    const body = url.includes("collection/getCollectionList")
-        ? { returnStatus: "SUCCEED", hasMore: false, data: {} }
-        : { returnStatus: "SUCCEED", hasMore: false, data: [] };
+    if (url.includes("collection/getCollectionList")) {
+        body = { returnStatus: "SUCCEED", hasMore: false, data: {} };
+    } else {
+        body = { returnStatus: "SUCCEED", hasMore: false, data: [] };
+    }
 
     $done({
         status: 200,
