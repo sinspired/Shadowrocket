@@ -40,8 +40,6 @@ def save_content(content, file_path):
         print(f"Error saving content to {file_path}: {e}")
 
 def rewrite_to_sgmodule(js_content, project_name):
-    if not re.search(r'hostname', js_content, re.IGNORECASE):
-        return None
     utc_time = datetime.datetime.now(datetime.timezone.utc)
     beijing_time = utc_time + datetime.timedelta(hours=8)
     time_stamp = beijing_time.strftime("%Y-%m-%d %H:%M:%S")
