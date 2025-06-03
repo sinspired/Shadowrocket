@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-03 13:21:30
+#!desc=2025-06-03 13:46:55
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
@@ -1576,13 +1576,11 @@ Amap =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search_
 Amap =type=http-response, pattern=^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js, requires-body=true, max-size=0
 BahamutAnimeAds =type=http-response, pattern=^https?:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v\d/(token|m3u8).php\?, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/BahamutAnimeAds.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
-FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(customize\/getCustomizePageName|post\/getPostsByTags|recommend\/getRecommendInfoFlows|theme/getThemeList)\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
+FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(post\/getPostsByTags|theme/getThemeList|customize\/getCustomizePageName|recommend\/getRecommendInfoFlows|evaluate\/getEvaluateCard|collection\/getCollectionList)\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_CAR_ZHIHU_COLLEGE, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|CUSTOM_BANNER|KONGO|CUSTOM_KONGO), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
-FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/collection\/getCollectionList\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
-FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/content\/evaluate\/getEvaluateCards\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 FAWVW =type=http-response, pattern=^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.*, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js, requires-body=true, max-size=0
 Flightradar24 =type=http-response, pattern=^https?:\/\/mobile\.flightradar24\.com\/mobile\/(user-session|subscribe), script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Flightradar24.js, requires-body=true, max-size=0
 PupuSplashAds =type=http-response, pattern=^https?:\/\/j1\.pupuapi\.com\/client\/marketing\/banner\/v7\?position_types=2(%[A-Z0-9]+)+&store_id, script-path=https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/PupuSplashAds.js, requires-body=true, max-size=0

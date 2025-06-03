@@ -9,33 +9,27 @@
 [rewrite_local]
 ^https?:\/\/oneapp-api\.faw-vw\.com\/search\/firstPage\/getPromptList\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/benefits\/benefitsCard\/getInfo\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(customize\/getCustomizePageName|post\/getPostsByTags|recommend\/getRecommendInfoFlows|theme/getThemeList)\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_HOME_BUOY url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_OPEN_SCREEN_ADS url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_CAR_ZHIHU_COLLEGE url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 ^https?:\/\/oneapp-api\.faw-vw\.com\/content\/booth\/getBoothList\/v1\?.*showPositionCode=VWAPP_(ICE|MEB)_HOME_(OWNER_BANNER|PROSPECTS_BANNER|CUSTOM_BANNER|KONGO|CUSTOM_KONGO) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
-
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/evaluate\/getEvaluateCards\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
-^https?:\/\/oneapp-api\.faw-vw\.com\/content\/collection\/getCollectionList\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
+^https?:\/\/oneapp-api\.faw-vw\.com\/content\/(post\/getPostsByTags|theme/getThemeList|customize\/getCustomizePageName|recommend\/getRecommendInfoFlows|evaluate\/getEvaluateCard|collection\/getCollectionList)\/v1\?.* url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/FAWVW.js
 
 [mitm]
 hostname = oneapp-api.faw-vw.com
 */
 
 try {
-    const jsonResponse = {
-        returnStatus: "SUCCEED",
-        hasMore: false,
-        data: []
-    };
-    const responseBody = JSON.stringify(jsonResponse);
-    const responseHeaders = {
-        "Content-Type": "application/json"
-    };
+    const url = $request.url;
+
+    const body = url.includes("collection/getCollectionList")
+        ? { returnStatus: "SUCCEED", data: {} }
+        : { returnStatus: "SUCCEED", hasMore: false, data: [] };
+
     $done({
         status: 200,
-        body: responseBody,
-        headers: responseHeaders
+        body: JSON.stringify(body),
+        headers: { "Content-Type": "application/json" }
     });
 } catch (e) {
     $done();
