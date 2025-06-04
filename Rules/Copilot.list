@@ -1,59 +1,59 @@
 # NAME: Copilot
 # UPDATED: 2024-07-03 16:18:30
-# HOST: 20
-# HOST-KEYWORD: 1
-# HOST-SUFFIX: 26
+# DOMAIN: 20
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 26
 # IP-ASN: 2
 # IP-CIDR: 2
 # TOTAL: 51
-HOST,api.msn.com,Copilot
-HOST,api.statsig.com,Copilot
-HOST,assets.msn.com,Copilot
-HOST,browser-intake-datadoghq.com,Copilot
-HOST,chat.openai.com.cdn.cloudflare.net,Copilot
-HOST,copilot.microsoft.com,Copilot
-HOST,gateway.bingviz.microsoft.net,Copilot
-HOST,gateway.bingviz.microsoftapp.net,Copilot
-HOST,in.appcenter.ms,Copilot
-HOST,location.microsoft.com,Copilot
-HOST,odc.officeapps.live.com,Copilot
-HOST,openai-api.arkoselabs.com,Copilot
-HOST,openaicomproductionae4b.blob.core.windows.net,Copilot
-HOST,production-openaicom-storage.azureedge.net,Copilot
-HOST,r.bing.com,Copilot
-HOST,self.events.data.microsoft.com,Copilot
-HOST,services.bingapis.com,Copilot
-HOST,static.cloudflareinsights.com,Copilot
-HOST,sydney.bing.com,Copilot
-HOST,www.bing.com,Copilot
-HOST-SUFFIX,algolia.net,Copilot
-HOST-SUFFIX,api.microsoftapp.net,Copilot
-HOST-SUFFIX,auth0.com,Copilot
-HOST-SUFFIX,bing-shopping.microsoft-falcon.io,Copilot
-HOST-SUFFIX,challenges.cloudflare.com,Copilot
-HOST-SUFFIX,chatgpt.com,Copilot
-HOST-SUFFIX,chatgpt.livekit.cloud,Copilot
-HOST-SUFFIX,client-api.arkoselabs.com,Copilot
-HOST-SUFFIX,edgeservices.bing.com,Copilot
-HOST-SUFFIX,events.statsigapi.net,Copilot
-HOST-SUFFIX,featuregates.org,Copilot
-HOST-SUFFIX,host.livekit.cloud,Copilot
-HOST-SUFFIX,identrust.com,Copilot
-HOST-SUFFIX,intercom.io,Copilot
-HOST-SUFFIX,intercomcdn.com,Copilot
-HOST-SUFFIX,launchdarkly.com,Copilot
-HOST-SUFFIX,oaistatic.com,Copilot
-HOST-SUFFIX,oaiusercontent.com,Copilot
-HOST-SUFFIX,observeit.net,Copilot
-HOST-SUFFIX,openai.com,Copilot
-HOST-SUFFIX,openaiapi-site.azureedge.net,Copilot
-HOST-SUFFIX,openaicom.imgix.net,Copilot
-HOST-SUFFIX,segment.io,Copilot
-HOST-SUFFIX,sentry.io,Copilot
-HOST-SUFFIX,stripe.com,Copilot
-HOST-SUFFIX,turn.livekit.cloud,Copilot
-HOST-KEYWORD,openaicom-api,Copilot
-IP-CIDR,24.199.123.28/32,Copilot
-IP-CIDR,64.23.132.171/32,Copilot
-IP-ASN,14061,Copilot
-IP-ASN,20473,Copilot
+DOMAIN,api.msn.com
+DOMAIN,api.statsig.com
+DOMAIN,assets.msn.com
+DOMAIN,browser-intake-datadoghq.com
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,copilot.microsoft.com
+DOMAIN,gateway.bingviz.microsoft.net
+DOMAIN,gateway.bingviz.microsoftapp.net
+DOMAIN,in.appcenter.ms
+DOMAIN,location.microsoft.com
+DOMAIN,odc.officeapps.live.com
+DOMAIN,openai-api.arkoselabs.com
+DOMAIN,openaicomproductionae4b.blob.core.windows.net
+DOMAIN,production-openaicom-storage.azureedge.net
+DOMAIN,r.bing.com
+DOMAIN,self.events.data.microsoft.com
+DOMAIN,services.bingapis.com
+DOMAIN,static.cloudflareinsights.com
+DOMAIN,sydney.bing.com
+DOMAIN,www.bing.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,api.microsoftapp.net
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,bing-shopping.microsoft-falcon.io
+DOMAIN-SUFFIX,challenges.cloudflare.com
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chatgpt.livekit.cloud
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,edgeservices.bing.com
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,host.livekit.cloud
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,launchdarkly.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,observeit.net
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+DOMAIN-SUFFIX,openaicom.imgix.net
+DOMAIN-SUFFIX,segment.io
+DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,turn.livekit.cloud
+DOMAIN-KEYWORD,openaicom-api
+IP-CIDR,24.199.123.28/32,no-resolve
+IP-CIDR,64.23.132.171/32,no-resolve
+IP-ASN,14061,no-resolve
+IP-ASN,20473,no-resolve
