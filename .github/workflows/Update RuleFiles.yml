@@ -23,39 +23,38 @@ jobs:
     - name: Download rule files
       run: |
         mkdir -p Rules
-        echo "Rules/Lan.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Lan/Lan.list" > rule_file_links.list
-        echo "Rules/Direct.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Direct/Direct.list" >> rule_file_links.list
-        echo "Rules/Hijacking.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Hijacking/Hijacking.list" >> rule_file_links.list
-        echo "Rules/Privacy_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy_Domain.list" >> rule_file_links.list
-        echo "Rules/Privacy.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy.list" >> rule_file_links.list
-        echo "Rules/WeChat.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list" >> rule_file_links.list
-        echo "Rules/Telegram.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list" >> rule_file_links.list
-        echo "Rules/OpenAI.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/OpenAI/OpenAI.list" >> rule_file_links.list
-        echo "Rules/Copilot.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Copilot/Copilot.list" >> rule_file_links.list
-        echo "Rules/Gemini.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Gemini/Gemini.list" >> rule_file_links.list
-        echo "Rules/Claude.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Claude/Claude.list" >> rule_file_links.list
-        echo "Rules/Apple_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple_Domain.list" >> rule_file_links.list
-        echo "Rules/Apple.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Apple/Apple.list" >> rule_file_links.list
-        echo "Rules/Microsoft.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Microsoft/Microsoft.list" >> rule_file_links.list
-        echo "Rules/Google.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list" >> rule_file_links.list
-        echo "Rules/GlobalMedia_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia_Domain.list" >> rule_file_links.list
-        echo "Rules/GlobalMedia.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/GlobalMedia/GlobalMedia.list" >> rule_file_links.list
-        echo "Rules/Global_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global_Domain.list" >> rule_file_links.list
-        echo "Rules/Global.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Global/Global.list" >> rule_file_links.list
-        echo "Rules/ChinaMedia.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaMedia/ChinaMedia.list" >> rule_file_links.list
-        echo "Rules/China_Domain.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia_Domain.list" >> rule_file_links.list
-        echo "Rules/China.list|https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ChinaNoMedia/ChinaNoMedia.list" >> rule_file_links.list
+        base_url="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket"
+        cat > rule_sources.list <<EOF
+        Rules/Lan.list|$base_url/Lan/Lan.list
+        Rules/Direct.list|$base_url/Direct/Direct.list
+        Rules/Hijacking.list|$base_url/Hijacking/Hijacking.list
+        Rules/Privacy_Domain.list|$base_url/Privacy/Privacy_Domain.list
+        Rules/Privacy.list|$base_url/Privacy/Privacy.list
+        Rules/WeChat.list|$base_url/WeChat/WeChat.list
+        Rules/Telegram.list|$base_url/Telegram/Telegram.list
+        Rules/OpenAI.list|$base_url/OpenAI/OpenAI.list
+        Rules/Copilot.list|$base_url/Copilot/Copilot.list
+        Rules/Gemini.list|$base_url/Gemini/Gemini.list
+        Rules/Claude.list|$base_url/Claude/Claude.list
+        Rules/Apple_Domain.list|$base_url/Apple/Apple_Domain.list
+        Rules/Apple.list|$base_url/Apple/Apple.list
+        Rules/Microsoft.list|$base_url/Microsoft/Microsoft.list
+        Rules/Google.list|$base_url/Google/Google.list
+        Rules/GlobalMedia_Domain.list|$base_url/GlobalMedia/GlobalMedia_Domain.list
+        Rules/GlobalMedia.list|$base_url/GlobalMedia/GlobalMedia.list
+        Rules/Global_Domain.list|$base_url/Global/Global_Domain.list
+        Rules/Global.list|$base_url/Global/Global.list
+        Rules/ChinaMedia.list|$base_url/ChinaMedia/ChinaMedia.list
+        Rules/China_Domain.list|$base_url/ChinaNoMedia/ChinaNoMedia_Domain.list
+        Rules/China.list|$base_url/ChinaNoMedia/ChinaNoMedia.list
+        EOF
         while IFS='|' read -r filepath url; do
           echo "Downloading: $url -> $filepath"
           curl -fsS -o "$filepath" "$url" || (echo "Retrying..." && curl -fsS -o "$filepath" "$url") || echo "Download failed: $url"
-        done < rule_file_links.list
+        done < rule_sources.list
 
     - name: Clean up rule files
-      run: |
-        find Rules -type f -name "*.list" | while read -r file; do
-          grep -v '^# AUTHOR' "$file" | grep -v '^# REPO' > cleaned_file.tmp
-          mv cleaned_file.tmp "$file"
-        done
+      run: find Rules -type f -name "*.list" -exec sed -i '/^# AUTHOR/d;/^# REPO/d' {} +
 
     - name: Generate Ai.list
       run: |
