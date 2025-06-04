@@ -145,9 +145,7 @@ ca-p12 =
 [*@LOWERTOP*](https://github.com/LOWERTOP/Shadowrocket-First)
 [*@Loyalsoldier*](https://github.com/Loyalsoldier/geoip)
 [*@Maasea*](https://github.com/Maasea/sgmodule)
-[*@mw418*](https://github.com/mw418/Loon)
 [*@NobyDa*](https://github.com/NobyDa/Script)
 [*@Sliverkiss*](https://github.com/Sliverkiss/QuantumultX)
-[*@ZenmoFeiShi*](https://github.com/ZenmoFeiShi/Qx)
 [*@zirawell*](https://github.com/zirawell/R-Store)
 [*@zZPiglet*](https://github.com/zZPiglet/Task)<br>
