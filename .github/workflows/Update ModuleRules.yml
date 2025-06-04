@@ -27,11 +27,6 @@ jobs:
       run: |
         python ModuleBuild/ModuleBuild.py
 
-    - name: Set up Git configuration
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
     - name: Commit & push generated ModuleRules
       uses: EndBug/add-and-commit@v9
       with:
