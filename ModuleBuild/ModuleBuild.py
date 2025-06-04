@@ -3,7 +3,7 @@ import re
 import datetime
 import requests
 
-def load_content(url):
+def load_source(url):
     if os.path.isfile(url):
         try:
             with open(url, 'r', encoding='utf-8') as file:
@@ -130,10 +130,10 @@ hostname = %APPEND% {mitm_match_content}
 """
     return sgmodule_content
 
-def merge_rules(rule_sources, project_name, parent_dir):
+def generate_sgmodule(rule_sources, project_name, parent_dir):
     merged_rule_text = ""
     for url in rule_sources:
-        rule_text = load_content(url)
+        rule_text = load_source(url)
         if rule_text:
             merged_rule_text += rule_text + "\n"
         else:
@@ -141,13 +141,13 @@ def merge_rules(rule_sources, project_name, parent_dir):
     sgmodule_content = build_sgmodule(merged_rule_text, project_name)
     if sgmodule_content:
         output_file = os.path.join(parent_dir, "Module.sgmodule")
-        save_content(sgmodule_content, output_file)
+        save_sgmodule(sgmodule_content, output_file)
         print(sgmodule_content)
         print(f"Successfully converted and saved to {output_file}")
     else:
         print("Combined content does not meet the requirements for conversion.")
 
-def save_content(content, file_path):
+def save_sgmodule(content, file_path):
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
@@ -165,7 +165,7 @@ def main():
     except IOError as e:
         print(f"Error reading the input file: {e}")
         exit(1)
-    merge_rules(build_entries, "融合模块", parent_dir)
+    generate_sgmodule(build_entries, "融合模块", parent_dir)
 
 if __name__ == "__main__":
     main()
