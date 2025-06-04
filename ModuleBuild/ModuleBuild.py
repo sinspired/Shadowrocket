@@ -9,7 +9,7 @@ def load_source(url):
             with open(url, 'r', encoding='utf-8') as file:
                 return file.read()
         except IOError as e:
-            print(f"Error reading local file {url}: {e}")
+            print(f"Failed to read local file: {url}: {e}")
             return None
     elif url.startswith("https://"):
         try:
@@ -17,7 +17,7 @@ def load_source(url):
             response.raise_for_status()
             return response.text
         except requests.RequestException as e:
-            print(f"Error downloading content from {url}: {e}")
+            print(f"Failed to download content from URL: {url}: {e}")
             return None
     else:
         local_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), url)
@@ -29,7 +29,7 @@ def load_source(url):
                 print(f"Error reading local file {local_path}: {e}")
                 return None
         else:
-            print(f"File not found at {local_path}")
+            print(f"Local file not found: {local_path}")
             return None
 
 def build_sgmodule(rule_text, project_name):
@@ -137,22 +137,22 @@ def generate_sgmodule(rule_sources, project_name, parent_dir):
         if rule_text:
             merged_rule_text += rule_text + "\n"
         else:
-            print(f"Failed to download or process the content from {url}.")
+            print(f"Unable to retrieve or process rule source: {url}")
     sgmodule_content = build_sgmodule(merged_rule_text, project_name)
     if sgmodule_content:
         output_file = os.path.join(parent_dir, "Module.sgmodule")
         save_sgmodule(sgmodule_content, output_file)
         print(sgmodule_content)
-        print(f"Successfully converted and saved to {output_file}")
+        print(f"Module successfully generated and saved to: {output_file}")
     else:
-        print("Combined content does not meet the requirements for conversion.")
+        print("No valid content found — module generation skipped.")
 
 def save_sgmodule(content, file_path):
     try:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
     except IOError as e:
-        print(f"Error saving content to {file_path}: {e}")
+        print(f"Failed to save output file: {file_path}: {e}")
 
 def main():
     current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -163,7 +163,7 @@ def main():
         with open(input_file_path, 'r') as file:
             build_entries = [line.strip() for line in file if line.strip() and not line.strip().startswith('#')]
     except IOError as e:
-        print(f"Error reading the input file: {e}")
+        print(f"Failed to read input file: {e}")
         exit(1)
     generate_sgmodule(build_entries, "融合模块", parent_dir)
 
