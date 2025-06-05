@@ -54,7 +54,13 @@ jobs:
         done < rule_sources.list
 
     - name: Clean up rule files
-      run: find Rules -type f -name "*.list" -exec sed -i '/^# AUTHOR/d;/^# REPO/d;/^# DESCRIPTION/d' {} +
+      run: |
+        find Rules -type f -name "*.list" -exec sed -i \
+          -e '/^# AUTHOR/d' \
+          -e '/^# REPO/d' \
+          -e '/^# DESCRIPTION/d' \
+          -e 's/^\(# UPDATED: [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\) .*/\1/' \
+          {} +
 
     - name: Generate Ai.list
       run: |
