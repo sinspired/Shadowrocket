@@ -139,6 +139,7 @@ ca-p12 =
 [*@blackmatrix7*](https://github.com/blackmatrix7)
 [*@ddgksf2013*](https://github.com/ddgksf2013/ddgksf2013)
 [*@fmz200*](https://github.com/fmz200/wool_scripts)
+[*@godalming123*](https://github.com/godalming123/minimal)
 [*@iab0x00*](https://github.com/iab0x00/ProxyRules)
 [*@Keywos*](https://github.com/Keywos/rule)
 [*@kokoryh*](https://github.com/kokoryh/Sparkle)
