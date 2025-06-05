@@ -54,7 +54,7 @@ jobs:
         done < rule_sources.list
 
     - name: Clean up rule files
-      run: find Rules -type f -name "*.list" -exec sed -i '/^# AUTHOR/d;/^# REPO/d/^# DESCRIPTION/d' {} +
+      run: find Rules -type f -name "*.list" -exec sed -i '/^# AUTHOR/d;/^# REPO/d;/^# DESCRIPTION/d' {} +
 
     - name: Generate Ai.list
       run: |
