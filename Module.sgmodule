@@ -1,5 +1,5 @@
 #!name=融合模块
-#!desc=2025-06-04 20:14:19
+#!desc=2025-06-08 01:51:36
 
 [Rule]
 AND, ((PROTOCOL,UDP),(DST-PORT,443)), REJECT
