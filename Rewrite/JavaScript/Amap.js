@@ -1,10 +1,10 @@
 /*
 # > 高德地图
 # 高德地图应用净化；
-# 原作者：@zirawell，由向晚重写维护；
+# 原作者：@zirawell，由Sinspired重写维护；
 
 # 更新时间: 20250522
-# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiangwanConfig/Amap.js
+# 规则链接: https://raw.githubusercontent.com/Sinspired/Shadowrocket/main/Rewrite/XiangwanConfig/Amap.js
 
 [rewrite_local]
 ^https?:\/\/.*\.amap\.com\/ws\/banner\/lists\/\? url reject-dict
@@ -18,20 +18,20 @@
 ^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? url reject-dict
 ^https?:\/\/.*\.amap\.com\/ws\/valueadded\/ url reject
 ^https?:\/\/.*\.amap\.com\/ws\/(mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) url reject-dict
-^https?:\/\/.*\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/bus\/plan\/integrate\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/(?>card-service-plan-home|main-page) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/perception\/drive\/(?>routeInfo|routePlan) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv\d\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
-^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location) url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/boss\/(car\/order\/content_info|order_web\/friendly_information) url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/bus\/plan\/integrate\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/c3frontend\/af-(hotel|launch)\/page\/main\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/faas\/amap-navigation\/(?>card-service-plan-home|main-page) url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/perception\/drive\/(?>routeInfo|routePlan) url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv\d\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail) url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
+^https?:\/\/.*\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location) url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/Amap.js
 
 [mitm]
 hostname = *.amap.com

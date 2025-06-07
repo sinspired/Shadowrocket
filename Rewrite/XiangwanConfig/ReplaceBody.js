@@ -1,9 +1,9 @@
 /*
 # 批量替换HTTP请求/响应Body内容；
-# 由向晚重写维护；
+# 由Sinspired重写维护；
 
 # 更新时间: 20250521
-# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiangwanConfig/ReplaceBody.js
+# 规则链接: https://raw.githubusercontent.com/Sinspired/Shadowrocket/main/Rewrite/XiangwanConfig/ReplaceBody.js
 */
 
 function getRegexp(str) {

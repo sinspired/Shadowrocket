@@ -1,7 +1,7 @@
 name: Update RewriteFiles
 on:
   schedule:
-    - cron: '22 22 * * *'
+    - cron: "22 22 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -227,7 +227,7 @@ jobs:
           sort -u -o LocalScripts.list LocalScripts.list
           local_original_links=""
           while IFS= read -r local_url; do
-            if echo "$local_url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+            if echo "$local_url" | grep -Eq "Sinspired/Shadowrocket/main/Rewrite/JavaScript/|Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/"; then
               continue
             fi
             local_filename=$(basename "$local_url")
@@ -293,7 +293,7 @@ jobs:
           for file in "${local_files[@]}"; do
             if [[ -f "$file" ]]; then
               while IFS= read -r url; do
-                if echo "$url" | grep -Eq "XiangwanGuan/Shadowrocket/main/Rewrite/JavaScript/|xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/"; then
+                if echo "$url" | grep -Eq "Sinspired/Shadowrocket/main/Rewrite/JavaScript/|Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/"; then
                   continue
                 fi
                 filename=$(basename "$url")
@@ -320,9 +320,9 @@ jobs:
       - name: Commit & Copy RewriteFiles
         uses: EndBug/add-and-commit@v9
         with:
-          author_name: 'GitHub Actions'
-          author_email: 'actions@github.com'
-          message: 'Update RewriteFiles'
+          author_name: "GitHub Actions"
+          author_email: "actions@github.com"
+          message: "Update RewriteFiles"
           add: Rewrite/**
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

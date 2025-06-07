@@ -1,13 +1,13 @@
 /*
 # > AMDC
 # 用于阿里系应用，拦截AMDC请求，并修改响应内容；
-# 由向晚重写维护；
+# 由Sinspired重写维护；
 
 # 更新时间: 20250521
-# 规则链接: https://raw.githubusercontent.com/XiangwanGuan/Shadowrocket/main/Rewrite/XiangwanConfig/AliAMDC.js
+# 规则链接: https://raw.githubusercontent.com/Sinspired/Shadowrocket/main/Rewrite/XiangwanConfig/AliAMDC.js
 
 [rewrite_local]
-^https?:\/\/amdc\.m\.taobao\.com url script-response-body https://xiangwanguan.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js 
+^https?:\/\/amdc\.m\.taobao\.com url script-response-body https://Sinspired.github.io/Shadowrocket/Rewrite/JavaScript/AliAMDC.js 
 
 [mitm]
 hostname = amdc.m.taobao.com
