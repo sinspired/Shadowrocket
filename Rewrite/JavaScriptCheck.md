@@ -1,4 +1,4 @@
-### Update: 2025-06-09<br>
+### Update: 2025-06-10<br>
 
 ### fmz200: <br>
 https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
@@ -43,7 +43,6 @@ https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soda.js<br>
 https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/soul/soul_ads.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js<br>
-https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/Umetrip_remove_ads.js<br>
 https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js<br>
 https://raw.githubusercontent.com/app2smile/rules/master/js/vgtime.js<br>
 https://raw.githubusercontent.com/Sliverkiss/QuantumultX/main/AdBlock/xmApp/wnbz.js<br>
