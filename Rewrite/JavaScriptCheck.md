@@ -1,4 +1,4 @@
-### Update: 2025-06-17<br>
+### Update: 2025-06-18<br>
 
 ### fmz200: <br>
 https://raw.githubusercontent.com/kokoryh/Script/master/js/12306.js<br>
