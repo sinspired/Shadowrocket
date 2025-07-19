@@ -1,10 +1,10 @@
 # NAME: Direct
-# UPDATED: 2025-06-06
+# UPDATED: 2025-07-20
 # DOMAIN: 56
-# DOMAIN-KEYWORD: 35
+# DOMAIN-KEYWORD: 36
 # DOMAIN-SUFFIX: 126
 # USER-AGENT: 1
-# TOTAL: 218
+# TOTAL: 219
 DOMAIN,ad.10010.com
 DOMAIN,ad.12306.cn
 DOMAIN,ain.bgm.tv
@@ -187,6 +187,7 @@ DOMAIN-SUFFIX,weather-data.apple.com
 DOMAIN-SUFFIX,weather-map.apple.com
 DOMAIN-SUFFIX,wiley.com
 DOMAIN-SUFFIX,xunlei.com
+DOMAIN-KEYWORD,amp-api.podcasts.apple.com
 DOMAIN-KEYWORD,anti-ad.net
 DOMAIN-KEYWORD,api-adservices.apple.com
 DOMAIN-KEYWORD,api.smoot.apple.cn
