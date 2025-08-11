@@ -1,12 +1,12 @@
 # NAME: GlobalMedia
-# UPDATED: 2025-06-06
-# DOMAIN: 35
+# UPDATED: 2025-08-12
+# DOMAIN: 36
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 1270
+# DOMAIN-SUFFIX: 1272
 # IP-CIDR: 924
 # URL-REGEX: 1
 # USER-AGENT: 69
-# TOTAL: 2325
+# TOTAL: 2328
 .112263.com
 .20thcenturystudios.com.au
 .20thcenturystudios.com.br
@@ -142,6 +142,7 @@
 .chocotv.com.tw
 .cinemax.com
 .claude.ai
+.claudeusercontent.com
 .cloudfront.net
 .cnbc.com
 .cnbcfm.com
@@ -164,6 +165,8 @@
 .cstatic.net
 .curbed.com
 .curiositystream.com
+.curosr.com
+.curosr.sh
 .cwseed.com
 .cwtv.com
 .d9.flashtalking.com
@@ -932,7 +935,6 @@
 .snssdk.com
 .soccermatchpass.com
 .socdm.com
-.sora.com
 .sorcerersarena.com
 .soundcloud.app.goo.gl
 .soundcloud.com
@@ -1277,6 +1279,7 @@
 .zeriamerikes.com
 .zype.com
 ai.google.dev
+aistudio.google.com
 akmcdnoversea-tw.inter.ptqy.gitv.tv
 api.githubcopilot.com
 api.groq.com
