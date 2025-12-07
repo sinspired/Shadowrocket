@@ -1,12 +1,12 @@
 # NAME: GlobalMedia
-# UPDATED: 2025-08-14
-# DOMAIN: 36
+# UPDATED: 2025-12-08
+# DOMAIN: 37
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 1272
+# DOMAIN-SUFFIX: 1275
 # IP-CIDR: 924
 # URL-REGEX: 1
 # USER-AGENT: 69
-# TOTAL: 2328
+# TOTAL: 2332
 .112263.com
 .20thcenturystudios.com.au
 .20thcenturystudios.com.br
@@ -142,6 +142,7 @@
 .chocotv.com.tw
 .cinemax.com
 .claude.ai
+.claude.com
 .claudeusercontent.com
 .cloudfront.net
 .cnbc.com
@@ -653,6 +654,7 @@
 .japronx.net
 .japronx.tv
 .japronx.vip
+.jetbrains.ai
 .joeswall.com
 .joinmaidez.com
 .joox.com
@@ -1095,6 +1097,7 @@
 .woflthenewsstation.com
 .wogx.com
 .wwwhuluplus.com
+.x.ai
 .yb.uncn.jp
 .youboranqs01.com
 .youtu.be
@@ -1310,6 +1313,7 @@ ktpx.amazon.com
 news-client.apple.com
 news-edge.apple.com
 news-events.apple.com
+notebooklm.google.com
 ocvideo.apple.com
 rpg.pic-imges.com
 rthklive2-lh.akamaihd.net
